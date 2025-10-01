@@ -23,11 +23,23 @@ public class CompteController {
         return compteService.getAllComptes();
     }
 
-    @GetMapping("/getUserById/{id}")
-    public Compte getCompteById(@PathVariable(value = "id") int id){
+    @GetMapping("/getCompteById/{id}")
+    public Compte getCompteById(@PathVariable(value = "id") Long id){
         return compteService.getCompteById(id);
     }
 
-    @PostMapping("/createUser")
+    @PostMapping("/createCompte")
     public Compte createCompte(@RequestBody Compte compte){return compteService.createCompte(compte);}
+
+    //UPDATE
+    @PutMapping("/updateCompte/{id}")
+    public Compte updateCompte(@PathVariable(value = "id") Long id, @RequestBody Compte Compte){
+        return compteService.updateCompte(id, Compte);
+    }
+
+    //DELETE
+    @DeleteMapping("/deleteCompte/{id}")
+    public void deleteCompte(@PathVariable(value = "id") Long id) {
+        compteService.deleteCompte(id);
+    }
 }

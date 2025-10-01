@@ -4,10 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5b10cc8b-6bf7-4a3c-9554-c1bc55f3cdbd" name="Changes" comment="updating properties">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/happy_foody/model/Recette.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/happy_foody/repository/RecetteRepository.java" afterDir="false" />
+    <list default="true" id="5b10cc8b-6bf7-4a3c-9554-c1bc55f3cdbd" name="Changes" comment="created Recette table">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/happy_foody/controller/RecetteController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/happy_foody/service/RecetteService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/happy_foody/controller/CompteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/happy_foody/controller/CompteController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/happy_foody/repository/CompteRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/happy_foody/repository/CompteRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/happy_foody/repository/RecetteRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/happy_foody/repository/RecetteRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/happy_foody/service/CompteService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/happy_foody/service/CompteService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,8 +21,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -133,7 +137,9 @@
       <workItem from="1759253560465" duration="258000" />
       <workItem from="1759253827111" duration="3057000" />
       <workItem from="1759263271512" duration="978000" />
-      <workItem from="1759264266951" duration="671000" />
+      <workItem from="1759264266951" duration="743000" />
+      <workItem from="1759301514941" duration="2041000" />
+      <workItem from="1759306936271" duration="2451000" />
     </task>
     <task id="LOCAL-00001" summary="1st commit">
       <option name="closed" value="true" />
@@ -167,7 +173,15 @@
       <option name="project" value="LOCAL" />
       <updated>1759234552036</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="created Recette table">
+      <option name="closed" value="true" />
+      <created>1759264964713</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1759264964713</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -189,6 +203,7 @@
     <MESSAGE value="1st commit" />
     <MESSAGE value="refractoring" />
     <MESSAGE value="updating properties" />
-    <option name="LAST_COMMIT_MESSAGE" value="updating properties" />
+    <MESSAGE value="created Recette table" />
+    <option name="LAST_COMMIT_MESSAGE" value="created Recette table" />
   </component>
 </project>
