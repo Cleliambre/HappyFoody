@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5b10cc8b-6bf7-4a3c-9554-c1bc55f3cdbd" name="Changes" comment="updating properties">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/happy_foody/model/Post.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/happy_foody/repository/PostRepository.java" afterDir="false" />
+    <list default="true" id="5b10cc8b-6bf7-4a3c-9554-c1bc55f3cdbd" name="Changes" comment="adding Post table">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/happy_foody/controller/PostController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/happy_foody/service/PostService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -17,8 +17,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -130,7 +130,7 @@
       <updated>1758893875033</updated>
       <workItem from="1758893876295" duration="1381000" />
       <workItem from="1758895269905" duration="27000" />
-      <workItem from="1759335034451" duration="1927000" />
+      <workItem from="1759335034451" duration="4157000" />
     </task>
     <task id="LOCAL-00001" summary="1st commit">
       <option name="closed" value="true" />
@@ -164,7 +164,15 @@
       <option name="project" value="LOCAL" />
       <updated>1759234552036</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="adding Post table">
+      <option name="closed" value="true" />
+      <created>1759337184398</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1759337184398</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -186,6 +194,7 @@
     <MESSAGE value="1st commit" />
     <MESSAGE value="refractoring" />
     <MESSAGE value="updating properties" />
-    <option name="LAST_COMMIT_MESSAGE" value="updating properties" />
+    <MESSAGE value="adding Post table" />
+    <option name="LAST_COMMIT_MESSAGE" value="adding Post table" />
   </component>
 </project>
