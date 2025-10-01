@@ -5,13 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5b10cc8b-6bf7-4a3c-9554-c1bc55f3cdbd" name="Changes" comment="updating properties">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/happy_foody/controller/CompteController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/happy_foody/repository/CompteRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/happy_foody/service/CompteService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/happy_foody/model/Post.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/happy_foody/repository/PostRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/happy_foody/model/Compte.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/happy_foody/model/Compte.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,8 +17,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -40,12 +36,12 @@
     &quot;assignee&quot;: &quot;ABellik&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/Cleliambre/ProjetWebET4.git&quot;,
-    &quot;accountId&quot;: &quot;8d0eaa8d-242e-4f84-8764-185633b15cf3&quot;
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/Cleliambre/ProjetWebET4.git",
+    "accountId": "5bf8a29a-093c-40c3-bd90-e6cc883598f3"
   }
-}</component>
+}]]></component>
   <component name="KubernetesApiPersistence">{}</component>
   <component name="KubernetesApiProvider">{
   &quot;isMigrated&quot;: true
@@ -79,7 +75,7 @@
     "RunOnceActivity.git.unshallow": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "Spring Boot.HappyFoodyApplication.executor": "Run",
-    "git-widget-placeholder": "compte",
+    "git-widget-placeholder": "post",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/abellik/IdeaProjects/demo-back-angular-Mysql-docker",
     "node.js.detected.package.eslint": "true",
@@ -134,6 +130,7 @@
       <updated>1758893875033</updated>
       <workItem from="1758893876295" duration="1381000" />
       <workItem from="1758895269905" duration="27000" />
+      <workItem from="1759335034451" duration="1927000" />
     </task>
     <task id="LOCAL-00001" summary="1st commit">
       <option name="closed" value="true" />
