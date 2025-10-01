@@ -18,7 +18,7 @@ public class CompteService {
         return compteRepository.findAll();
     }
 
-    public Compte getCompteById(int id) throws ResourceNotFoundException {
+    public Compte getCompteById(Long id) throws ResourceNotFoundException {
         Compte compte = compteRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Compte not found"));
         return compte;
     }
@@ -28,7 +28,7 @@ public class CompteService {
     }
 
     public Compte updateCompte(Long compteId, Compte compteDetails) throws ResourceNotFoundException {
-        Compte compte = compteRepository.findById(Math.toIntExact(compteId)).orElseThrow(() -> new ResourceNotFoundException("Compte not found"));
+        Compte compte = compteRepository.findById(compteId).orElseThrow(() -> new ResourceNotFoundException("Compte not found"));
 
         compte.setPseudo(compteDetails.getPseudo());
         compte.setPassword(compteDetails.getPassword());
@@ -42,7 +42,7 @@ public class CompteService {
     }
 
     public void deleteCompte(Long compteId) throws ResourceNotFoundException {
-        Compte compte = compteRepository.findById(Math.toIntExact(compteId)).orElseThrow(()->new ResourceNotFoundException("Compte not found"));
+        Compte compte = compteRepository.findById(compteId).orElseThrow(()->new ResourceNotFoundException("Compte not found"));
 
         compteRepository.delete(compte);
     }

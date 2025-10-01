@@ -1,0 +1,57 @@
+package com.example.happy_foody.model;
+
+import jakarta.persistence.*;
+
+@Entity
+@Table(name="recette")
+public class Recette {
+    private long idRecette;
+    private String titre;
+
+
+    private Compte auteur;
+
+    private String description;
+    private int temps;
+    private int portion;
+
+    public Recette() {}
+
+    public Recette(String titre, Compte auteur, String description,
+                   int temps, int portion)
+    {
+        this.titre = titre;
+        this.auteur = auteur;
+        this.description = description;
+        this.temps = temps;
+        this.portion = portion;
+    }
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    public long getIdRecette() {return idRecette;}
+    public void setIdRecette(long idRecette) {this.idRecette = idRecette;}
+
+    @Column(name = "titre", nullable = false)
+    public String getTitre() {return titre;}
+    public void setTitre(String titre) {this.titre = titre;}
+
+    @ManyToOne
+    @JoinColumn(name = "id_auteur", nullable = false)
+    public Compte getAuteur() {return auteur;}
+    public void setAuteur(Compte auteur) {this.auteur = auteur;}
+
+    @Column(name = "description", nullable = true)
+    public String getDescription() {return description;}
+    public void setDescription(String description) {this.description = description;}
+
+    @Column(name = "temps", nullable = false)
+    public int getTemps() {return temps;}
+    public void setTemps(int temps) {this.temps = temps;}
+
+    @Column(name = "portion", nullable = false)
+    public int getPortion() {return portion;}
+    public void setPortion(int portion) {this.portion = portion;}
+
+}
+
