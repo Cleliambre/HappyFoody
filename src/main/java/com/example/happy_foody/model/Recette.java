@@ -30,7 +30,7 @@ public class Recette {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     public long getIdRecette() {return idRecette;}
-    public void setIdRecette(long idRecette) {this.idRecette = idRecette;}
+    private void setIdRecette(long idRecette) {this.idRecette = idRecette;}
 
     @Column(name = "titre", nullable = false)
     public String getTitre() {return titre;}

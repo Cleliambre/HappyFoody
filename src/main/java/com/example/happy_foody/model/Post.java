@@ -25,7 +25,7 @@ public class Post {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     public long getIdPost() {return idPost;}
-    public void setIdPost(long idPost) {this.idPost = idPost;}
+    private void setIdPost(long idPost) {this.idPost = idPost;}
 
     @Column(name = "titre", nullable = false)
     public String getTitre() {return titre;}
