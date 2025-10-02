@@ -4,8 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9ea62db3-0e47-4e74-b700-e583ca0f2c56" name="Changes" comment="added Ingredient controller &amp; service">
+    <list default="true" id="9ea62db3-0e47-4e74-b700-e583ca0f2c56" name="Changes" comment="workspace">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/happy_foody/model/Quantite.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/happy_foody/model/QuantiteId.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/happy_foody/model/Unite.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/happy_foody/repository/QuantiteRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/happy_foody/HappyFoodyApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/happy_foody/HappyFoodyApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/happy_foody/model/Ingredient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/happy_foody/model/Ingredient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/happy_foody/model/Recette.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/happy_foody/model/Recette.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,8 +22,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="Class" />
+        <option value="Enum" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -28,35 +36,39 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestState"><![CDATA[{
-  "prStates": [
+  <component name="GitHubPullRequestState">{
+  &quot;prStates&quot;: [
     {
-      "id": {
-        "id": "PR_kwDOPtUX-M6rw4Sd",
-        "number": 60
+      &quot;id&quot;: {
+        &quot;id&quot;: &quot;PR_kwDOPtUX-M6rw4Sd&quot;,
+        &quot;number&quot;: 60
       },
-      "lastSeen": 1759410100483
+      &quot;lastSeen&quot;: 1759410100483
     }
   ]
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "recentNewPullRequestHead": {
-    "server": {
-      "useHttp": false,
-      "host": "github.com",
-      "port": null,
-      "suffix": null
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;recentNewPullRequestHead&quot;: {
+    &quot;server&quot;: {
+      &quot;useHttp&quot;: false,
+      &quot;host&quot;: &quot;github.com&quot;,
+      &quot;port&quot;: null,
+      &quot;suffix&quot;: null
     },
-    "owner": "Cleliambre",
-    "repository": "ProjetWebET4"
+    &quot;owner&quot;: &quot;Cleliambre&quot;,
+    &quot;repository&quot;: &quot;ProjetWebET4&quot;
   }
-}]]></component>
+}</component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Application.HappyFoodyApplication.executor": "Run",
     "Docker.compose.yaml: Compose Deployment.executor": "Run",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
     "Spring Boot.HappyFoodyApplication.executor": "Run",
-    "git-widget-placeholder": "#61 on ingrédient",
+    "git-widget-placeholder": "Quantité",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",

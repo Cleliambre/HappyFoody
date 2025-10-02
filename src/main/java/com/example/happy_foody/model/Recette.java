@@ -2,18 +2,22 @@ package com.example.happy_foody.model;
 
 import jakarta.persistence.*;
 
+import java.util.HashSet;
+import java.util.Set;
+
 @Entity
 @Table(name="recette")
 public class Recette {
     private long idRecette;
     private String titre;
 
-
     private Compte auteur;
 
     private String description;
     private int temps;
     private int portion;
+
+    private Set<Quantite> quantites = new HashSet<Quantite>();
 
     public Recette() {}
 
@@ -53,5 +57,11 @@ public class Recette {
     public int getPortion() {return portion;}
     public void setPortion(int portion) {this.portion = portion;}
 
+    //sert à ce que le lien entre Recette et Quantite soit bidirectionnelle
+    @OneToMany(mappedBy = "pk.recette")
+    public Set<Quantite> getQuantites() {return quantites;}
+    public void setQuantites(Set<Quantite> quantites) {
+        this.quantites = quantites;
+    }
 }
 
