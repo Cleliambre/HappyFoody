@@ -17,7 +17,7 @@ public class Quantite {
         this.pk = pk;
     }
 
-    @Column(name = "portion")
+    @Column(name = "portion", nullable = false)
     public float getPortion() {
         return portion;
     }
