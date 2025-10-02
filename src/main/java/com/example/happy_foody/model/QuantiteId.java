@@ -21,7 +21,7 @@ public class QuantiteId implements java.io.Serializable  {
     }
 
     @ManyToOne
-    @JoinColumn(name = "id_ingrédient")
+    @JoinColumn(name = "id_ingredient")
     public Ingredient getIngredient() {
         return ingredient;
     }
