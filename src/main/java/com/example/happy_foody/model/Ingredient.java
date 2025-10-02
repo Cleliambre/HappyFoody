@@ -17,7 +17,7 @@ public class Ingredient {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     public long getIdIngredient() {return idIngredient;}
-    public void setIdIngredient(long idIngredient) {this.idIngredient = idIngredient;}
+    private void setIdIngredient(long idIngredient) {this.idIngredient = idIngredient;}
 
     @Column(name = "nom", nullable = false, unique = true)
     public String getNom() {return nom;}
