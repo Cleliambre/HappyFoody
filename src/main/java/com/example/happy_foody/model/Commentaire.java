@@ -41,5 +41,11 @@ public class Commentaire {
     @JoinColumn(name = "id_auteur", nullable = false)
     public Compte getAuteur() {return auteur;}
     public void setAuteur(Compte auteur) {this.auteur = auteur;}
+
+    @ManyToOne
+    @JoinColumn(name = "id_commRepondu", nullable = true)
+    public Commentaire getCommRepondu() {return CommRepondu;}
+    public void setCommRepondu(Commentaire CommRepondu) {this.CommRepondu = CommRepondu;}
+
 }
 
