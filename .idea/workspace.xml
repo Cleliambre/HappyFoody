@@ -4,69 +4,28 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9ea62db3-0e47-4e74-b700-e583ca0f2c56" name="Changes" comment="added Ingredient controller &amp; service">
+    <list default="true" id="f32d5f50-a5af-4d14-b388-d74ca3d35fa0" name="Changes" comment="updating properties">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/happy_foody/model/Compte.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/happy_foody/model/Compte.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/happy_foody/model/Post.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/happy_foody/model/Post.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/happy_foody/model/Recette.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/happy_foody/model/Recette.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Interface" />
-        <option value="Class" />
-      </list>
-    </option>
-  </component>
   <component name="Git.Settings">
-    <option name="RECENT_BRANCH_BY_REPOSITORY">
-      <map>
-        <entry key="$PROJECT_DIR$" value="develop" />
-      </map>
-    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestState"><![CDATA[{
-  "prStates": [
-    {
-      "id": {
-        "id": "PR_kwDOPtUX-M6rw4Sd",
-        "number": 60
-      },
-      "lastSeen": 1759410100483
-    }
-  ]
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "recentNewPullRequestHead": {
-    "server": {
-      "useHttp": false,
-      "host": "github.com",
-      "port": null,
-      "suffix": null
-    },
-    "owner": "Cleliambre",
-    "repository": "ProjetWebET4"
-  }
-}]]></component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "Application.HappyFoodyApplication.executor": "Run",
-    "Docker.compose.yaml: Compose Deployment.executor": "Run",
-    "Spring Boot.HappyFoodyApplication.executor": "Run",
-    "git-widget-placeholder": "#61 on ingrédient",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
+    "git-widget-placeholder": "#62 on Etape",
     "node.js.selected.package.tslint": "(autodetect)"
   }
 }]]></component>
   <component name="RunManager">
     <configuration name="HappyFoodyApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
-      <option name="ALTERNATIVE_JRE_PATH" value="17" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <module name="Happy_Foody" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.happy_foody.HappyFoodyApplication" />
       <method v="2">
@@ -75,28 +34,6 @@
     </configuration>
   </component>
   <component name="TaskManager">
-    <task id="LOCAL-00001" summary="added Ingredient table &amp; repository">
-      <option name="closed" value="true" />
-      <created>1759407961690</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1759407961690</updated>
-    </task>
-    <task id="LOCAL-00002" summary="added Ingredient controller &amp; service">
-      <option name="closed" value="true" />
-      <created>1759410023080</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1759410023080</updated>
-    </task>
-    <option name="localTasksCounter" value="3" />
     <servers />
-  </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="added Ingredient table &amp; repository" />
-    <MESSAGE value="added Ingredient controller &amp; service" />
-    <option name="LAST_COMMIT_MESSAGE" value="added Ingredient controller &amp; service" />
   </component>
 </project>
