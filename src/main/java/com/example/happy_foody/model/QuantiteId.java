@@ -11,6 +11,13 @@ public class QuantiteId implements java.io.Serializable  {
     private Recette recette;
     private Ingredient ingredient;
 
+    public QuantiteId() {}
+
+    public QuantiteId(Recette recette, Ingredient ingredient) {
+        this.recette = recette;
+        this.ingredient = ingredient;
+    }
+
     @ManyToOne
     @JoinColumn(name = "id_recette")
     public Recette getRecette() {

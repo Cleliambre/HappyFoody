@@ -9,6 +9,14 @@ public class Quantite {
     private float portion;
     private Unite unite;
 
+    public Quantite() {}
+
+    public Quantite(QuantiteId pk, float portion, Unite unite) {
+        this.pk = pk;
+        this.portion = portion;
+        this.unite = unite;
+    }
+
     @Id
     public QuantiteId getPk() {
         return pk;

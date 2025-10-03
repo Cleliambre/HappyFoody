@@ -29,9 +29,9 @@ public class Ingredient {
     public void setNom(String nom) {this.nom = nom;}
 
     //sert à ce que le lien entre Ingredient et Quantite soit bidirectionnel
-    @OneToMany(mappedBy = "pk.ingredient")
+    /*@OneToMany(mappedBy = "pk.ingredient")
     public Set<Quantite> getQuantites() {return quantites;}
     public void setQuantites(Set<Quantite> quantites) {
         this.quantites = quantites;
-    }
+    }*/
 }

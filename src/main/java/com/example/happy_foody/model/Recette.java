@@ -58,10 +58,10 @@ public class Recette {
     public void setPortion(int portion) {this.portion = portion;}
 
     //sert à ce que le lien entre Recette et Quantite soit bidirectionnel
-    @OneToMany(mappedBy = "pk.recette")
+    /*@OneToMany(mappedBy = "pk.recette")
     public Set<Quantite> getQuantites() {return quantites;}
     public void setQuantites(Set<Quantite> quantites) {
         this.quantites = quantites;
-    }
+    }*/
 }
 
