@@ -8,7 +8,7 @@ import java.util.Date;
 @Table(name="commentaire")
 public class Commentaire {
     private long idCommentaire;
-    private Commentaire CommRepondu;
+    private Commentaire commRepondu;
     private Compte auteur;
     private String contenu;
     private Date date;
@@ -20,7 +20,7 @@ public class Commentaire {
     {
         this.date = date;
         this.contenu = contenu;
-        this.CommRepondu = CommRepondu;
+        this.commRepondu = CommRepondu;
         this.auteur = auteur;
     }
 
@@ -44,8 +44,8 @@ public class Commentaire {
 
     @ManyToOne
     @JoinColumn(name = "id_commRepondu", nullable = true)
-    public Commentaire getCommRepondu() {return CommRepondu;}
-    public void setCommRepondu(Commentaire CommRepondu) {this.CommRepondu = CommRepondu;}
+    public Commentaire getCommRepondu() {return commRepondu;}
+    public void setCommRepondu(Commentaire CommRepondu) {this.commRepondu = CommRepondu;}
 
 }
 

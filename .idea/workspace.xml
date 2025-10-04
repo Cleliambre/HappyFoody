@@ -5,9 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f32d5f50-a5af-4d14-b388-d74ca3d35fa0" name="Changes" comment="jsp">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/happy_foody/controller/CommentaireController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/happy_foody/repository/CommentaireRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/happy_foody/service/CommentaireService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_26_09_2025_16_05_[Changes]1/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_26_09_2025_16_05__Changes_1.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/happy_foody/model/Commentaire.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/happy_foody/model/Commentaire.java" afterDir="false" />
     </list>
@@ -38,12 +37,12 @@
     &quot;assignee&quot;: &quot;ABellik&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/Cleliambre/HappyFoody.git&quot;,
-    &quot;accountId&quot;: &quot;0359ed3f-9f09-49a9-a7a9-b23d315450a2&quot;
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/Cleliambre/HappyFoody.git",
+    "accountId": "77cdc171-3702-4abf-b264-cfaca464b510"
   }
-}</component>
+}]]></component>
   <component name="KubernetesApiPersistence">{}</component>
   <component name="KubernetesApiProvider">{
   &quot;isMigrated&quot;: true
@@ -65,7 +64,15 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "git-widget-placeholder": "Commentaire",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "Spring Boot.HappyFoodyApplication.executor": "Run",
+    "git-widget-placeholder": "#64 on Commentaire",
     "kotlin-language-version-configured": "true",
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -86,8 +93,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9823dce3aa75-bf35d07a577b-intellij.indexing.shared.core-IU-252.26830.84" />
-        <option value="bundled-js-predefined-d6986cc7102b-3aa1da707db6-JavaScript-IU-252.26830.84" />
+        <option value="bundled-jdk-9823dce3aa75-bf35d07a577b-intellij.indexing.shared.core-IU-252.26199.169" />
+        <option value="bundled-js-predefined-d6986cc7102b-9c94529fcfe0-JavaScript-IU-252.26199.169" />
       </set>
     </attachedChunks>
   </component>
@@ -101,6 +108,7 @@
       <updated>1759481024294</updated>
       <workItem from="1759481126932" duration="1325000" />
       <workItem from="1759488929639" duration="878000" />
+      <workItem from="1759583615113" duration="1548000" />
     </task>
     <task id="LOCAL-00001" summary="created table">
       <option name="closed" value="true" />
