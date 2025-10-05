@@ -29,7 +29,7 @@ public class Compte {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     public long getIdCompte() {return idCompte;}
-    public void setIdCompte(long idCompte) {this.idCompte = idCompte;}
+    private void setIdCompte(long idCompte) {this.idCompte = idCompte;}
 
     @Column(name = "pseudo", nullable = false)
     public String getPseudo() {return pseudo;}
