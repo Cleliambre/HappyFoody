@@ -29,7 +29,7 @@ public class Commentaire {
     public long getIdCommentaire() {return idCommentaire;}
     private void setIdCommentaire(long idCommentaire) {this.idCommentaire = idCommentaire;}
 
-    @Column(name = "contenu", nullable = false)
+    @Column(name = "contenu", nullable = true)
     public String getContenu() {return contenu;}
     public void setContenu(String contenu) {this.contenu = contenu;}
 
