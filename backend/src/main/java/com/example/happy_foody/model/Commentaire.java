@@ -6,6 +6,7 @@ import java.util.Date;
 
 @Entity
 @Table(name="commentaire")
+@Inheritance(strategy = InheritanceType.JOINED)
 public class Commentaire {
     private long idCommentaire;
     private Commentaire commRepondu;
