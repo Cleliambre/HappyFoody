@@ -1,0 +1,58 @@
+.HappyFoodyIcon {
+    height: 90px;
+    width: 90px;
+}
+
+.ButtonIcon {
+    height: 50px;
+    width: 50px;
+}
+
+.LeftButton {
+    padding: 5px;
+    gap: 5px;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    width: 120px;
+    height: 70px;
+    background-color: white;
+    color: black;
+}
+
+.RightButton {
+    padding: 5px;
+    gap: 5px;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    width: 80px;
+    height: 70px;
+    border: none;
+    background-color: white;
+    color: black;
+}
+
+.InsertButton {
+    width: -webkit-fill-available;
+}
+
+.GroupButton {
+    gap: 20px;
+    display: flex;
+    flex-direction: row;
+}
+
+.Menu {
+    align-items: center;
+    gap: 30px;
+    padding-right: 40px;
+    padding-left: 40px;
+    width: -webkit-fill-available;
+    display: flex;
+    flex-direction: row;
+    background-color: white;
+    height: fit-content;
+    border-bottom: solid;
+    border-bottom-color: darkgray;
+}
