@@ -30,6 +30,10 @@ public class CommentairePostService {
     public CommentairePost updateCommentairePost(Long commentairePostId, CommentairePost commentairePostDetails) throws ResourceNotFoundException {
         CommentairePost commentairePost = commentairePostRepository.findById(commentairePostId).orElseThrow(() -> new ResourceNotFoundException("CommentairePost not found"));
 
+        commentairePost.setAuteur(commentairePostDetails.getAuteur());
+        commentairePost.setContenu(commentairePostDetails.getContenu());
+        commentairePost.setDate(commentairePostDetails.getDate());
+        commentairePost.setCommRepondu(commentairePostDetails.getCommRepondu());
         commentairePost.setPost(commentairePostDetails.getPost());
 
         final CommentairePost updatedCommentairePost = commentairePostRepository.save(commentairePost);
