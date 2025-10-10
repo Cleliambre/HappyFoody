@@ -4,11 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9ea62db3-0e47-4e74-b700-e583ca0f2c56" name="Changes" comment="added Quantite Table &amp; linked tables">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/happy_foody/controller/QuantiteController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/happy_foody/service/QuantiteService.java" afterDir="false" />
+    <list default="true" id="9ea62db3-0e47-4e74-b700-e583ca0f2c56" name="Changes" comment="test">
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/happy_foody/controller/InscriptionController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/happy_foody/model/Inscription.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/happy_foody/model/InscriptionId.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/happy_foody/repository/InscriptionRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/happy_foody/service/InscriptionService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/happy_foody/repository/QuantiteRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/happy_foody/repository/QuantiteRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/happy_foody/model/Ingredient.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/happy_foody/model/Ingredient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/happy_foody/model/Recette.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/happy_foody/model/Recette.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,24 +67,40 @@
     "RequestMappingsPanelOrder1": "1",
     "RequestMappingsPanelWidth0": "75",
     "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "Spring Boot.Backend.executor": "Run",
     "Spring Boot.HappyFoodyApplication.executor": "Run",
-    "git-widget-placeholder": "Quantité",
+    "git-widget-placeholder": "Inscription",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)"
   }
 }]]></component>
-  <component name="RunManager">
-    <configuration name="HappyFoodyApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+  <component name="RunManager" selected="Spring Boot.Backend">
+    <configuration name="Backend" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <option name="ALTERNATIVE_JRE_PATH" value="17" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
-      <module name="Happy_Foody" />
+      <module name="backend" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.happy_foody.HappyFoodyApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Frontend" type="js.build_tools.npm">
+      <package-json value="$PROJECT_DIR$/frontend/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="start" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="npm.Frontend" />
+      <item itemvalue="Spring Boot.Backend" />
+    </list>
   </component>
   <component name="TaskManager">
     <task id="LOCAL-00001" summary="added Ingredient table &amp; repository">
