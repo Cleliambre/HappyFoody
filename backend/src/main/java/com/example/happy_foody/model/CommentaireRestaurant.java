@@ -20,13 +20,14 @@ public class CommentaireRestaurant extends Commentaire{
         super();
     }
 
-    public CommentaireRestaurant(Commentaire CommRepondu, Compte auteur, String contenu, Date date, int noteRapidite, int noteService, int noteQualite, int noteHygiene)
+    public CommentaireRestaurant(Commentaire CommRepondu, Compte auteur, String contenu, Date date, int noteRapidite, int noteService, int noteQualite, int noteHygiene, Restaurant restaurant)
     {
         super(CommRepondu, auteur, contenu, date);
         this.noteRapidite = noteRapidite;
         this.noteService = noteService;
         this.noteQualite = noteQualite;
         this.noteHygiene = noteHygiene;
+        this.restaurant = restaurant;
     }
 
     @Column(name = "noteRapidite", nullable = false)
@@ -44,7 +45,6 @@ public class CommentaireRestaurant extends Commentaire{
     @Column(name = "noteHygiene", nullable = false)
     public int getNoteHygiene() {return noteHygiene;}
     public void setNoteHygiene(int noteHygiene) {this.noteHygiene = noteHygiene; }
-
 
     @ManyToOne
     @JoinColumn(name = "id_restaurant", nullable = false)
