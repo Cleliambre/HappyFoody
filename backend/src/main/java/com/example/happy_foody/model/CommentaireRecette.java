@@ -16,10 +16,11 @@ public class CommentaireRecette extends Commentaire{
         super();
     }
 
-    public CommentaireRecette(Commentaire CommRepondu, Compte auteur, String contenu, Date date, int note)
+    public CommentaireRecette(Commentaire CommRepondu, Compte auteur, String contenu, Date date, int note, Recette recette)
     {
         super(CommRepondu, auteur, contenu, date);
         this.note = note;
+        this.recette = recette;
     }
 
     @Column(name = "note", nullable = false)

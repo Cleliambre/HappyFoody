@@ -4,11 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9ea62db3-0e47-4e74-b700-e583ca0f2c56" name="Changes" comment="added Quantite Table &amp; linked tables">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/happy_foody/controller/QuantiteController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/happy_foody/service/QuantiteService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/happy_foody/repository/QuantiteRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/happy_foody/repository/QuantiteRepository.java" afterDir="false" />
+    <list default="true" id="f32d5f50-a5af-4d14-b388-d74ca3d35fa0" name="Changes" comment="Added CommentairePost backend + corrected constructors of CommentaireRecette and CommentaireRestaurant">
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/happy_foody/service/CommentairePostService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/happy_foody/service/CommentairePostService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,7 +24,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="develop" />
+        <entry key="$PROJECT_DIR$" value="Partage" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -64,18 +61,17 @@
     "RequestMappingsPanelWidth0": "75",
     "RequestMappingsPanelWidth1": "75",
     "Spring Boot.HappyFoodyApplication.executor": "Run",
-    "git-widget-placeholder": "Quantité",
+    "git-widget-placeholder": "#100 on commentairePost",
+    "kotlin-language-version-configured": "true",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)"
   }
 }]]></component>
-  <component name="RunManager">
-    <configuration name="HappyFoodyApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
-      <option name="ALTERNATIVE_JRE_PATH" value="17" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
-      <module name="Happy_Foody" />
+  <component name="RunManager" selected="Spring Boot.Backend">
+    <configuration name="Backend" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="backend" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.happy_foody.HappyFoodyApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -111,9 +107,11 @@
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="added Ingredient table &amp; repository" />
-    <MESSAGE value="added Ingredient controller &amp; service" />
-    <MESSAGE value="added Quantite Table &amp; linked tables" />
-    <option name="LAST_COMMIT_MESSAGE" value="added Quantite Table &amp; linked tables" />
+    <MESSAGE value="1st" />
+    <MESSAGE value="refractored Commentaire" />
+    <MESSAGE value="Change in front-end execution configuration" />
+    <MESSAGE value="added CommentaireRecette backend" />
+    <MESSAGE value="Added CommentairePost backend + corrected constructors of CommentaireRecette and CommentaireRestaurant" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added CommentairePost backend + corrected constructors of CommentaireRecette and CommentaireRestaurant" />
   </component>
 </project>
