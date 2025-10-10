@@ -4,15 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f32d5f50-a5af-4d14-b388-d74ca3d35fa0" name="Changes" comment="test">
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/happy_foody/controller/PartageController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/happy_foody/model/CommentairePartage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/happy_foody/model/Partage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/happy_foody/model/TypePartage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/happy_foody/repository/CommentairePartageRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/happy_foody/repository/PartageRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/happy_foody/service/CommentairePartageService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/happy_foody/service/PartageService.java" afterDir="false" />
+    <list default="true" id="f32d5f50-a5af-4d14-b388-d74ca3d35fa0" name="Changes" comment="added Tag backend">
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/happy_foody/controller/TagController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/happy_foody/model/Tag.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/happy_foody/model/TypeTag.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/happy_foody/repository/TagRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/happy_foody/service/TagService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -91,12 +89,19 @@
     "RequestMappingsPanelWidth0": "75",
     "RequestMappingsPanelWidth1": "75",
     "Spring Boot.HappyFoodyApplication.executor": "Run",
-    "git-widget-placeholder": "Partage",
+    "git-widget-placeholder": "Tag",
     "kotlin-language-version-configured": "true",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)"
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_interpreter_path": "node",
+    "nodejs_package_manager_path": "npm",
+    "npm.Frontend.executor": "Run",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.2",
+    "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RunManager" selected="Spring Boot.Backend">
@@ -141,7 +146,7 @@
     <MESSAGE value="refractored Commentaire" />
     <MESSAGE value="Change in front-end execution configuration" />
     <MESSAGE value="added CommentaireRecette backend" />
-    <MESSAGE value="Added CommentairePost backend + corrected constructors of CommentaireRecette and CommentaireRestaurant" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added CommentairePost backend + corrected constructors of CommentaireRecette and CommentaireRestaurant" />
+    <MESSAGE value="added Tag backend" />
+    <option name="LAST_COMMIT_MESSAGE" value="added Tag backend" />
   </component>
 </project>
