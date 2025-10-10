@@ -4,12 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f32d5f50-a5af-4d14-b388-d74ca3d35fa0" name="Changes" comment="added Tag backend">
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/happy_foody/controller/TagController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/happy_foody/model/Tag.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/happy_foody/model/TypeTag.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/happy_foody/repository/TagRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/happy_foody/service/TagService.java" afterDir="false" />
+    <list default="true" id="f32d5f50-a5af-4d14-b388-d74ca3d35fa0" name="Changes" comment="test">
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/happy_foody/controller/MessageController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/happy_foody/model/Message.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/happy_foody/repository/MessageRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/happy_foody/service/MessageService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
@@ -89,7 +88,7 @@
     "RequestMappingsPanelWidth0": "75",
     "RequestMappingsPanelWidth1": "75",
     "Spring Boot.HappyFoodyApplication.executor": "Run",
-    "git-widget-placeholder": "Tag",
+    "git-widget-placeholder": "message",
     "kotlin-language-version-configured": "true",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
