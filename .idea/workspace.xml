@@ -30,21 +30,32 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="develop" />
+        <entry key="$PROJECT_DIR$" value="Partage" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory">{
-  &quot;lastFilter&quot;: {
-    &quot;state&quot;: &quot;OPEN&quot;,
-    &quot;assignee&quot;: &quot;ABellik&quot;
-  }
+  <component name="GitHubPullRequestState">{
+  &quot;prStates&quot;: [
+    {
+      &quot;id&quot;: {
+        &quot;id&quot;: &quot;PR_kwDOPtUX-M6rw4Sd&quot;,
+        &quot;number&quot;: 60
+      },
+      &quot;lastSeen&quot;: 1759410100483
+    }
+  ]
 }</component>
   <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/Cleliambre/HappyFoody.git&quot;,
-    &quot;accountId&quot;: &quot;77cdc171-3702-4abf-b264-cfaca464b510&quot;
+  &quot;recentNewPullRequestHead&quot;: {
+    &quot;server&quot;: {
+      &quot;useHttp&quot;: false,
+      &quot;host&quot;: &quot;github.com&quot;,
+      &quot;port&quot;: null,
+      &quot;suffix&quot;: null
+    },
+    &quot;owner&quot;: &quot;Cleliambre&quot;,
+    &quot;repository&quot;: &quot;ProjetWebET4&quot;
   }
 }</component>
   <component name="KubernetesApiPersistence">{}</component>
@@ -58,6 +69,9 @@
       </MavenGeneralSettings>
     </option>
   </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 8
 }</component>
@@ -68,21 +82,17 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "JavaScript Debug.Debug Application.executor": "Run",
-    "Maven.backend [clean,install].executor": "Run",
+    "Application.HappyFoodyApplication.executor": "Run",
+    "Docker.compose.yaml: Compose Deployment.executor": "Run",
     "RequestMappingsPanelOrder0": "0",
     "RequestMappingsPanelOrder1": "1",
     "RequestMappingsPanelWidth0": "75",
     "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "Spring Boot.Backend.executor": "Run",
     "Spring Boot.HappyFoodyApplication.executor": "Run",
     "git-widget-placeholder": "Tag",
     "kotlin-language-version-configured": "true",
     "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_interpreter_path": "node",
@@ -95,17 +105,6 @@
   }
 }]]></component>
   <component name="RunManager" selected="Spring Boot.Backend">
-    <configuration default="true" type="JetRunConfigurationType">
-      <module name="backend" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
-      <module name="backend" />
-      <option name="filePath" />
-      <method v="2" />
-    </configuration>
     <configuration name="Backend" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="backend" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.happy_foody.HappyFoodyApplication" />
@@ -113,61 +112,34 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Frontend" type="js.build_tools.npm">
-      <package-json value="$PROJECT_DIR$/frontend/package.json" />
-      <command value="run" />
-      <scripts>
-        <script value="start" />
-      </scripts>
-      <node-interpreter value="project" />
-      <envs />
-      <method v="2" />
-    </configuration>
-    <list>
-      <item itemvalue="npm.Frontend" />
-      <item itemvalue="Spring Boot.Backend" />
-    </list>
   </component>
-  <component name="SharedIndexes">
-    <attachedChunks>
-      <set>
-        <option value="bundled-jdk-9823dce3aa75-bf35d07a577b-intellij.indexing.shared.core-IU-252.26199.169" />
-        <option value="bundled-js-predefined-d6986cc7102b-9c94529fcfe0-JavaScript-IU-252.26199.169" />
-      </set>
-    </attachedChunks>
-  </component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
-    <task active="true" id="Default" summary="Default task">
-      <changelist id="f32d5f50-a5af-4d14-b388-d74ca3d35fa0" name="Changes" comment="updating properties" />
-      <created>1759655299895</created>
-      <option name="number" value="Default" />
-      <option name="presentableId" value="Default" />
-      <updated>1759655299895</updated>
-      <workItem from="1759655301418" duration="444000" />
-      <workItem from="1759863464180" duration="4951000" />
-    </task>
-    <task id="LOCAL-00001" summary="refractored Commentaire">
+    <task id="LOCAL-00001" summary="added Ingredient table &amp; repository">
       <option name="closed" value="true" />
-      <created>1759830818484</created>
+      <created>1759407961690</created>
       <option name="number" value="00001" />
       <option name="presentableId" value="LOCAL-00001" />
       <option name="project" value="LOCAL" />
-      <updated>1759830818484</updated>
+      <updated>1759407961690</updated>
     </task>
-    <task id="LOCAL-00002" summary="Change in front-end execution configuration">
+    <task id="LOCAL-00002" summary="added Ingredient controller &amp; service">
       <option name="closed" value="true" />
-      <created>1759831009719</created>
+      <created>1759410023080</created>
       <option name="number" value="00002" />
       <option name="presentableId" value="LOCAL-00002" />
       <option name="project" value="LOCAL" />
-      <updated>1759831009719</updated>
+      <updated>1759410023080</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Added CommentairePost backend + corrected constructors of CommentaireRecette and CommentaireRestaurant">
+      <option name="closed" value="true" />
+      <created>1759997798682</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1759997798682</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
-  </component>
-  <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="1st" />
