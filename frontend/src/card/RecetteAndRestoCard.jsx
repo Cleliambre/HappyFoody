@@ -7,7 +7,11 @@ import StarOutlinedIcon from '@mui/icons-material/StarOutlined';
 export default function RecetteAndRestoCard({imageURL, title, nbFavori=0, isFavorite = false, rate = 0, description})
 {
     let text = <React.Fragment>
-        <Typography content="text">
+        <Typography
+            content="text"
+            component="div"
+            sx={{ display: 'flex', alignItems: 'center', gap: '4px' }}
+        >
             {rate}
             <StarOutlinedIcon fontSize="small" className="Star"/>
         </Typography>
