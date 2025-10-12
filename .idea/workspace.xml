@@ -4,20 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f32d5f50-a5af-4d14-b388-d74ca3d35fa0" name="Changes" comment="test">
-      <change afterPath="$PROJECT_DIR$/frontend/src/card/Card.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/card/PartageCard.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/card/PostCard.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/card/RecetteAndRestoCard.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/images/berserk.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/images/enfer.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/images/necromencienne.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/list/List.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/list/List.jsx" afterDir="false" />
+    <list default="true" id="f32d5f50-a5af-4d14-b388-d74ca3d35fa0" name="Changes" comment="retrait des importations superflues">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -183,7 +171,31 @@
       <option name="project" value="LOCAL" />
       <updated>1759831009719</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="added List &amp; card components">
+      <option name="closed" value="true" />
+      <created>1760290419130</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1760290419130</updated>
+    </task>
+    <task id="LOCAL-00004" summary="factorisation du code">
+      <option name="closed" value="true" />
+      <created>1760296046316</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1760296046316</updated>
+    </task>
+    <task id="LOCAL-00005" summary="retrait des importations superflues">
+      <option name="closed" value="true" />
+      <created>1760296142909</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1760296142909</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -194,6 +206,9 @@
     <MESSAGE value="refractored Commentaire" />
     <MESSAGE value="Change in front-end execution configuration" />
     <MESSAGE value="added CommentaireRecette backend" />
-    <option name="LAST_COMMIT_MESSAGE" value="added CommentaireRecette backend" />
+    <MESSAGE value="added List &amp; card components" />
+    <MESSAGE value="factorisation du code" />
+    <MESSAGE value="retrait des importations superflues" />
+    <option name="LAST_COMMIT_MESSAGE" value="retrait des importations superflues" />
   </component>
 </project>
