@@ -5,11 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f32d5f50-a5af-4d14-b388-d74ca3d35fa0" name="Changes" comment="test">
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/happy_foody/controller/RestaurantController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/happy_foody/model/Restaurant.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/happy_foody/repository/RestaurantRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/happy_foody/service/RestaurantService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/happy_foody/controller/RecetteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/happy_foody/controller/RecetteController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/card/Card.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/card/PartageCard.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/card/PostCard.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/card/RecetteAndRestoCard.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/images/berserk.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/images/enfer.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/images/necromencienne.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/list/List.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/list/List.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,6 +29,9 @@
       <list>
         <option value="Interface" />
         <option value="Class" />
+        <option value="JavaScript File" />
+        <option value="CSS File" />
+        <option value="JSX File" />
       </list>
     </option>
   </component>
@@ -77,8 +88,10 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "Spring Boot.Backend.executor": "Run",
     "Spring Boot.HappyFoodyApplication.executor": "Run",
-    "git-widget-placeholder": "refactored-restaurant",
+    "git-widget-placeholder": "frontend-ListComponent",
     "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/ambre/IdeaProjects/Happy_Foody/frontend/src/images",
+    "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
@@ -88,10 +101,20 @@
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "ts.external.directory.path": "C:\\Program Files\\JetBrains\\IntelliJ IDEA 2025.2.2\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager" selected="Spring Boot.Backend">
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\ambre\IdeaProjects\Happy_Foody\frontend\src\images" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\ambre\IdeaProjects\Happy_Foody\frontend\src\images" />
+    </key>
+  </component>
+  <component name="RunManager" selected="npm.Frontend">
     <configuration default="true" type="JetRunConfigurationType">
       <module name="backend" />
       <method v="2">
