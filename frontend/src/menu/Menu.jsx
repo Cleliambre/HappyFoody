@@ -1,75 +1,93 @@
-import React, {useState} from "react";
-import iconHappyFoody from "./HappyFoodyIcon.png"
-import './Menu.css'
-import Button from '@mui/material/Button'
+import React, { useState } from "react";
+import iconHappyFoody from "./HappyFoodyIcon.png";
+import "./Menu.css";
+import Button from "@mui/material/Button";
+import Badge from "@mui/material/Badge";
 
-import EmailOutlinedIcon from '@mui/icons-material/EmailOutlined';
-import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
-import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlined';
-import VolunteerActivismOutlinedIcon from '@mui/icons-material/VolunteerActivismOutlined';
-import PeopleOutlinedIcon from '@mui/icons-material/PeopleOutlined';
-import RestaurantOutlinedIcon from '@mui/icons-material/RestaurantOutlined';
-import MenuBookOutlinedIcon from '@mui/icons-material/MenuBookOutlined';
+import MessagesIcon from "@mui/icons-material/EmailOutlined";
+import ProfilIcon from "@mui/icons-material/AccountCircleOutlined";
+import FavorisIcon from "@mui/icons-material/FavoriteBorderOutlined";
+import PartagesIcon from "@mui/icons-material/VolunteerActivismOutlined";
+import CommunauteIcon from "@mui/icons-material/PeopleOutlined";
+import RestaurantsIcon from "@mui/icons-material/RestaurantOutlined";
+import RecettesIcon from "@mui/icons-material/MenuBookOutlined";
 
-function ButtonMenu({button, style, variant}) {
-    return(
-      <Button variant={variant} className={style}>
-          {button.icon}
-          <text>{button.text}</text>
-      </Button>
+function ButtonMenu({ button, style, variant, selected, onClick }) {
+    const { icon, text, badge } = button;
+
+    return (
+        <Button
+            variant={variant}
+            className={`${style} ${selected ? "Selected" : ""}`}
+            onClick={() => onClick(text)}
+        >
+            {badge ? (
+                <span className="ButtonIcon">
+                    <Badge className="SmallBadge"
+                        badgeContent={badge} max={999}
+                        color="error">
+                        {icon}
+                    </Badge>
+                </span>
+            ) : (
+                <span className="ButtonIcon">{icon}</span>
+            )}
+            <span>{text}</span>
+        </Button>
     );
 }
 
-function GroupButtonMenu({buttons, style, variant}){
-    return(
+function GroupButtonMenu({ buttons, style, variant, selectedButton, onSelect }) {
+    return (
         <div className="GroupButton">
-            {buttons.map(button =>
-                <ButtonMenu button={button} style={style} variant={variant}/>
-            )}
+            {buttons.map((button) => (
+                <ButtonMenu
+                    key={button.text}
+                    button={button}
+                    style={style}
+                    variant={variant}
+                    selected={selectedButton === button.text}
+                    onClick={onSelect}
+                />
+            ))}
         </div>
     );
 }
 
-export default function Menu(){
-    const [leftButtons] = useState([
-            {
-                text:"Recette",
-                icon: <MenuBookOutlinedIcon></MenuBookOutlinedIcon>,
-            },
-            {
-                text: "Restaurant",
-                icon: <RestaurantOutlinedIcon></RestaurantOutlinedIcon>,
-            },
-            {
-                text: "Communauté",
-                icon: <PeopleOutlinedIcon></PeopleOutlinedIcon>,
-            },
-            {
-                text: "Partage",
-                icon: <VolunteerActivismOutlinedIcon></VolunteerActivismOutlinedIcon>,
-            },
-    ]);
-    const [rightButtons] = useState([
-            {
-                text:"Favori",
-                icon: <FavoriteBorderOutlinedIcon></FavoriteBorderOutlinedIcon>,
-            },
-            {
-                text: "Message",
-                icon: <EmailOutlinedIcon></EmailOutlinedIcon>,
-            },
-            {
-                text: "Profil",
-                icon: <AccountCircleOutlinedIcon></AccountCircleOutlinedIcon>,
-            },
-    ]);
+export default function Menu() {
+    const [selectedButton, setSelectedButton] = useState("Recettes");
+
+    const leftButtons = [
+        { text: "Recettes", icon: <RecettesIcon /> },
+        { text: "Restaurants", icon: <RestaurantsIcon /> },
+        { text: "Communauté", icon: <CommunauteIcon /> },
+        { text: "Partages", icon: <PartagesIcon /> },
+    ];
+
+    const rightButtons = [
+        { text: "Favoris", icon: <FavorisIcon /> },
+        { text: "Messages", icon: <MessagesIcon />, badge: 1000 },
+        { text: "Profil", icon: <ProfilIcon /> },
+    ];
 
     return (
         <div className="Menu">
-            <img className="HappyFoodyIcon" src={iconHappyFoody}/>
-            <GroupButtonMenu buttons={leftButtons} style="LeftButton" variant="contained"></GroupButtonMenu>
-            <insert className="InsertButton"></insert>
-            <GroupButtonMenu buttons={rightButtons} style="RightButton" variant="text"></GroupButtonMenu>
+            <img className="HappyFoodyIcon" src={iconHappyFoody} alt="HappyFoody" />
+            <GroupButtonMenu
+                buttons={leftButtons}
+                style="LeftButton"
+                variant="contained"
+                selectedButton={selectedButton}
+                onSelect={setSelectedButton}
+            />
+            <div className="InsertButton" />
+            <GroupButtonMenu
+                buttons={rightButtons}
+                style="RightButton"
+                variant="text"
+                selectedButton={selectedButton}
+                onSelect={setSelectedButton}
+            />
         </div>
     );
 }
