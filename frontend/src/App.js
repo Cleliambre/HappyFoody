@@ -1,31 +1,32 @@
 import './App.css';
 import CardList from "./list/List";
 import {useState} from "react";
-import RCard from "./card/RecetteAndRestoCard";
-import PostCard from "./card/PostCard";
 import PartageCard from "./card/PartageCard";
+
 import berserk from './images/berserk.jpg'
 import enfer from './images/enfer.jpg'
 import necromencienne from "./images/necromencienne.jpg"
+import PostCard from "./card/PostCard";
+import RecetteAndRestoCard from "./card/RecetteAndRestoCard";
 
 function App() {
     const [cards, setCards] = useState([
         {id:0,
-        element : <RCard
+        element : <RecetteAndRestoCard
             imageURL = {berserk}
             title = "Test"
             description = "Ceci est un test"
             isFavorite={true}
             nbFavori={50000}
             tags = {[]}>
-        ></RCard>},
+        ></RecetteAndRestoCard>},
         {id:1,
-        element: <RCard
+        element: <RecetteAndRestoCard
             imageURL = "https://i.imgur.com/MK3eW3As.jpg"
             title = "Test2"
             description = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
             tags = {[]}>
-        ></RCard>},
+        ></RecetteAndRestoCard>},
         {id:2,
         element: <PostCard
             imageURL = {enfer}
