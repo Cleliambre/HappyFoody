@@ -4,7 +4,6 @@ import "./Card.css"
 
 import Typography from '@mui/material/Typography';
 import GenericCard from "./GenericCard";
-import ThumbUpOutlinedIcon from "@mui/icons-material/ThumbUpOutlined";
 import ChatBubbleOutlineOutlinedIcon from "@mui/icons-material/ChatBubbleOutlineOutlined";
 
 export default function PostCard2({imageURL, title, nbFavori=0, isFavorite = false, description, nbCommentaire = 0, delai = 0, unite = "minute" })

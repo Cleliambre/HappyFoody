@@ -1,6 +1,5 @@
 import * as React from "react";
 import Typography from "@mui/material/Typography";
-import ChatBubbleOutlineOutlinedIcon from "@mui/icons-material/ChatBubbleOutlineOutlined";
 import GenericCard from "./GenericCard";
 
 import StarOutlinedIcon from '@mui/icons-material/StarOutlined';
