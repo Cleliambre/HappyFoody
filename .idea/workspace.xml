@@ -5,9 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f32d5f50-a5af-4d14-b388-d74ca3d35fa0" name="Changes" comment="retrait des importations superflues">
+      <change afterPath="$PROJECT_DIR$/frontend/src/card_list/Card.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/card_list/CardList.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/card_list/GenericCard.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/card_list/PartageElement.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/card_list/PostElement.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/card_list/RecetteAndRestoElement.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/card/Card.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/card/Card.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/card/RecetteAndRestoCard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/card/RecetteAndRestoCard.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/card/Card.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/card/GenericCard.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/card/PartageCard.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/card/PostCard.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/card/RecetteAndRestoCard.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/list/List.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/list/List.jsx" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,40 +77,41 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;JavaScript Debug.Debug Application.executor&quot;: &quot;Run&quot;,
-    &quot;Maven.backend [clean,install].executor&quot;: &quot;Run&quot;,
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;Spring Boot.Backend.executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.HappyFoodyApplication.executor&quot;: &quot;Run&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;frontend-ListComponent&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/ambre/IdeaProjects/Happy_Foody/frontend/src/images&quot;,
-    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_interpreter_path&quot;: &quot;node&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;npm.Frontend.executor&quot;: &quot;Run&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;C:\\Program Files\\JetBrains\\IntelliJ IDEA 2025.2.2\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "JavaScript Debug.Debug Application.executor": "Run",
+    "Maven.backend [clean,install].executor": "Run",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Spring Boot.Backend.executor": "Run",
+    "Spring Boot.HappyFoodyApplication.executor": "Run",
+    "git-widget-placeholder": "frontend-ListComponent-2.0",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/tangf/IdeaProjects/HappyFoody/frontend/src/card",
+    "list.type.of.created.stylesheet": "CSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_interpreter_path": "node",
+    "nodejs_package_manager_path": "npm",
+    "npm.Frontend.executor": "Run",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "ts.external.directory.path": "C:\\Program Files\\JetBrains\\IntelliJ IDEA 2025.2.2\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\tangf\IdeaProjects\HappyFoody\frontend\src\card" />
       <recent name="C:\Users\ambre\IdeaProjects\Happy_Foody\frontend\src\images" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -212,16 +226,5 @@
     <MESSAGE value="factorisation du code" />
     <MESSAGE value="retrait des importations superflues" />
     <option name="LAST_COMMIT_MESSAGE" value="retrait des importations superflues" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/frontend/src/card/RecetteAndRestoCard.jsx</url>
-          <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
