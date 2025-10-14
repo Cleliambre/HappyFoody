@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import { Stack, Container } from '@mui/material';
 
-import img1 from '../images/berserk.jpg'
-import img2 from '../images/enfer.jpg'
-import img3 from "../images/necromencienne.jpg"
+import img0 from '../images/taboule.png'
+import img1 from '../images/wok_sushi.png'
+import img2 from '../images/taboule_crame.png'
+import img3 from '../images/poulet.jpg'
 
 import GenericCard from "./GenericCard";
 import PartageElement from "./PartageElement";
@@ -13,38 +14,70 @@ import RecetteAndRestoElement from "./RecetteAndRestoElement";
 export default function CardList() {
     const [cards, setCards] = useState([
         {
-            id: 1,
-            title: 'Test-Recettes-Restaurants',
+            id: 0,
+            title: 'Taboulé (Test Recette)',
             text: <RecetteAndRestoElement
-                rate={1.5}
-                description="Un Deux Trois Quatre Cinq Six Sept Huit Neuf Dix Onze Douze Treize Quatorze Quinze !!!"
+                rate={3.5}
+                description="Un très bon taboulé, très frais et aérien."
+                tags_nourriture={["Végétarien"]}
             />,
-            tags: {},
+            tags: [],
+            thumbnail: img0,
+            liked: false,
+            likes: 119,
+        },
+        {
+            id: 1,
+            title: 'Wok Sushi (Test Restaurant)',
+            text: <RecetteAndRestoElement
+                rate={4.0}
+                description="Le restaurant Wok & Sushi fusionne deux spécialités asiatiques.
+                    WOK exprime les plats chauds du traiteur asiatique comme les Bobuns,
+                    les nouilles sautés, les gambas et bien d'autre encore..
+                    SUSHI vous fera découvrir le restaurant japonais avec certaines saveurs telles que des sushis,
+                    des makis california, des sashimis et plus d'autre encore."
+                tags_lieu={["Les Ulis, 91940"]}
+                tags_nourriture={["Asiatique", "Wok", "Sushi"]}
+            />,
+            tags: [],
             thumbnail: img1,
             liked: false,
-            likes: 2,
+            likes: 97,
         },
         {
             id: 2,
-            title: 'Test-Post',
+            title: 'Aide Taboulé cramé (Test Post)',
             text: <PostElement
-                delai={2}
+                delai={8}
                 unite="heure"
-                description = "J'adore ma vie en enfer lalalalala......T-T"
-                nbCommentaire={5000}/>,
-            tags: {},
+                description = "Bonjour, je viens de cramer du taboulé.
+                    Vous pensez que je peux encore le manger ?
+                    J’aime pas mangé froid du coup je l’ai un peu chauffé..."
+                nbCommentaire={15000}
+            />,
             thumbnail: img2,
             liked: true,
             likes: 1000000,
         },
         {
             id: 3,
-            title: 'Test-Partage',
+            title: 'Poulet rôti (Test Partage)',
             text: <PartageElement
                 pseudo="necroDansLAme"
                 confiance={3}
-                description = "Vie fantomatique à partager, merci de me dm."/>,
-            tags: {},
+                description = "Vie fantomatique à partager, merci de me dm."
+                tags_partage={ ["Partage",
+                    <div style={{ textAlign: 'center', lineHeight: 1.0 }}>
+                        <div>Publié le</div>
+                        <div>16/09/2025</div>
+                    </div>,
+                    <div style={{ textAlign: 'center', lineHeight: 1.0 }}>
+                        <div>Expire le</div>
+                        <div>20/09/2025</div>
+                    </div>]}
+                tags_lieu={["Polytech Paris-Saclay, Orsay"]}
+                tags_nourriture={["Végétarien", "Froid"]}
+            />,
             thumbnail: img3,
             liked: false,
             likes: 15400,
@@ -79,7 +112,7 @@ export default function CardList() {
 
     return (
         <Container>
-            <h2>{heading}</h2>
+            <p>{heading}</p>
             <Stack spacing={2}>
                 {cards.map((card) => (
                     <GenericCard

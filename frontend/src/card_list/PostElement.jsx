@@ -17,7 +17,7 @@ export default function PostElement({delai, unite, description, nbCommentaire})
         <React.Fragment>
 
             {/* Temps */}
-            <Typography variant="text" className="sub-description">
+            <Typography variant="text" className="black-font">
                 Il y a {delai} {unite}{delai>1 ? "s":""}
             </Typography>
 
@@ -29,7 +29,7 @@ export default function PostElement({delai, unite, description, nbCommentaire})
             {/* Nombre de commentaires */}
             <div className="align-text-icon">
                 <CommentaireIcon fontSize="small"/>
-                <Typography variant="text" className="comment-count">
+                <Typography variant="text" className="small-font">
                     {formatNbCommentaires(nbCommentaire)}
                 </Typography>
             </div>

@@ -7,12 +7,15 @@ import {
     CardMedia,
     Typography,
     IconButton,
-    Box, CardActionArea,
+    Box,
+    CardActionArea,
+    Chip,
 } from '@mui/material';
 
 //icons
 import FavoriteIconFalse from '@mui/icons-material/FavoriteBorderOutlined';
 import FavoriteIconTrue from '@mui/icons-material/FavoriteOutlined';
+
 
 export default function GenericCard({ card, onLike, onClick }) {
 
@@ -34,6 +37,7 @@ export default function GenericCard({ card, onLike, onClick }) {
                         component="img"
                         image={card.thumbnail}
                         alt={card.title}
+                        className="thumbnail"
                     />
                 </div>
 
