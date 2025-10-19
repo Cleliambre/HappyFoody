@@ -31,7 +31,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="develop" />
+        <entry key="$PROJECT_DIR$" value="Partage" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -59,6 +59,28 @@
     &quot;repository&quot;: &quot;ProjetWebET4&quot;
   }
 }</component>
+  <component name="KubernetesApiPersistence">{}</component>
+  <component name="KubernetesApiProvider">{
+  &quot;isMigrated&quot;: true
+}</component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHomeTypeForPersistence" value="WRAPPER" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 8
+}</component>
+  <component name="ProjectId" id="33dk17sm84FdVeoq2xCIIIwjGj7" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Application.HappyFoodyApplication.executor": "Run",
@@ -74,7 +96,14 @@
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)"
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_interpreter_path": "node",
+    "nodejs_package_manager_path": "npm",
+    "npm.Frontend.executor": "Run",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.2",
+    "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RunManager" selected="Spring Boot.Backend">
@@ -119,21 +148,23 @@
       <option name="project" value="LOCAL" />
       <updated>1759410023080</updated>
     </task>
-    <task id="LOCAL-00003" summary="added Quantite Table &amp; linked tables">
+    <task id="LOCAL-00003" summary="Added CommentairePost backend + corrected constructors of CommentaireRecette and CommentaireRestaurant">
       <option name="closed" value="true" />
-      <created>1759427669530</created>
+      <created>1759997798682</created>
       <option name="number" value="00003" />
       <option name="presentableId" value="LOCAL-00003" />
       <option name="project" value="LOCAL" />
-      <updated>1759427669530</updated>
+      <updated>1759997798682</updated>
     </task>
     <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="added Ingredient table &amp; repository" />
-    <MESSAGE value="added Ingredient controller &amp; service" />
-    <MESSAGE value="added Quantite Table &amp; linked tables" />
-    <option name="LAST_COMMIT_MESSAGE" value="added Quantite Table &amp; linked tables" />
+    <MESSAGE value="1st" />
+    <MESSAGE value="refractored Commentaire" />
+    <MESSAGE value="Change in front-end execution configuration" />
+    <MESSAGE value="added CommentaireRecette backend" />
+    <MESSAGE value="added Tag backend" />
+    <option name="LAST_COMMIT_MESSAGE" value="added Tag backend" />
   </component>
 </project>
