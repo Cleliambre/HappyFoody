@@ -17,7 +17,7 @@ public class Recette {
     private int temps;
     private int portion;
 
-    private Set<Quantite> quantites = new HashSet<Quantite>();
+    //private Set<Quantite> quantites = new HashSet<Quantite>();
 
     public Recette() {}
 

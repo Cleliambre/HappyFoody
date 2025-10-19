@@ -11,7 +11,7 @@ public class Ingredient {
     private long idIngredient;
     String nom;
 
-    private Set<Quantite> quantites = new HashSet<Quantite>();
+    //private Set<Quantite> quantites = new HashSet<Quantite>();
 
     public Ingredient () {}
 
