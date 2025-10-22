@@ -4,12 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f32d5f50-a5af-4d14-b388-d74ca3d35fa0" name="Changes" comment="test">
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/happy_foody/controller/RestaurantController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/happy_foody/model/Restaurant.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/happy_foody/repository/RestaurantRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/happy_foody/service/RestaurantService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/happy_foody/controller/RecetteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/happy_foody/controller/RecetteController.java" afterDir="false" />
+    <list default="true" id="9ea62db3-0e47-4e74-b700-e583ca0f2c56" name="Changes" comment="test">
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/happy_foody/controller/InscriptionController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/happy_foody/model/Inscription.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/happy_foody/model/InscriptionId.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/happy_foody/repository/InscriptionRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/happy_foody/service/InscriptionService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/happy_foody/model/Ingredient.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/happy_foody/model/Ingredient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/happy_foody/model/Recette.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/happy_foody/model/Recette.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,6 +22,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Enum" />
         <option value="Interface" />
         <option value="Class" />
       </list>
@@ -27,21 +31,32 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="develop" />
+        <entry key="$PROJECT_DIR$" value="Partage" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory">{
-  &quot;lastFilter&quot;: {
-    &quot;state&quot;: &quot;OPEN&quot;,
-    &quot;assignee&quot;: &quot;ABellik&quot;
-  }
+  <component name="GitHubPullRequestState">{
+  &quot;prStates&quot;: [
+    {
+      &quot;id&quot;: {
+        &quot;id&quot;: &quot;PR_kwDOPtUX-M6rw4Sd&quot;,
+        &quot;number&quot;: 60
+      },
+      &quot;lastSeen&quot;: 1759410100483
+    }
+  ]
 }</component>
   <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/Cleliambre/HappyFoody.git&quot;,
-    &quot;accountId&quot;: &quot;77cdc171-3702-4abf-b264-cfaca464b510&quot;
+  &quot;recentNewPullRequestHead&quot;: {
+    &quot;server&quot;: {
+      &quot;useHttp&quot;: false,
+      &quot;host&quot;: &quot;github.com&quot;,
+      &quot;port&quot;: null,
+      &quot;suffix&quot;: null
+    },
+    &quot;owner&quot;: &quot;Cleliambre&quot;,
+    &quot;repository&quot;: &quot;ProjetWebET4&quot;
   }
 }</component>
   <component name="KubernetesApiPersistence">{}</component>
@@ -55,6 +70,9 @@
       </MavenGeneralSettings>
     </option>
   </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 8
 }</component>
@@ -65,21 +83,18 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "JavaScript Debug.Debug Application.executor": "Run",
-    "Maven.backend [clean,install].executor": "Run",
+    "Application.HappyFoodyApplication.executor": "Run",
+    "Docker.compose.yaml: Compose Deployment.executor": "Run",
     "RequestMappingsPanelOrder0": "0",
     "RequestMappingsPanelOrder1": "1",
     "RequestMappingsPanelWidth0": "75",
     "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "Spring Boot.Backend.executor": "Run",
     "Spring Boot.HappyFoodyApplication.executor": "Run",
-    "git-widget-placeholder": "refactored-restaurant",
-    "kotlin-language-version-configured": "true",
+    "git-widget-placeholder": "Inscription",
     "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_interpreter_path": "node",
@@ -87,23 +102,14 @@
     "npm.Frontend.executor": "Run",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
+    "project.structure.side.proportion": "0.2",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RunManager" selected="Spring Boot.Backend">
-    <configuration default="true" type="JetRunConfigurationType">
-      <module name="backend" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
-      <module name="backend" />
-      <option name="filePath" />
-      <method v="2" />
-    </configuration>
     <configuration name="Backend" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <option name="ALTERNATIVE_JRE_PATH" value="17" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <module name="backend" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.happy_foody.HappyFoodyApplication" />
       <method v="2">
@@ -125,52 +131,40 @@
       <item itemvalue="Spring Boot.Backend" />
     </list>
   </component>
-  <component name="SharedIndexes">
-    <attachedChunks>
-      <set>
-        <option value="bundled-jdk-9823dce3aa75-bf35d07a577b-intellij.indexing.shared.core-IU-252.26199.169" />
-        <option value="bundled-js-predefined-d6986cc7102b-9c94529fcfe0-JavaScript-IU-252.26199.169" />
-      </set>
-    </attachedChunks>
-  </component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
-    <task active="true" id="Default" summary="Default task">
-      <changelist id="f32d5f50-a5af-4d14-b388-d74ca3d35fa0" name="Changes" comment="updating properties" />
-      <created>1759655299895</created>
-      <option name="number" value="Default" />
-      <option name="presentableId" value="Default" />
-      <updated>1759655299895</updated>
-      <workItem from="1759655301418" duration="444000" />
-      <workItem from="1759863464180" duration="4951000" />
-    </task>
-    <task id="LOCAL-00001" summary="refractored Commentaire">
+    <task id="LOCAL-00001" summary="added Ingredient table &amp; repository">
       <option name="closed" value="true" />
-      <created>1759830818484</created>
+      <created>1759407961690</created>
       <option name="number" value="00001" />
       <option name="presentableId" value="LOCAL-00001" />
       <option name="project" value="LOCAL" />
-      <updated>1759830818484</updated>
+      <updated>1759407961690</updated>
     </task>
-    <task id="LOCAL-00002" summary="Change in front-end execution configuration">
+    <task id="LOCAL-00002" summary="added Ingredient controller &amp; service">
       <option name="closed" value="true" />
-      <created>1759831009719</created>
+      <created>1759410023080</created>
       <option name="number" value="00002" />
       <option name="presentableId" value="LOCAL-00002" />
       <option name="project" value="LOCAL" />
-      <updated>1759831009719</updated>
+      <updated>1759410023080</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Added CommentairePost backend + corrected constructors of CommentaireRecette and CommentaireRestaurant">
+      <option name="closed" value="true" />
+      <created>1759997798682</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1759997798682</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
-  </component>
-  <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="1st" />
     <MESSAGE value="refractored Commentaire" />
     <MESSAGE value="Change in front-end execution configuration" />
     <MESSAGE value="added CommentaireRecette backend" />
-    <option name="LAST_COMMIT_MESSAGE" value="added CommentaireRecette backend" />
+    <MESSAGE value="added Tag backend" />
+    <option name="LAST_COMMIT_MESSAGE" value="added Tag backend" />
   </component>
 </project>
