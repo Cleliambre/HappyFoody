@@ -4,12 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9ea62db3-0e47-4e74-b700-e583ca0f2c56" name="Changes" comment="retrait des importations superflues">
-      <change afterPath="$PROJECT_DIR$/frontend/src/connexion/ConnexionContent.jsx" afterDir="false" />
+    <list default="true" id="9ea62db3-0e47-4e74-b700-e583ca0f2c56" name="Changes" comment="added connexion page for the FrontEnd">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/connexion/connexionContent.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/connexion/Connexion.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/connexion/Connexion.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/connexion/Connexion.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/connexion/ConnexionContent.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/connexion/ConnexionContent.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -173,8 +171,17 @@
       <option name="presentableId" value="Default" />
       <updated>1761199756333</updated>
       <workItem from="1761199760028" duration="30000" />
+      <workItem from="1761220629479" duration="848000" />
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="added connexion page for the FrontEnd">
+      <option name="closed" value="true" />
+      <created>1761220863280</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1761220863280</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -186,6 +193,7 @@
     <MESSAGE value="Change in front-end execution configuration" />
     <MESSAGE value="added CommentaireRecette backend" />
     <MESSAGE value="added Tag backend" />
-    <option name="LAST_COMMIT_MESSAGE" value="added Tag backend" />
+    <MESSAGE value="added connexion page for the FrontEnd" />
+    <option name="LAST_COMMIT_MESSAGE" value="added connexion page for the FrontEnd" />
   </component>
 </project>

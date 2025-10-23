@@ -19,7 +19,6 @@ export default function ConnexionContent() {
                        variant="outlined"
                    />
                 </div>
-
                 <div className="input-container">
                    <TextField
                        className = "input-content"
@@ -32,17 +31,22 @@ export default function ConnexionContent() {
                    <Link href="#" className = 'lien-mdp'>Mot de passe oublié ?</Link>
                 </div>
            </div>
-           <Button
-               className = "bouton"
-               variant="contained"
-               color="primary"
-               size = "large"
-               sx ={{borderRadius:'30px'}}>
-               Valider
-           </Button>
-           <Typography variant="body3" color="textSecondary">
-               Pas de compte ? <Link href="#"> Inscrivez-vous. </Link>
-           </Typography>
+           <div className="validation-group">
+               <Button
+                   className = "bouton"
+                   variant="contained"
+                   color="primary"
+                   size = "large"
+                   sx ={{borderRadius:'30px'}}>
+                   Valider
+               </Button>
+               <Typography
+                   className="inscription-link"
+                   variant="body3"
+                   color="textSecondary">
+                   Pas de compte ? <Link href="#"> Inscrivez-vous. </Link>
+               </Typography>
+           </div>
 
     </div>
    );
