@@ -8,8 +8,7 @@ import {
     Typography,
     IconButton,
     Box,
-    CardActionArea,
-    Chip,
+    CardActionArea
 } from '@mui/material';
 
 //icons

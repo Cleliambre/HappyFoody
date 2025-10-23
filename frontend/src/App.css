@@ -1,10 +1,10 @@
 .App {
   justify-content: center;
   display: flex;
+    background-color: #ecf1fd;
 }
 
 .App-header {
-  background-color: #ffffff;
   min-height: 100vh;
   width: 80%;
   display: flex;

@@ -75,8 +75,8 @@ export default function CardList() {
                         <div>Expire le</div>
                         <div>20/09/2025</div>
                     </div>]}
-                tags_lieu={["Polytech Paris-Saclay, Orsay"]}
-                tags_nourriture={["Végétarien", "Froid"]}
+                tags_lieu={["Polytech Paris-Saclay, Orsay", "Gif-sur-Yvette", "Palaiseau", "Massy"]}
+                tags_nourriture={["Chaud", "Salé", "Poulet", "Au four", "Herbe", "Viande"]}
             />,
             thumbnail: img3,
             liked: false,
