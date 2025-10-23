@@ -132,8 +132,8 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Spring Boot.Backend" />
       <item itemvalue="npm.Frontend" />
+      <item itemvalue="Spring Boot.Backend" />
     </list>
   </component>
   <component name="SharedIndexes">
