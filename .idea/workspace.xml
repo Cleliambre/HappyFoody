@@ -4,12 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f32d5f50-a5af-4d14-b388-d74ca3d35fa0" name="Changes" comment="Ajout des tags">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/card_list/CardList.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/card_list/CardList.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/card_list/GenericCard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/card_list/GenericCard.jsx" afterDir="false" />
-    </list>
+    <list default="true" id="f32d5f50-a5af-4d14-b388-d74ca3d35fa0" name="Changes" comment="Petite correction" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -137,8 +132,8 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="npm.Frontend" />
       <item itemvalue="Spring Boot.Backend" />
+      <item itemvalue="npm.Frontend" />
     </list>
   </component>
   <component name="SharedIndexes">
@@ -164,6 +159,7 @@
       <workItem from="1760883688952" duration="678000" />
       <workItem from="1760895866392" duration="394000" />
       <workItem from="1761139930746" duration="2476000" />
+      <workItem from="1761200355078" duration="121000" />
     </task>
     <task id="LOCAL-00001" summary="refractored Commentaire">
       <option name="closed" value="true" />
@@ -221,7 +217,15 @@
       <option name="project" value="LOCAL" />
       <updated>1760423395425</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Petite correction">
+      <option name="closed" value="true" />
+      <created>1761200410494</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1761200410494</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -236,6 +240,7 @@
     <MESSAGE value="factorisation du code" />
     <MESSAGE value="retrait des importations superflues" />
     <MESSAGE value="Ajout des tags" />
-    <option name="LAST_COMMIT_MESSAGE" value="Ajout des tags" />
+    <MESSAGE value="Petite correction" />
+    <option name="LAST_COMMIT_MESSAGE" value="Petite correction" />
   </component>
 </project>
