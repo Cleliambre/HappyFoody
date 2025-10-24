@@ -14,8 +14,8 @@ export default function ConnexionContent() {
                 <div className="input-container">
                    <TextField
                        className = "input-content"
-                       id="adresse-mail"
-                       label="Adresse mail"
+                       id="pseudoOrEmail"
+                       label="Pseudo / adresse mail"
                        variant="outlined"
                    />
                 </div>
