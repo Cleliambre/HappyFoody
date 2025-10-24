@@ -45,4 +45,17 @@ public class RecetteController {
     public void deleteRecette(@PathVariable(value = "id") Long id){
         recetteService.deleteRecette(id);
     }
+
+    /**
+     * 🔍 Recherche de recettes par mots-clés et/ou tags.
+     * Exemple d’appel :
+     * GET /api/recette/search?keyWords=poulet curry&tags=1,2,3
+     */
+    @GetMapping("/search")
+    public List<Recette> searchRecettes(
+            @RequestParam(required = false) String keyWords,
+            @RequestParam(required = false) List<String> tags
+    ) {
+        return recetteService.getRecettebyTagsAndKeyWords(keyWords, tags);
+    }
 }
