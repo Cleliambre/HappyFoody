@@ -2,6 +2,7 @@ import React from 'react';
 import './Inscription.css'
 import {Typography, TextField, Button, Link} from '@mui/material';
 
+//TO DO : interdire les @ dans le pseudo + limite de 30 caractères dans le pseudo + obligation de @ dans l'email
 
 export default function Inscription() {
     return (

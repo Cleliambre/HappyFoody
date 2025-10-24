@@ -4,15 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9ea62db3-0e47-4e74-b700-e583ca0f2c56" name="Changes" comment="test">
-      <change afterPath="$PROJECT_DIR$/frontend/src/Inscription/Inscription.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/Inscription/Inscription.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/menu/HappyFoodyIcon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/menu/Menu.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/menu/Menu.jsx" afterDir="false" />
+    <list default="true" id="9ea62db3-0e47-4e74-b700-e583ca0f2c56" name="Changes" comment="added inscription page">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,9 +85,11 @@
     "RequestMappingsPanelWidth0": "75",
     "RequestMappingsPanelWidth1": "75",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
     "Spring Boot.Backend.executor": "Run",
     "Spring Boot.HappyFoodyApplication.executor": "Run",
     "git-widget-placeholder": "frontend__inscription",
+    "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/ambre/IdeaProjects/Happy_Foody/frontend/src/menu",
     "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
@@ -110,6 +105,11 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\ambre\IdeaProjects\Happy_Foody\frontend\src\menu" />
+    </key>
+  </component>
   <component name="RunManager" selected="npm.Frontend">
     <configuration name="Backend" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <option name="ALTERNATIVE_JRE_PATH" value="17" />
@@ -134,6 +134,14 @@
       <item itemvalue="npm.Frontend" />
       <item itemvalue="Spring Boot.Backend" />
     </list>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-bf35d07a577b-intellij.indexing.shared.core-IU-252.26199.169" />
+        <option value="bundled-js-predefined-d6986cc7102b-9c94529fcfe0-JavaScript-IU-252.26199.169" />
+      </set>
+    </attachedChunks>
   </component>
   <component name="TaskManager">
     <task id="LOCAL-00001" summary="added Ingredient table &amp; repository">
@@ -160,8 +168,27 @@
       <option name="project" value="LOCAL" />
       <updated>1759997798682</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="added inscription page">
+      <option name="closed" value="true" />
+      <created>1761223658615</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1761223658615</updated>
+    </task>
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="9ea62db3-0e47-4e74-b700-e583ca0f2c56" name="Changes" comment="added inscription page" />
+      <created>1761305401691</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1761305401691</updated>
+      <workItem from="1761305405335" duration="388000" />
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="1st" />
@@ -169,6 +196,7 @@
     <MESSAGE value="Change in front-end execution configuration" />
     <MESSAGE value="added CommentaireRecette backend" />
     <MESSAGE value="added Tag backend" />
-    <option name="LAST_COMMIT_MESSAGE" value="added Tag backend" />
+    <MESSAGE value="added inscription page" />
+    <option name="LAST_COMMIT_MESSAGE" value="added inscription page" />
   </component>
 </project>
