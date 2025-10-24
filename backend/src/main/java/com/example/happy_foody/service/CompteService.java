@@ -1,10 +1,10 @@
 package com.example.happy_foody.service;
 
+import com.example.happy_foody.model.*;
 import com.example.happy_foody.repository.CompteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.rest.webmvc.ResourceNotFoundException;
 import org.springframework.stereotype.Service;
-import com.example.happy_foody.model.Compte;
 
 import java.util.List;
 
@@ -45,5 +45,21 @@ public class CompteService {
         Compte compte = compteRepository.findById(compteId).orElseThrow(()->new ResourceNotFoundException("Compte not found"));
 
         compteRepository.delete(compte);
+    }
+
+    public List<Recette> getLikedRecettes(Long compteId) {
+        return compteRepository.findLikedRecettes(compteId);
+    }
+
+    public List<Restaurant> getLikedRestaurants(Long compteId) {
+        return compteRepository.findLikedRestaurants(compteId);
+    }
+
+    public List<Post> getLikedPosts(Long compteId) {
+        return compteRepository.findLikedPosts(compteId);
+    }
+
+    public List<Partage> getLikedPartages(Long compteId) {
+        return compteRepository.findLikedPartages(compteId);
     }
 }

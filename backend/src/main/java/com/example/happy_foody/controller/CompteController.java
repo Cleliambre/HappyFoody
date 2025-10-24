@@ -1,6 +1,6 @@
 package com.example.happy_foody.controller;
 
-import com.example.happy_foody.model.Compte;
+import com.example.happy_foody.model.*;
 import com.example.happy_foody.service.CompteService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -42,4 +42,25 @@ public class CompteController {
     public void deleteCompte(@PathVariable(value = "id") Long id) {
         compteService.deleteCompte(id);
     }
+
+    @GetMapping("/getLikedRecettes/{id}")
+    public List<Recette> getLikedRecettes(@PathVariable(value = "id") Long id){
+        return compteService.getLikedRecettes(id);
+    }
+
+    @GetMapping("/getLikedRestaurants/{id}")
+    public List<Restaurant> getLikedRestaurants(@PathVariable(value = "id") Long id){
+        return compteService.getLikedRestaurants(id);
+    }
+
+    @GetMapping("/getLikedPosts/{id}")
+    public List<Post> getLikedPosts(@PathVariable(value = "id") Long id){
+        return compteService.getLikedPosts(id);
+    }
+
+    @GetMapping("/getLikedPartages/{id}")
+    public List<Partage> getLikedPartages(@PathVariable(value = "id") Long id){
+        return compteService.getLikedPartages(id);
+    }
+
 }
