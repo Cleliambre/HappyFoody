@@ -4,6 +4,8 @@ package com.example.happy_foody.controller;
 import com.example.happy_foody.model.Recette;
 import com.example.happy_foody.service.RecetteService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.rest.webmvc.ResourceNotFoundException;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -47,7 +49,6 @@ public class RecetteController {
     }
 
     /**
-     * 🔍 Recherche de recettes par mots-clés et/ou tags.
      * Exemple d’appel :
      * GET /api/recette/search?keyWords=poulet curry&tags=1,2,3
      */

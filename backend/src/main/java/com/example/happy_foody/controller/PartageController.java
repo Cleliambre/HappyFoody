@@ -1,6 +1,7 @@
 package com.example.happy_foody.controller;
 
 import com.example.happy_foody.model.Partage;
+import com.example.happy_foody.model.Post;
 import com.example.happy_foody.service.PartageService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -43,5 +44,17 @@ public class PartageController {
     @DeleteMapping("/deletePartage/{id}")
     public void deletePartage(@PathVariable(value = "id") Long id){
         partageService.deletePartage(id);
+    }
+
+    /**
+     * Exemple d’appel :
+     * GET /api/partage/search?keyWords=poulet curry&tags=1,2,3
+     */
+    @GetMapping("/search")
+    public List<Partage> searchPartages(
+            @RequestParam(required = false) String keyWords,
+            @RequestParam(required = false) List<String> tags
+    ) {
+        return partageService.getPartagebyTagsAndKeyWords(keyWords, tags);
     }
 }

@@ -1,6 +1,7 @@
 package com.example.happy_foody.controller;
 
 import com.example.happy_foody.model.Post;
+import com.example.happy_foody.model.Restaurant;
 import com.example.happy_foody.service.PostService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -44,5 +45,17 @@ public class PostController {
     @DeleteMapping("/deletePost/{id}")
     public void deletePost(@PathVariable(value = "id") Long id){
         postService.deletePost(id);
+    }
+
+    /**
+     * Exemple d’appel :
+     * GET /api/post/search?keyWords=poulet curry&tags=1,2,3
+     */
+    @GetMapping("/search")
+    public List<Post> searchPosts(
+            @RequestParam(required = false) String keyWords,
+            @RequestParam(required = false) List<String> tags
+    ) {
+        return postService.getPostbyTagsAndKeyWords(keyWords, tags);
     }
 }

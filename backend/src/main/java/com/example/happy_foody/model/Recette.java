@@ -14,7 +14,7 @@ public class Recette {
 
     private Compte auteur;
 
-    private Set<Tag> tags = new HashSet<>();
+    private Set<Tag> tags;
 
 
     private String description;
