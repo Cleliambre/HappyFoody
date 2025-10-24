@@ -1,0 +1,124 @@
+
+.card {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: space-between;
+    width: 100%;
+    min-height: 170px;
+    height: fit-content;
+    cursor: pointer;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    background-color: white;
+    border-radius: 14px;
+    overflow: hidden;
+}
+
+.card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.5);
+}
+
+/* --- Image à gauche --- */
+.thumbnail-container {
+    height: 130px;
+    width: 130px;
+    overflow: hidden;
+    padding: 20px 0 20px 20px;
+    object-fit: cover;
+}
+
+.thumbnail {
+    height: 130px;
+    width: 130px;
+    overflow: hidden;
+    object-fit: cover;
+}
+
+/* --- Zone centrale --- */
+.info-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+    overflow: hidden;
+    min-width: 0;
+}
+
+.title {
+    display: block;
+    font-weight: 600;
+    text-align: left;
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.black-font {
+    text-align: left;
+    color: #000000;
+    font-size: 0.9rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.description {
+    width: 100%;
+    display: block;
+    text-align: left;
+    color: #555;
+    font-size: 0.9rem;
+    line-height: 1.2;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 10px 0 10px 0;
+}
+
+.align-text-icon {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+}
+
+.small-font {
+    text-align: left;
+    color: #000000;
+    font-size: 0.8rem;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.star{
+    color: gold;
+}
+
+.tags {
+    display: flex;
+    flex-direction: row;
+    height: fit-content;
+    gap: 4px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-bottom: 5px;
+}
+
+/* --- Zone droite --- */
+.like-container {
+    flex: 0 0 55px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding-top: 8px;
+    overflow: hidden;
+}
+
+.like-count {
+    font-weight: 500;
+    color: #444;
+    line-height: 1;
+}
