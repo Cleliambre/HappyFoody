@@ -1,9 +1,7 @@
 import React from 'react';
 import './Profil.css'
-import {Typography, TextField, Button, Avatar, Tabs, Tab} from '@mui/material';
-import TabContext from '@mui/lab/TabContext';
-import TabList from '@mui/lab/TabList';
-import TabPanel from '@mui/lab/TabPanel';
+import {Typography, Button, Avatar, Tab} from '@mui/material';
+import  {TabContext, TabList, TabPanel} from '@mui/lab'
 import CardList from "../card_list/CardList";
 
 export default function Profil({pp,pseudo, description}) {
