@@ -75,4 +75,35 @@ public interface CompteRepository extends JpaRepository<Compte,Long> {
     (:id_compte,:id_partage)
     """, nativeQuery = true)
     int saveLikedPartage(@Param("id_compte") Long idCompte, @Param("id_partage") Long idPartage);
+
+
+    @Modifying
+    @Query(value = """
+    DELETE FROM compte_recette cr
+    WHERE cr.id_compte = :id_compte AND cr.id_recette = :id_recette
+    """, nativeQuery = true)
+    int deleteLikedRecette(@Param("id_compte") Long idCompte, @Param("id_recette") Long idRecette);
+
+    @Modifying
+    @Query(value = """
+    DELETE FROM compte_restaurant cr
+    WHERE cr.id_compte = :id_compte AND cr.id_restaurant = :id_restaurant
+    """, nativeQuery = true)
+    int deleteLikedRestaurant(@Param("id_compte") Long idCompte, @Param("id_restaurant") Long idRestaurant);
+
+    @Modifying
+    @Query(value = """
+    DELETE FROM compte_post cp
+    WHERE cp.id_compte = :id_compte AND cp.id_post = :id_post
+    """, nativeQuery = true)
+    int deleteLikedPost(@Param("id_compte") Long idCompte, @Param("id_post") Long idPost);
+
+    @Modifying
+    @Query(value = """
+    DELETE FROM compte_partage cp
+    WHERE cp.id_compte = :id_compte AND cp.id_partage = :id_partage
+    """, nativeQuery = true)
+    int deleteLikedPartage(@Param("id_compte") Long idCompte, @Param("id_partage") Long idPartage);
 }
+
+

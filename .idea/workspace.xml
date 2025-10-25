@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9ea62db3-0e47-4e74-b700-e583ca0f2c56" name="Changes" comment="added liked contents backend">
+    <list default="true" id="9ea62db3-0e47-4e74-b700-e583ca0f2c56" name="Changes" comment="updated liked contents backend">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/happy_foody/controller/CompteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/happy_foody/controller/CompteController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/happy_foody/repository/CompteRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/happy_foody/repository/CompteRepository.java" afterDir="false" />
@@ -189,7 +189,7 @@
       <workItem from="1761246884540" duration="3622000" />
       <workItem from="1761290065626" duration="6907000" />
       <workItem from="1761332950531" duration="2558000" />
-      <workItem from="1761380642525" duration="5363000" />
+      <workItem from="1761380642525" duration="6982000" />
     </task>
     <task id="LOCAL-00004" summary="added search bar backend for Recette, Restaurant, Post and Partage + added lists of liked contents for each one">
       <option name="closed" value="true" />
@@ -207,7 +207,15 @@
       <option name="project" value="LOCAL" />
       <updated>1761339240310</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="updated liked contents backend">
+      <option name="closed" value="true" />
+      <created>1761388463915</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1761388463915</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -221,7 +229,8 @@
     <MESSAGE value="1st" />
     <MESSAGE value="added search bar backend for Recette, Restaurant, Post and Partage + added lists of liked contents for each one" />
     <MESSAGE value="added liked contents backend" />
-    <option name="LAST_COMMIT_MESSAGE" value="added liked contents backend" />
+    <MESSAGE value="updated liked contents backend" />
+    <option name="LAST_COMMIT_MESSAGE" value="updated liked contents backend" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

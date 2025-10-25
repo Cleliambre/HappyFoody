@@ -82,4 +82,24 @@ public class CompteService {
         int rows = compteRepository.saveLikedPartage(compteId, partageId);
         return rows>0;
     }
+
+    public boolean deleteLikedRecette(Long compteId, Long recetteId) {
+        int rows = compteRepository.deleteLikedRecette(compteId, recetteId);
+        return rows>0;
+    }
+
+    public boolean deleteLikedRestaurant(Long compteId, Long restaurantId) {
+        int rows = compteRepository.deleteLikedRestaurant(compteId, restaurantId);
+        return rows>0;
+    }
+
+    public boolean deleteLikedPost(Long compteId, Long postId) {
+        int rows = compteRepository.deleteLikedPost(compteId, postId);
+        return rows>0;
+    }
+
+    public boolean deleteLikedPartage(Long compteId, Long partageId) {
+        int rows = compteRepository.deleteLikedPartage(compteId, partageId);
+        return rows>0;
+    }
 }

@@ -82,4 +82,24 @@ public class CompteController {
     public void createLikedPartage(@RequestParam Long compteId, @RequestParam Long partageId){
         compteService.createLikedPartage(compteId, partageId);
     }
+
+    @PostMapping("/deleteLikedRecette")
+    public void deleteLikedRecette(@RequestParam Long compteId, @RequestParam Long recetteId){
+        compteService.deleteLikedRecette(compteId, recetteId);
+    }
+
+    @PostMapping("/deleteLikedRestaurant")
+    public void deleteLikedRestaurant(@RequestParam Long compteId, @RequestParam Long restaurantId){
+        compteService.deleteLikedRestaurant(compteId, restaurantId);
+    }
+
+    @PostMapping("/deleteLikedPost")
+    public void deleteLikedPost(@RequestParam Long compteId, @RequestParam Long postId){
+        compteService.deleteLikedPost(compteId, postId);
+    }
+
+    @PostMapping("/deleteLikedPartage")
+    public void deleteLikedPartage(@RequestParam Long compteId, @RequestParam Long partageId){
+        compteService.deleteLikedPartage(compteId, partageId);
+    }
 }
