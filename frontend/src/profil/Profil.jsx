@@ -1,10 +1,10 @@
 import React from 'react';
 import './Profil.css'
-import {Typography, Button, Avatar, Tab} from '@mui/material';
+import {Typography, Button, Avatar, Tab, Stack, Container} from '@mui/material';
 import  {TabContext, TabList, TabPanel} from '@mui/lab'
 import CardList from "../card_list/CardList";
 
-export default function Profil({pp,pseudo, description}) {
+export default function Profil({pp,pseudo, description, cards}) {
     const [value, setValue] = React.useState('1');
 
     const handleChange = (event, newValue) => {
@@ -13,10 +13,10 @@ export default function Profil({pp,pseudo, description}) {
 
     return (
         <div className="profil-content">
-            <Typography variant="h3" color="textSecondary" className = "titre">
+            <Typography variant="h3" color="textSecondary">
                 Profil
             </Typography>
-            <div>
+            <Container sx={{width: '80%'}}>
                 <div className="profil-description">
                     <Avatar src={pp} className="profil-avatar" sx={{width:150, height:150}}/>
                     <div className="profil-description-text">
@@ -29,17 +29,18 @@ export default function Profil({pp,pseudo, description}) {
                     </div>
                 </div>
 
-                <div className="profil-buttons">
-                    <div className="button-container">
-                        <Button variant="outlined" className = "modif">
-                            Modifier le profil
-                        </Button>
-                    </div>
+                <Stack
+                    className="profil-buttons"
+                    spacing={2}
+                >
+                    <Button variant="outlined" className = "modif">
+                        Modifier le profil
+                    </Button>
                     <Button variant="outlined" color="error">
                         Déconnexion
                     </Button>
-                </div>
-            </div>
+                </Stack>
+            </Container>
 
             <div className = "parutions">
                 <TabContext
