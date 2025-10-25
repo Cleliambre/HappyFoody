@@ -62,4 +62,24 @@ public class CompteService {
     public List<Partage> getLikedPartages(Long compteId) {
         return compteRepository.findLikedPartages(compteId);
     }
+
+    public boolean createLikedRecette(Long compteId, Long recetteId) {
+        int rows = compteRepository.saveLikedRecette(compteId, recetteId);
+        return rows>0;
+    }
+
+    public boolean createLikedRestaurant(Long compteId, Long restaurantId) {
+        int rows = compteRepository.saveLikedRestaurant(compteId, restaurantId);
+        return rows>0;
+    }
+
+    public boolean createLikedPost(Long compteId, Long postId) {
+        int rows = compteRepository.saveLikedPost(compteId, postId);
+        return rows>0;
+    }
+
+    public boolean createLikedPartage(Long compteId, Long partageId) {
+        int rows = compteRepository.saveLikedPartage(compteId, partageId);
+        return rows>0;
+    }
 }

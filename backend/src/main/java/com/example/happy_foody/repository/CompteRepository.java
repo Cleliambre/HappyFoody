@@ -2,6 +2,7 @@ package com.example.happy_foody.repository;
 
 import com.example.happy_foody.model.*;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
@@ -47,9 +48,31 @@ public interface CompteRepository extends JpaRepository<Compte,Long> {
     """, nativeQuery = true)
     List<Partage> findLikedPartages(@Param("id_compte") Long idCompte);
 
+    @Modifying
+    @Query(value = """
+    INSERT INTO compte_recette VALUES
+    (:id_compte,:id_recette)
+    """, nativeQuery = true)
+    int saveLikedRecette(@Param("id_compte") Long idCompte, @Param("id_recette") Long idRecette);
 
+    @Modifying
+    @Query(value = """
+    INSERT INTO compte_restaurant VALUES
+    (:id_compte,:id_restaurant)
+    """, nativeQuery = true)
+    int saveLikedRestaurant(@Param("id_compte") Long idCompte, @Param("id_restaurant") Long idRestaurant);
 
+    @Modifying
+    @Query(value = """
+    INSERT INTO compte_post VALUES
+    (:id_compte,:id_post)
+    """, nativeQuery = true)
+    int saveLikedPost(@Param("id_compte") Long idCompte, @Param("id_post") Long idPost);
 
-
-
+    @Modifying
+    @Query(value = """
+    INSERT INTO compte_partage VALUES
+    (:id_compte,:id_partage)
+    """, nativeQuery = true)
+    int saveLikedPartage(@Param("id_compte") Long idCompte, @Param("id_partage") Long idPartage);
 }

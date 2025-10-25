@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9ea62db3-0e47-4e74-b700-e583ca0f2c56" name="Changes" comment="started to add tests">
+    <list default="true" id="9ea62db3-0e47-4e74-b700-e583ca0f2c56" name="Changes" comment="added liked contents backend">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/happy_foody/controller/CompteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/happy_foody/controller/CompteController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/happy_foody/repository/CompteRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/happy_foody/repository/CompteRepository.java" afterDir="false" />
@@ -49,22 +49,22 @@
     }
   ]
 }</component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/Cleliambre/HappyFoody.git",
-    "accountId": "77cdc171-3702-4abf-b264-cfaca464b510"
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Cleliambre/HappyFoody.git&quot;,
+    &quot;accountId&quot;: &quot;77cdc171-3702-4abf-b264-cfaca464b510&quot;
   },
-  "recentNewPullRequestHead": {
-    "server": {
-      "useHttp": false,
-      "host": "github.com",
-      "port": null,
-      "suffix": null
+  &quot;recentNewPullRequestHead&quot;: {
+    &quot;server&quot;: {
+      &quot;useHttp&quot;: false,
+      &quot;host&quot;: &quot;github.com&quot;,
+      &quot;port&quot;: null,
+      &quot;suffix&quot;: null
     },
-    "owner": "Cleliambre",
-    "repository": "ProjetWebET4"
+    &quot;owner&quot;: &quot;Cleliambre&quot;,
+    &quot;repository&quot;: &quot;ProjetWebET4&quot;
   }
-}]]></component>
+}</component>
   <component name="KubernetesApiPersistence">{}</component>
   <component name="KubernetesApiProvider">{
   &quot;isMigrated&quot;: true
@@ -188,7 +188,8 @@
       <workItem from="1761168411855" duration="46000" />
       <workItem from="1761246884540" duration="3622000" />
       <workItem from="1761290065626" duration="6907000" />
-      <workItem from="1761332950531" duration="2482000" />
+      <workItem from="1761332950531" duration="2558000" />
+      <workItem from="1761380642525" duration="5363000" />
     </task>
     <task id="LOCAL-00004" summary="added search bar backend for Recette, Restaurant, Post and Partage + added lists of liked contents for each one">
       <option name="closed" value="true" />
@@ -198,7 +199,15 @@
       <option name="project" value="LOCAL" />
       <updated>1761314321447</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="added liked contents backend">
+      <option name="closed" value="true" />
+      <created>1761339240310</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1761339240310</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -211,7 +220,8 @@
     <MESSAGE value="added Tag backend" />
     <MESSAGE value="1st" />
     <MESSAGE value="added search bar backend for Recette, Restaurant, Post and Partage + added lists of liked contents for each one" />
-    <option name="LAST_COMMIT_MESSAGE" value="added search bar backend for Recette, Restaurant, Post and Partage + added lists of liked contents for each one" />
+    <MESSAGE value="added liked contents backend" />
+    <option name="LAST_COMMIT_MESSAGE" value="added liked contents backend" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

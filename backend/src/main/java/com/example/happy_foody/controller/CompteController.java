@@ -63,4 +63,23 @@ public class CompteController {
         return compteService.getLikedPartages(id);
     }
 
+    @PostMapping("/saveLikedRecette")
+    public void createLikedRecette(@RequestParam Long compteId, @RequestParam Long recetteId){
+        compteService.createLikedRecette(compteId, recetteId);
+    }
+
+    @PostMapping("/saveLikedRestaurant")
+    public void createLikedRestaurant(@RequestParam Long compteId, @RequestParam Long restaurantId){
+        compteService.createLikedRestaurant(compteId, restaurantId);
+    }
+
+    @PostMapping("/saveLikedPost")
+    public void createLikedPost(@RequestParam Long compteId, @RequestParam Long postId){
+        compteService.createLikedPost(compteId, postId);
+    }
+
+    @PostMapping("/saveLikedPartage")
+    public void createLikedPartage(@RequestParam Long compteId, @RequestParam Long partageId){
+        compteService.createLikedPartage(compteId, partageId);
+    }
 }
