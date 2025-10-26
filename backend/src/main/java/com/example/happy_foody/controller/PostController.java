@@ -1,7 +1,6 @@
 package com.example.happy_foody.controller;
 
 import com.example.happy_foody.model.Post;
-import com.example.happy_foody.model.Restaurant;
 import com.example.happy_foody.service.PostService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -29,6 +28,12 @@ public class PostController {
     @GetMapping("/getPostById/{id}")
     public Post getPostById(@PathVariable(value = "id") Long id){
         return postService.getPostById(id);
+    }
+
+    //SELECT
+    @GetMapping("/getPostByAuthor/{id_auteur}")
+    public List<Post> getPostsByAuthor(@PathVariable(value = "id_auteur") Long id){
+        return postService.getPostsByAuthor(id);
     }
 
     //INSERT

@@ -4,8 +4,6 @@ package com.example.happy_foody.controller;
 import com.example.happy_foody.model.Recette;
 import com.example.happy_foody.service.RecetteService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.rest.webmvc.ResourceNotFoundException;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -30,6 +28,12 @@ public class RecetteController {
     @GetMapping("/getRecetteById/{id}")
     public Recette getRecetteById(@PathVariable(value = "id") Long id){
         return recetteService.getRecetteById(id);
+    }
+
+    //SELECT
+    @GetMapping("/getRecetteByAuthor/{id_auteur}")
+    public List<Recette> getRecettesByAuthor(@PathVariable(value = "id_auteur") Long id){
+        return recetteService.getRecettesByAuthor(id);
     }
 
     //INSERT

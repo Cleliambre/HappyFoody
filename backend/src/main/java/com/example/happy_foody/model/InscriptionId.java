@@ -2,10 +2,13 @@ package com.example.happy_foody.model;
 
 import jakarta.persistence.*;
 
+import java.io.Serial;
+
 
 @Embeddable
 public class InscriptionId implements java.io.Serializable  {
     /*serializable est nécessaire pour l'utiliser en clé primaire*/
+    @Serial
     private static final long serialVersionUID = 1L;
 
     private Compte compte;

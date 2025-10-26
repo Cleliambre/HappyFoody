@@ -2,7 +2,6 @@ package com.example.happy_foody.service;
 
 
 import com.example.happy_foody.model.Post;
-import com.example.happy_foody.model.Restaurant;
 import com.example.happy_foody.repository.PostRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.rest.webmvc.ResourceNotFoundException;
@@ -24,6 +23,10 @@ public class PostService {
     public Post getPostById(Long id) throws ResourceNotFoundException {
         Post post = postRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Post not found"));
         return post;
+    }
+
+    public List<Post> getPostsByAuthor(Long id_auteur) {
+        return postRepository.findByAuthor(id_auteur);
     }
 
     public Post createPost(Post post) {

@@ -24,6 +24,10 @@ public class PartageService {
         return partage;
     }
 
+    public List<Partage> getPartagesByAuthor(Long id_auteur) {
+        return  partageRepository.findByAuthor(id_auteur);
+    }
+
     public Partage createPartage(Partage partage) {
         return partageRepository.save(partage);
     }

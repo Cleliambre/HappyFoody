@@ -24,6 +24,9 @@ public class RecetteService {
         return recette;
     }
 
+    public List<Recette> getRecettesByAuthor(Long id_auteur) {
+        return recetteRepository.findByAuthor(id_auteur);
+    }
 
     public Recette createRecette(Recette recette) {
         return recetteRepository.save(recette);

@@ -12,13 +12,13 @@ import java.util.List;
 public interface RecetteRepository extends JpaRepository<Recette,Long> {
 
     @Query(value = """
-    SELECT DISTINCT r.* 
+    SELECT DISTINCT r.*
     FROM recette r
     JOIN compte c ON c.id_compte = r.id_auteur
     JOIN quantite q ON q.id_recette = r.id_recette
     JOIN ingrédient i ON i.id_ingredient = q.id_ingredient
     JOIN etape e ON e.id_recette = r.id_recette
-    WHERE 
+    WHERE
         LOWER(c.pseudo) LIKE LOWER(CONCAT('%', :motCle, '%'))
         OR LOWER(i.nom) LIKE LOWER(CONCAT('%', :motCle, '%'))
         OR LOWER(e.txt_etape) LIKE LOWER(CONCAT('%', :motCle, '%'))
@@ -28,7 +28,7 @@ public interface RecetteRepository extends JpaRepository<Recette,Long> {
     List<Recette> findByKeyWord(@Param("motCle") String motCle);
 
     @Query(value = """
-    SELECT DISTINCT r.* 
+    SELECT DISTINCT r.*
     FROM recette r
     JOIN recette_tag rt ON r.id_recette = rt.id_recette
     JOIN tag t ON rt.id_tag = t.id_tag
@@ -37,4 +37,11 @@ public interface RecetteRepository extends JpaRepository<Recette,Long> {
     """, nativeQuery = true)
     List<Recette> findByTag(@Param("nom") String nom);
 
+    @Query(value = """
+    SELECT DISTINCT r.*
+    FROM recette r
+    JOIN compte c ON r.id_auteur = c.id_compte
+    WHERE r.id_auteur = :id_auteur
+    """, nativeQuery = true)
+    List<Recette> findByAuthor(@Param("id_auteur") Long id_auteur);
 }

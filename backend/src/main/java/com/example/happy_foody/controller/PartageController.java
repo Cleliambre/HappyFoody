@@ -1,7 +1,6 @@
 package com.example.happy_foody.controller;
 
 import com.example.happy_foody.model.Partage;
-import com.example.happy_foody.model.Post;
 import com.example.happy_foody.service.PartageService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -28,6 +27,12 @@ public class PartageController {
     @GetMapping("/getPartageById/{id}")
     public Partage getPartageById(@PathVariable(value = "id") Long id){
         return partageService.getPartageById(id);
+    }
+
+    //SELECT
+    @GetMapping("/getPartageByAuthor/{id_auteur}")
+    public List<Partage> getPartagesByAuthor(@PathVariable(value = "id_auteur") Long id){
+        return partageService.getPartagesByAuthor(id);
     }
 
     //INSERT
