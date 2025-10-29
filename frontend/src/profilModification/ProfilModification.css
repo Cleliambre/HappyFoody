@@ -1,0 +1,18 @@
+.profilModification-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 100%;
+
+}
+
+.inputs{
+    max-width: 600px;
+    width: 80%;
+}
+
+.buttons{
+    margin-top: 10px;
+    width: 25%;
+}
