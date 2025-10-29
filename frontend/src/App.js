@@ -1,11 +1,14 @@
-import logo from './logo.svg';
 import './App.css';
-import ConnexionContent from "./connexion/ConnexionContent";
+import ForgottenPassword from "./forgottenPassword/ForgottenPassword";
+import Menu from "./menu/Menu";
+
+import CardList from "./card_list/CardList";
 
 function App() {
   return (
     <div className="App">
-      <ConnexionContent/>
+        <Menu/>
+      <ForgottenPassword/>
     </div>
   );
 }
