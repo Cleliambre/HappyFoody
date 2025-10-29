@@ -1,14 +1,10 @@
 import './App.css';
-import ForgottenPassword from "./forgottenPassword/ForgottenPassword";
-import Menu from "./menu/Menu";
-
-import CardList from "./card_list/CardList";
+import Inscription from "./Inscription/Inscription";
 
 function App() {
   return (
     <div className="App">
-        <Menu/>
-      <ForgottenPassword/>
+      <Inscription/>
     </div>
   );
 }
