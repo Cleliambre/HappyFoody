@@ -25,6 +25,7 @@
         <option value="Enum" />
         <option value="Interface" />
         <option value="Class" />
+        <option value="JavaScript File" />
         <option value="CSS File" />
         <option value="JSX File" />
       </list>
