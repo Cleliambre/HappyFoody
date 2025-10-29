@@ -1,10 +1,10 @@
 import './App.css';
-import Inscription from "./Inscription/Inscription";
+import PasswordModification from "./passwordModification/PasswordModification";
 
 function App() {
   return (
     <div className="App">
-      <Inscription/>
+      <PasswordModification/>
     </div>
   );
 }
