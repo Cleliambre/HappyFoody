@@ -6,7 +6,12 @@ import Stack from "@mui/material/Stack";
 export default function PasswordModification() {
     return (
         <div className="passwordModification-content">
-            <Typography variant="h3" color = "textSecondary">
+            <Typography
+                variant="h3"
+                color = "textSecondary"
+                className="titre"
+                margin = "20px"
+            >
                 Modification du mot de passe
             </Typography>
             <Stack
@@ -44,7 +49,7 @@ export default function PasswordModification() {
             <Stack
                 spacing={2}
                 width="25%"
-                margin="10px"
+                margin="20px"
             >
                 <Button
                     variant="contained"
