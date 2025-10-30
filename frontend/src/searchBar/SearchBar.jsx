@@ -4,11 +4,12 @@ import {IconButton, InputBase, Paper} from "@mui/material";
 import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
 import FilterAltOutlinedIcon from '@mui/icons-material/FilterAltOutlined';
 
-export default function SearchBar({message, onFilterClick, onSearchClick}) {
+export default function SearchBar({message, color, onFilterClick, onSearchClick}) {
     return(
         <Paper
             className="searchBar"
             elevation={1}
+            sx={{backgroundColor: color}}
         >
             <IconButton
                 onClick={onFilterClick}

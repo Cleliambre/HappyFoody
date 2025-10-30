@@ -7,6 +7,7 @@ function App() {
       <SearchBar
           message="Rechercher une recette"
           className = "searchBar"
+          color="lavenderblush"
       />
     </div>
   );
