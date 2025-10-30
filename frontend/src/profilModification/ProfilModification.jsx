@@ -6,12 +6,17 @@ import ModeEditOutlinedIcon from '@mui/icons-material/ModeEditOutlined';
 export default function ProfilModification({pseudo, pp, description, email, mdp}){
     return(
         <div className="profilModification-content">
-            <Typography variant="h3" color="textSecondary" className = "titre">
+            <Typography
+                variant="h3"
+                color="textSecondary"
+                margin="20px"
+            >
                 Modifier le profil
             </Typography>
             <Badge
                 overlap="circular"
                 anchorOrigin={{vertical: 'bottom', horizontal: 'right'}}
+                className="badge"
                 badgeContent=
                     {<IconButton>
                         <Avatar sx={{backgroundColor : "whiteSmoke",color : "black"}}>
@@ -19,7 +24,11 @@ export default function ProfilModification({pseudo, pp, description, email, mdp}
                         </Avatar>
                     </IconButton>}
             >
-                <Avatar src={pp} className="profil-avatar" sx={{width:150, height:150}}/>
+                <Avatar
+                    src={pp}
+                    className="profil-avatar"
+                    sx={{width:150, height:150}}
+                />
             </Badge>
             <Stack spacing={2} className="inputs"
             >
