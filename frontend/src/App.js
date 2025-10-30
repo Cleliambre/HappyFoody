@@ -1,10 +1,13 @@
 import './App.css';
-import Inscription from "./Inscription/Inscription";
+import SearchBar from "./searchBar/SearchBar";
 
 function App() {
   return (
     <div className="App">
-      <Inscription/>
+      <SearchBar
+          message="Rechercher une recette"
+          className = "searchBar"
+      />
     </div>
   );
 }
