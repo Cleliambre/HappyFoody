@@ -4,8 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9ea62db3-0e47-4e74-b700-e583ca0f2c56" name="Changes" comment="added inscription page">
+    <list default="true" id="9ea62db3-0e47-4e74-b700-e583ca0f2c56" name="Changes" comment="added color parameter to searchBar">
+      <change afterPath="$PROJECT_DIR$/frontend/src/card_list/CardListV2.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/searchBar/SearchBar.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/searchBar/SearchBar.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/searchPage/GenericSearchPage.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/searchPage/GenericSearchPageV2.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/searchPage/RecetteSearchPage.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/searchPage/RecetteSearchPageV2.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/searchPage/RestaurantSearchPage.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/searchPage/SearchPage.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,19 +28,26 @@
         <option value="Enum" />
         <option value="Interface" />
         <option value="Class" />
-        <option value="JSX File" />
+        <option value="JavaScript File" />
         <option value="CSS File" />
+        <option value="JSX File" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="develop" />
+        <entry key="$PROJECT_DIR$" value="frontend_search_bar" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "Cleliambre"
+  }
+}]]></component>
   <component name="GitHubPullRequestState">{
   &quot;prStates&quot;: [
     {
@@ -42,18 +59,22 @@
     }
   ]
 }</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;recentNewPullRequestHead&quot;: {
-    &quot;server&quot;: {
-      &quot;useHttp&quot;: false,
-      &quot;host&quot;: &quot;github.com&quot;,
-      &quot;port&quot;: null,
-      &quot;suffix&quot;: null
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/Cleliambre/ProjetWebET4.git",
+    "accountId": "5bf8a29a-093c-40c3-bd90-e6cc883598f3"
+  },
+  "recentNewPullRequestHead": {
+    "server": {
+      "useHttp": false,
+      "host": "github.com",
+      "port": null,
+      "suffix": null
     },
-    &quot;owner&quot;: &quot;Cleliambre&quot;,
-    &quot;repository&quot;: &quot;ProjetWebET4&quot;
+    "owner": "Cleliambre",
+    "repository": "ProjetWebET4"
   }
-}</component>
+}]]></component>
   <component name="KubernetesApiPersistence">{}</component>
   <component name="KubernetesApiProvider">{
   &quot;isMigrated&quot;: true
@@ -76,35 +97,35 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.HappyFoodyApplication.executor": "Run",
-    "Docker.compose.yaml: Compose Deployment.executor": "Run",
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "Spring Boot.Backend.executor": "Run",
-    "Spring Boot.HappyFoodyApplication.executor": "Run",
-    "git-widget-placeholder": "frontend__inscription",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/ambre/IdeaProjects/Happy_Foody/frontend/src/menu",
-    "list.type.of.created.stylesheet": "CSS",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_interpreter_path": "node",
-    "nodejs_package_manager_path": "npm",
-    "npm.Frontend.executor": "Run",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.2",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.HappyFoodyApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.compose.yaml: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;Spring Boot.Backend.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.HappyFoodyApplication.executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;frontend__search__pages&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/ambre/IdeaProjects/Happy_Foody/frontend/src/menu&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_interpreter_path&quot;: &quot;node&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;npm.Frontend.executor&quot;: &quot;Run&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\ambre\IdeaProjects\Happy_Foody\frontend\src\menu" />
@@ -183,8 +204,25 @@
       <option name="presentableId" value="Default" />
       <updated>1761305401691</updated>
       <workItem from="1761305405335" duration="388000" />
+      <workItem from="1761907741874" duration="9834000" />
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="added searchBar component">
+      <option name="closed" value="true" />
+      <created>1761842990385</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1761842990385</updated>
+    </task>
+    <task id="LOCAL-00006" summary="added color parameter to searchBar">
+      <option name="closed" value="true" />
+      <created>1761844578708</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1761844578708</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -197,6 +235,8 @@
     <MESSAGE value="added CommentaireRecette backend" />
     <MESSAGE value="added Tag backend" />
     <MESSAGE value="added inscription page" />
-    <option name="LAST_COMMIT_MESSAGE" value="added inscription page" />
+    <MESSAGE value="added searchBar component" />
+    <MESSAGE value="added color parameter to searchBar" />
+    <option name="LAST_COMMIT_MESSAGE" value="added color parameter to searchBar" />
   </component>
 </project>
