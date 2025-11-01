@@ -1,4 +1,6 @@
 import * as React from 'react';
+import { Link } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
 // Importation pour to construire un MenuBar
 import {
@@ -25,26 +27,25 @@ import CommunauteIcon from "@mui/icons-material/PeopleOutlined";
 import RestaurantsIcon from "@mui/icons-material/RestaurantOutlined";
 import RecettesIcon from "@mui/icons-material/MenuBookOutlined";
 import Badge from "@mui/material/Badge";
-import {useState} from "react";
 
 // Noms et icons des boutons de gauche et droite du menu
 
 const leftButtons = [
-    { text: 'Recette',    icon: <RecettesIcon /> },
-    { text: 'Restaurant', icon: <RestaurantsIcon /> },
-    { text: 'Communauté',  icon: <CommunauteIcon /> },
-    { text: 'Partage',    icon: <PartagesIcon /> },
+    { path:"/recette",    text: 'Recette',    icon: <RecettesIcon /> },
+    { path:"/restaurant", text: 'Restaurant', icon: <RestaurantsIcon /> },
+    { path:"/communaute", text: 'Communauté', icon: <CommunauteIcon /> },
+    { path:"/partage",    text: 'Partage',    icon: <PartagesIcon /> },
 ];
 
 const rightButtons = [
-    { text: 'Favoris',  icon: <FavorisIcon />,  badge: 0 },
-    { text: 'Messages', icon: <MessagesIcon />, badge: 0 },
-    { text: 'Profil',   icon: <Avatar/>,        badge: 0 },
+    { path:"/favoris",  icon: <FavorisIcon />,  badge: 0 },
+    { path:"/messages", icon: <MessagesIcon />, badge: 0 },
+    { path:"/profil",   icon: <Avatar/>,        badge: 0 },
 ];
 
 export default function MenuBar() {
 
-    const [selectedButton, setSelectedButton] = useState("Recette");
+    const location = useLocation();
     const [anchorElNav, setAnchorElNav] = React.useState(null);
 
     const handleOpenNavMenu = (event) => {
@@ -76,10 +77,12 @@ export default function MenuBar() {
                     >
                         {leftButtons.map((button) => (
                             <Button
-                                onClick={() => {handleCloseNavMenu(); setSelectedButton(button.text);}}
+                                onClick={handleCloseNavMenu}
+                                component={Link}
+                                to={button.path}
                                 sx={{
-                                    color: selectedButton === button.text ? 'white' : 'primary',
-                                    backgroundColor: selectedButton === button.text ? 'orange' : 'white',
+                                    color: location.pathname === button.path ? 'white' : 'primary',
+                                    backgroundColor: location.pathname === button.path ? 'orange' : 'white',
                                     display: 'flex',
                                     flexDirection: 'column',
                                     mr: 1,
@@ -125,8 +128,9 @@ export default function MenuBar() {
                             sx={{ display: { xs: 'block', md: 'none' } }}
                         >
                             {leftButtons.map((button) => (
-                                <MenuItem key={button.text}
-                                          onClick={() => {handleCloseNavMenu(); setSelectedButton(button.text);}}
+                                <MenuItem onClick={handleCloseNavMenu}
+                                          component={Link}
+                                          to={button.path}
                                 >
                                     {button.icon}
                                     <Typography sx={{ textAlign: 'center', paddingLeft:'5px' }}>{button.text}</Typography>
@@ -145,7 +149,9 @@ export default function MenuBar() {
                     {/*==== IconButtons de droite ====*/}
                     <Box sx={{ flexGrow: 0 }}>
                         {rightButtons.map((button) => (
-                            <IconButton onClick={() => {handleCloseNavMenu(); setSelectedButton(button.text);}}
+                            <IconButton onClick={handleCloseNavMenu}
+                                        component={Link}
+                                        to={button.path}
                                         sx={{ color: 'white', backgroundColor:'transparent',
                                             mr: 1,
                                             alignItems:'center'
