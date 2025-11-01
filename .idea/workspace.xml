@@ -31,6 +31,8 @@
         <option value="Enum" />
         <option value="Interface" />
         <option value="Class" />
+        <option value="JSX File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
