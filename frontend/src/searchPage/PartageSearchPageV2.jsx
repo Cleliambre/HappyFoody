@@ -1,26 +1,24 @@
-import GenericSearchPage from "./GenericSearchPage";
-
-import AutoStoriesOutlinedIcon from '@mui/icons-material/AutoStoriesOutlined';
+import GenericSearchPage from "./GenericSearchPageV2";
 import React from "react";
+import VolunteerActivismOutlinedIcon from '@mui/icons-material/VolunteerActivismOutlined';
 
 /**
- * Version où les enfants représentent des tags
+ * Version où les enfants représentent des cartes
  * @param onFilterClick
  * @param onSearchClick
  * @param children
  * @returns {React.JSX.Element}
  * @constructor
  */
-export default function RecetteSearchPage({onFilterClick, onSearchClick, children}){
-
+export default function CommunauteSearchPage({onFilterClick, onSearchClick, children}){
     const [pageDescription, setPageDescription] = React.useState({
-        title : "Recettes",
-        description : "Trouve ou découvre des recettes adaptées à tes envies et besoin ! \nTu peux aussi partager tes meilleures recettes !",
-        logo : <AutoStoriesOutlinedIcon sx={{ fontSize: "150px" }} />
+        title : "Partage",
+        description : "Trop de nourriture préparée ? Donne-la ou partage-la autour d'un bon repas avec d'autres personnes !",
+        logo : <VolunteerActivismOutlinedIcon sx={{ fontSize: "150px" }} />
     });
 
     const [barInfo, setBarInfo] = React.useState({
-        barMessage : "Rechercher une recette",
+        barMessage : "Rechercher un partage",
         isPlus : true
     });
 

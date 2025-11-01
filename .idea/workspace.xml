@@ -4,18 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9ea62db3-0e47-4e74-b700-e583ca0f2c56" name="Changes" comment="added color parameter to searchBar">
-      <change afterPath="$PROJECT_DIR$/frontend/src/card_list/CardListV2.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/searchBar/SearchBar.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/searchBar/SearchBar.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/searchPage/GenericSearchPage.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/searchPage/GenericSearchPageV2.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/searchPage/RecetteSearchPage.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/searchPage/RecetteSearchPageV2.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/searchPage/RestaurantSearchPage.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/searchPage/SearchPage.css" afterDir="false" />
+    <list default="true" id="9ea62db3-0e47-4e74-b700-e583ca0f2c56" name="Changes" comment="added 2 versions of BasicSearchPage and RecetteSearchPage">
+      <change afterPath="$PROJECT_DIR$/frontend/src/searchPage/CommunautéSearchPageV2.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/searchPage/PartageSearchPageV2.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/searchPage/RestaurantSearchPageV2.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/searchPage/useSearchPageTags.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/searchPage/GenericSearchPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/searchPage/GenericSearchPage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/searchPage/GenericSearchPageV2.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/searchPage/GenericSearchPageV2.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/searchPage/RecetteSearchPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/searchPage/RecetteSearchPage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/searchPage/RecetteSearchPageV2.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/searchPage/RecetteSearchPageV2.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/searchPage/RestaurantSearchPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/searchPage/RestaurantSearchPage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/searchPage/SearchPage.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/searchPage/SearchPage.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,12 +43,12 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "Cleliambre"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Cleliambre&quot;
   }
-}]]></component>
+}</component>
   <component name="GitHubPullRequestState">{
   &quot;prStates&quot;: [
     {
@@ -59,22 +60,22 @@
     }
   ]
 }</component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/Cleliambre/ProjetWebET4.git",
-    "accountId": "5bf8a29a-093c-40c3-bd90-e6cc883598f3"
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Cleliambre/ProjetWebET4.git&quot;,
+    &quot;accountId&quot;: &quot;5bf8a29a-093c-40c3-bd90-e6cc883598f3&quot;
   },
-  "recentNewPullRequestHead": {
-    "server": {
-      "useHttp": false,
-      "host": "github.com",
-      "port": null,
-      "suffix": null
+  &quot;recentNewPullRequestHead&quot;: {
+    &quot;server&quot;: {
+      &quot;useHttp&quot;: false,
+      &quot;host&quot;: &quot;github.com&quot;,
+      &quot;port&quot;: null,
+      &quot;suffix&quot;: null
     },
-    "owner": "Cleliambre",
-    "repository": "ProjetWebET4"
+    &quot;owner&quot;: &quot;Cleliambre&quot;,
+    &quot;repository&quot;: &quot;ProjetWebET4&quot;
   }
-}]]></component>
+}</component>
   <component name="KubernetesApiPersistence">{}</component>
   <component name="KubernetesApiProvider">{
   &quot;isMigrated&quot;: true
@@ -123,6 +124,7 @@
     &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Program Files\\JetBrains\\IntelliJ IDEA 2025.2.2\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
@@ -204,7 +206,8 @@
       <option name="presentableId" value="Default" />
       <updated>1761305401691</updated>
       <workItem from="1761305405335" duration="388000" />
-      <workItem from="1761907741874" duration="9834000" />
+      <workItem from="1761907741874" duration="19110000" />
+      <workItem from="1762009076147" duration="1237000" />
     </task>
     <task id="LOCAL-00005" summary="added searchBar component">
       <option name="closed" value="true" />
@@ -222,7 +225,15 @@
       <option name="project" value="LOCAL" />
       <updated>1761844578708</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="added 2 versions of BasicSearchPage and RecetteSearchPage">
+      <option name="closed" value="true" />
+      <created>1761919328853</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1761919328853</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -237,6 +248,7 @@
     <MESSAGE value="added inscription page" />
     <MESSAGE value="added searchBar component" />
     <MESSAGE value="added color parameter to searchBar" />
-    <option name="LAST_COMMIT_MESSAGE" value="added color parameter to searchBar" />
+    <MESSAGE value="added 2 versions of BasicSearchPage and RecetteSearchPage" />
+    <option name="LAST_COMMIT_MESSAGE" value="added 2 versions of BasicSearchPage and RecetteSearchPage" />
   </component>
 </project>

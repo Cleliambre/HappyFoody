@@ -1,9 +1,9 @@
-import GenericSearchPage from "./GenericSearchPage";
+import GenericSearchPage from "./GenericSearchPageV2";
 import React from "react";
-import RestaurantIcon from '@mui/icons-material/Restaurant';
+import RestaurantOutlinedIcon from '@mui/icons-material/Restaurant';
 
 /**
- * Version où les enfants représentent des tags
+ * Version où les enfants représentent des cartes
  * @param onFilterClick
  * @param onSearchClick
  * @param children
@@ -14,7 +14,7 @@ export default function RestaurantSearchPage({onFilterClick, onSearchClick, chil
     const [pageDescription, setPageDescription] = React.useState({
         title : "Restaurants",
         description : "Trouve ou découvre des restaurants proches de chez toi ! ",
-        logo : <RestaurantIcon sx={{ fontSize: "150px" }} />
+        logo : <RestaurantOutlinedIcon sx={{ fontSize: "150px" }} />
     });
 
     const [barInfo, setBarInfo] = React.useState({

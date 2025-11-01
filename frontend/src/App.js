@@ -1,6 +1,6 @@
 import './App.css';
 import React, {useState} from "react";
-import RecetteSearchPage from "./searchPage/RecetteSearchPageV2";
+import RestaurantSearchPage from "./searchPage/RestaurantSearchPageV2";
 import AutoStoriesOutlinedIcon from '@mui/icons-material/AutoStoriesOutlined';
 import img1 from "./images/enfer.jpg"
 import {Chip, Stack} from "@mui/material";
@@ -11,6 +11,9 @@ import img2 from "./images/taboule_crame.png";
 import PartageElement from "./card_list/PartageElement";
 import img3 from "./images/poulet.jpg";
 import GenericCard from "./card_list/GenericCard";
+import CommunauteSearchPage from "./searchPage/CommunautéSearchPageV2";
+import PartageSearchPage from "./searchPage/PartageSearchPageV2";
+import RecetteSearchPage from "./searchPage/RecetteSearchPageV2";
 
 function App() {
 
@@ -23,14 +26,11 @@ function App() {
         {
             name: "Végétarien",
             color: "success"
-
         },
         {
             name:"test"
         }
     ]);
-
-
 
     const [cards, setCards] = useState([
         {

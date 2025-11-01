@@ -7,7 +7,7 @@ import AddIcon from '@mui/icons-material/Add';
 import CardList from "../card_list/CardList";
 
 /**
- *
+ * Version où les enfants représentent des tags
  * @param pageDescr de la forme {balise simple logo, string title, string description}
  * @param barInfo de la forme {string barMessage, bool isPlus}
  * @param onFilterClick pour la gestion d'évènement pour un clic sur le bouton de filtre

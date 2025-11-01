@@ -1,25 +1,25 @@
-import GenericSearchPage from "./GenericSearchPage";
+import GenericSearchPage from "./GenericSearchPageV2";
 import React from "react";
-import RestaurantIcon from '@mui/icons-material/Restaurant';
+import PeopleAltOutlinedIcon from '@mui/icons-material/PeopleAltOutlined';
 
 /**
- * Version où les enfants représentent des tags
+ * Version où les enfants représentent des cartes
  * @param onFilterClick
  * @param onSearchClick
  * @param children
  * @returns {React.JSX.Element}
  * @constructor
  */
-export default function RestaurantSearchPage({onFilterClick, onSearchClick, children}){
+export default function CommunauteSearchPage({onFilterClick, onSearchClick, children}){
     const [pageDescription, setPageDescription] = React.useState({
-        title : "Restaurants",
-        description : "Trouve ou découvre des restaurants proches de chez toi ! ",
-        logo : <RestaurantIcon sx={{ fontSize: "150px" }} />
+        title : "Communauté",
+        description : "Des questions ? Des astuces ? Des réussites ? Vous êtes au bon endroit !",
+        logo : <PeopleAltOutlinedIcon sx={{ fontSize: "150px" }} />
     });
 
     const [barInfo, setBarInfo] = React.useState({
-        barMessage : "Rechercher un restaurant",
-        isPlus : false
+        barMessage : "Rechercher un forum",
+        isPlus : true
     });
 
     return (
