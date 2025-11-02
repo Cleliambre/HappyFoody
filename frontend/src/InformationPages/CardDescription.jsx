@@ -1,10 +1,39 @@
-import {Stack, Card, CardMedia, Box, Typography, Divider, Avatar, Chip, Link, CardContent} from "@mui/material";
-import taboule from "../images/taboule.png"
-import berserk from "../images/berserk.jpg"
-import StarOutlinedIcon from '@mui/icons-material/StarOutlined';
+import {
+    Stack,
+    Card,
+    CardMedia,
+    Box,
+    Typography,
+    Divider,
+    Avatar,
+    Chip,
+    Link,
+    CardContent,
+    IconButton,
+    Accordion, AccordionSummary, AccordionDetails, Collapse, CardActions
+} from "@mui/material";
+import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlined';
+import FavoriteOutlinedIcon from '@mui/icons-material/FavoriteOutlined';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import React from "react";
 
-export default function CardDescription({image, tags, titre, texteDescription, onTagClick, children}){
+export default function CardDescription({image, tags, titre, texteDescription, onTagClick, like, setLike, children}){
+
+    // Formatage du compteur de likes (ex: 1000 → "1K")
+    const formatLikes = (num) => {
+        if (num >= 1_000_000) return Math.floor(num / 1_000_000) + 'M';
+        if (num >= 1_000) return Math.floor(num / 1_000) + 'K';
+        return num.toString();
+    };
+
+    const handleLike = () => {
+        setLike({liked : !like.liked,
+                nb : like.liked ? like.nb-1:like.nb+1});
+    };
+
+    const [isExpanded, setExpanded] = React.useState(false);
+
+    const handleExpandMore = () => {setExpanded(!isExpanded);};
 
     return (
         //Contenu de la page
@@ -12,29 +41,31 @@ export default function CardDescription({image, tags, titre, texteDescription, o
         /*Boîte de description*/
             <Card
                 sx={{
+                    width: "100%",
                     display: "flex",
-                    width : "80%",
-                    maxWidth : "900px"
+                    flexDirection: "column",
                 }}
             >
-                <CardContent>
+                <CardContent
+                    sx={{width:'95%', display:"flex", justifyContent:"space-between"}}
+                >
                     {/*contenu de la description*/}
                     <Stack
                         direction="row"
                         spacing={2}
-                        alignItems="center"
+                        alignItems="start"
                     >
                         {/*image*/}
                         <CardMedia
                             component="img"
                             image={image}
-                            sx={{width:"250px", height:"250px"}}
+                            sx={{width:"200px", height:"200px"}}
                         />
 
                         {/*titre, auteur, note, description et tags*/}
                         <Stack
                             direction="column"
-                            minHeight={"250px"}
+                            minHeight={"200px"}
                             justifyContent="space-between"
                         >
                             {/*titre, auteur, note, description*/}
@@ -52,6 +83,7 @@ export default function CardDescription({image, tags, titre, texteDescription, o
                                 <Stack
                                     direction="row"
                                     spacing={2}
+                                    flexWrap= "wrap"
                                 >
                                     <Divider orientation="vertical" flexItem/>
                                     {/*auteur, note*/}
@@ -67,14 +99,36 @@ export default function CardDescription({image, tags, titre, texteDescription, o
                                     {texteDescription}
                                 </Typography>
                             </Stack>
-                            <Stack direction="row" spacing={2}>
-                                {tags.map((tag) => (
-                                    <Chip label={tag.label} color = {tag.color} onClick={onTagClick}/>
-                                ))}
-                            </Stack>
                         </Stack>
+
+                    </Stack>
+
+                    {/*Favori*/}
+                    <Stack>
+                        <IconButton onClick={handleLike}>
+                            {like.liked ? <FavoriteOutlinedIcon color="error"/> : <FavoriteBorderOutlinedIcon/>}
+                        </IconButton>
+                        <Typography variant="body2" lineHeight={0}>
+                            {formatLikes(like.nb)}
+                        </Typography>
                     </Stack>
                 </CardContent>
+                <Divider />
+                <CardActions sx={{justifyContent:"space-between"}}>
+                    <Typography variant="h6" color="textSecondary">
+                        Catégories
+                    </Typography>
+                    <IconButton onClick={handleExpandMore}>
+                        <ExpandMoreIcon/>
+                    </IconButton>
+                </CardActions>
+                <Collapse in={isExpanded}>
+                    <Stack direction="row" flexWrap="wrap" gap={1} margin="10px">
+                        {tags.map((tag) => (
+                            <Chip label={tag.label} color={tag.color} onClick={onTagClick}/>
+                        ))}
+                    </Stack>
+                </Collapse>
             </Card>
     );
 }
