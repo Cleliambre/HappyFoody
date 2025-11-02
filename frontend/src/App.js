@@ -1,16 +1,16 @@
 import './App.css';
-import Profil from "./profil/Profil";
-import berserker from "./images/berserker.jpeg";
+import Inscription from "./Inscription/Inscription";
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 function App() {
   return (
-    <div className="App">
-        <Profil
-            pp ={berserker}
-            pseudo="test"
-            description="Ceci est un texte de test que j'essaie d'allonger le plus possible pour voir le résultat."
-        />
-    </div>
+      <Router>
+        <div className="App">
+            <Routes>
+                <Route path="/inscription" element={<Inscription/>} />
+            </Routes>
+        </div>
+      </Router>
   );
 }
 
