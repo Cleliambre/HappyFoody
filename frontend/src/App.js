@@ -1,10 +1,14 @@
 import './App.css';
-import PasswordModification from "./passwordModification/PasswordModification";
+import SearchBar from "./searchBar/SearchBar";
 
 function App() {
   return (
     <div className="App">
-      <PasswordModification/>
+      <SearchBar
+          message="Rechercher une recette"
+          className = "searchBar"
+          color="lavenderblush"
+      />
     </div>
   );
 }
