@@ -4,8 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9ea62db3-0e47-4e74-b700-e583ca0f2c56" name="Changes" comment="added inscription page">
+    <list default="true" id="9ea62db3-0e47-4e74-b700-e583ca0f2c56" name="Changes" comment="corrected a bug and added SQL for recipes, posts and shares">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/happy_foody/controller/PartageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/happy_foody/controller/PartageController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/happy_foody/controller/PostController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/happy_foody/controller/PostController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/happy_foody/controller/RecetteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/happy_foody/controller/RecetteController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/happy_foody/model/Inscription.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/happy_foody/model/Inscription.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/happy_foody/model/InscriptionId.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/happy_foody/model/InscriptionId.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/happy_foody/model/QuantiteId.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/happy_foody/model/QuantiteId.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/happy_foody/repository/PartageRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/happy_foody/repository/PartageRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/happy_foody/repository/PostRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/happy_foody/repository/PostRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/happy_foody/repository/RecetteRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/happy_foody/repository/RecetteRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/happy_foody/service/InscriptionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/happy_foody/service/InscriptionService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/happy_foody/service/PartageService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/happy_foody/service/PartageService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/happy_foody/service/PostService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/happy_foody/service/PostService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/happy_foody/service/RecetteService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/happy_foody/service/RecetteService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,6 +44,12 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;ABellik&quot;
+  }
+}</component>
   <component name="GitHubPullRequestState">{
   &quot;prStates&quot;: [
     {
@@ -43,6 +62,10 @@
   ]
 }</component>
   <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Cleliambre/HappyFoody.git&quot;,
+    &quot;accountId&quot;: &quot;77cdc171-3702-4abf-b264-cfaca464b510&quot;
+  },
   &quot;recentNewPullRequestHead&quot;: {
     &quot;server&quot;: {
       &quot;useHttp&quot;: false,
@@ -76,41 +99,39 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.HappyFoodyApplication.executor": "Run",
-    "Docker.compose.yaml: Compose Deployment.executor": "Run",
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "Spring Boot.Backend.executor": "Run",
-    "Spring Boot.HappyFoodyApplication.executor": "Run",
-    "git-widget-placeholder": "frontend__inscription",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/ambre/IdeaProjects/Happy_Foody/frontend/src/menu",
-    "list.type.of.created.stylesheet": "CSS",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_interpreter_path": "node",
-    "nodejs_package_manager_path": "npm",
-    "npm.Frontend.executor": "Run",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.2",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.HappyFoodyApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.compose.yaml: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;Maven.backend [clean,install].executor&quot;: &quot;Run&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;Spring Boot.Backend.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.HappyFoodyApplication.executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;amelioration-recette-backend&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/abellik/IdeaProjects/HappyFoody/backend&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_interpreter_path&quot;: &quot;node&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;npm.Frontend.executor&quot;: &quot;Run&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;promo.database&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
-  <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\ambre\IdeaProjects\Happy_Foody\frontend\src\menu" />
-    </key>
-  </component>
-  <component name="RunManager" selected="npm.Frontend">
+}</component>
+  <component name="RunManager" selected="Spring Boot.Backend">
     <configuration name="Backend" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <option name="ALTERNATIVE_JRE_PATH" value="17" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
@@ -143,6 +164,7 @@
       </set>
     </attachedChunks>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task id="LOCAL-00001" summary="added Ingredient table &amp; repository">
       <option name="closed" value="true" />
@@ -168,35 +190,72 @@
       <option name="project" value="LOCAL" />
       <updated>1759997798682</updated>
     </task>
-    <task id="LOCAL-00004" summary="added inscription page">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="9ea62db3-0e47-4e74-b700-e583ca0f2c56" name="Changes" comment="test" />
+      <created>1761145201585</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1761145201585</updated>
+      <workItem from="1761145204045" duration="7249000" />
+      <workItem from="1761168411855" duration="46000" />
+      <workItem from="1761246884540" duration="3622000" />
+      <workItem from="1761290065626" duration="6907000" />
+      <workItem from="1761332950531" duration="2558000" />
+      <workItem from="1761380642525" duration="8991000" />
+      <workItem from="1761463027883" duration="4435000" />
+    </task>
+    <task id="LOCAL-00004" summary="added search bar backend for Recette, Restaurant, Post and Partage + added lists of liked contents for each one">
       <option name="closed" value="true" />
-      <created>1761223658615</created>
+      <created>1761314321447</created>
       <option name="number" value="00004" />
       <option name="presentableId" value="LOCAL-00004" />
       <option name="project" value="LOCAL" />
-      <updated>1761223658615</updated>
+      <updated>1761314321447</updated>
     </task>
-    <task active="true" id="Default" summary="Default task">
-      <changelist id="9ea62db3-0e47-4e74-b700-e583ca0f2c56" name="Changes" comment="added inscription page" />
-      <created>1761305401691</created>
-      <option name="number" value="Default" />
-      <option name="presentableId" value="Default" />
-      <updated>1761305401691</updated>
-      <workItem from="1761305405335" duration="388000" />
+    <task id="LOCAL-00005" summary="added liked contents backend">
+      <option name="closed" value="true" />
+      <created>1761339240310</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1761339240310</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00006" summary="updated liked contents backend">
+      <option name="closed" value="true" />
+      <created>1761388463915</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1761388463915</updated>
+    </task>
+    <task id="LOCAL-00007" summary="updated liked contents backend">
+      <option name="closed" value="true" />
+      <created>1761392437031</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1761392437032</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="1st" />
     <MESSAGE value="refractored Commentaire" />
     <MESSAGE value="Change in front-end execution configuration" />
     <MESSAGE value="added CommentaireRecette backend" />
     <MESSAGE value="added Tag backend" />
-    <MESSAGE value="added inscription page" />
-    <option name="LAST_COMMIT_MESSAGE" value="added inscription page" />
+    <MESSAGE value="1st" />
+    <MESSAGE value="added search bar backend for Recette, Restaurant, Post and Partage + added lists of liked contents for each one" />
+    <MESSAGE value="added liked contents backend" />
+    <MESSAGE value="updated liked contents backend" />
+    <MESSAGE value="corrected a bug and added SQL for recipes, posts and shares" />
+    <option name="LAST_COMMIT_MESSAGE" value="corrected a bug and added SQL for recipes, posts and shares" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

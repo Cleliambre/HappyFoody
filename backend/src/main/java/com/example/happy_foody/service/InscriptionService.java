@@ -19,7 +19,7 @@ public class InscriptionService {
     }
 
     public Inscription getInscriptionById(InscriptionId id) throws ResourceNotFoundException {
-        Inscription inscription = inscriptionRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Quantité not found"));
+        Inscription inscription = inscriptionRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Inscription not found"));
         return inscription;
     }
 
