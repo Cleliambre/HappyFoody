@@ -4,11 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9ea62db3-0e47-4e74-b700-e583ca0f2c56" name="Changes" comment="updated page title and favicon">
+    <list default="true" id="f32d5f50-a5af-4d14-b388-d74ca3d35fa0" name="Changes" comment="Add responsive AppBar (MenuBar)">
+      <change afterPath="$PROJECT_DIR$/frontend/src/pages/Communaute.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/pages/Favoris.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/pages/Messages.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/pages/Partage.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/pages/Profil.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/pages/Recette.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/pages/Restaurant.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/menu/MenuBar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/menu/MenuBar.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,13 +31,14 @@
         <option value="Class" />
         <option value="CSS File" />
         <option value="JSX File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="frontend-ListComponent-2.0" />
+        <entry key="$PROJECT_DIR$" value="front_end_menu" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -59,18 +68,8 @@
 }</component>
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/Cleliambre/ProjetWebET4.git&quot;,
-    &quot;accountId&quot;: &quot;5bf8a29a-093c-40c3-bd90-e6cc883598f3&quot;
-  },
-  &quot;recentNewPullRequestHead&quot;: {
-    &quot;server&quot;: {
-      &quot;useHttp&quot;: false,
-      &quot;host&quot;: &quot;github.com&quot;,
-      &quot;port&quot;: null,
-      &quot;suffix&quot;: null
-    },
-    &quot;owner&quot;: &quot;Cleliambre&quot;,
-    &quot;repository&quot;: &quot;ProjetWebET4&quot;
+    &quot;url&quot;: &quot;https://github.com/Cleliambre/HappyFoody.git&quot;,
+    &quot;accountId&quot;: &quot;483f852f-e9fb-421d-a929-7aa5a36df291&quot;
   }
 }</component>
   <component name="KubernetesApiPersistence">{}</component>
@@ -97,8 +96,8 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "Application.HappyFoodyApplication.executor": "Run",
-    "Docker.compose.yaml: Compose Deployment.executor": "Run",
+    "JavaScript Debug.Debug Application.executor": "Run",
+    "JavaScript Debug.Frontend.executor": "Run",
     "Maven.backend [clean,install].executor": "Run",
     "RequestMappingsPanelOrder0": "0",
     "RequestMappingsPanelOrder1": "1",
@@ -110,9 +109,10 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "Spring Boot.Backend.executor": "Run",
     "Spring Boot.HappyFoodyApplication.executor": "Run",
-    "git-widget-placeholder": "back&&front-inscription",
+    "git-widget-placeholder": "front__end__nav",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/abellik/IdeaProjects/HappyFoody/backend",
+    "last_opened_file_path": "C:/Users/tangf/IdeaProjects/HappyFoody/frontend/src/pages",
+    "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -122,15 +122,19 @@
     "npm.Frontend.executor": "Run",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "promo.database",
+    "project.structure.side.proportion": "0.2",
+    "ts.external.directory.path": "C:\\Program Files\\JetBrains\\IntelliJ IDEA 2025.2.2\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager" selected="Compound.Back&amp;Front">
-    <configuration name="Back&amp;Front" type="CompoundRunConfigurationType">
-      <toRun name="Frontend" type="js.build_tools.npm" />
-      <toRun name="Backend" type="SpringBootApplicationConfigurationType" />
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\tangf\IdeaProjects\HappyFoody\frontend\src\pages" />
+      <recent name="C:\Users\tangf\IdeaProjects\HappyFoody\frontend\src\menu" />
+    </key>
+  </component>
+  <component name="RunManager" selected="npm.Frontend">
+    <configuration name="Frontend" type="JavascriptDebugType" uri="http://localhost:3000">
       <method v="2" />
     </configuration>
     <configuration name="Backend" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
@@ -153,7 +157,7 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Compound.Back&amp;Front" />
+      <item itemvalue="JavaScript Debug.Frontend" />
       <item itemvalue="npm.Frontend" />
       <item itemvalue="Spring Boot.Backend" />
     </list>
@@ -166,6 +170,7 @@
       </set>
     </attachedChunks>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task id="LOCAL-00001" summary="added Ingredient table &amp; repository">
       <option name="closed" value="true" />
@@ -196,59 +201,32 @@
       <created>1761323685628</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1761323685628</updated>
-      <workItem from="1761323689528" duration="10557000" />
-      <workItem from="1761383576513" duration="3037000" />
+      <updated>1759655299895</updated>
+      <workItem from="1759655301418" duration="444000" />
+      <workItem from="1760037630616" duration="449000" />
+      <workItem from="1760044040949" duration="465000" />
+      <workItem from="1760283873678" duration="7503000" />
+      <workItem from="1761305361285" duration="9405000" />
+      <workItem from="1761328181480" duration="2325000" />
+      <workItem from="1762005051279" duration="24353000" />
     </task>
-    <task id="LOCAL-00004" summary="added profil page with the CardList example">
+    <task id="LOCAL-00001" summary="Added Menu">
       <option name="closed" value="true" />
-      <created>1761338497529</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
+      <created>1760042108998</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
       <option name="project" value="LOCAL" />
-      <updated>1761338497529</updated>
+      <updated>1760042108998</updated>
     </task>
-    <task id="LOCAL-00005" summary="added profil page with the CardList example">
+    <task id="LOCAL-00002" summary="Add responsive AppBar (MenuBar)">
       <option name="closed" value="true" />
-      <created>1761338597097</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
+      <created>1762027464550</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
       <option name="project" value="LOCAL" />
-      <updated>1761338597097</updated>
+      <updated>1762027464550</updated>
     </task>
-    <task id="LOCAL-00006" summary="updated liked contents backend">
-      <option name="closed" value="true" />
-      <created>1761388463915</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1761388463915</updated>
-    </task>
-    <task id="LOCAL-00007" summary="updated liked contents backend">
-      <option name="closed" value="true" />
-      <created>1761392437031</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1761392437032</updated>
-    </task>
-    <task id="LOCAL-00008" summary="added back and front connexion for &quot;inscription&quot;">
-      <option name="closed" value="true" />
-      <created>1762079389007</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1762079389007</updated>
-    </task>
-    <task id="LOCAL-00009" summary="updated page title and favicon">
-      <option name="closed" value="true" />
-      <created>1762082922993</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1762082922993</updated>
-    </task>
-    <option name="localTasksCounter" value="10" />
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -303,16 +281,8 @@
     <MESSAGE value="added CommentaireRecette backend" />
     <MESSAGE value="added Tag backend" />
     <MESSAGE value="1st" />
-    <MESSAGE value="added search bar backend for Recette, Restaurant, Post and Partage + added lists of liked contents for each one" />
-    <MESSAGE value="added liked contents backend" />
-    <MESSAGE value="updated liked contents backend" />
-    <MESSAGE value="corrected a bug and added SQL for recipes, posts and shares" />
-    <MESSAGE value="added back and front connexion for &quot;inscription&quot;" />
-    <MESSAGE value="updated page title and favicon" />
-    <option name="LAST_COMMIT_MESSAGE" value="updated page title and favicon" />
-  </component>
-  <component name="XSLT-Support.FileAssociations.UIState">
-    <expand />
-    <select />
+    <MESSAGE value="Added Menu" />
+    <MESSAGE value="Add responsive AppBar (MenuBar)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add responsive AppBar (MenuBar)" />
   </component>
 </project>

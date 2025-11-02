@@ -7,7 +7,9 @@
     background-color: white;
 }
 
-
+.container {
+  background-color: #ffffff;
+}
 
 .App-logo {
   height: 40vmin;

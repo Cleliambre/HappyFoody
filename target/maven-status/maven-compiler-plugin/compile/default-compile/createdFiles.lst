@@ -1,0 +1,5 @@
+com\example\happy_foody\HappyFoodyApplication.class
+com\example\happy_foody\model\Compte.class
+com\example\happy_foody\service\CompteService.class
+com\example\happy_foody\controller\CompteController.class
+com\example\happy_foody\repository\CompteRepository.class
