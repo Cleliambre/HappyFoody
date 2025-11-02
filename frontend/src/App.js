@@ -1,17 +1,10 @@
 import './App.css';
-import ProfilModification from "./profilModification/ProfilModification";
-import taboule from "./images/taboule.png"
+import PasswordModification from "./passwordModification/PasswordModification";
 
 function App() {
   return (
     <div className="App">
-      <ProfilModification
-          pseudo={"MariaSalade"}
-          pp={taboule}
-          description={"Je suis très fan de Salade"}
-          email={"maria.salade@gmail.com"}
-          mdp={"JAimeLaSaladeCarCEstTropChouette!"}
-      />
+      <PasswordModification/>
     </div>
   );
 }
