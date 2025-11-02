@@ -4,12 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9ea62db3-0e47-4e74-b700-e583ca0f2c56" name="Changes" comment="added back and front connexion for &quot;inscription&quot;">
+    <list default="true" id="9ea62db3-0e47-4e74-b700-e583ca0f2c56" name="Changes" comment="updated page title and favicon">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/public/favicon.ico" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/public/favicon.ico" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/public/logo192.png" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/public/logo192.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/public/logo512.png" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/public/logo512.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/Inscription/Inscription.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/Inscription/Inscription.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -241,7 +240,15 @@
       <option name="project" value="LOCAL" />
       <updated>1762079389007</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="updated page title and favicon">
+      <option name="closed" value="true" />
+      <created>1762082922993</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1762082922993</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -258,7 +265,8 @@
     <MESSAGE value="updated liked contents backend" />
     <MESSAGE value="corrected a bug and added SQL for recipes, posts and shares" />
     <MESSAGE value="added back and front connexion for &quot;inscription&quot;" />
-    <option name="LAST_COMMIT_MESSAGE" value="added back and front connexion for &quot;inscription&quot;" />
+    <MESSAGE value="updated page title and favicon" />
+    <option name="LAST_COMMIT_MESSAGE" value="updated page title and favicon" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
