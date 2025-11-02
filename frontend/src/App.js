@@ -1,14 +1,15 @@
 import './App.css';
-import SearchBar from "./searchBar/SearchBar";
+import Profil from "./profil/Profil";
+import berserker from "./images/berserker.jpeg";
 
 function App() {
   return (
     <div className="App">
-      <SearchBar
-          message="Rechercher une recette"
-          className = "searchBar"
-          color="lavenderblush"
-      />
+        <Profil
+            pp ={berserker}
+            pseudo="test"
+            description="Ceci est un texte de test que j'essaie d'allonger le plus possible pour voir le résultat."
+        />
     </div>
   );
 }

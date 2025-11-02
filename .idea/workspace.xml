@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9ea62db3-0e47-4e74-b700-e583ca0f2c56" name="Changes" comment="added profil modification page">
+    <list default="true" id="9ea62db3-0e47-4e74-b700-e583ca0f2c56" name="Changes" comment="added profil page with the CardList example">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/passwordModification/PasswordModification.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/passwordModification/PasswordModification.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/profil/Profil.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/profil/Profil.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/profil/Profil.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/profil/Profil.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,15 +20,15 @@
         <option value="Enum" />
         <option value="Interface" />
         <option value="Class" />
-        <option value="JSX File" />
         <option value="CSS File" />
+        <option value="JSX File" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="frontend_modif_profil" />
+        <entry key="$PROJECT_DIR$" value="frontend-ListComponent-2.0" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -105,9 +106,9 @@
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
     &quot;Spring Boot.Backend.executor&quot;: &quot;Run&quot;,
     &quot;Spring Boot.HappyFoodyApplication.executor&quot;: &quot;Run&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;frontend__modif__mdp&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;frontend__profil&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/ambre/IdeaProjects/Happy_Foody/frontend/src/menu&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/ambre/IdeaProjects/Happy_Foody/frontend/src/images&quot;,
     &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
@@ -124,7 +125,7 @@
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\ambre\IdeaProjects\Happy_Foody\frontend\src\menu" />
+      <recent name="C:\Users\ambre\IdeaProjects\Happy_Foody\frontend\src\images" />
     </key>
   </component>
   <component name="RunManager" selected="npm.Frontend">
@@ -160,7 +161,6 @@
       </set>
     </attachedChunks>
   </component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task id="LOCAL-00001" summary="added Ingredient table &amp; repository">
       <option name="closed" value="true" />
@@ -187,43 +187,29 @@
       <updated>1759997798682</updated>
     </task>
     <task active="true" id="Default" summary="Default task">
-      <changelist id="9ea62db3-0e47-4e74-b700-e583ca0f2c56" name="Changes" comment="test" />
-      <created>1761145201585</created>
+      <changelist id="9ea62db3-0e47-4e74-b700-e583ca0f2c56" name="Changes" comment="retrait des importations superflues" />
+      <created>1761323685628</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1761145201585</updated>
-      <workItem from="1761145204045" duration="7249000" />
-      <workItem from="1761168411855" duration="46000" />
-      <workItem from="1761246884540" duration="3622000" />
-      <workItem from="1761290065626" duration="6907000" />
-      <workItem from="1761332950531" duration="2558000" />
-      <workItem from="1761380642525" duration="8991000" />
-      <workItem from="1761463027883" duration="4435000" />
+      <updated>1761323685628</updated>
+      <workItem from="1761323689528" duration="10557000" />
+      <workItem from="1761383576513" duration="3037000" />
     </task>
-    <task id="LOCAL-00004" summary="added search bar backend for Recette, Restaurant, Post and Partage + added lists of liked contents for each one">
+    <task id="LOCAL-00004" summary="added profil page with the CardList example">
       <option name="closed" value="true" />
-      <created>1761314321447</created>
+      <created>1761338497529</created>
       <option name="number" value="00004" />
       <option name="presentableId" value="LOCAL-00004" />
       <option name="project" value="LOCAL" />
-      <updated>1761314321447</updated>
+      <updated>1761338497529</updated>
     </task>
-    <task active="true" id="Default" summary="Default task">
-      <changelist id="9ea62db3-0e47-4e74-b700-e583ca0f2c56" name="Changes" comment="added inscription page" />
-      <created>1761305401691</created>
-      <option name="number" value="Default" />
-      <option name="presentableId" value="Default" />
-      <updated>1761305401691</updated>
-      <workItem from="1761305405335" duration="388000" />
-      <workItem from="1761838845717" duration="327000" />
-    </task>
-    <task id="LOCAL-00005" summary="added profil modification page">
+    <task id="LOCAL-00005" summary="added profil page with the CardList example">
       <option name="closed" value="true" />
-      <created>1761763695764</created>
+      <created>1761338597097</created>
       <option name="number" value="00005" />
       <option name="presentableId" value="LOCAL-00005" />
       <option name="project" value="LOCAL" />
-      <updated>1761763695764</updated>
+      <updated>1761338597097</updated>
     </task>
     <option name="localTasksCounter" value="6" />
     <servers />
@@ -279,8 +265,7 @@
     <MESSAGE value="Change in front-end execution configuration" />
     <MESSAGE value="added CommentaireRecette backend" />
     <MESSAGE value="added Tag backend" />
-    <MESSAGE value="added inscription page" />
-    <MESSAGE value="added profil modification page" />
-    <option name="LAST_COMMIT_MESSAGE" value="added profil modification page" />
+    <MESSAGE value="added profil page with the CardList example" />
+    <option name="LAST_COMMIT_MESSAGE" value="added profil page with the CardList example" />
   </component>
 </project>
