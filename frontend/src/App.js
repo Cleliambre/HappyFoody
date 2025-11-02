@@ -13,11 +13,10 @@ import Profil from "./pages/Profil"
 
 import Inscription from "./Inscription/Inscription";
 
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 
 function App() {
   return (
-    <Router>
       <div className="App">
         <MenuBar/>
         <div className="container">
@@ -37,7 +36,6 @@ function App() {
             </Routes>
         </div>
       </div>
-    </Router>
   );
 }
 
