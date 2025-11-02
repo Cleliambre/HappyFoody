@@ -3,6 +3,7 @@ package com.example.happy_foody.model;
 import jakarta.persistence.*;
 
 import java.util.Date;
+import java.util.Set;
 
 @Entity
 @Table(name="post")
@@ -12,6 +13,8 @@ public class Post {
     private Compte auteur;
     private String contenu;
     private Date date;
+
+    private Set<Tag> tags;
 
     public Post() {}
 
@@ -45,4 +48,13 @@ public class Post {
     @Column(name = "date", nullable = false)
     public Date getDate() {return date;}
     public void setDate(Date date) {this.date = date;}
+
+    @ManyToMany
+    @JoinTable(
+            name = "post_tag",
+            joinColumns = @JoinColumn(name = "id_post"),
+            inverseJoinColumns = @JoinColumn(name = "id_tag")
+    )
+    public Set<Tag> getTags() {return tags;}
+    public void setTags(Set<Tag> tags) {this.tags = tags;}
 }
