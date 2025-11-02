@@ -1,5 +1,6 @@
 package com.example.happy_foody.controller;
 
+import com.example.happy_foody.model.Recette;
 import com.example.happy_foody.model.Restaurant;
 import com.example.happy_foody.service.RestaurantService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,6 +37,18 @@ public class RestaurantController {
     @DeleteMapping("/deleteRestaurant/{id}")
     public void deleteRestaurant(@PathVariable(value = "id") Long id){
         restaurantService.deleteRestaurant(id);
+    }
+
+    /**
+     * Exemple d’appel :
+     * GET /api/restaurant/search?keyWords=poulet curry&tags=1,2,3
+     */
+    @GetMapping("/search")
+    public List<Restaurant> searchRestaurants(
+            @RequestParam(required = false) String keyWords,
+            @RequestParam(required = false) List<String> tags
+    ) {
+        return restaurantService.getRestaurantbyTagsAndKeyWords(keyWords, tags);
     }
 
 
