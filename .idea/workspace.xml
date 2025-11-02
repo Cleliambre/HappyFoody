@@ -21,20 +21,26 @@
         <option value="Enum" />
         <option value="Interface" />
         <option value="Class" />
-        <option value="JSX File" />
         <option value="CSS File" />
+        <option value="JSX File" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="develop" />
+        <entry key="$PROJECT_DIR$" value="frontend-ListComponent-2.0" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
+  &quot;history&quot;: [
+    {
+      &quot;state&quot;: &quot;OPEN&quot;,
+      &quot;assignee&quot;: &quot;ABellik&quot;
+    }
+  ],
   &quot;lastFilter&quot;: {
     &quot;state&quot;: &quot;OPEN&quot;,
     &quot;assignee&quot;: &quot;ABellik&quot;
@@ -53,8 +59,8 @@
 }</component>
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/Cleliambre/HappyFoody.git&quot;,
-    &quot;accountId&quot;: &quot;77cdc171-3702-4abf-b264-cfaca464b510&quot;
+    &quot;url&quot;: &quot;https://github.com/Cleliambre/ProjetWebET4.git&quot;,
+    &quot;accountId&quot;: &quot;5bf8a29a-093c-40c3-bd90-e6cc883598f3&quot;
   },
   &quot;recentNewPullRequestHead&quot;: {
     &quot;server&quot;: {
@@ -160,7 +166,6 @@
       </set>
     </attachedChunks>
   </component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task id="LOCAL-00001" summary="added Ingredient table &amp; repository">
       <option name="closed" value="true" />
@@ -187,34 +192,29 @@
       <updated>1759997798682</updated>
     </task>
     <task active="true" id="Default" summary="Default task">
-      <changelist id="9ea62db3-0e47-4e74-b700-e583ca0f2c56" name="Changes" comment="test" />
-      <created>1761145201585</created>
+      <changelist id="9ea62db3-0e47-4e74-b700-e583ca0f2c56" name="Changes" comment="retrait des importations superflues" />
+      <created>1761323685628</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1761145201585</updated>
-      <workItem from="1761145204045" duration="7249000" />
-      <workItem from="1761168411855" duration="46000" />
-      <workItem from="1761246884540" duration="3622000" />
-      <workItem from="1761290065626" duration="6907000" />
-      <workItem from="1761332950531" duration="2558000" />
-      <workItem from="1761380642525" duration="8991000" />
-      <workItem from="1761463027883" duration="4435000" />
+      <updated>1761323685628</updated>
+      <workItem from="1761323689528" duration="10557000" />
+      <workItem from="1761383576513" duration="3037000" />
     </task>
-    <task id="LOCAL-00004" summary="added search bar backend for Recette, Restaurant, Post and Partage + added lists of liked contents for each one">
+    <task id="LOCAL-00004" summary="added profil page with the CardList example">
       <option name="closed" value="true" />
-      <created>1761314321447</created>
+      <created>1761338497529</created>
       <option name="number" value="00004" />
       <option name="presentableId" value="LOCAL-00004" />
       <option name="project" value="LOCAL" />
-      <updated>1761314321447</updated>
+      <updated>1761338497529</updated>
     </task>
-    <task id="LOCAL-00005" summary="added liked contents backend">
+    <task id="LOCAL-00005" summary="added profil page with the CardList example">
       <option name="closed" value="true" />
-      <created>1761339240310</created>
+      <created>1761338597097</created>
       <option name="number" value="00005" />
       <option name="presentableId" value="LOCAL-00005" />
       <option name="project" value="LOCAL" />
-      <updated>1761339240310</updated>
+      <updated>1761338597097</updated>
     </task>
     <task id="LOCAL-00006" summary="updated liked contents backend">
       <option name="closed" value="true" />
@@ -253,6 +253,49 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="origin/develop" />
+                </option>
+              </RecentGroup>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="origin/main" />
+                </option>
+              </RecentGroup>
+            </list>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="compte" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="refractored Commentaire" />
