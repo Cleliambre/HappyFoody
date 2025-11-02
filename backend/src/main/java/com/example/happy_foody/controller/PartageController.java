@@ -29,6 +29,12 @@ public class PartageController {
         return partageService.getPartageById(id);
     }
 
+    //SELECT
+    @GetMapping("/getPartageByAuthor/{id_auteur}")
+    public List<Partage> getPartagesByAuthor(@PathVariable(value = "id_auteur") Long id){
+        return partageService.getPartagesByAuthor(id);
+    }
+
     //INSERT
     @PostMapping("/createPartage")
     public Partage createPartage(@RequestBody Partage Partage){return partageService.createPartage(Partage);}
@@ -43,5 +49,17 @@ public class PartageController {
     @DeleteMapping("/deletePartage/{id}")
     public void deletePartage(@PathVariable(value = "id") Long id){
         partageService.deletePartage(id);
+    }
+
+    /**
+     * Exemple d’appel :
+     * GET /api/partage/search?keyWords=poulet curry&tags=1,2,3
+     */
+    @GetMapping("/search")
+    public List<Partage> searchPartages(
+            @RequestParam(required = false) String keyWords,
+            @RequestParam(required = false) List<String> tags
+    ) {
+        return partageService.getPartagebyTagsAndKeyWords(keyWords, tags);
     }
 }
