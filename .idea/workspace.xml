@@ -33,6 +33,12 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;ABellik&quot;
+  }
+}</component>
   <component name="GitHubPullRequestState">{
   &quot;prStates&quot;: [
     {
@@ -45,6 +51,10 @@
   ]
 }</component>
   <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Cleliambre/HappyFoody.git&quot;,
+    &quot;accountId&quot;: &quot;77cdc171-3702-4abf-b264-cfaca464b510&quot;
+  },
   &quot;recentNewPullRequestHead&quot;: {
     &quot;server&quot;: {
       &quot;useHttp&quot;: false,
@@ -202,7 +212,6 @@
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="1st" />
     <MESSAGE value="refractored Commentaire" />
     <MESSAGE value="Change in front-end execution configuration" />
     <MESSAGE value="added CommentaireRecette backend" />

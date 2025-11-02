@@ -1,4 +1,3 @@
-
 import * as React from "react";
 import "./Card.css"
 
@@ -8,8 +7,8 @@ import {Chip} from "@mui/material";
 
 export default function PartageElement(
     {pseudo, confiance, description,
-        tags_partage,
-        tags_lieu=["Lieu non défini"], tags_nourriture})
+    tags_partage,
+    tags_lieu=["Lieu non défini"], tags_nourriture})
 {
     // Score de confiance
     let confianceLogo = [];

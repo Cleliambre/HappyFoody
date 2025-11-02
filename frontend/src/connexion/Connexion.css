@@ -1,0 +1,51 @@
+.connexion-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.titre {
+    text-align: left;
+}
+
+.input{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.input-container{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    width: 80%;
+    margin-top: 15px;
+    max-width: 600px;
+}
+
+.input-content{
+    width: 100%;
+}
+
+.lien-mdp{
+    padding-top: 5px;
+}
+
+.validation-group{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.bouton{
+    width:25%;
+}
+
+.inscription-link{
+    padding-top: 15px;
+}

@@ -1,4 +1,3 @@
-
 import * as React from "react";
 import "./Card.css"
 
@@ -8,7 +7,7 @@ import {Chip} from "@mui/material";
 
 export default function RecetteAndRestoElement(
     {rate, description,
-        tags_lieu=[], tags_nourriture=[]})
+    tags_lieu=[], tags_nourriture=[]})
 {
     return(
         <React.Fragment>

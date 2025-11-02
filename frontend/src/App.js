@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import Profil from "./profil/Profil";
 import berserker from "./images/berserker.jpeg";

@@ -30,6 +30,12 @@ public class PostController {
         return postService.getPostById(id);
     }
 
+    //SELECT
+    @GetMapping("/getPostByAuthor/{id_auteur}")
+    public List<Post> getPostsByAuthor(@PathVariable(value = "id_auteur") Long id){
+        return postService.getPostsByAuthor(id);
+    }
+
     //INSERT
     @PostMapping("/createPost")
     public Post createPost(@RequestBody Post Post){return postService.createPost(Post);}
@@ -44,5 +50,17 @@ public class PostController {
     @DeleteMapping("/deletePost/{id}")
     public void deletePost(@PathVariable(value = "id") Long id){
         postService.deletePost(id);
+    }
+
+    /**
+     * Exemple d’appel :
+     * GET /api/post/search?keyWords=poulet curry&tags=1,2,3
+     */
+    @GetMapping("/search")
+    public List<Post> searchPosts(
+            @RequestParam(required = false) String keyWords,
+            @RequestParam(required = false) List<String> tags
+    ) {
+        return postService.getPostbyTagsAndKeyWords(keyWords, tags);
     }
 }

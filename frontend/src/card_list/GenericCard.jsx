@@ -1,4 +1,3 @@
-
 import React from 'react';
 import './Card.css';
 
@@ -31,39 +30,39 @@ export default function GenericCard({ card, onLike, onClick }) {
             <CardActionArea>
                 <div className="card">
 
-                    {/* Image à gauche */}
-                    <div className="thumbnail-container">
-                        <CardMedia
-                            component="img"
-                            image={card.thumbnail}
-                            alt={card.title}
-                            className="thumbnail"
-                        />
+                {/* Image à gauche */}
+                <div className="thumbnail-container">
+                    <CardMedia
+                        component="img"
+                        image={card.thumbnail}
+                        alt={card.title}
+                        className="thumbnail"
+                    />
+                </div>
+
+                {/* Contenu central */}
+                <Box className="info-container">
+                    <Typography variant="h6" className="title">
+                        {card.title}
+                    </Typography>
+                    {card.text}
+                </Box>
+
+                {/* Like button à droite */}
+                <Box className="like-container">
+                    <div onClick={(e) => e.stopPropagation()}>
+                        <IconButton
+                            aria-label="like"
+                            onClick={() => onLike?.(card)}
+                            size="small"
+                        >
+                            {card.liked ? <FavoriteIconTrue color='error' /> : <FavoriteIconFalse />}
+                        </IconButton>
                     </div>
-
-                    {/* Contenu central */}
-                    <Box className="info-container">
-                        <Typography variant="h6" className="title">
-                            {card.title}
-                        </Typography>
-                        {card.text}
-                    </Box>
-
-                    {/* Like button à droite */}
-                    <Box className="like-container">
-                        <div onClick={(e) => e.stopPropagation()}>
-                            <IconButton
-                                aria-label="like"
-                                onClick={() => onLike?.(card)}
-                                size="small"
-                            >
-                                {card.liked ? <FavoriteIconTrue color='error' /> : <FavoriteIconFalse />}
-                            </IconButton>
-                        </div>
-                        <Typography variant="body2" className="like-count">
-                            {formatLikes(card.likes)}
-                        </Typography>
-                    </Box>
+                    <Typography variant="body2" className="like-count">
+                        {formatLikes(card.likes)}
+                    </Typography>
+                </Box>
                 </div>
             </CardActionArea>
         </Card>
