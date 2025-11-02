@@ -1,4 +1,5 @@
 import './App.css';
+
 import MenuBar from "./menu/MenuBar";
 
 import Recette from "./pages/Recette"
@@ -10,11 +11,14 @@ import Favoris from "./pages/Favoris"
 import Messages from "./pages/Messages"
 import Profil from "./pages/Profil"
 
-import {Route, Routes} from "react-router-dom"
+import Inscription from "./Inscription/Inscription";
+
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 function App() {
   return (
-    <div className="App">
+    <Router>
+      <div className="App">
         <MenuBar/>
         <div className="container">
             <Routes>
@@ -28,10 +32,12 @@ function App() {
                 <Route path="/favoris" element={<Favoris/>}/>
                 <Route path="/messages" element={<Messages/>}/>
                 <Route path="/profil" element={<Profil/>}/>
+                  
+                <Route path="/inscription" element={<Inscription/>} />
             </Routes>
         </div>
-
-    </div>
+      </div>
+    </Router>
   );
 }
 

@@ -26,6 +26,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Enum" />
         <option value="Interface" />
         <option value="Class" />
         <option value="CSS File" />
@@ -43,10 +44,27 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
+  &quot;history&quot;: [
+    {
+      &quot;state&quot;: &quot;OPEN&quot;,
+      &quot;assignee&quot;: &quot;ABellik&quot;
+    }
+  ],
   &quot;lastFilter&quot;: {
     &quot;state&quot;: &quot;OPEN&quot;,
     &quot;assignee&quot;: &quot;ABellik&quot;
   }
+}</component>
+  <component name="GitHubPullRequestState">{
+  &quot;prStates&quot;: [
+    {
+      &quot;id&quot;: {
+        &quot;id&quot;: &quot;PR_kwDOPtUX-M6rw4Sd&quot;,
+        &quot;number&quot;: 60
+      },
+      &quot;lastSeen&quot;: 1759410100483
+    }
+  ]
 }</component>
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
@@ -64,6 +82,9 @@
         <option name="mavenHomeTypeForPersistence" value="WRAPPER" />
       </MavenGeneralSettings>
     </option>
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 8
@@ -93,6 +114,7 @@
     "last_opened_file_path": "C:/Users/tangf/IdeaProjects/HappyFoody/frontend/src/pages",
     "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_interpreter_path": "node",
@@ -116,6 +138,8 @@
       <method v="2" />
     </configuration>
     <configuration name="Backend" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <option name="ALTERNATIVE_JRE_PATH" value="17" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <module name="backend" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.happy_foody.HappyFoodyApplication" />
       <method v="2">
@@ -148,9 +172,33 @@
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
+    <task id="LOCAL-00001" summary="added Ingredient table &amp; repository">
+      <option name="closed" value="true" />
+      <created>1759407961690</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1759407961690</updated>
+    </task>
+    <task id="LOCAL-00002" summary="added Ingredient controller &amp; service">
+      <option name="closed" value="true" />
+      <created>1759410023080</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1759410023080</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Added CommentairePost backend + corrected constructors of CommentaireRecette and CommentaireRestaurant">
+      <option name="closed" value="true" />
+      <created>1759997798682</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1759997798682</updated>
+    </task>
     <task active="true" id="Default" summary="Default task">
-      <changelist id="f32d5f50-a5af-4d14-b388-d74ca3d35fa0" name="Changes" comment="updating properties" />
-      <created>1759655299895</created>
+      <changelist id="9ea62db3-0e47-4e74-b700-e583ca0f2c56" name="Changes" comment="retrait des importations superflues" />
+      <created>1761323685628</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1759655299895</updated>
@@ -184,7 +232,54 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="origin/develop" />
+                </option>
+              </RecentGroup>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="origin/main" />
+                </option>
+              </RecentGroup>
+            </list>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="compte" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
+    <MESSAGE value="refractored Commentaire" />
+    <MESSAGE value="Change in front-end execution configuration" />
+    <MESSAGE value="added CommentaireRecette backend" />
+    <MESSAGE value="added Tag backend" />
     <MESSAGE value="1st" />
     <MESSAGE value="Added Menu" />
     <MESSAGE value="Add responsive AppBar (MenuBar)" />
