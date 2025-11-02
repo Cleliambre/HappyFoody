@@ -4,10 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9ea62db3-0e47-4e74-b700-e583ca0f2c56" name="Changes" comment="corrected a bug and added SQL for recipes, posts and shares">
+    <list default="true" id="9ea62db3-0e47-4e74-b700-e583ca0f2c56" name="Changes" comment="added back and front connexion for &quot;inscription&quot;">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/public/favicon.ico" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/public/favicon.ico" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/public/logo192.png" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/public/logo192.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/public/logo512.png" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/public/logo512.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/Inscription/Inscription.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/Inscription/Inscription.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -121,7 +122,12 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager" selected="Spring Boot.Backend">
+  <component name="RunManager" selected="Compound.Back&amp;Front">
+    <configuration name="Back&amp;Front" type="CompoundRunConfigurationType">
+      <toRun name="Frontend" type="js.build_tools.npm" />
+      <toRun name="Backend" type="SpringBootApplicationConfigurationType" />
+      <method v="2" />
+    </configuration>
     <configuration name="Backend" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <option name="ALTERNATIVE_JRE_PATH" value="17" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
@@ -142,6 +148,7 @@
       <method v="2" />
     </configuration>
     <list>
+      <item itemvalue="Compound.Back&amp;Front" />
       <item itemvalue="npm.Frontend" />
       <item itemvalue="Spring Boot.Backend" />
     </list>
@@ -226,7 +233,15 @@
       <option name="project" value="LOCAL" />
       <updated>1761392437032</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="added back and front connexion for &quot;inscription&quot;">
+      <option name="closed" value="true" />
+      <created>1762079389007</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1762079389007</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -242,7 +257,8 @@
     <MESSAGE value="added liked contents backend" />
     <MESSAGE value="updated liked contents backend" />
     <MESSAGE value="corrected a bug and added SQL for recipes, posts and shares" />
-    <option name="LAST_COMMIT_MESSAGE" value="corrected a bug and added SQL for recipes, posts and shares" />
+    <MESSAGE value="added back and front connexion for &quot;inscription&quot;" />
+    <option name="LAST_COMMIT_MESSAGE" value="added back and front connexion for &quot;inscription&quot;" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

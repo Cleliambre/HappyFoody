@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import './Inscription.css'
 import {Typography, TextField, Button, Link} from '@mui/material';
 import axios from 'axios';
@@ -6,6 +6,12 @@ import axios from 'axios';
 //TO DO : interdire les @ dans le pseudo + limite de 30 caractères dans le pseudo + obligation de @ dans l'email
 
 export default function Inscription() {
+
+    //Changement du titre de la page sur l'onglet du navigateur
+    useEffect(() => {
+        document.title = "Inscription - Happy Foody";
+    }, [])
+
     //Etat de départ des champs
     const [pseudo, setPseudo] = useState('');
     const  [email, setEmail] = useState('');
