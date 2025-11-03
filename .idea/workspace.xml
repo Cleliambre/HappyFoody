@@ -4,11 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9ea62db3-0e47-4e74-b700-e583ca0f2c56" name="Changes" comment="added short description of a recipe">
+    <list default="true" id="f32d5f50-a5af-4d14-b388-d74ca3d35fa0" name="Changes" comment="Add responsive AppBar (MenuBar)">
+      <change afterPath="$PROJECT_DIR$/frontend/src/pages/Communaute.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/pages/Favoris.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/pages/Messages.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/pages/Partage.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/pages/Profil.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/pages/Recette.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/pages/Restaurant.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/InformationPages/CardDescription.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/InformationPages/CardDescription.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/InformationPages/RecettePage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/InformationPages/RecettePage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/menu/MenuBar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/menu/MenuBar.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,23 +31,30 @@
         <option value="Class" />
         <option value="CSS File" />
         <option value="JSX File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="develop" />
+        <entry key="$PROJECT_DIR$" value="front_end_menu" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "Cleliambre"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;history&quot;: [
+    {
+      &quot;state&quot;: &quot;OPEN&quot;,
+      &quot;assignee&quot;: &quot;ABellik&quot;
+    }
+  ],
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;ABellik&quot;
   }
-}]]></component>
+}</component>
   <component name="GitHubPullRequestState">{
   &quot;prStates&quot;: [
     {
@@ -51,20 +66,10 @@
     }
   ]
 }</component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/Cleliambre/ProjetWebET4.git",
-    "accountId": "5bf8a29a-093c-40c3-bd90-e6cc883598f3"
-  },
-  "recentNewPullRequestHead": {
-    "server": {
-      "useHttp": false,
-      "host": "github.com",
-      "port": null,
-      "suffix": null
-    },
-    "owner": "Cleliambre",
-    "repository": "ProjetWebET4"
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Cleliambre/HappyFoody.git&quot;,
+    &quot;accountId&quot;: &quot;483f852f-e9fb-421d-a929-7aa5a36df291&quot;
   }
 }]]></component>
   <component name="KubernetesApiPersistence">{}</component>
@@ -89,45 +94,52 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.HappyFoodyApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Docker.compose.yaml: Compose Deployment.executor&quot;: &quot;Run&quot;,
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;Spring Boot.Backend.executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.HappyFoodyApplication.executor&quot;: &quot;Run&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;frontend__recettePage&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/ambre/IdeaProjects/Happy_Foody/frontend/src/menu&quot;,
-    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_interpreter_path&quot;: &quot;node&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;npm.Frontend.executor&quot;: &quot;Run&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;C:\\Program Files\\JetBrains\\IntelliJ IDEA 2025.2.2\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "JavaScript Debug.Debug Application.executor": "Run",
+    "JavaScript Debug.Frontend.executor": "Run",
+    "Maven.backend [clean,install].executor": "Run",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Spring Boot.Backend.executor": "Run",
+    "Spring Boot.HappyFoodyApplication.executor": "Run",
+    "git-widget-placeholder": "front__end__nav",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/tangf/IdeaProjects/HappyFoody/frontend/src/pages",
+    "list.type.of.created.stylesheet": "CSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_interpreter_path": "node",
+    "nodejs_package_manager_path": "npm",
+    "npm.Frontend.executor": "Run",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "ts.external.directory.path": "C:\\Program Files\\JetBrains\\IntelliJ IDEA 2025.2.2\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external",
+    "vue.rearranger.settings.migration": "true"
   }
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\ambre\IdeaProjects\Happy_Foody\frontend\src\menu" />
+      <recent name="C:\Users\tangf\IdeaProjects\HappyFoody\frontend\src\pages" />
+      <recent name="C:\Users\tangf\IdeaProjects\HappyFoody\frontend\src\menu" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\ambre\IdeaProjects\Happy_Foody\frontend\src\InformationPages" />
     </key>
   </component>
   <component name="RunManager" selected="npm.Frontend">
+    <configuration name="Frontend" type="JavascriptDebugType" uri="http://localhost:3000">
+      <method v="2" />
+    </configuration>
     <configuration name="Backend" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <option name="ALTERNATIVE_JRE_PATH" value="17" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
@@ -148,6 +160,7 @@
       <method v="2" />
     </configuration>
     <list>
+      <item itemvalue="JavaScript Debug.Frontend" />
       <item itemvalue="npm.Frontend" />
       <item itemvalue="Spring Boot.Backend" />
     </list>
@@ -160,6 +173,7 @@
       </set>
     </attachedChunks>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task id="LOCAL-00001" summary="added Ingredient table &amp; repository">
       <option name="closed" value="true" />
@@ -185,45 +199,93 @@
       <option name="project" value="LOCAL" />
       <updated>1759997798682</updated>
     </task>
-    <task id="LOCAL-00004" summary="added inscription page">
-      <option name="closed" value="true" />
-      <created>1761223658615</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1761223658615</updated>
-    </task>
     <task active="true" id="Default" summary="Default task">
-      <changelist id="9ea62db3-0e47-4e74-b700-e583ca0f2c56" name="Changes" comment="added inscription page" />
-      <created>1761305401691</created>
+      <changelist id="9ea62db3-0e47-4e74-b700-e583ca0f2c56" name="Changes" comment="retrait des importations superflues" />
+      <created>1761323685628</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1761305401691</updated>
-      <workItem from="1761305405335" duration="388000" />
-      <workItem from="1762093054206" duration="14351000" />
+      <updated>1759655299895</updated>
+      <workItem from="1759655301418" duration="444000" />
+      <workItem from="1760037630616" duration="449000" />
+      <workItem from="1760044040949" duration="465000" />
+      <workItem from="1760283873678" duration="7503000" />
+      <workItem from="1761305361285" duration="9405000" />
+      <workItem from="1761328181480" duration="2325000" />
+      <workItem from="1762005051279" duration="24353000" />
     </task>
-    <task id="LOCAL-00005" summary="added short description of a recipe">
+    <task id="LOCAL-00001" summary="Added Menu">
       <option name="closed" value="true" />
-      <created>1762022790541</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
+      <created>1760042108998</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
       <option name="project" value="LOCAL" />
-      <updated>1762022790541</updated>
+      <updated>1760042108998</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00002" summary="Add responsive AppBar (MenuBar)">
+      <option name="closed" value="true" />
+      <created>1762027464550</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1762027464550</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="origin/develop" />
+                </option>
+              </RecentGroup>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="origin/main" />
+                </option>
+              </RecentGroup>
+            </list>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="compte" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="1st" />
     <MESSAGE value="refractored Commentaire" />
     <MESSAGE value="Change in front-end execution configuration" />
     <MESSAGE value="added CommentaireRecette backend" />
     <MESSAGE value="added Tag backend" />
-    <MESSAGE value="added inscription page" />
-    <MESSAGE value="added short description of a recipe" />
-    <option name="LAST_COMMIT_MESSAGE" value="added short description of a recipe" />
+    <MESSAGE value="1st" />
+    <MESSAGE value="Added Menu" />
+    <MESSAGE value="Add responsive AppBar (MenuBar)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add responsive AppBar (MenuBar)" />
   </component>
 </project>

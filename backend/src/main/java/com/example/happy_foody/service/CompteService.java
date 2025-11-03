@@ -1,10 +1,10 @@
 package com.example.happy_foody.service;
 
+import com.example.happy_foody.model.*;
 import com.example.happy_foody.repository.CompteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.rest.webmvc.ResourceNotFoundException;
 import org.springframework.stereotype.Service;
-import com.example.happy_foody.model.Compte;
 
 import java.util.List;
 
@@ -45,5 +45,61 @@ public class CompteService {
         Compte compte = compteRepository.findById(compteId).orElseThrow(()->new ResourceNotFoundException("Compte not found"));
 
         compteRepository.delete(compte);
+    }
+
+    public List<Recette> getLikedRecettes(Long compteId) {
+        return compteRepository.findLikedRecettes(compteId);
+    }
+
+    public List<Restaurant> getLikedRestaurants(Long compteId) {
+        return compteRepository.findLikedRestaurants(compteId);
+    }
+
+    public List<Post> getLikedPosts(Long compteId) {
+        return compteRepository.findLikedPosts(compteId);
+    }
+
+    public List<Partage> getLikedPartages(Long compteId) {
+        return compteRepository.findLikedPartages(compteId);
+    }
+
+    public boolean createLikedRecette(Long compteId, Long recetteId) {
+        int rows = compteRepository.saveLikedRecette(compteId, recetteId);
+        return rows>0;
+    }
+
+    public boolean createLikedRestaurant(Long compteId, Long restaurantId) {
+        int rows = compteRepository.saveLikedRestaurant(compteId, restaurantId);
+        return rows>0;
+    }
+
+    public boolean createLikedPost(Long compteId, Long postId) {
+        int rows = compteRepository.saveLikedPost(compteId, postId);
+        return rows>0;
+    }
+
+    public boolean createLikedPartage(Long compteId, Long partageId) {
+        int rows = compteRepository.saveLikedPartage(compteId, partageId);
+        return rows>0;
+    }
+
+    public boolean deleteLikedRecette(Long compteId, Long recetteId) {
+        int rows = compteRepository.deleteLikedRecette(compteId, recetteId);
+        return rows>0;
+    }
+
+    public boolean deleteLikedRestaurant(Long compteId, Long restaurantId) {
+        int rows = compteRepository.deleteLikedRestaurant(compteId, restaurantId);
+        return rows>0;
+    }
+
+    public boolean deleteLikedPost(Long compteId, Long postId) {
+        int rows = compteRepository.deleteLikedPost(compteId, postId);
+        return rows>0;
+    }
+
+    public boolean deleteLikedPartage(Long compteId, Long partageId) {
+        int rows = compteRepository.deleteLikedPartage(compteId, partageId);
+        return rows>0;
     }
 }

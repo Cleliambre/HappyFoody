@@ -2,6 +2,9 @@ package com.example.happy_foody.model;
 
 import jakarta.persistence.*;
 
+import java.util.HashSet;
+import java.util.Set;
+
 @Entity
 @Table(name="compte")
 public class Compte {
@@ -12,6 +15,11 @@ public class Compte {
     private String mail;
     private String password;
     private int scoreConfiance;
+
+    private Set<Recette> recettesLiked;
+    private Set<Restaurant> restaurantsLiked;
+    private Set<Post> postsLiked;
+    private Set<Partage> partagesLiked;
 
     public Compte() {}
 
@@ -60,5 +68,41 @@ public class Compte {
     public void setScoreConfiance(int scoreConfiance) {
         this.scoreConfiance = scoreConfiance;
     }
+
+    @ManyToMany
+    @JoinTable(
+            name = "compte_recette",
+            joinColumns = @JoinColumn(name = "id_compte"),
+            inverseJoinColumns = @JoinColumn(name = "id_recette")
+    )
+    public Set<Recette> getRecettesLiked() {return recettesLiked;}
+    public void setRecettesLiked(Set<Recette> recettesLiked) {this.recettesLiked = recettesLiked;}
+
+    @ManyToMany
+    @JoinTable(
+            name = "compte_restaurant",
+            joinColumns = @JoinColumn(name = "id_compte"),
+            inverseJoinColumns = @JoinColumn(name = "id_restaurant")
+    )
+    public Set<Restaurant> getRestaurantsLiked() {return restaurantsLiked;}
+    public void setRestaurantsLiked(Set<Restaurant> restaurantsLiked) {this.restaurantsLiked = restaurantsLiked;}
+
+    @ManyToMany
+    @JoinTable(
+            name = "compte_post",
+            joinColumns = @JoinColumn(name = "id_compte"),
+            inverseJoinColumns = @JoinColumn(name = "id_post")
+    )
+    public Set<Post> getPostsLiked() {return postsLiked;}
+    public void setPostsLiked(Set<Post> postsLiked) {this.postsLiked = postsLiked;}
+
+    @ManyToMany
+    @JoinTable(
+            name = "compte_partage",
+            joinColumns = @JoinColumn(name = "id_compte"),
+            inverseJoinColumns = @JoinColumn(name = "id_partage")
+    )
+    public Set<Partage> getPartagesLiked() {return partagesLiked;}
+    public void setPartagesLiked(Set<Partage> partagesLiked) {this.partagesLiked = partagesLiked;}
 }
 

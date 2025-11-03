@@ -1,12 +1,9 @@
 package com.example.happy_foody.model;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 @Entity
-@Table(name = "quantite")
+@Table(name = "inscription")
 public class Inscription {
     private InscriptionId pk;
     private int nbPart;
