@@ -3,6 +3,7 @@ package com.example.happy_foody.model;
 import jakarta.persistence.*;
 
 import java.util.Date;
+import java.util.Set;
 
 @Entity
 @Table(name="partage")
@@ -18,6 +19,8 @@ public class Partage {
     private Date datePublication;
 
     private TypePartage typePartage;
+
+    private Set<Tag> tags;
 
     public Partage() {}
 
@@ -66,5 +69,14 @@ public class Partage {
     @Column(name = "typePartage", nullable = false)
     public TypePartage getTypePartage() {return typePartage;}
     public void setTypePartage(TypePartage typePartage) {this.typePartage = typePartage;}
+
+    @ManyToMany
+    @JoinTable(
+            name = "partage_tag",
+            joinColumns = @JoinColumn(name = "id_partage"),
+            inverseJoinColumns = @JoinColumn(name = "id_tag")
+    )
+    public Set<Tag> getTags() {return tags;}
+    public void setTags(Set<Tag> tags) {this.tags = tags;}
 
 }
