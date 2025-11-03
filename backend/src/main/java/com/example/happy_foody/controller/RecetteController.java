@@ -30,6 +30,12 @@ public class RecetteController {
         return recetteService.getRecetteById(id);
     }
 
+    //SELECT
+    @GetMapping("/getRecetteByAuthor/{id_auteur}")
+    public List<Recette> getRecettesByAuthor(@PathVariable(value = "id_auteur") Long id){
+        return recetteService.getRecettesByAuthor(id);
+    }
+
     //INSERT
     @PostMapping("/createRecette")
     public Recette createRecette(@RequestBody Recette Recette){return recetteService.createRecette(Recette);}
@@ -44,5 +50,17 @@ public class RecetteController {
     @DeleteMapping("/deleteRecette/{id}")
     public void deleteRecette(@PathVariable(value = "id") Long id){
         recetteService.deleteRecette(id);
+    }
+
+    /**
+     * Exemple d’appel :
+     * GET /api/recette/search?keyWords=poulet curry&tags=1,2,3
+     */
+    @GetMapping("/search")
+    public List<Recette> searchRecettes(
+            @RequestParam(required = false) String keyWords,
+            @RequestParam(required = false) List<String> tags
+    ) {
+        return recetteService.getRecettebyTagsAndKeyWords(keyWords, tags);
     }
 }

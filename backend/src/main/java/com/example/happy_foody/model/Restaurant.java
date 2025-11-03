@@ -2,6 +2,9 @@ package com.example.happy_foody.model;
 
 import jakarta.persistence.*;
 
+import java.util.HashSet;
+import java.util.Set;
+
 @Entity
 @Table(name="restaurant")
 public class Restaurant {
@@ -16,6 +19,8 @@ public class Restaurant {
     private String reserver;
     private String menu;
     private String site;
+
+    private Set<Tag> tags;
 
     public Restaurant() {}
 
@@ -86,4 +91,13 @@ public class Restaurant {
     @Column (name = "site", nullable = true)
     public String getSite() {return site;}
     public void setSite(String site) {this.site = site;}
+
+    @ManyToMany
+    @JoinTable(
+            name = "restaurant_tag",
+            joinColumns = @JoinColumn(name = "id_restaurant"),
+            inverseJoinColumns = @JoinColumn(name = "id_tag")
+    )
+    public Set<Tag> getTags() {return tags;}
+    public void setTags(Set<Tag> tags) {this.tags = tags;}
 }
