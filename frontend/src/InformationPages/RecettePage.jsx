@@ -1,17 +1,4 @@
-import {
-    Stack,
-    Card,
-    CardMedia,
-    Box,
-    Typography,
-    Divider,
-    Avatar,
-    Chip,
-    Link,
-    CardContent,
-    Button,
-    Paper, List, ListItem, ListItemText
-} from "@mui/material";
+import {Stack, Typography, Avatar, Link, Button, Paper, List, ListItem, ListItemText} from "@mui/material";
 import taboule from "../images/taboule.png"
 import berserk from "../images/berserk.jpg"
 import StarOutlinedIcon from '@mui/icons-material/StarOutlined';

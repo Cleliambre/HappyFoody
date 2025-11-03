@@ -1,17 +1,4 @@
-import {
-    Stack,
-    Card,
-    CardMedia,
-    Box,
-    Typography,
-    Divider,
-    Avatar,
-    Chip,
-    Link,
-    CardContent,
-    IconButton,
-    Accordion, AccordionSummary, AccordionDetails, Collapse, CardActions
-} from "@mui/material";
+import {Stack, Card, CardMedia, Typography, Divider, Chip, CardContent, IconButton, Collapse, CardActions} from "@mui/material";
 import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlined';
 import FavoriteOutlinedIcon from '@mui/icons-material/FavoriteOutlined';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
