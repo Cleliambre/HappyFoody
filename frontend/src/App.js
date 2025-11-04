@@ -14,6 +14,7 @@ import Profil from "./pages/Profil"
 import Inscription from "./Inscription/Inscription";
 
 import { Routes, Route } from 'react-router-dom';
+import RecetteCreation from "./creationPages/RecetteCreation";
 
 function App() {
   return (
@@ -33,6 +34,8 @@ function App() {
                 <Route path="/profil" element={<Profil/>}/>
                   
                 <Route path="/inscription" element={<Inscription/>} />
+
+                <Route path="/createRecette" element={<RecetteCreation/>}/>
             </Routes>
         </div>
       </div>
