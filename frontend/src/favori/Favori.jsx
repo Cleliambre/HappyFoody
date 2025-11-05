@@ -163,7 +163,7 @@ export default function Favori(){
         <Stack
             alignItems={"center"}
             textAlign={"center"}
-            justifyContent={"space-evenly"} height={"100%"}
+            height={"100%"}
             padding={2}
         >
             {/*titre*/}
