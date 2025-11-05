@@ -39,7 +39,20 @@ export default function RecetteCreation(){
         "test2 blabla blabla youpiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii",
     ]);
 
-    const handleTagAdd = (newTag)=>(setTags([...tags, newTag]));
+    const handleTagAdd = (nom)=>{
+
+        let error = false;
+        tags.map(tag=>{
+            if(tag.label === nom){
+                error = true;
+            }
+        })
+        if(!error)
+        {
+            const newTag = {label : nom, color : "success"};
+            setTags([...tags, newTag]);
+        }
+    };
 
     const handleTagRemove = (index)=>{
         const newTags = tags.filter((description, index2) => index2 !== index);
@@ -107,6 +120,52 @@ export default function RecetteCreation(){
         setEtape("");
     }
 
+    const [opened3, setOpened3] = useState(false);
+
+    const handleOpen3 = () => {setOpened3(true);};
+    const handleClose3 = () => {setOpened3(false);};
+
+    const [tagsPossibles, setTagsPossibles] = useState([
+        {label: "vegetarien", color : "success"}
+    ])
+
+    const [tagSelected, setTagSelected] = useState("vegetarien");
+
+    const [nouveauTagPossible, setNouveauTagPossible] = useState("");
+
+    const [textErreurNouvTagPossible, setTextErreurNouvTagPossible] = useState("");
+    const [colorTextError, setColorTextError] = useState("");
+
+    const handleAjoutNouveauTagPossible = (nom)=>{
+        let isError;
+        isError = false
+        if(nom===""){
+            setTextErreurNouvTagPossible("Le nom entré est invalide ! ");
+            setColorTextError("error");
+            isError = true;
+        }
+        else {
+            tagsPossibles.map(tag => {
+                if (tag.label === nom || nom === "") {
+                    setTextErreurNouvTagPossible("Le nom entré existe déjà ! ");
+                    setColorTextError("error");
+                    isError = true;
+                }
+            })
+        }
+        if(!isError){
+            const newTag = {label : nom, color : "success"}
+            setTagsPossibles([...tagsPossibles, newTag]);
+            setTextErreurNouvTagPossible("Nom de tag ajouté !")
+            setColorTextError("success");
+
+            setTagSelected(nom);
+            setNouveauTagPossible("");
+        }
+
+        isError = false;
+    }
+
     return (
         <React.Fragment>
             {/*Contenu de la page*/}
@@ -154,7 +213,7 @@ export default function RecetteCreation(){
                         titre={titre}
                         texteDescription={description}
                         compte={compte}
-                        onTagAdd={handleTagAdd}
+                        onTagAdd={handleOpen3}
                         onTitleChange={handleTitle}
                         onDescriptionChange={handleDescription}
                         onTagDelete={handleTagRemove}
@@ -328,7 +387,7 @@ export default function RecetteCreation(){
                         <DialogContentText>
                             Entrez l'unité
                         </DialogContentText>
-                        <Select
+                        <Select variant="standard"
                             autoFocus
                             fullWidth={true}
                             value={uniteIngredient}
@@ -362,6 +421,56 @@ export default function RecetteCreation(){
                         <Button
                             variant="contained"
                             onClick={handleConfirmerEtape}
+                        >
+                            Confirmer
+                        </Button>
+                    </Stack>
+                </DialogContent>
+            </Dialog>
+
+            {/*Boîte de dialogue pour l'ajout d'un tag*/}
+            <Dialog open={opened3} onClose={handleClose3}>
+                <DialogTitle>
+                    Ajout d'un tag
+                </DialogTitle>
+                <DialogContent>
+                    <Stack direction="column" spacing={2}>
+                        <DialogContentText>
+                            Choisissez un tag à ajouter
+                        </DialogContentText>
+                        <Select
+                            variant="standard"
+                            fullWidth={true}
+                            value={tagSelected}
+                            onChange={(e)=>setTagSelected(e.target.value)}
+                        >
+                            {tagsPossibles.map((tag) =>
+                                <MenuItem value={tag.label}>{tag.label}</MenuItem>
+                            )}
+                        </Select>
+                        <DialogContentText>
+                            Aucun tag ne vous convient ? Ajoutez-en un :
+                        </DialogContentText>
+                        <Stack direction="row" spacing={1}>
+                            <TextField
+                                label="nouveau tag"
+                                value={nouveauTagPossible}
+                                onChange={(e)=>setNouveauTagPossible(e.target.value)}
+                            />
+                            <Button
+                                variant="contained"
+                                onClick={() => handleAjoutNouveauTagPossible(nouveauTagPossible)}
+                            >
+                                Ajouter
+                            </Button>
+                        </Stack>
+                        <Typography color={colorTextError}>{textErreurNouvTagPossible}</Typography>
+                        <Button
+                            variant="contained"
+                            onClick={() => {
+                                handleTagAdd(tagSelected);
+                                handleClose3();
+                            }}
                         >
                             Confirmer
                         </Button>
