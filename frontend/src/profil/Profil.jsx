@@ -5,6 +5,9 @@ import  {TabContext, TabList, TabPanel} from '@mui/lab'
 import CardList from "../card_list/CardList";
 
 export default function Profil({pp,pseudo, description, cards}) {
+    useEffect(() => {document.title = "Profil - Happy Foody"}, [])
+
+
     const [value, setValue] = React.useState('1');
     const [compte, setCompte] = useState(null);
 

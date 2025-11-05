@@ -1,12 +1,25 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import './Connexion.css'
 import {Typography, TextField, Button, Link} from '@mui/material';
 import {useNavigate} from 'react-router-dom';
 
 
 export default function ConnexionContent() {
+
+    useEffect(() => {document.title = "Connexion - Happy Foody"}, [])
+
+    useEffect(() => {
+        const idCompte = localStorage.getItem('idCompte');
+        if (idCompte) {
+            // ✅ Si l'utilisateur est déjà connecté, on le redirige vers le profil
+            window.location.href = '/profil';
+        }
+    }, []);
+
     const [mailOrPseudo, setmailOrPseudo] = useState('');
     const [password, setPassword] = useState('');
+    const [message, setMessage] = useState('');
+
     const navigate = useNavigate();
 
     const handleLogin = async () => {
@@ -23,7 +36,7 @@ export default function ConnexionContent() {
             navigate('/profil');
         }
         else{
-            alert("Identifiants incorrects")
+            setMessage("Identifiant ou mot de passe incorrect");
         }
     };
 
@@ -68,14 +81,27 @@ export default function ConnexionContent() {
                    onClick={handleLogin}>
                    Valider
                </Button>
+               {message && (
+                   <Typography
+                       variant="body2"
+                       color={"red"}
+                       style={{ marginTop: "10px" }}
+                   >
+                       {message}
+                   </Typography>
+               )}
                <Typography
                    className="inscription-link"
                    variant="body3"
                    color="textSecondary">
-                   Pas de compte ? <Link href="#"> Inscrivez-vous. </Link>
+                   Pas de compte ?
+                   <Link
+                       component="button"
+                       variant="body2"
+                       onClick={() => navigate("/inscription")}
+                   > Inscrivez-vous. </Link>
                </Typography>
            </div>
-
     </div>
    );
 }
