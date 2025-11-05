@@ -7,6 +7,7 @@ import org.springframework.data.rest.webmvc.ResourceNotFoundException;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class CompteService {
@@ -101,5 +102,9 @@ public class CompteService {
     public boolean deleteLikedPartage(Long compteId, Long partageId) {
         int rows = compteRepository.deleteLikedPartage(compteId, partageId);
         return rows>0;
+    }
+
+    public Optional<Compte> getCompteByMailOrPseudo(String mail, String pseudo){
+        return compteRepository.findByMailOrPseudo(mail, pseudo);
     }
 }

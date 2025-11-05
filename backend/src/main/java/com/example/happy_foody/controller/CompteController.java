@@ -2,21 +2,30 @@ package com.example.happy_foody.controller;
 
 import com.example.happy_foody.model.*;
 import com.example.happy_foody.service.CompteService;
+import com.example.happy_foody.service.JwtService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Map;
+import java.util.Optional;
 
 @RestController
 @RequestMapping(path="api/compte")
 @CrossOrigin
 public class CompteController {
     private final CompteService compteService;
+    private final JwtService jwtService;
 
 
     @Autowired
-    public CompteController(CompteService compteService) {this.compteService = compteService;}
+    public CompteController(CompteService compteService, JwtService jwtService) {
+        this.compteService = compteService;
+        this.jwtService = jwtService;
+    }
 
     @GetMapping("/all")
     public List<Compte> getComptes(){
@@ -102,4 +111,30 @@ public class CompteController {
     public void deleteLikedPartage(@RequestParam Long compteId, @RequestParam Long partageId){
         compteService.deleteLikedPartage(compteId, partageId);
     }
+
+    @PostMapping("/login")
+    public ResponseEntity<?> login(@RequestBody Map<String, String> credentials) {
+        String mailOrPseudo = credentials.get("mailOrPseudo");
+        String password = credentials.get("password");
+
+        System.out.println(mailOrPseudo);
+        System.out.println(password);
+
+        // On cherche le compte
+        Optional<Compte> compteOpt = compteService.getCompteByMailOrPseudo(mailOrPseudo, mailOrPseudo);
+
+
+        if (compteOpt.isPresent()) {
+            Compte compte = compteOpt.get();
+            if (compte.getPassword().equals(password)) {
+                // Génération du token JWT
+                String token = jwtService.generateToken(compte);
+                return ResponseEntity.ok(Map.of("token", token, "idCompte", compte.getIdCompte()));
+            }
+        }
+
+        return ResponseEntity.status(HttpStatus.UNAUTHORIZED)
+                .body(Map.of("error", "Identifiants incorrects"));
+    }
+
 }

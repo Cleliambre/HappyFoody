@@ -9,9 +9,10 @@ import Partage from "./pages/Partage"
 
 import Favoris from "./pages/Favoris"
 import Messages from "./pages/Messages"
-import Profil from "./pages/Profil"
+import Profil from "./profil/Profil"
 
 import Inscription from "./Inscription/Inscription";
+import Connexion from "./connexion/ConnexionContent";
 
 import { Routes, Route } from 'react-router-dom';
 
@@ -33,6 +34,7 @@ function App() {
                 <Route path="/profil" element={<Profil/>}/>
                   
                 <Route path="/inscription" element={<Inscription/>} />
+                <Route path="/connexion" element={<Connexion/>} />
             </Routes>
         </div>
       </div>
