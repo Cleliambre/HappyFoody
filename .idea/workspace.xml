@@ -5,18 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f32d5f50-a5af-4d14-b388-d74ca3d35fa0" name="Changes" comment="Add responsive AppBar (MenuBar)">
-      <change afterPath="$PROJECT_DIR$/frontend/src/pages/Communaute.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/pages/Favoris.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/pages/Messages.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/pages/Partage.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/pages/Profil.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/pages/Recette.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/pages/Restaurant.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/card_list/CardListV2.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/favori/Favori.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/menu/MenuBar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/menu/MenuBar.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,15 +22,15 @@
         <option value="Interface" />
         <option value="Class" />
         <option value="CSS File" />
-        <option value="JSX File" />
         <option value="JavaScript File" />
+        <option value="JSX File" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="front_end_menu" />
+        <entry key="$PROJECT_DIR$" value="frontend_recetteCreationPage" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -109,7 +101,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "Spring Boot.Backend.executor": "Run",
     "Spring Boot.HappyFoodyApplication.executor": "Run",
-    "git-widget-placeholder": "front__end__nav",
+    "git-widget-placeholder": "frontend__favoriPage",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/tangf/IdeaProjects/HappyFoody/frontend/src/pages",
     "list.type.of.created.stylesheet": "CSS",
@@ -172,21 +164,21 @@
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
-    <task id="LOCAL-00001" summary="added Ingredient table &amp; repository">
+    <task id="LOCAL-00001" summary="Added Menu">
       <option name="closed" value="true" />
-      <created>1759407961690</created>
+      <created>1760042108998</created>
       <option name="number" value="00001" />
       <option name="presentableId" value="LOCAL-00001" />
       <option name="project" value="LOCAL" />
-      <updated>1759407961690</updated>
+      <updated>1760042108998</updated>
     </task>
-    <task id="LOCAL-00002" summary="added Ingredient controller &amp; service">
+    <task id="LOCAL-00002" summary="Add responsive AppBar (MenuBar)">
       <option name="closed" value="true" />
-      <created>1759410023080</created>
+      <created>1762027464550</created>
       <option name="number" value="00002" />
       <option name="presentableId" value="LOCAL-00002" />
       <option name="project" value="LOCAL" />
-      <updated>1759410023080</updated>
+      <updated>1762027464550</updated>
     </task>
     <task id="LOCAL-00003" summary="Added CommentairePost backend + corrected constructors of CommentaireRecette and CommentaireRestaurant">
       <option name="closed" value="true" />
@@ -209,22 +201,6 @@
       <workItem from="1761305361285" duration="9405000" />
       <workItem from="1761328181480" duration="2325000" />
       <workItem from="1762005051279" duration="24353000" />
-    </task>
-    <task id="LOCAL-00001" summary="Added Menu">
-      <option name="closed" value="true" />
-      <created>1760042108998</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1760042108998</updated>
-    </task>
-    <task id="LOCAL-00002" summary="Add responsive AppBar (MenuBar)">
-      <option name="closed" value="true" />
-      <created>1762027464550</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1762027464550</updated>
     </task>
     <option name="localTasksCounter" value="3" />
     <servers />
