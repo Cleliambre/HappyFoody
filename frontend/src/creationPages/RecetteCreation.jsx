@@ -109,7 +109,7 @@ export default function RecetteCreation(){
 
     return (
         <React.Fragment>
-            /*Contenu de la page*/
+            {/*Contenu de la page*/}
             <Stack
                 direction="column"
                 spacing={2}
