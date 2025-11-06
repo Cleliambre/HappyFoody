@@ -5,8 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f32d5f50-a5af-4d14-b388-d74ca3d35fa0" name="Changes" comment="Add responsive AppBar (MenuBar)">
-      <change afterPath="$PROJECT_DIR$/frontend/src/creationPages/CreateCardDescription.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/creationPages/RecetteCreation.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/card_list/CardListV2.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/favori/Favori.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.js" afterDir="false" />
     </list>
@@ -30,7 +30,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="front_end_menu" />
+        <entry key="$PROJECT_DIR$" value="frontend_recetteCreationPage" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -101,7 +101,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "Spring Boot.Backend.executor": "Run",
     "Spring Boot.HappyFoodyApplication.executor": "Run",
-    "git-widget-placeholder": "frontend__recetteCreationPage",
+    "git-widget-placeholder": "frontend__favoriPage",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/tangf/IdeaProjects/HappyFoody/frontend/src/pages",
     "list.type.of.created.stylesheet": "CSS",

@@ -7,13 +7,13 @@ import Restaurant from "./pages/Restaurant"
 import Communaute from "./pages/Communaute"
 import Partage from "./pages/Partage"
 
-import Favoris from "./pages/Favoris"
 import Messages from "./pages/Messages"
 import Profil from "./pages/Profil"
 
 import Inscription from "./Inscription/Inscription";
 
 import { Routes, Route } from 'react-router-dom';
+import Favori from "./favori/Favori";
 import RecetteCreation from "./creationPages/RecetteCreation";
 
 function App() {
@@ -33,12 +33,12 @@ function App() {
                 <Route path="/communaute" element={<Communaute/>}/>
                 <Route path="/partage" element={<Partage/>}/>
 
-                <Route path="/favoris" element={<Favoris/>}/>
                 <Route path="/messages" element={<Messages/>}/>
                 <Route path="/profil" element={<Profil/>}/>
                   
                 <Route path="/inscription" element={<Inscription/>} />
 
+                <Route path="/favoris" element={<Favori/>}/>
                 <Route path="/createRecette" element={<RecetteCreation/>}/>
             </Routes>
         </div>
