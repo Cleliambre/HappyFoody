@@ -3,8 +3,9 @@ import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlin
 import FavoriteOutlinedIcon from '@mui/icons-material/FavoriteOutlined';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import React from "react";
+import ChatBubbleOutlineOutlinedIcon from "@mui/icons-material/ChatBubbleOutlineOutlined";
 
-export default function CardDescription({image, tags, titre, texteDescription, onTagClick, like, setLike, children}){
+export default function CardDescription({image, tags, titre, texteDescription, isCommu, onTagClick, like, setLike, children}){
 
     // Formatage du compteur de likes (ex: 1000 → "1K")
     const formatLikes = (num) => {
@@ -85,9 +86,24 @@ export default function CardDescription({image, tags, titre, texteDescription, o
                                 <Typography variant="body2" color="textSecondary">
                                     {texteDescription}
                                 </Typography>
-                            </Stack>
-                        </Stack>
 
+                                {/*Bouton répondre, si c'est un post de communauté*/}
+                                {isCommu ? <Chip
+                                    label={
+                                        <Stack direction="row" spacing={1}>
+                                            <ChatBubbleOutlineOutlinedIcon size="small"/>
+                                            <Typography variant="body1">Répondre</Typography>
+                                        </Stack>}
+                                    color="primary"
+                                    onClick={onTagClick}
+
+                                /> :  <React.Fragment/>}
+
+                            </Stack>
+
+
+
+                        </Stack>
                     </Stack>
 
                     {/*Favori*/}
@@ -117,7 +133,7 @@ export default function CardDescription({image, tags, titre, texteDescription, o
                     <Collapse in={isExpanded}>
                         <Stack direction="row" flexWrap="wrap" gap={1} margin="10px">
                             {tags.map((tag) => (
-                                <Chip label={tag.label} color={tag.color} onClick={onTagClick}/>
+                                <Chip label={tag.label} color={tag.color}/>
                             ))}
                         </Stack>
                     </Collapse> : <React.Fragment/>
