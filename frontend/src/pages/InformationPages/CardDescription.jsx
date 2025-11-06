@@ -91,7 +91,7 @@ export default function CardDescription({image, tags, titre, texteDescription, o
                     </Stack>
 
                     {/*Favori*/}
-                    <Stack>
+                    <Stack alignItems={"center"}>
                         <IconButton onClick={handleLike}>
                             {like.liked ? <FavoriteOutlinedIcon color="error"/> : <FavoriteBorderOutlinedIcon/>}
                         </IconButton>
@@ -101,21 +101,27 @@ export default function CardDescription({image, tags, titre, texteDescription, o
                     </Stack>
                 </CardContent>
                 <Divider />
-                <CardActions sx={{justifyContent:"space-between"}}>
-                    <Typography variant="h6" color="textSecondary">
-                        Catégories
-                    </Typography>
-                    <IconButton onClick={handleExpandMore}>
-                        <ExpandMoreIcon/>
-                    </IconButton>
-                </CardActions>
-                <Collapse in={isExpanded}>
-                    <Stack direction="row" flexWrap="wrap" gap={1} margin="10px">
-                        {tags.map((tag) => (
-                            <Chip label={tag.label} color={tag.color} onClick={onTagClick}/>
-                        ))}
-                    </Stack>
-                </Collapse>
+
+                { (!(tags===undefined || tags === null) && tags.length > 0) ?
+                    <CardActions sx={{justifyContent: "space-between"}}>
+                        <Typography variant="h6" color="textSecondary">
+                            Catégories
+                        </Typography>
+                        <IconButton onClick={handleExpandMore}>
+                            <ExpandMoreIcon/>
+                        </IconButton>
+                    </CardActions> : <React.Fragment/>
+                }
+
+                {(!(tags===undefined || tags === null) && tags.length > 0) ?
+                    <Collapse in={isExpanded}>
+                        <Stack direction="row" flexWrap="wrap" gap={1} margin="10px">
+                            {tags.map((tag) => (
+                                <Chip label={tag.label} color={tag.color} onClick={onTagClick}/>
+                            ))}
+                        </Stack>
+                    </Collapse> : <React.Fragment/>
+                }
             </Card>
     );
 }

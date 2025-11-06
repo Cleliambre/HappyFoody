@@ -105,11 +105,11 @@ export default function RecettePage(){
                 </CardDescription>
 
                 {/*Bouton de retour*/}
-                <Button variant="contained" sx={{backgroundColor: "gray"}}>
-                    <Typography className = "cancel" alignContent={"center"}>
+                <Button variant="contained" sx={{backgroundColor: "gray", alignContent: "center"}}>
+                    <Typography className = "cancel">
                         Retour
-                        <KeyboardReturnIcon />
                     </Typography>
+                    <KeyboardReturnIcon />
                 </Button>
             </Stack>
 
@@ -119,22 +119,26 @@ export default function RecettePage(){
             <Stack direction="row" spacing={10}>
                 {/*Temps*/}
                 <Paper elevation={2} sx={{padding:2}}>
-                    <Typography variant="h5">
-                        Temps :
-                    </Typography>
-                    <Typography variant="body3">
-                        {formatTemps(temps)}
-                    </Typography>
+                    <Stack alignItems="center">
+                        <Typography variant="h5">
+                            Temps :
+                        </Typography>
+                        <Typography variant="body3">
+                            {formatTemps(temps)}
+                        </Typography>
+                    </Stack>
                 </Paper>
 
                 {/*portions*/}
                 <Paper elevation={2} sx={{padding:2}}>
-                    <Typography variant="h5">
-                        Portions :
-                    </Typography>
-                    <Typography variant="body3">
-                        {portion} personnes
-                    </Typography>
+                    <Stack alignItems={"center"}>
+                        <Typography variant="h5">
+                            Portions :
+                        </Typography>
+                        <Typography variant="body3">
+                            {portion} personnes
+                        </Typography>
+                    </Stack>
                 </Paper>
             </Stack>
 

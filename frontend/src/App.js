@@ -19,6 +19,8 @@ import PasswordModification from "./pages/passwordModification/PasswordModificat
 import RecetteCreation from "./pages/creationPages/RecetteCreation";
 
 import { Routes, Route } from 'react-router-dom';
+import CommunautePage from "./pages/InformationPages/CommunautePage";
+import RecettePage from "./pages/InformationPages/RecettePage";
 
 
 function App() {
@@ -44,6 +46,10 @@ function App() {
                 <Route path="/connexion" element={<Connexion/>} />
 
                 <Route path="/createRecette" element={<RecetteCreation/>}/>
+
+                <Route path="/postCommunaute" element={<CommunautePage/>}/>
+
+                <Route path="/recettePage" element={<RecettePage/>}/>
             </Routes>
         </div>
       </div>
