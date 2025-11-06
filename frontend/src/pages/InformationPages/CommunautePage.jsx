@@ -1,9 +1,19 @@
 import Stack from "@mui/material/Stack";
 import CardDescription from "./CardDescription";
-import {Avatar, Button, Link, Typography} from "@mui/material";
+import {
+    Avatar,
+    Button, Card, CardActions, CardHeader,
+    Dialog,
+    DialogContent,
+    DialogContentText,
+    DialogTitle, Divider,
+    Link, Pagination,
+    TextField,
+    Typography
+} from "@mui/material";
 import ChatBubbleOutlineOutlinedIcon from '@mui/icons-material/ChatBubbleOutlineOutlined';
 import KeyboardReturnIcon from "@mui/icons-material/KeyboardReturn";
-import React from "react";
+import React, {useState} from "react";
 import tabouleCrame from "../../images/taboule_crame.png";
 import necromencienne from "../../images/necromencienne.jpg";
 import CardList from "../../components/card_list/CardListV2";
@@ -43,6 +53,26 @@ export default function CommunautePage(){
         else return parsedSeconds + ((parsedSeconds===1)? " seconde" : " secondes");
     }
 
+    //Pour l'ouverture / fermeture de la boîte de dialogue permettant de créer un nouveau commentaire
+
+    const [commentaire, setCommentaire] = React.useState("");
+    const [erreurTexte, setErreurTexte] = React.useState("");
+
+    const handleValidationComment = () => {
+        if(commentaire === ""){
+            setErreurTexte("Votre commentaire est vide, veuillez le remplir.");
+        }
+        else{
+            setCommentaire("");
+            setErreurTexte("");
+        }
+    }
+
+    const handleAnnulerComment = () => {
+        setCommentaire("");
+        setErreurTexte("")
+    }
+
 
     return (
         //Contenu de la page
@@ -68,6 +98,7 @@ export default function CommunautePage(){
                     texteDescription={description.description}
                     like={like}
                     setLike={setLike}
+                    isCommu={true}
                 >
                     {/*auteur, temps et nbCommentaires*/}
                     <Stack
@@ -113,15 +144,58 @@ export default function CommunautePage(){
                     </Typography>
                     <KeyboardReturnIcon />
                 </Button>
+
+                {/*liste de commentaires*/}
+                <Stack alignItems="center" spacing={2} width="100%" >
+                    <CardList>
+                        {/*Attente des commentaires*/}
+                        Commentaires en attente
+                    </CardList>
+
+
+                    <Pagination count={Math.ceil(commentaires.length/5)}/>
+                </Stack>
+
+                <Divider orientation="horizontal" flexItem={true}/>
+
+                {/*bloc de création de recette*/}
+                <Typography variant="h4">Commentaire</Typography>
+                <Card sx={{width:'100%', padding: '10px'}}>
+                    <CardHeader
+                        avatar={<Avatar src={ description.pp}/>}
+                        title={description.auteur}
+                    />
+                    <Stack direction="column" spacing={2} alignItems="center">
+                        <TextField
+                            multiline={true}
+                            fullWidth={true}
+                            label="Commentaire"
+                            value={commentaire}
+                            onChange={(e)=>setCommentaire(e.target.value)}
+                        />
+                        <Typography variant="body2" color="error">
+                            {erreurTexte}
+                        </Typography>
+                        <Stack direction="row" spacing={2} width={"100%"} justifyContent="flex-end" >
+                            <Button
+                                onClick={handleAnnulerComment}
+                            >
+                                Annuler
+                            </Button>
+                            <Button
+                                variant="contained"
+                                onClick={handleValidationComment}
+                            >
+                                Valider
+                            </Button>
+                        </Stack>
+                    </Stack>
+
+                </Card>
+
             </Stack>
 
-            {/*liste de commentaires*/}
-            <Stack>
-                <CardList>
-                    {/*Attente des commentaires*/}
-                    Commentaires en attente
-                </CardList>
-            </Stack>
+
 
         </Stack>
     );
