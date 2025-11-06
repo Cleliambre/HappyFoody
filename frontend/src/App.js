@@ -18,7 +18,7 @@ import PasswordModification from "./pages/passwordModification/PasswordModificat
 
 import RecetteCreation from "./pages/creationPages/RecetteCreation";
 
-import { Routes, Route } from 'react-router-dom';
+import {Routes, Route} from 'react-router-dom';
 
 
 function App() {
@@ -36,7 +36,10 @@ function App() {
 
                 <Route path="/favoris" element={<Favoris/>}/>
                 <Route path="/messages" element={<Messages/>}/>
-                <Route path="/profil" element={<Profil/>}/>
+                {/*<Route path="/profil" element={<Profil/>}/>*/}
+                <Route path="/profil/:pseudo" element={<Profil />} />
+                <Route path="/profil" element={<Profil />} />
+                />
                   
                 <Route path="/inscription" element={<Inscription/>} />
 
