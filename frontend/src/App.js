@@ -14,8 +14,13 @@ import Inscription from "./Inscription/Inscription";
 
 import { Routes, Route } from 'react-router-dom';
 import Favori from "./favori/Favori";
+import RecetteCreation from "./creationPages/RecetteCreation";
 
 function App() {
+
+
+
+
   return (
       <div className="App">
         <MenuBar/>
@@ -34,6 +39,7 @@ function App() {
                 <Route path="/inscription" element={<Inscription/>} />
 
                 <Route path="/favoris" element={<Favori/>}/>
+                <Route path="/createRecette" element={<RecetteCreation/>}/>
             </Routes>
         </div>
       </div>
