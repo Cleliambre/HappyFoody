@@ -1,10 +1,12 @@
+
 import {Stack, Card, CardMedia, Typography, Divider, Chip, CardContent, IconButton, Collapse, CardActions} from "@mui/material";
 import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlined';
 import FavoriteOutlinedIcon from '@mui/icons-material/FavoriteOutlined';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import React from "react";
+import ChatBubbleOutlineOutlinedIcon from "@mui/icons-material/ChatBubbleOutlineOutlined";
 
-export default function CardDescription({image, tags, titre, texteDescription, onTagClick, like, setLike, children}){
+export default function CardDescription({image, tags, titre, texteDescription, isCommu, onTagClick, like, setLike, children}){
 
     // Formatage du compteur de likes (ex: 1000 → "1K")
     const formatLikes = (num) => {
@@ -15,7 +17,7 @@ export default function CardDescription({image, tags, titre, texteDescription, o
 
     const handleLike = () => {
         setLike({liked : !like.liked,
-                nb : like.liked ? like.nb-1:like.nb+1});
+            nb : like.liked ? like.nb-1:like.nb+1});
     };
 
     const [isExpanded, setExpanded] = React.useState(false);
@@ -26,96 +28,117 @@ export default function CardDescription({image, tags, titre, texteDescription, o
         //Contenu de la page
 
         /*Boîte de description*/
-            <Card
-                sx={{
-                    width: "100%",
-                    display: "flex",
-                    flexDirection: "column",
-                }}
+        <Card
+            sx={{
+                width: "100%",
+                display: "flex",
+                flexDirection: "column",
+            }}
+        >
+            <CardContent
+                sx={{width:'95%', display:"flex", justifyContent:"space-between"}}
             >
-                <CardContent
-                    sx={{width:'95%', display:"flex", justifyContent:"space-between"}}
+                {/*contenu de la description*/}
+                <Stack
+                    direction="row"
+                    spacing={2}
+                    alignItems="start"
                 >
-                    {/*contenu de la description*/}
-                    <Stack
-                        direction="row"
-                        spacing={2}
-                        alignItems="start"
-                    >
-                        {/*image*/}
-                        <CardMedia
-                            component="img"
-                            image={image}
-                            sx={{width:"200px", height:"200px"}}
-                        />
+                    {/*image*/}
+                    <CardMedia
+                        component="img"
+                        image={image}
+                        sx={{width:"200px", height:"200px"}}
+                    />
 
-                        {/*titre, auteur, note, description et tags*/}
+                    {/*titre, auteur, note, description et tags*/}
+                    <Stack
+                        direction="column"
+                        minHeight={"200px"}
+                        justifyContent="space-between"
+                    >
+                        {/*titre, auteur, note, description*/}
                         <Stack
                             direction="column"
-                            minHeight={"200px"}
-                            justifyContent="space-between"
+                            spacing={2}
+                            alignItems="start"
                         >
-                            {/*titre, auteur, note, description*/}
-                            <Stack
-                                direction="column"
-                                spacing={2}
-                                alignItems="start"
-                            >
-                                {/*titre*/}
-                                <Typography variant="h3">
-                                    {titre}
-                                </Typography>
+                            {/*titre*/}
+                            <Typography variant="h3">
+                                {titre}
+                            </Typography>
 
-                                {/*auteur, note + divider*/}
+                            {/*auteur, note + divider*/}
+                            <Stack
+                                direction="row"
+                                spacing={2}
+                                flexWrap= "wrap"
+                            >
+                                <Divider orientation="vertical" flexItem/>
+                                {/*auteur, note*/}
                                 <Stack
-                                    direction="row"
-                                    spacing={2}
-                                    flexWrap= "wrap"
+                                    direction="column"
+                                    spacing={1}
                                 >
-                                    <Divider orientation="vertical" flexItem/>
-                                    {/*auteur, note*/}
-                                    <Stack
-                                        direction="column"
-                                        spacing={1}
-                                    >
-                                        {children}
-                                    </Stack>
+                                    {children}
                                 </Stack>
-                                {/*Description*/}
-                                <Typography variant="body2" color="textSecondary">
-                                    {texteDescription}
-                                </Typography>
                             </Stack>
+                            {/*Description*/}
+                            <Typography variant="body2" color="textSecondary">
+                                {texteDescription}
+                            </Typography>
+
+                            {/*Bouton répondre, si c'est un post de communauté*/}
+                            {isCommu ? <Chip
+                                label={
+                                    <Stack direction="row" spacing={1}>
+                                        <ChatBubbleOutlineOutlinedIcon size="small"/>
+                                        <Typography variant="body1">Répondre</Typography>
+                                    </Stack>}
+                                color="primary"
+                                onClick={onTagClick}
+
+                            /> :  <React.Fragment/>}
+
                         </Stack>
 
-                    </Stack>
 
-                    {/*Favori*/}
-                    <Stack>
-                        <IconButton onClick={handleLike}>
-                            {like.liked ? <FavoriteOutlinedIcon color="error"/> : <FavoriteBorderOutlinedIcon/>}
-                        </IconButton>
-                        <Typography variant="body2" lineHeight={0}>
-                            {formatLikes(like.nb)}
-                        </Typography>
+
                     </Stack>
-                </CardContent>
-                <Divider />
-                <CardActions sx={{justifyContent:"space-between"}}>
+                </Stack>
+
+                {/*Favori*/}
+                <Stack alignItems={"center"}>
+                    <IconButton onClick={handleLike}>
+                        {like.liked ? <FavoriteOutlinedIcon color="error"/> : <FavoriteBorderOutlinedIcon/>}
+                    </IconButton>
+                    <Typography variant="body2" lineHeight={0}>
+                        {formatLikes(like.nb)}
+                    </Typography>
+                </Stack>
+            </CardContent>
+            <Divider />
+
+            { (!(tags===undefined || tags === null) && tags.length > 0) ?
+                <CardActions sx={{justifyContent: "space-between"}}>
                     <Typography variant="h6" color="textSecondary">
                         Catégories
                     </Typography>
                     <IconButton onClick={handleExpandMore}>
                         <ExpandMoreIcon/>
                     </IconButton>
-                </CardActions>
+                </CardActions> : <React.Fragment/>
+            }
+
+            {(!(tags===undefined || tags === null) && tags.length > 0) ?
                 <Collapse in={isExpanded}>
                     <Stack direction="row" flexWrap="wrap" gap={1} margin="10px">
                         {tags.map((tag) => (
-                            <Chip label={tag.label} color={tag.color} onClick={onTagClick}/>
+                            <Chip label={tag.label} color={tag.color}/>
                         ))}
                     </Stack>
-                </Collapse>
-            </Card>
+                </Collapse> : <React.Fragment/>
+            }
+        </Card>
     );
 }
