@@ -7,6 +7,7 @@ import org.springframework.data.rest.webmvc.ResourceNotFoundException;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class CompteService {
@@ -102,4 +103,28 @@ public class CompteService {
         int rows = compteRepository.deleteLikedPartage(compteId, partageId);
         return rows>0;
     }
+
+    public Optional<Compte> getCompteByMailOrPseudo(String mail, String pseudo){
+        return compteRepository.findByMailOrPseudo(mail, pseudo);
+    }
+
+    public boolean updatePassword(Long id, String oldPassword, String newPassword) {
+        Optional<Compte> compteOpt = compteRepository.findById(id);
+        if (compteOpt.isEmpty()) {
+            return false;
+        }
+
+        Compte compte = compteOpt.get();
+
+        // Vérifie l'ancien mot de passe
+        if (!compte.getPassword().equals(oldPassword)) {
+            return false;
+        }
+
+        // Met à jour le mot de passe
+        compte.setPassword(newPassword);
+        compteRepository.save(compte);
+        return true;
+    }
+
 }

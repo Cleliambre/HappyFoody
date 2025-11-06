@@ -8,6 +8,7 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.Optional;
 
 @Repository
 public interface CompteRepository extends JpaRepository<Compte,Long> {
@@ -104,6 +105,14 @@ public interface CompteRepository extends JpaRepository<Compte,Long> {
     WHERE cp.id_compte = :id_compte AND cp.id_partage = :id_partage
     """, nativeQuery = true)
     int deleteLikedPartage(@Param("id_compte") Long idCompte, @Param("id_partage") Long idPartage);
+
+    @Query(value = """
+    SELECT DISTINCT c.*
+    FROM compte c
+    WHERE c.mail = :mail OR c.pseudo = :pseudo
+    """, nativeQuery = true)
+    Optional<Compte> findByMailOrPseudo(@Param("mail") String mail, @Param("pseudo") String pseudo);
+
 }
 
 

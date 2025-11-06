@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react';
 import './Inscription.css'
 import {Typography, TextField, Button, Link} from '@mui/material';
 import axios from 'axios';
+import {useNavigate} from 'react-router-dom';
 
 //TO DO : interdire les @ dans le pseudo + limite de 30 caractères dans le pseudo + obligation de @ dans l'email
 
@@ -12,12 +13,21 @@ export default function Inscription() {
         document.title = "Inscription - Happy Foody";
     }, [])
 
+    useEffect(() => {
+        const idCompte = localStorage.getItem('idCompte');
+        if (idCompte) {
+            window.location.href = '/profil';
+        }
+    }, []);
+
     //Etat de départ des champs
     const [pseudo, setPseudo] = useState('');
     const  [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [password2, setPassword2] = useState('');
     const [message, setMessage] = useState('');
+
+    const navigate = useNavigate();
 
     const handleSubmit = async () => {
         //Validation basique
@@ -134,10 +144,14 @@ export default function Inscription() {
                     className="inscription-link"
                     variant="body3"
                     color="textSecondary">
-                    Vous avez un compte ? <Link href="#"> Connectez-vous. </Link>
+                    Vous avez un compte ?
+                    <Link
+                        component="button"
+                        variant="body2"
+                        onClick={() => navigate("/connexion")}
+                    > Connectez-vous. </Link>
                 </Typography>
             </div>
-
         </div>
     );
 }

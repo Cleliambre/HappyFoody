@@ -30,23 +30,35 @@ import Badge from "@mui/material/Badge";
 
 // Noms et icons des boutons de gauche et droite du menu
 
-const leftButtons = [
-    { path:"/recette",    text: 'Recette',    icon: <RecettesIcon /> },
-    { path:"/restaurant", text: 'Restaurant', icon: <RestaurantsIcon /> },
-    { path:"/communaute", text: 'Communauté', icon: <CommunauteIcon /> },
-    { path:"/partage",    text: 'Partage',    icon: <PartagesIcon /> },
-];
 
-const rightButtons = [
-    { path:"/favoris",  icon: <FavorisIcon />,  badge: 0 },
-    { path:"/messages", icon: <MessagesIcon />, badge: 0 },
-    { path:"/profil",   icon: <Avatar/>,        badge: 0 },
-];
 
 export default function MenuBar() {
 
     const location = useLocation();
     const [anchorElNav, setAnchorElNav] = React.useState(null);
+
+    const isConnected = !!localStorage.getItem('token');
+    const profilPath = isConnected ? "/profil" : "/connexion";
+    const userImageUrl= localStorage.getItem('urlImage');
+
+    const leftButtons = [
+        { path:"/recette",    text: 'Recette',    icon: <RecettesIcon /> },
+        { path:"/restaurant", text: 'Restaurant', icon: <RestaurantsIcon /> },
+        { path:"/communaute", text: 'Communauté', icon: <CommunauteIcon /> },
+        { path:"/partage",    text: 'Partage',    icon: <PartagesIcon /> },
+    ];
+
+    const rightButtons = [
+        { path:"/favoris",  icon: <FavorisIcon />,  badge: 0 },
+        { path:"/messages", icon: <MessagesIcon />, badge: 0 },
+        {
+            path: profilPath,
+            icon: (<Avatar
+                src={isConnected ? userImageUrl : null}
+            />),
+            badge: 0
+        },
+    ];
 
     const handleOpenNavMenu = (event) => {
         setAnchorElNav(event.currentTarget);
