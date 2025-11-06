@@ -19,6 +19,7 @@ import PasswordModification from "./pages/passwordModification/PasswordModificat
 import RecetteCreation from "./pages/creationPages/RecetteCreation";
 
 import { Routes, Route } from 'react-router-dom';
+import PartageCreation from "./pages/creationPages/PartageCreation";
 
 
 function App() {
@@ -44,6 +45,7 @@ function App() {
                 <Route path="/connexion" element={<Connexion/>} />
 
                 <Route path="/createRecette" element={<RecetteCreation/>}/>
+                <Route path="/createPartage" element={<PartageCreation/>}/>
             </Routes>
         </div>
       </div>
