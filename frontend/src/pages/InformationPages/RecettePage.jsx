@@ -1,6 +1,6 @@
 import {Stack, Typography, Avatar, Link, Button, Paper, List, ListItem, ListItemText} from "@mui/material";
-import taboule from "../images/taboule.png"
-import berserk from "../images/berserk.jpg"
+import taboule from "../../images/taboule.png"
+import berserk from "../../images/berserk.jpg"
 import StarOutlinedIcon from '@mui/icons-material/StarOutlined';
 import React from "react";
 import CardDescription from "./CardDescription";

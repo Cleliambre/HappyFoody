@@ -2,9 +2,9 @@ import React from "react";
 import "./SearchPage.css"
 import Stack from "@mui/material/Stack";
 import {Typography, Button, Pagination, Chip} from "@mui/material";
-import SearchBar from "../searchBar/SearchBar";
+import SearchBar from "../../components/searchBar/SearchBar";
 import AddIcon from '@mui/icons-material/Add';
-import CardListV2 from "../card_list/CardListV2";
+import CardListV2 from "../../components/card_list/CardListV2";
 
 /**
  * Version où les enfants représentent des cartes

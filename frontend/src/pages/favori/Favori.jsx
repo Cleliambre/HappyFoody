@@ -1,17 +1,17 @@
 import {Typography, Stack, Tab} from "@mui/material";
 import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlined';
 import {TabContext, TabList, TabPanel} from "@mui/lab";
-import CardList from "../card_list/CardListV2";
+import CardList from "../../components/card_list/CardListV2";
 import React from "react";
-import GenericCard from "../card_list/GenericCard";
-import RecetteAndRestoElement from "../card_list/RecetteAndRestoElement";
-import img0 from "../images/taboule.png";
-import img1 from "../images/wok_sushi.png";
-import PostElement from "../card_list/PostElement";
-import img2 from "../images/taboule_crame.png";
-import PartageElement from "../card_list/PartageElement";
-import img3 from "../images/poulet.jpg";
-import SearchBar from "../searchBar/SearchBar";
+import GenericCard from "../../components/card_list/GenericCard";
+import RecetteAndRestoElement from "../../components/card_list/RecetteAndRestoElement";
+import img0 from "../../images/taboule.png";
+import img1 from "../../images/wok_sushi.png";
+import PostElement from "../../components/card_list/PostElement";
+import img2 from "../../images/taboule_crame.png";
+import PartageElement from "../../components/card_list/PartageElement";
+import img3 from "../../images/poulet.jpg";
+import SearchBar from "../../components/searchBar/SearchBar";
 
 export default function Favori(){
 

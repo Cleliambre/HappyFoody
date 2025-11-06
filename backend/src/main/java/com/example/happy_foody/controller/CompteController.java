@@ -137,4 +137,17 @@ public class CompteController {
                 .body(Map.of("error", "Identifiants incorrects"));
     }
 
+    @PutMapping("/updatePassword/{id}")
+    public String updatePassword(
+            @PathVariable(value = "id") Long id,
+            @RequestBody Map<String, String> body) {
+
+        String oldPassword = body.get("oldPassword");
+        String newPassword = body.get("newPassword");
+
+        boolean updated = compteService.updatePassword(id, oldPassword, newPassword);
+        return updated ? "Mot de passe mis à jour avec succès" : "Ancien mot de passe incorrect";
+    }
+
 }
+

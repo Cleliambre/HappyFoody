@@ -107,4 +107,24 @@ public class CompteService {
     public Optional<Compte> getCompteByMailOrPseudo(String mail, String pseudo){
         return compteRepository.findByMailOrPseudo(mail, pseudo);
     }
+
+    public boolean updatePassword(Long id, String oldPassword, String newPassword) {
+        Optional<Compte> compteOpt = compteRepository.findById(id);
+        if (compteOpt.isEmpty()) {
+            return false;
+        }
+
+        Compte compte = compteOpt.get();
+
+        // Vérifie l'ancien mot de passe
+        if (!compte.getPassword().equals(oldPassword)) {
+            return false;
+        }
+
+        // Met à jour le mot de passe
+        compte.setPassword(newPassword);
+        compteRepository.save(compte);
+        return true;
+    }
+
 }

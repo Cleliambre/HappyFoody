@@ -1,20 +1,19 @@
 import GenericSearchPage from "./GenericSearchPage";
-import AutoStoriesOutlinedIcon from '@mui/icons-material/AutoStoriesOutlined';
 import React from "react";
-import RecetteAndRestoElement from "../card_list/RecetteAndRestoElement";
-import img0 from "../images/taboule.png";
-import GenericCard from "../card_list/GenericCard";
+import PeopleAltOutlinedIcon from '@mui/icons-material/PeopleAltOutlined';
+import GenericCard from "../../components/card_list/GenericCard";
+import PostElement from "../../components/card_list/PostElement";
+import img2 from "../../images/taboule_crame.png";
 
-export default function RecetteSearchPage(){
-
+export default function CommunauteSearchPage(){
     const [pageDescription] = React.useState({
-        title : "Recettes",
-        description : "Trouve ou découvre des recettes adaptées à tes envies et besoin ! \nTu peux aussi partager tes meilleures recettes !",
-        logo : <AutoStoriesOutlinedIcon sx={{ fontSize: "150px" }} />
+        title : "Communauté",
+        description : "Des questions ? Des astuces ? Des réussites ? Vous êtes au bon endroit !",
+        logo : <PeopleAltOutlinedIcon sx={{ fontSize: "150px" }} />
     });
 
     const [barInfo] = React.useState({
-        barMessage : "Rechercher une recette",
+        barMessage : "Rechercher un forum",
         isPlus : true
     });
 
@@ -57,19 +56,37 @@ export default function RecetteSearchPage(){
 
     const [cards, setCards] = React.useState([
         {
-            id: 0,
-            title: 'Taboulé (Test Recette)',
-            text: <RecetteAndRestoElement
-                rate={3.5}
-                description="Un très bon taboulé, très frais et aérien."
-                tags_nourriture={["Végétarien"]}
+            id: 2,
+            title: 'Aide Taboulé cramé (Test Post)',
+            text: <PostElement
+                delai={8}
+                unite="heure"
+                description = "Bonjour, je viens de cramer du taboulé.
+                    Vous pensez que je peux encore le manger ?
+                    J’aime pas mangé froid du coup je l’ai un peu chauffé..."
+                nbCommentaire={15000}
             />,
-            tags: [],
-            thumbnail: img0,
-            liked: false,
-            likes: 119,
+            thumbnail: img2,
+            liked: true,
+            likes: 1000000,
+        },
+        {
+            id: 3,
+            title: 'Aide Taboulé cramé (Test Post)',
+            text: <PostElement
+                delai={8}
+                unite="heure"
+                description = "Bonjour, je viens de cramer du taboulé.
+                    Vous pensez que je peux encore le manger ?
+                    J’aime pas mangé froid du coup je l’ai un peu chauffé..."
+                nbCommentaire={15000}
+            />,
+            thumbnail: img2,
+            liked: true,
+            likes: 1000000,
         }
     ]);
+
 
     return (
         <GenericSearchPage
@@ -77,10 +94,10 @@ export default function RecetteSearchPage(){
             barInfo={barInfo}
             tags={tags}
             paginationSize={30}
+            onPlusClick={handleCreate}
             onFilterClick={handleFilter}
             onSearchClick={handleSearch}
             onTagDelete={handleTag}
-            onPlusClick={handleCreate}
         >
             {cards.map((card) => (
                 <GenericCard

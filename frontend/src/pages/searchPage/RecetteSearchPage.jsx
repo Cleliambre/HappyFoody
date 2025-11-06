@@ -1,21 +1,21 @@
 import GenericSearchPage from "./GenericSearchPage";
+import AutoStoriesOutlinedIcon from '@mui/icons-material/AutoStoriesOutlined';
 import React from "react";
-import RestaurantOutlinedIcon from '@mui/icons-material/Restaurant';
-import RecetteAndRestoElement from "../card_list/RecetteAndRestoElement";
-import img1 from "../images/enfer.jpg";
-import GenericCard from "../card_list/GenericCard";
+import RecetteAndRestoElement from "../../components/card_list/RecetteAndRestoElement";
+import img0 from "../../images/taboule.png";
+import GenericCard from "../../components/card_list/GenericCard";
 
+export default function RecetteSearchPage(){
 
-export default function RestaurantSearchPage(){
     const [pageDescription] = React.useState({
-        title : "Restaurants",
-        description : "Trouve ou découvre des restaurants proches de chez toi ! ",
-        logo : <RestaurantOutlinedIcon sx={{ fontSize: "150px" }} />
+        title : "Recettes",
+        description : "Trouve ou découvre des recettes adaptées à tes envies et besoin ! \nTu peux aussi partager tes meilleures recettes !",
+        logo : <AutoStoriesOutlinedIcon sx={{ fontSize: "150px" }} />
     });
 
     const [barInfo] = React.useState({
-        barMessage : "Rechercher un restaurant",
-        isPlus : false
+        barMessage : "Rechercher une recette",
+        isPlus : true
     });
 
     const [tags, setTags] = React.useState([
@@ -52,43 +52,41 @@ export default function RestaurantSearchPage(){
     /*à remplir pour gérer le bouton de recherche*/
     const handleSearch = ()=> {}
 
+    /*à compléter pour gérer le bouton de création de recette*/
+    const handleCreate = ()=> {};
+
     const [cards, setCards] = React.useState([
         {
-            id: 1,
-            title: 'Wok Sushi (Test Restaurant)',
+            id: 0,
+            title: 'Taboulé (Test Recette)',
             text: <RecetteAndRestoElement
-                rate={4.0}
-                description="Le restaurant Wok & Sushi fusionne deux spécialités asiatiques.
-                    WOK exprime les plats chauds du traiteur asiatique comme les Bobuns,
-                    les nouilles sautés, les gambas et bien d'autre encore..
-                    SUSHI vous fera découvrir le restaurant japonais avec certaines saveurs telles que des sushis,
-                    des makis california, des sashimis et plus d'autre encore."
-                tags_lieu={["Les Ulis, 91940"]}
-                tags_nourriture={["Asiatique", "Wok", "Sushi"]}
-
+                rate={3.5}
+                description="Un très bon taboulé, très frais et aérien."
+                tags_nourriture={["Végétarien"]}
             />,
             tags: [],
-            thumbnail: img1,
+            thumbnail: img0,
             liked: false,
-            likes: 97,
+            likes: 119,
         }
     ]);
 
     return (
         <GenericSearchPage
             pageDescr={pageDescription}
-            tags={tags}
             barInfo={barInfo}
+            tags={tags}
             paginationSize={30}
             onFilterClick={handleFilter}
             onSearchClick={handleSearch}
             onTagDelete={handleTag}
+            onPlusClick={handleCreate}
         >
             {cards.map((card) => (
                 <GenericCard
-                card={card}
-                onLike={handleLike}
-                onClick={handleClick}
+                    card={card}
+                    onLike={handleLike}
+                    onClick={handleClick}
                 />
             ))}
         </GenericSearchPage>

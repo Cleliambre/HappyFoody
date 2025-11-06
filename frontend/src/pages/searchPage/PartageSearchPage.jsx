@@ -1,9 +1,9 @@
 import GenericSearchPage from "./GenericSearchPage";
 import React from "react";
 import VolunteerActivismOutlinedIcon from '@mui/icons-material/VolunteerActivismOutlined';
-import PartageElement from "../card_list/PartageElement";
-import img3 from "../images/poulet.jpg";
-import GenericCard from "../card_list/GenericCard";
+import PartageElement from "../../components/card_list/PartageElement";
+import img3 from "../../images/poulet.jpg";
+import GenericCard from "../../components/card_list/GenericCard";
 
 export default function PartageSearchPage(){
     const [pageDescription] = React.useState({

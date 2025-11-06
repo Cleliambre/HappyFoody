@@ -1,7 +1,7 @@
 import CreateCardDescription from "./CreateCardDescription";
 import React, {useState} from "react";
 
-import berserker from "../images/berserker.jpeg"
+import berserker from "../../images/berserker.jpeg"
 import KeyboardReturnIcon from "@mui/icons-material/KeyboardReturn";
 import {Dialog, DialogContent, DialogContentText, DialogTitle, IconButton, List, ListItem, ListItemText, MenuItem, Paper, Select, TextField, Tooltip, Typography, Stack} from "@mui/material";
 import Button from "@mui/material/Button";

@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import './Profil.css'
 import {Typography, Button, Avatar, Tab, Stack, Container} from '@mui/material';
 import  {TabContext, TabList, TabPanel} from '@mui/lab'
-import CardList from "../card_list/CardList";
+import CardList from "../../components/card_list/CardList";
 
 export default function Profil({pp,pseudo, description, cards}) {
     useEffect(() => {document.title = "Profil - Happy Foody"}, [])

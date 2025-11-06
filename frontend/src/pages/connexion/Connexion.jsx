@@ -4,7 +4,7 @@ import {Typography, TextField, Button, Link} from '@mui/material';
 import {useNavigate} from 'react-router-dom';
 
 
-export default function ConnexionContent() {
+export default function Connexion() {
 
     useEffect(() => {document.title = "Connexion - Happy Foody"}, [])
 
