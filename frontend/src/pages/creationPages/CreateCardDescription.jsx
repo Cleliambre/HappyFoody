@@ -30,23 +30,26 @@ export default function CreateCardDescription({image, tags, titre, texteDescript
                         alignItems="start"
                         width="100%"
                     >
+                        {/*Stack pour pouvoir espacer le stylo avec le reste*/}
+                        <Stack paddingBottom={2}>
                         {/*image*/}
-                        <Badge
-                            anchorOrigin={{vertical: 'bottom', horizontal: 'right'}}
-                            className="badge"
-                            badgeContent=
-                                {<IconButton>
-                                    <Avatar sx={{backgroundColor : "whiteSmoke",color : "black"}}>
-                                        <ModeEditOutlinedIcon/>
-                                    </Avatar>
-                                </IconButton>}
-                        >
-                            <CardMedia
-                                component="img"
-                                image={image}
-                                sx={{width:"200px", height:"200px"}}
-                            />
-                        </Badge>
+                            <Badge
+                                anchorOrigin={{vertical: 'bottom', horizontal: 'right'}}
+                                className="badge"
+                                badgeContent=
+                                    {<IconButton>
+                                        <Avatar sx={{backgroundColor : "whiteSmoke",color : "black"}}>
+                                            <ModeEditOutlinedIcon/>
+                                        </Avatar>
+                                    </IconButton>}
+                            >
+                                <CardMedia
+                                    component="img"
+                                    image={image}
+                                    sx={{width:"200px", height:"200px"}}
+                                />
+                            </Badge>
+                        </Stack>
 
                         {/*titre, auteur, description et tags*/}
                         <Stack

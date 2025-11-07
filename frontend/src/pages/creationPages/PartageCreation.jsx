@@ -5,8 +5,7 @@ import berserker from "../../images/berserker.jpeg"
 import KeyboardReturnIcon from "@mui/icons-material/KeyboardReturn";
 import {Dialog, DialogContent, DialogContentText, DialogTitle, MenuItem, Paper, Select, TextField, Typography, Stack} from "@mui/material";
 import Button from "@mui/material/Button";
-
-import AutoStoriesOutlinedIcon from '@mui/icons-material/AutoStoriesOutlined';
+import VolunteerActivismOutlinedIcon from '@mui/icons-material/VolunteerActivismOutlined';
 import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 import {LocalizationProvider} from "@mui/x-date-pickers/LocalizationProvider"
 import {AdapterDayjs} from "@mui/x-date-pickers/AdapterDayjs";
@@ -121,14 +120,11 @@ export default function PartageCreation(){
             >
                 {/*Titre + bouton + carte de description*/}
                 <Stack direction="row" spacing={2} alignItems="center">
-                    <AutoStoriesOutlinedIcon sx={{ fontSize: "150px" }}/>
+                    <VolunteerActivismOutlinedIcon sx={{ fontSize: "150px" }}/>
 
                     <Stack direction="column" spacing={2} textAlign="center">
                         <Typography variant="h3">
-                            Création de Recette
-                        </Typography>
-                        <Typography variant="body1" color="textSecondary">
-                            Partagez votre meilleure recette ci-dessous !
+                            Création d'une page de partage
                         </Typography>
                     </Stack>
                 </Stack>
@@ -151,7 +147,7 @@ export default function PartageCreation(){
 
                     {/*Carte de d'information*/}
                     <CreateCardDescription
-                        texteTitreField="Nom de la recette"
+                        texteTitreField="Nom de la page de partage"
                         image={image}
                         tags={tags}
                         titre={titre}
