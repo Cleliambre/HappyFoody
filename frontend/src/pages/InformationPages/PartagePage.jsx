@@ -100,18 +100,23 @@ export default function PartagePage(){
                                 src = {description.pp}
                             />
 
-                            {/*pseudo*/}
-                            <Typography variant="body2">
-                                {description.auteur}
-                            </Typography>
+                            {/*Pseudo + confiance pour améliorer l'affichage selon la taille de la fenêtre*/}
+                            <Stack gap={1} sx={{
+                                flexDirection: {sm: 'column', md: 'row'}
+                            }}>
+                                {/*pseudo*/}
+                                <Typography variant="body2">
+                                    {description.auteur}
+                                </Typography>
 
-                            {/*confiance*/}
-                            {/*on crée un tableau d'éléments vides de la taille que l'on souhaite (ici, le nombre de confiances),
-                            qu'on parcourra pour faire l'équivalent d'une boucle for*/}
-                            <Stack direction="row" spacing={0} alignItems="center" flexWrap="wrap" >
-                                {Array.from({ length: description.confiance }).map((_, i) => (
-                                    <ThumbUpOutlinedIcon key={i} fontSize="small"/>
-                                ))}
+                                {/*confiance*/}
+                                {/*on crée un tableau d'éléments vides de la taille que l'on souhaite (ici, le nombre de confiances),
+                                qu'on parcourra pour faire l'équivalent d'une boucle for*/}
+                                <Stack direction="row" spacing={0} alignItems="center">
+                                    {Array.from({ length: description.confiance }).map((_, i) => (
+                                        <ThumbUpOutlinedIcon key={i} fontSize="small"/>
+                                    ))}
+                                </Stack>
                             </Stack>
                         </Stack>
 
