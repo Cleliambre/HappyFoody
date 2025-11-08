@@ -1,11 +1,13 @@
 import GenericSearchPage from "./GenericSearchPage";
-import React from "react";
+import React, {useEffect} from "react";
 import PeopleAltOutlinedIcon from '@mui/icons-material/PeopleAltOutlined';
 import GenericCard from "../../components/card_list/GenericCard";
 import PostElement from "../../components/card_list/PostElement";
 import img2 from "../../images/taboule_crame.png";
 
 export default function CommunauteSearchPage(){
+    useEffect(() => {document.title = "Recherche Communauté - Happy Foody"}, [])
+
     const [pageDescription] = React.useState({
         title : "Communauté",
         description : "Des questions ? Des astuces ? Des réussites ? Vous êtes au bon endroit !",
