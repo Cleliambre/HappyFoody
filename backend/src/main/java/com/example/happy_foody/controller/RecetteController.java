@@ -54,7 +54,7 @@ public class RecetteController {
 
     /**
      * Exemple d’appel :
-     * GET /api/recette/search?keyWords=poulet curry&tags=1,2,3
+     * GET /api/recette/search?keyWords=poulet%20curry&tags=1&tags=2&tags=3
      */
     @GetMapping("/search")
     public List<Recette> searchRecettes(
@@ -63,4 +63,17 @@ public class RecetteController {
     ) {
         return recetteService.getRecettebyTagsAndKeyWords(keyWords, tags);
     }
+
+    @GetMapping("/noteMoyenne/{id}")
+    public Long getNoteMoyenneById(@PathVariable(value = "id") Long id)
+    {
+        return recetteService.getNoteMoyenneById(id);
+    }
+
+    @GetMapping("/nombreLikes/{id}")
+    public Long getNombreLikesById(@PathVariable(value = "id") Long id)
+    {
+        return recetteService.getNombreLikesById(id);
+    }
+
 }

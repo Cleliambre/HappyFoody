@@ -51,8 +51,8 @@ public interface CompteRepository extends JpaRepository<Compte,Long> {
 
     @Modifying
     @Query(value = """
-    INSERT INTO compte_recette VALUES
-    (:id_compte,:id_recette)
+    INSERT INTO compte_recette(id_compte, id_recette)
+    VALUES (:id_compte, :id_recette)
     """, nativeQuery = true)
     int saveLikedRecette(@Param("id_compte") Long idCompte, @Param("id_recette") Long idRecette);
 

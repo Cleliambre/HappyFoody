@@ -14,10 +14,10 @@ public interface RecetteRepository extends JpaRepository<Recette,Long> {
     @Query(value = """
     SELECT DISTINCT r.*
     FROM recette r
-    JOIN compte c ON c.id_compte = r.id_auteur
-    JOIN quantite q ON q.id_recette = r.id_recette
-    JOIN ingrédient i ON i.id_ingredient = q.id_ingredient
-    JOIN etape e ON e.id_recette = r.id_recette
+    LEFT JOIN compte c ON c.id_compte = r.id_auteur
+    LEFT JOIN quantite q ON q.id_recette = r.id_recette
+    LEFT JOIN ingrédient i ON i.id_ingredient = q.id_ingredient
+    LEFT JOIN etape e ON e.id_recette = r.id_recette
     WHERE
         LOWER(c.pseudo) LIKE LOWER(CONCAT('%', :motCle, '%'))
         OR LOWER(i.nom) LIKE LOWER(CONCAT('%', :motCle, '%'))
@@ -30,8 +30,8 @@ public interface RecetteRepository extends JpaRepository<Recette,Long> {
     @Query(value = """
     SELECT DISTINCT r.*
     FROM recette r
-    JOIN recette_tag rt ON r.id_recette = rt.id_recette
-    JOIN tag t ON rt.id_tag = t.id_tag
+    LEFT JOIN recette_tag rt ON r.id_recette = rt.id_recette
+    LEFT JOIN tag t ON rt.id_tag = t.id_tag
     WHERE t.nom = :nom
 
     """, nativeQuery = true)
@@ -44,4 +44,22 @@ public interface RecetteRepository extends JpaRepository<Recette,Long> {
     WHERE r.id_auteur = :id_auteur
     """, nativeQuery = true)
     List<Recette> findByAuthor(@Param("id_auteur") Long id_auteur);
+
+    @Query(value = """
+    SELECT AVG(cr.note)
+    FROM commentaire_recette cr
+    JOIN recette r ON cr.id_recette = r.id_recette
+    WHERE r.id_recette = :id_recette
+    """, nativeQuery = true)
+    Long findNoteMoyenneById(@Param("id_recette") Long id_recette);
+
+    @Query(value = """
+    SELECT COUNT(cr.id_compte)
+    FROM compte_recette cr
+    JOIN recette r ON cr.id_recette = r.id_recette
+    WHERE r.id_recette = :id_recette
+    """, nativeQuery = true)
+    Long findNombreLikesById(@Param("id_recette") Long id_recette);
+
+
 }

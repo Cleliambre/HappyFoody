@@ -11,7 +11,7 @@ import java.util.Set;
 public class Recette {
     private long idRecette;
     private String titre;
-
+    private String urlImage;
     private Compte auteur;
 
     private Set<Tag> tags;
@@ -25,12 +25,12 @@ public class Recette {
 
     public Recette() {}
 
-    public Recette(String titre, Compte auteur, String description,
-                   int temps, int portion)
+    public Recette(String titre, Compte auteur, String description, String urlImage, int temps, int portion)
     {
         this.titre = titre;
         this.auteur = auteur;
         this.description = description;
+        this.urlImage = urlImage;
         this.temps = temps;
         this.portion = portion;
     }
@@ -52,6 +52,10 @@ public class Recette {
     @Column(name = "description", nullable = true)
     public String getDescription() {return description;}
     public void setDescription(String description) {this.description = description;}
+
+    @Column(name = "urlImage", nullable = true)
+    public String getUrlImage() {return urlImage;}
+    public void setUrlImage(String urlImage) {this.urlImage = urlImage;}
 
     @Column(name = "temps", nullable = false)
     public int getTemps() {return temps;}
