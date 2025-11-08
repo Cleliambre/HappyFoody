@@ -113,6 +113,13 @@ public interface CompteRepository extends JpaRepository<Compte,Long> {
     """, nativeQuery = true)
     Optional<Compte> findByMailOrPseudo(@Param("mail") String mail, @Param("pseudo") String pseudo);
 
+    @Query(value = """
+    SELECT DISTINCT c.*
+    FROM compte c
+    WHERE c.pseudo = :pseudo
+    """, nativeQuery = true)
+    Compte findByPseudo(@Param("pseudo") String pseudo);
+
 }
 
 
