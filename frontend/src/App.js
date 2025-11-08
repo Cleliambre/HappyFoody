@@ -38,7 +38,10 @@ function App() {
 
                 <Route path="/favoris" element={<Favoris/>}/>
                 <Route path="/messages" element={<Messages/>}/>
-                <Route path="/profil" element={<Profil/>}/>
+                {/*<Route path="/profil" element={<Profil/>}/>*/}
+                <Route path="/profil/:pseudo" element={<Profil />} />
+                <Route path="/profil" element={<Profil />} />
+                />
                   
                 <Route path="/inscription" element={<Inscription/>} />
 
