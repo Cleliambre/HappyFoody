@@ -87,6 +87,8 @@ export default function RestaurantPage(){
             <Stack
                 alignItems="start"
                 spacing={1}
+                width={"80%"}
+                maxWidth = "900px"
             >
 
                 {/* Présentation carte du restaurant */}
