@@ -20,9 +20,9 @@ import Inscription from "./pages/Inscription/Inscription";
 import Connexion from "./pages/connexion/Connexion";
 import PasswordModification from "./pages/passwordModification/PasswordModification";
 
-// Page d'information
-import RecettePage from "./pages/InformationPages/RecettePage";
-import RestaurantPage from "./pages/InformationPages/RestaurantPage";
+import RecetteCreation from "./pages/creationPages/RecetteCreation";
+
+import {Routes, Route} from 'react-router-dom';
 
 // Pages de création
 import RecetteCreation from "./pages/creationPages/RecetteCreation";
@@ -45,7 +45,12 @@ function App() {
                 {/* Onglets personnels */}
                 <Route path="/favoris" element={<Favoris/>}/>
                 <Route path="/messages" element={<Messages/>}/>
-                <Route path="/profil" element={<Profil/>}/>
+                {/*<Route path="/profil" element={<Profil/>}/>*/}
+                <Route path="/profil/:pseudo" element={<Profil />} />
+                <Route path="/profil" element={<Profil />} />
+                />
+                  
+                <Route path="/inscription" element={<Inscription/>} />
 
                 {/* Les pages de "Profil" */}
                 <Route path="/inscription" element={<Inscription/>} />
