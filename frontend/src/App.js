@@ -19,6 +19,8 @@ import PasswordModification from "./pages/passwordModification/PasswordModificat
 import RecetteCreation from "./pages/creationPages/RecetteCreation";
 
 import { Routes, Route } from 'react-router-dom';
+import MessageHome from "./pages/message/MessageHome";
+import Message from "./pages/message/Message";
 
 
 function App() {
@@ -44,6 +46,8 @@ function App() {
                 <Route path="/connexion" element={<Connexion/>} />
 
                 <Route path="/createRecette" element={<RecetteCreation/>}/>
+                <Route path={"/messageHome"} element={<MessageHome/>}/>
+                <Route path={"/message"} element={<Message/>}/>/
             </Routes>
         </div>
       </div>
