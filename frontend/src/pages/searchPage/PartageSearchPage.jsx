@@ -1,11 +1,13 @@
 import GenericSearchPage from "./GenericSearchPage";
-import React from "react";
+import React, {useEffect} from "react";
 import VolunteerActivismOutlinedIcon from '@mui/icons-material/VolunteerActivismOutlined';
 import PartageElement from "../../components/card_list/PartageElement";
 import img3 from "../../images/poulet.jpg";
 import GenericCard from "../../components/card_list/GenericCard";
 
 export default function PartageSearchPage(){
+    useEffect(() => {document.title = "Recherche Partage - Happy Foody"}, [])
+
     const [pageDescription] = React.useState({
         title : "Partage",
         description : "Trop de nourriture préparée ? Donne-la ou partage-la autour d'un bon repas avec d'autres personnes !",
