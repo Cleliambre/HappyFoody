@@ -27,6 +27,7 @@ import RestaurantPage from "./pages/InformationPages/RestaurantPage";
 // Pages de création
 import RecetteCreation from "./pages/creationPages/RecetteCreation";
 import React from "react";
+import {RestaurantComm} from "./pages/InformationPages/RestaurantComm";
 
 function App() {
   return (
@@ -34,7 +35,7 @@ function App() {
         <MenuBar/>
         <div className="container">
             <Routes>
-                <Route path="/" element={<RecetteSearch/>}/>
+                <Route path="/" element={<RestaurantComm/>}/>
 
                 {/* Onglets principaux */}
                 <Route path="/recette" element={<RecetteSearch/>}/>
@@ -55,6 +56,8 @@ function App() {
                 {/* Page d'information */}
                 <Route path={"/recette/:id"} element={<RecettePage/>}/>
                 <Route path="/restaurant/:id" element={<RestaurantPage />} />
+
+                {/* Page de commentaires */}
 
                 {/* Les pages de Création */}
                 <Route path="/createRecette" element={<RecetteCreation/>}/>

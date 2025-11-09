@@ -4,10 +4,7 @@ import React from "react";
 import {Box, Container, Divider} from "@mui/material";
 import CommList from "./CommList";
 import CreationComm from "./CreationComm";
-
-// Image
-import pfp from "../../images/necromencienne.jpg";
-import iconHappyFoody from "../menu/HappyFoodyIcon.png";
+import {Titre} from "../Titre";
 
 export function SectionComm({section="communaute", currentProfil, commentaires, setComm}) {
 
@@ -45,8 +42,8 @@ export function SectionComm({section="communaute", currentProfil, commentaires, 
                      sx={{borderBottomWidth: 3, padding:'10px'}}
             />
 
-            <Container Divider sx={{width: '80%', padding:'30px'}} ref={creationRef} justifyContent='center'>
-                <h1>Commentaire</h1>
+            <Container Divider sx={{padding:'30px', justifyItems:'center'}} ref={creationRef} justifyContent='center'>
+                <Titre text="Commentaire"/>
                 <CreationComm
                     currentProfil={currentProfil}
                     repondA={reponseA}

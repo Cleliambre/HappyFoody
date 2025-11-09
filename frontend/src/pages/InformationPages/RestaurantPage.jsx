@@ -17,9 +17,12 @@ import wok_sushi from "../../images/wok_sushi.png"
 import CardDescription from "./CardDescription";
 import ButtonReturn from "../../components/ButtonReturn";
 import CarteRestaurant from "../../components/restautant_component/CarteRestaurant";
-import RadioGroupRating from "../../components/smiley_rating/RadioGroupRating";
-import {Titre, PaperNote} from "../../components/restautant_component/components";
+import {PaperNote} from "../../components/restautant_component/PaperNote";
+import {Titre} from "../../components/Titre";
 import {noteGenerale} from "../../components/smiley_rating/getSmileys";
+import CreationComm from "../../components/commentaires/CreationComm";
+
+import { Link } from "react-router-dom";
 
 export default function RestaurantPage(){
     useEffect(() => {document.title = "Page Restaurant - Happy Foody"}, [])
@@ -56,7 +59,10 @@ export default function RestaurantPage(){
         {critere:"Hygiène",  note:4.9}
     ];
 
+    // TODO : stocker la position du restaurant ?
     const position = [48.676067465716706, 2.1728702239766395];
+
+    // ======== Information des restaurants =======
 
     const infos= [
         {champ:"📞 Téléphone : ", variable:description.tel},
@@ -80,8 +86,6 @@ export default function RestaurantPage(){
             {/* Bouton retour + carte de description */}
             <Stack
                 alignItems="start"
-                width={"80%"}
-                maxWidth="900px"
                 spacing={1}
             >
 
@@ -132,7 +136,7 @@ export default function RestaurantPage(){
                 }}
             >
                 <a href="#avis">Donner un avis</a>
-                <a href="#top3">Voir le top 3 des avis</a>
+                <Link to={"/"}>Voir le détails des avis</Link>
             </Grid>
 
 
@@ -170,19 +174,11 @@ export default function RestaurantPage(){
                      sx={{borderBottomWidth: 3}}
             />
 
-            {/* Top 3 des avis */}
-            <Titre id="top3" text={"Top 3 des avis"}/>
-            <Typography>
-                Top 3 des avis à faire...
-            </Typography>
-
-            {/* Donner un Avis */}
-            <Titre id="avis" text={"Donner un Avis"}/>
-            <RadioGroupRating/>
-            <Typography>
-                Avis à faire...
-            </Typography>
-            <Box sx={{ height: '30px' }} />
+            {/* Donner un avis */}
+            <Titre id="avis" text="Donner un avis"/>
+            {/* TODO : onPublier... */}
+            <CreationComm typeCommentaire="restaurant" currentProfil={null} onPublier={() => {}} />
+            <Box color="primary" sx={{ height: '30px' }} />
         </Stack>
      );
 }

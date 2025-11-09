@@ -101,8 +101,8 @@ export default function CreationComm({
         typeCommentaire = "communaute",
         currentProfil = null,
         repondA = null,
-        onPublier,
-        onCancel
+        onPublier = () => {},
+        onCancel = () => {}
     }) {
 
     /* ================= Notes ================= */
@@ -162,7 +162,7 @@ export default function CreationComm({
     }
 
     return (
-        <Card sx={{padding: '10px', flexGrow: 1}} elevation={5}>
+        <Card sx={{padding: '10px', width:'80%'}} elevation={5}>
             <CardHeader
                 avatar={
                     currentProfil && (
@@ -231,7 +231,6 @@ export default function CreationComm({
                         fullWidth
                         label={label}
                         value={commentaire}
-                        disabled={!currentProfil}
                         onChange={(e) => setCommentaire(e.target.value)}
                     />
 
@@ -249,8 +248,9 @@ export default function CreationComm({
                             onClick={handleValidationComment}
                             variant="contained"
                             disabled={
-                                !commentaire.trim() &&
-                                !noteCompletee(typeCommentaire, noteRecette, notesRestaurant)
+                                (!commentaire.trim() &&
+                                !noteCompletee(typeCommentaire, noteRecette, notesRestaurant) )
+                                || !currentProfil
                             }
                         >
                             Publier
