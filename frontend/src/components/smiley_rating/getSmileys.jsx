@@ -31,7 +31,15 @@ const formatNote = (num) => {
     return Math.floor(num+0.5);
 };
 
-// Fonction utilitaire
+// Fonctions de smileys
 export function getSmileys(index) {
     return smileys[formatNote(index)] || smileys[3];
 }
+
+export const noteGenerale = (notes) => {
+    const nb_note = notes.length;
+    if (nb_note === 0) return 0;
+
+    const somme = notes.reduce((acc, n) => acc + n.note, 0);
+    return Math.round((somme / nb_note) * 10) / 10;
+};

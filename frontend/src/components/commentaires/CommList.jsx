@@ -78,8 +78,8 @@ export default function CommList({width, commentaires, section, onRepondre}) {
                             <Box sx={{mb: 1}}>
                                 <CommBlock
                                            commentaire={comm}
-                                           section={section}
                                            onRepondre={onRepondre}
+                                           section={section}
                                 />
                             </Box>
 
@@ -92,8 +92,8 @@ export default function CommList({width, commentaires, section, onRepondre}) {
                                         {afficherReponses.map((rep) => (
                                             <CommBlock
                                                 commentaire={rep}
-                                                section={section}
                                                 onRepondre={onRepondre}
+                                                {...(section === "partage" ? { section: section } : {})}
                                                 refAuteurRepondu={getAuteurRepondu(rep.idCommRepondu, comm, commReponses)}
                                             />
                                         ))}

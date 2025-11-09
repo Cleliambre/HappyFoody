@@ -9,23 +9,28 @@ import {
     Typography, CardContent, Box, Rating, Grid,
 } from "@mui/material";
 
-
 import {ColorAvatar} from "../ColorAvatar";
 import ConfianceIcon from "@mui/icons-material/ThumbUpOutlined";
 import RadioGroupRating from "../smiley_rating/RadioGroupRating";
 
-/* TODO Faire une fonction pour vérifier que la note
-*   est valide / compléter
-* */
+function noteCompletee(typeCommentaire, noteRecette, notesRestaurant) {
+    if (typeCommentaire === "recette") {
+        return noteRecette !== null;
+    }
 
-function CreationCommElement({typeCommentaire, setLabel}) {
+    if (typeCommentaire === "restaurant") {
+        return notesRestaurant.every(note => note.note != null);
+    }
+    return true;
+}
 
-    // TODO prendre la note de la recette et l'ajouter à onPublier
-    const [noteRecette, setNoteRecette] = React.useState(null);
 
-    /* TODO prendre les notes de restaurant (rapidité, qualité, service, hygiène)
-    *   et les ajouter à onPublier
-    * */
+function CreationCommElement(
+    {typeCommentaire, setLabel,
+        setNoteRecette, noteRecette,
+        setNotesRestaurant, notesRestaurant
+    })
+{
 
     // Element vide
     if (typeCommentaire === "communaute" || typeCommentaire === "partage") {
@@ -44,7 +49,7 @@ function CreationCommElement({typeCommentaire, setLabel}) {
                     }}
                 />
                 {noteRecette === null && (
-                    <Typography color="gray" sx={{ml: 2}}>Sans Note</Typography>
+                    <Typography color="text.disabled" sx={{fontStyle: "italic", ml: 2}}>Sans Note</Typography>
                 )}
             </Box>
         );
@@ -54,14 +59,6 @@ function CreationCommElement({typeCommentaire, setLabel}) {
     if (typeCommentaire === "restaurant") {
         setLabel("Avis");
 
-        // TODO à compléter
-        const notes = [
-            {critere: "Rapidité", note: null},
-            {critere: "Qualité",  note: null},
-            {critere: "Service",  note: null},
-            {critere: "Hygiène",  note: null}
-        ];
-
         return (
             <Grid container spacing={5}
                   sx={{
@@ -69,14 +66,23 @@ function CreationCommElement({typeCommentaire, setLabel}) {
                       alignItems: "center"
                   }}
             >
-                {notes.map((note) => (
+                {notesRestaurant.map((note) => (
                     <Stack container flexDriection="column" spacing={1}
                           sx={{
                               justifyContent: "space-around",
                               alignItems: "center"
                           }}>
                         <Typography>{note.critere}</Typography>
-                        <RadioGroupRating/>
+                        <RadioGroupRating
+                            value={note.note}
+                            onChange={(newValue) => {
+                                setNotesRestaurant(prev =>
+                                    prev.map(n =>
+                                        n.critere === note.critere ? { ...n, note: newValue } : n
+                                    )
+                                );
+                            }}
+                        />
                     </Stack>
                 ))}
             </Grid>
@@ -99,22 +105,55 @@ export default function CreationComm({
         onCancel
     }) {
 
+    /* ================= Notes ================= */
+    const [noteRecette, setNoteRecette] = React.useState(null);
+
+    const [notesRestaurant, setNotesRestaurant] = React.useState([
+        {critere: "Rapidité", note: null},
+        {critere: "Qualité",  note: null},
+        {critere: "Service",  note: null},
+        {critere: "Hygiène",  note: null}
+    ]);
+
+    /* ================= Commentaire ================= */
     const [label, setLabel] = React.useState("Commentaire");
 
     const [commentaire, setCommentaire] = React.useState("");
 
     const handleValidationComment = () => {
         if (currentProfil) {
+
+            let notes = {};
+
+            if (typeCommentaire === "recette") {
+                notes = {note: noteRecette};
+            }
+
+            if (typeCommentaire === "restaurant") {
+                notes = {
+                    noteRapidite: notesRestaurant[0].note,
+                    noteQualite:  notesRestaurant[1].note,
+                    noteService:  notesRestaurant[2].note,
+                    noteHygiene:  notesRestaurant[3].note
+                };
+            }
+
             onPublier({
                 idCommRepondu: repondA?.idCommentaire ?? 0,
                 contenu: commentaire,
+                ...notes,
 
                 // idAuteur
                 username: currentProfil.username,
                 userImageUrl: currentProfil.userImageUrl,
+                scoreConfiance : currentProfil.scoreConfiance
             });
             onCancel();
             setCommentaire("");
+            setNoteRecette(null);
+            setNotesRestaurant(prev =>
+                prev.map(n => ({ ...n, note: null }))
+            );
         }
     }
 
@@ -180,7 +219,12 @@ export default function CreationComm({
                         </Box>
                     )}
 
-                    <CreationCommElement typeCommentaire={typeCommentaire} setLabel={setLabel}/>
+                    <CreationCommElement
+                        typeCommentaire={typeCommentaire}
+                        setLabel={setLabel}
+                        setNoteRecette={setNoteRecette} noteRecette={noteRecette}
+                        setNotesRestaurant={setNotesRestaurant} notesRestaurant={notesRestaurant}
+                    />
 
                     <TextField
                         multiline
@@ -204,7 +248,10 @@ export default function CreationComm({
                         <Button
                             onClick={handleValidationComment}
                             variant="contained"
-                            disabled={!commentaire.trim()} // TODO vérifier si note valide
+                            disabled={
+                                !commentaire.trim() &&
+                                !noteCompletee(typeCommentaire, noteRecette, notesRestaurant)
+                            }
                         >
                             Publier
                         </Button>

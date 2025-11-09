@@ -19,6 +19,7 @@ import ButtonReturn from "../../components/ButtonReturn";
 import CarteRestaurant from "../../components/restautant_component/CarteRestaurant";
 import RadioGroupRating from "../../components/smiley_rating/RadioGroupRating";
 import {Titre, PaperNote} from "../../components/restautant_component/components";
+import {noteGenerale} from "../../components/smiley_rating/getSmileys";
 
 export default function RestaurantPage(){
     useEffect(() => {document.title = "Page Restaurant - Happy Foody"}, [])
@@ -49,24 +50,11 @@ export default function RestaurantPage(){
     const [like, setLike] = React.useState({liked: false, nb:description.nbLike});
 
     const notes = [
-        {critere:"Rapidité", note:1.2},
+        {critere:"Rapidité", note:4.2},
         {critere:"Qualité",  note:4.3},
-        {critere:"Service",  note:2.1},
+        {critere:"Service",  note:4.1},
         {critere:"Hygiène",  note:4.9}
     ];
-
-    const noteGenerale = (notes) => {
-        const nb_note = notes.length;
-        if (nb_note === 0) return 0;
-
-        let somme = 0;
-        notes.forEach((note) => {
-            somme += Number(note.note);
-        });
-
-        return (somme / nb_note).toFixed(1);
-    };
-
 
     const position = [48.676067465716706, 2.1728702239766395];
 

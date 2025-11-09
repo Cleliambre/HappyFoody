@@ -4,12 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a51d4164-65dd-4e44-931e-9734ea826bff" name="Changes" comment="Add ColorAvatar.jsx + Update commentaire">
+    <list default="true" id="a51d4164-65dd-4e44-931e-9734ea826bff" name="Changes" comment="Add comment pagination">
+      <change afterPath="$PROJECT_DIR$/frontend/src/components/commentaires/test_commentaires/TestSectionComm.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/components/commentaires/CommBlock.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/commentaires/CommBlock.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/components/commentaires/CommList.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/commentaires/CommList.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/components/commentaires/CreationComm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/commentaires/CreationComm.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/components/commentaires/SectionComm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/commentaires/SectionComm.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/commentaires/test_commentaires/TestCommType.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/commentaires/test_commentaires/TestSection.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/smiley_rating/RadioGroupRating.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/smiley_rating/RadioGroupRating.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/smiley_rating/getSmileys.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/smiley_rating/getSmileys.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/InformationPages/RestaurantPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/InformationPages/RestaurantPage.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -150,7 +155,7 @@
       <workItem from="1762447777248" duration="9753000" />
       <workItem from="1762482111805" duration="604000" />
       <workItem from="1762513110943" duration="78290000" />
-      <workItem from="1762690980855" duration="13112000" />
+      <workItem from="1762690980855" duration="22970000" />
     </task>
     <task id="LOCAL-00001" summary="Add RestaurantPage, ButtonReturn, link and remove things unused">
       <option name="closed" value="true" />
@@ -168,7 +173,15 @@
       <option name="project" value="LOCAL" />
       <updated>1762702926800</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Add comment pagination">
+      <option name="closed" value="true" />
+      <created>1762704354342</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1762704354342</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -177,6 +190,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Add RestaurantPage, ButtonReturn, link and remove things unused" />
     <MESSAGE value="Add ColorAvatar.jsx + Update commentaire" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add ColorAvatar.jsx + Update commentaire" />
+    <MESSAGE value="Add comment pagination" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add comment pagination" />
   </component>
 </project>

@@ -1,9 +1,9 @@
 import CommList from "../CommList";
 import {Container} from "@mui/material";
 import React from "react";
-import pfp from "../../../images/necromencienne.jpg";
+import pfp from "../../../images/necromencienne.jpg"
 
-export function TestCommType() {
+export function TestSection() {
 
     const [commRecette] = React.useState([
         {

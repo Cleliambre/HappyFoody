@@ -19,11 +19,11 @@ import {
 import CommIcon from "@mui/icons-material/ChatBubbleOutlineOutlined";
 import ConfianceIcon from '@mui/icons-material/ThumbUpOutlined';
 import CloseIcon from "@mui/icons-material/Close";
-import {getSmileys} from "../smiley_rating/getSmileys";
+import {getSmileys, noteGenerale} from "../smiley_rating/getSmileys";
 import {PaperNote} from "../restautant_component/components";
 import {ColorAvatar} from "../ColorAvatar";
 
-function CommElement({commentaire, section, onVoirDetails}) {
+function CommElement({commentaire, section, onVoirDetails, notes}) {
 
     const renderSansNote = (
         <Typography variant="body2" color="text.disabled" sx={{fontStyle: "italic"}}>
@@ -32,7 +32,7 @@ function CommElement({commentaire, section, onVoirDetails}) {
     );
 
     // Element vide
-    if (section === "communaute" || commentaire.idCommRepondu !== 0) {
+    if (section === "communaute") {
         return null;
     }
 
@@ -44,13 +44,14 @@ function CommElement({commentaire, section, onVoirDetails}) {
 
     // Element de restaurant
     if (section === "restaurant") {
-        if (commentaire.note == null) {
+        if (notes.every(note => note.note == null)) {
             return renderSansNote;
         }
 
         return (
             <Box sx={{display: "flex", alignItems: "center", gap: 1}}>
-                {getSmileys(commentaire.note).icon}
+
+                {getSmileys(noteGenerale(notes)).icon}
 
                 <Typography
                     component="button"
@@ -127,9 +128,9 @@ export default function CommBlock({ commentaire, section, onRepondre, refAuteurR
 
     const notes = [
         {critere: "Rapidité", note: commentaire.noteRapidite},
-        {critere: "Qualité", note: commentaire.noteQualite},
-        {critere: "Service", note: commentaire.noteService},
-        {critere: "Hygiène", note: commentaire.noteHygiene}
+        {critere: "Qualité",  note: commentaire.noteQualite},
+        {critere: "Service",  note: commentaire.noteService},
+        {critere: "Hygiène",  note: commentaire.noteHygiene}
     ];
 
     return (
@@ -153,6 +154,7 @@ export default function CommBlock({ commentaire, section, onRepondre, refAuteurR
                                 commentaire={commentaire}
                                 section={section}
                                 onVoirDetails={handleVoirDetails}
+                                notes={notes}
                             />
                         </Box>
                     }
