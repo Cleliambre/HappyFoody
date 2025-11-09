@@ -2,6 +2,7 @@ package com.example.happy_foody.repository;
 
 import com.example.happy_foody.model.Recette;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
@@ -16,7 +17,7 @@ public interface RecetteRepository extends JpaRepository<Recette,Long> {
     FROM recette r
     LEFT JOIN compte c ON c.id_compte = r.id_auteur
     LEFT JOIN quantite q ON q.id_recette = r.id_recette
-    LEFT JOIN ingrédient i ON i.id_ingredient = q.id_ingredient
+    LEFT JOIN ingredient i ON i.id_ingredient = q.id_ingredient
     LEFT JOIN etape e ON e.id_recette = r.id_recette
     WHERE
         LOWER(c.pseudo) LIKE LOWER(CONCAT('%', :motCle, '%'))
@@ -60,6 +61,13 @@ public interface RecetteRepository extends JpaRepository<Recette,Long> {
     WHERE r.id_recette = :id_recette
     """, nativeQuery = true)
     Long findNombreLikesById(@Param("id_recette") Long id_recette);
+
+    @Modifying
+    @Query(value = """
+    INSERT INTO recette_tag(id_recette, id_tag)
+    VALUES (:id_recette, :id_tag)
+    """, nativeQuery = true)
+    int associerRecetteTag(@Param("id_recette") Long idRecette, @Param("id_tag") Long idTag);
 
 
 }

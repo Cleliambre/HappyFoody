@@ -28,8 +28,8 @@ export default function RecetteCreation(){
 
     const [tags, setTags] = useState([]);
     const [tagsPossibles, setTagsPossibles] = useState([])
+    const [tagsExistants, setTagsExistants] = useState([])
 
-    /*Il faut importer les tags du backend*/
 
     const [heures, setHeures] = useState(0);
     const [minutes, setMinutes] = useState(0);
@@ -52,19 +52,32 @@ export default function RecetteCreation(){
             .then(res => res.json())
             .then(data => setCompte(data));
 
-        // ✅ Récupérer les tags existants depuis le backend
-        axios.get("http://localhost:8080/api/compte/getAllTags")
-            .then(res => setTagsPossibles(res.data))
-            .catch(err => console.error("Erreur récupération tags :", err));
+        fetch(`http://localhost:8080/api/tag/all`)
+            .then(res => res.json())
+            .then(data => {setTagsExistants(data);});
 
-    }, []);
+    }, [navigate]);
+
+
+    useEffect(() => {
+        console.log("tagsExistants mis à jour :", tagsExistants);
+    }, [tagsExistants]);
+
+    useEffect(() => {
+        console.log("tagsPossibles mis à jour :", tagsPossibles);
+    }, [tagsPossibles]);
+
+    useEffect(() => {
+        console.log("tags mis à jour :", tags);
+    }, [tags]);
+
 
     const handleRetour = () => {navigate('/recette');}
 
     // --- TAGS ---
     const handleTagAdd = (nom)=>{
-        if (!tags.some(tag => tag.label === nom)) {
-            const newTag = {label: nom, color: "success"};
+        if (!tags.some(tag => tag.nom === nom)) {
+            const newTag = {nom: nom, color: "success"};
             setTags([...tags, newTag]);
         }
     };
@@ -99,8 +112,9 @@ export default function RecetteCreation(){
         "kg",
         "L",
         "mL",
-        "cuillère(s) à soupe",
-        "cuillère(s) à café"
+        "cuillère à soupe",
+        "cuillère à café",
+        "bouquet"
     ]);
 
     const handleConfirmerIngredient = ()=>{
@@ -139,13 +153,13 @@ export default function RecetteCreation(){
             setColorTextError("error");
             return;
         }
-        if (tagsPossibles.some(tag => tag.label === nom)) {
+        if (tagsPossibles.some(tag => tag.nom === nom)) {
             setTextErreurNouvTagPossible("Ce tag existe déjà !");
             setColorTextError("error");
             return;
         }
 
-        const newTag = {label : nom, color : "success"}
+        const newTag = {nom : nom, color : "success"}
         setTagsPossibles([...tagsPossibles, newTag]);
         setTextErreurNouvTagPossible("Nom de tag ajouté !")
         setColorTextError("success");
@@ -156,7 +170,7 @@ export default function RecetteCreation(){
 
     const handleSubmit = async () => {
         //Validation basique
-        if (!titre || !description || !image) {
+        if (!titre || !description) {
             setMessage("Veuillez remplir tous les champs obligatoires !");
             return;
         }
@@ -183,28 +197,31 @@ export default function RecetteCreation(){
                 auteur: compte
             };
 
-            const recetteResponse = await axios.post("http://localhost:8080/api/compte/createRecette", newRecette)
+            const recetteResponse = await axios.post("http://localhost:8080/api/recette/createRecette", newRecette)
             const recetteCreee = recetteResponse.data;
+
+            console.log("Test de réception de recette : ");
+            console.log(recetteCreee);
 
             // --- Ingrédients + quantités ---
             for (const ingredient of ingredients) {
-                const ingrResponse = await axios.post("http://localhost:8080/api/compte/createIngredient", {
+                const ingrResponse = await axios.post("http://localhost:8080/api/ingredient/createIngredient", {
                     nom: ingredient.nom
                 });
 
-                const quantiteObj = {
+
+                await axios.post("http://localhost:8080/api/quantite/createQuantite", {
                     ingredient: ingrResponse.data,
                     recette: recetteCreee,
                     portion: ingredient.quantite,
                     unite: ingredient.unite
-                };
-                await axios.post("http://localhost:8080/api/compte/createQuantite", quantiteObj);
+                });
             }
 
             // --- Étapes ---
             for (const etape of etapes) {
-                await axios.post("http://localhost:8080/api/compte/createEtape", {
-                    txt_etape: etape,
+                await axios.post("http://localhost:8080/api/etape/createEtape", {
+                    txtEtape: etape,
                     recette: recetteCreee
                 });
             }
@@ -212,23 +229,27 @@ export default function RecetteCreation(){
             // --- Tags ---
             for (const tag of tags) {
                 // Vérifie si le tag existe déjà
-                const existingTag = tagsPossibles.find(t => t.label === tag.label);
+                const existingTag = tagsExistants.find(t => t.nom === tag.nom);
+                console.log("Tags existants dans handleSubmit");
+                console.log(tagsExistants);
                 let tagObj;
 
+
                 if (existingTag) {
+                    console.log("J'existe !");
                     tagObj = existingTag;
                 } else {
-                    const resTag = await axios.post("http://localhost:8080/api/compte/createTag", {
-                        nom: tag.label,
-                        type_tag: 0
+                    const resTag = await axios.post("http://localhost:8080/api/tag/createTag", {
+                        nom: tag.nom,
+                        typeTag: 0
                     });
                     tagObj = resTag.data;
+
                 }
 
-                await axios.post("http://localhost:8080/api/compte/associerTagARecette", {
-                    tag: tagObj,
-                    recette: recetteCreee
-                });
+                console.log(tagObj);
+                await axios.post(`http://localhost:8080/api/recette/associerTagARecette?recetteId=${recetteCreee.idRecette}&tagId=${tagObj.idTag}`);
+
             }
 
 
@@ -558,8 +579,11 @@ export default function RecetteCreation(){
                             value={tagSelected}
                             onChange={(e)=>setTagSelected(e.target.value)}
                         >
+                            {tagsExistants.map((tag) =>
+                                <MenuItem value={tag.nom}>{tag.nom}</MenuItem>
+                            )}
                             {tagsPossibles.map((tag) =>
-                                <MenuItem value={tag.label}>{tag.label}</MenuItem>
+                                <MenuItem value={tag.nom}>{tag.nom}</MenuItem>
                             )}
                         </Select>
                         <DialogContentText>

@@ -24,6 +24,13 @@ public class QuantiteService {
     }
 
     public Quantite createQuantite(Quantite quantite) {
+        if (quantite.getPk() == null) {
+            QuantiteId id = new QuantiteId(
+                    quantite.getRecette().getIdRecette(),
+                    quantite.getIngredient().getIdIngredient()
+            );
+            quantite.setPk(id);
+        }
         return quantiteRepository.save(quantite);
     }
 

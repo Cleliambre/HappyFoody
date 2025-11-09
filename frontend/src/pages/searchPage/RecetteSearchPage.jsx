@@ -233,23 +233,15 @@ export default function RecetteSearchPage(){
     const [openFilter, setOpenFilter] = useState(false);
     const [tagSelected, setTagSelected] = useState("");
 
-// ✅ Ici, tu peux remplir manuellement ou récupérer dynamiquement tes tags disponibles
+    //Récupération des tags existants dans la base de données
     const [tagsPossibles, setTagsPossibles] = useState([]);
 
     useEffect(() => {
-        axios.get("http://localhost:8080/api/tag/all")
-            .then((response) => {
-                // Si ton objet Tag a une propriété "nom" ou "label", adapte ici :
-                const formattedTags = response.data.map((tag) => ({
-                    label: tag.nom,
-                    id: tag.idTag
-                }));
-                setTagsPossibles(formattedTags);
-            })
-            .catch((error) => {
-                console.error("Erreur lors du chargement des tags :", error);
-            });
-    }, []);
+        fetch(`http://localhost:8080/api/tag/all`)
+            .then(res => res.json())
+            .then(data => {setTagsPossibles(data);});
+
+    }, [navigate]);
 
 
     /*à remplir pour gérer le bouton filtre*/

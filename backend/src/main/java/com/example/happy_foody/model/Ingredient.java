@@ -6,7 +6,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 @Entity
-@Table(name = "ingrédient")
+@Table(name = "ingredient")
 public class Ingredient {
     private long idIngredient;
     String nom;

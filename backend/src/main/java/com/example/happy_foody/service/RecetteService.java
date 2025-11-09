@@ -2,6 +2,7 @@ package com.example.happy_foody.service;
 
 import com.example.happy_foody.model.Recette;
 import com.example.happy_foody.repository.RecetteRepository;
+import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.rest.webmvc.ResourceNotFoundException;
 import org.springframework.stereotype.Service;
@@ -10,6 +11,7 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 @Service
+@Transactional
 public class RecetteService {
 
     @Autowired
@@ -126,6 +128,10 @@ public class RecetteService {
 
     public Long getNombreLikesById(Long id){
         return recetteRepository.findNombreLikesById(id);
+    }
+
+    public void associerRecetteTag(Long idRecette, Long idTag){
+        recetteRepository.associerRecetteTag(idRecette,idTag);
     }
 
 }

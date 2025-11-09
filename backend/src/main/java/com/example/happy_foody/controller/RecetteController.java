@@ -76,4 +76,9 @@ public class RecetteController {
         return recetteService.getNombreLikesById(id);
     }
 
+    @PostMapping("/associerTagARecette")
+    public void associerTagARecette(@RequestParam Long recetteId, @RequestParam Long tagId){
+        recetteService.associerRecetteTag(recetteId, tagId);
+    }
+
 }
