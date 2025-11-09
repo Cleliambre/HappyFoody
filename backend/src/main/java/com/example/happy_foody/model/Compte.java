@@ -32,6 +32,10 @@ public class Compte {
         this.mail = mail;
         this.password = password;
         this.scoreConfiance = Integer.parseInt(scoreConfiance);
+        this.recettesLiked = new HashSet<>();
+        this.restaurantsLiked = new HashSet<>();
+        this.postsLiked = new HashSet<>();
+        this.partagesLiked = new HashSet<>();
     }
 
     @Id
@@ -75,6 +79,7 @@ public class Compte {
             joinColumns = @JoinColumn(name = "id_compte"),
             inverseJoinColumns = @JoinColumn(name = "id_recette")
     )
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public Set<Recette> getRecettesLiked() {return recettesLiked;}
     public void setRecettesLiked(Set<Recette> recettesLiked) {this.recettesLiked = recettesLiked;}
 
@@ -84,6 +89,7 @@ public class Compte {
             joinColumns = @JoinColumn(name = "id_compte"),
             inverseJoinColumns = @JoinColumn(name = "id_restaurant")
     )
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public Set<Restaurant> getRestaurantsLiked() {return restaurantsLiked;}
     public void setRestaurantsLiked(Set<Restaurant> restaurantsLiked) {this.restaurantsLiked = restaurantsLiked;}
 
@@ -93,6 +99,7 @@ public class Compte {
             joinColumns = @JoinColumn(name = "id_compte"),
             inverseJoinColumns = @JoinColumn(name = "id_post")
     )
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public Set<Post> getPostsLiked() {return postsLiked;}
     public void setPostsLiked(Set<Post> postsLiked) {this.postsLiked = postsLiked;}
 
@@ -102,6 +109,7 @@ public class Compte {
             joinColumns = @JoinColumn(name = "id_compte"),
             inverseJoinColumns = @JoinColumn(name = "id_partage")
     )
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public Set<Partage> getPartagesLiked() {return partagesLiked;}
     public void setPartagesLiked(Set<Partage> partagesLiked) {this.partagesLiked = partagesLiked;}
 }

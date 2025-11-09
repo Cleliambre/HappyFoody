@@ -17,10 +17,13 @@ import CardListV2 from "../../components/card_list/CardListV2";
  * @param onPlusClick pour la gestion d'évènement pour un clic sur le bouton de création
  * @param paginationSize un entier donnant le nombre de pages pour la pagination
  * @param children
+ * @param resultCount
+ * @param page
+ * @param onPageChange
  * @returns {React.JSX.Element}
  * @constructor
  */
-export default function GenericSearchPage({pageDescr, tags, barInfo, onFilterClick, onSearchClick, onTagDelete, onPlusClick, paginationSize, children}) {
+export default function GenericSearchPage({pageDescr, tags, barInfo, onFilterClick, onSearchClick, onTagDelete, onPlusClick, paginationSize, children, resultCount,page, onPageChange}) {
     return (
         <Stack
             spacing={2}
@@ -88,11 +91,15 @@ export default function GenericSearchPage({pageDescr, tags, barInfo, onFilterCli
                 </Stack>
             </Stack>
             <CardListV2
-                resMessage = {React.Children.count(children) + (React.Children.count(children)>1 ? " Resultats" : " Resultat")}
+                resMessage = {resultCount + (resultCount>1 ? " Resultats" : " Resultat")}
             >
                 {children}
             </CardListV2>
-            <Pagination count={paginationSize}/>
+            <Pagination
+                count={paginationSize}
+                page={page}
+                onChange={onPageChange}
+            />
         </Stack>
     );
 }

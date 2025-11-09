@@ -46,6 +46,7 @@ public class Recette {
 
     @ManyToOne
     @JoinColumn(name = "id_auteur", nullable = false)
+    @com.fasterxml.jackson.annotation.JsonIgnoreProperties({"recettesLiked", "restaurantsLiked", "postsLiked", "partagesLiked"})
     public Compte getAuteur() {return auteur;}
     public void setAuteur(Compte auteur) {this.auteur = auteur;}
 

@@ -5,7 +5,13 @@ export async function searchRecettes(keyWords = "", tags = []) {
     if (keyWords) params.append("keyWords", keyWords);
     tags.forEach(tag => params.append("tags", tag));
 
-    const response = await fetch(`${API_URL}/search?${params.toString()}`, {
+    let b = false;
+
+    if (params.size === 0) {
+        b = true;
+    }
+
+    const response = await fetch(b ? `${API_URL}/all` : `${API_URL}/search?${params.toString()}`, {
         method: "GET",
         headers: {
             "Content-Type": "application/json",

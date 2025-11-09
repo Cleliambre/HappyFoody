@@ -1,89 +1,98 @@
 import CreateCardDescription from "./CreateCardDescription";
-import React, {useState} from "react";
-
-import berserker from "../../images/berserker.jpeg"
+import React, {useEffect, useState} from "react";
+import {useNavigate} from "react-router-dom";
 import KeyboardReturnIcon from "@mui/icons-material/KeyboardReturn";
 import {Dialog, DialogContent, DialogContentText, DialogTitle, IconButton, List, ListItem, ListItemText, MenuItem, Paper, Select, TextField, Tooltip, Typography, Stack} from "@mui/material";
 import Button from "@mui/material/Button";
-
 import DeleteOutlineOutlinedIcon from '@mui/icons-material/DeleteOutlineOutlined';
 import AutoStoriesOutlinedIcon from '@mui/icons-material/AutoStoriesOutlined';
+import axios from "axios";
 
 export default function RecetteCreation(){
 
+    //Changement du titre de la page sur l'onglet du navigateur
+    useEffect(() => {
+        document.title = "Création de Recette - Happy Foody";
+    }, [])
+
+
+
+    const navigate = useNavigate();
+    const [message, setMessage] = useState('');
+
     const[image, setImage] = useState(null);
+    const [titre, setTitre] = useState("");
+    const [description, setDescription] = useState("");
+    const [compte, setCompte] = useState(null);
+
 
     const [tags, setTags] = useState([]);
+    const [tagsPossibles, setTagsPossibles] = useState([])
 
-    const [titre, setTitre] = useState("");
-
-    const [description, setDescription] = useState("");
-
-    const [compte, setCompte] = useState(
-        {pp : berserker, pseudo : "MariaSalade"}
-    );
+    /*Il faut importer les tags du backend*/
 
     const [heures, setHeures] = useState(0);
-
     const [minutes, setMinutes] = useState(0);
-
     const [portion, setPortion] = useState(0);
 
-    const [ingredients, setIngredients] = useState([
-        {nom:"test", quantite:100, unite : "g"},
-        {nom:"test à rallonge ++ oui, toujours plus", quantite: 100000, unite: "kg"}
-    ]);
 
-    const [etapes, setEtapes] = useState([
-        "test1 blabla blabla",
-        "test2 blabla blabla youpiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii",
-    ]);
+    const [ingredients, setIngredients] = useState([]);
+    const [etapes, setEtapes] = useState([]);
 
+
+
+    useEffect(() => {
+        const idCompte = localStorage.getItem('idCompte');
+        if (!idCompte) {
+            navigate('/connexion');
+            return;
+        }
+
+        fetch(`http://localhost:8080/api/compte/getCompteById/${idCompte}`)
+            .then(res => res.json())
+            .then(data => setCompte(data));
+
+        // ✅ Récupérer les tags existants depuis le backend
+        axios.get("http://localhost:8080/api/compte/getAllTags")
+            .then(res => setTagsPossibles(res.data))
+            .catch(err => console.error("Erreur récupération tags :", err));
+
+    }, []);
+
+    const handleRetour = () => {navigate('/recette');}
+
+    // --- TAGS ---
     const handleTagAdd = (nom)=>{
-
-        let error = false;
-        tags.map(tag=>{
-            if(tag.label === nom){
-                error = true;
-            }
-        })
-        if(!error)
-        {
-            const newTag = {label : nom, color : "success"};
+        if (!tags.some(tag => tag.label === nom)) {
+            const newTag = {label: nom, color: "success"};
             setTags([...tags, newTag]);
         }
     };
 
     const handleTagRemove = (index)=>{
-        const newTags = tags.filter((description, index2) => index2 !== index);
-        setTags(newTags);
+        setTags(tags.filter((_, i) => i !== index));
     }
 
+    // --- CHAMPS CARD ---
     const handleTitle = (titre) => setTitre(titre);
-
     const handleDescription = (description) => setDescription(description);
 
+    // --- INGREDIENTS ---
     const handleIngDelete = (index) => {
-        const newIngredients = ingredients.filter((ingredient, index2) => index2 !== index);
-        setIngredients(newIngredients);
+        setIngredients(ingredients.filter((_, i) => i !== index));
     }
 
+    // --- ÉTAPES ---
     const handleEtapeDelete = (index) => {
         const newEtapes = etapes.filter((etape, index2) => index2 !== index);
         setEtapes(newEtapes);
     }
 
+    // --- BOÎTES DE DIALOGUE ---
     const [opened, setOpened] = useState(false);
-
-    const handleOpen1 = () => {setOpened(true);};
-    const handleClose1 = () => {setOpened(false);};
-
     const [nomIngredient, setNomIngredient] = useState("");
-
     const [quantiteIngredient, setQuantiteIngredient] = useState(0);
-
     const [uniteIngredient, setUniteIngredient] = useState("");
-
     const [uniteAccepted, setUniteAccepted] = useState([
         "",
         "g",
@@ -96,6 +105,7 @@ export default function RecetteCreation(){
 
     const handleConfirmerIngredient = ()=>{
         setOpened(false);
+        if (!nomIngredient || quantiteIngredient <= 0) return;
         const newIngredient = {
             nom : nomIngredient,
             quantite : quantiteIngredient,
@@ -107,64 +117,154 @@ export default function RecetteCreation(){
         setQuantiteIngredient(0);
     };
 
+
     const [opened2, setOpened2] = useState(false);
-
-    const handleOpen2 = () => {setOpened2(true);};
-    const handleClose2 = () => {setOpened2(false);};
-
     const [etape, setEtape] = useState("")
-
     const handleConfirmerEtape = ()=>{
         setOpened2(false);
-        setEtapes([...etapes, etape]);
+        if (etape.trim() !== "") setEtapes([...etapes, etape]);
         setEtape("");
     }
 
+
     const [opened3, setOpened3] = useState(false);
-
-    const handleOpen3 = () => {setOpened3(true);};
-    const handleClose3 = () => {setOpened3(false);};
-
-    const [tagsPossibles, setTagsPossibles] = useState([
-        {label: "vegetarien", color : "success"}
-    ])
-
-    const [tagSelected, setTagSelected] = useState("vegetarien");
-
+    const [tagSelected, setTagSelected] = useState("");
     const [nouveauTagPossible, setNouveauTagPossible] = useState("");
-
     const [textErreurNouvTagPossible, setTextErreurNouvTagPossible] = useState("");
     const [colorTextError, setColorTextError] = useState("");
 
     const handleAjoutNouveauTagPossible = (nom)=>{
-        let isError;
-        isError = false
-        if(nom===""){
+        if(!nom.trim()){
             setTextErreurNouvTagPossible("Le nom entré est invalide ! ");
             setColorTextError("error");
-            isError = true;
+            return;
         }
-        else {
-            tagsPossibles.map(tag => {
-                if (tag.label === nom || nom === "") {
-                    setTextErreurNouvTagPossible("Le nom entré existe déjà ! ");
-                    setColorTextError("error");
-                    isError = true;
-                }
-            })
-        }
-        if(!isError){
-            const newTag = {label : nom, color : "success"}
-            setTagsPossibles([...tagsPossibles, newTag]);
-            setTextErreurNouvTagPossible("Nom de tag ajouté !")
-            setColorTextError("success");
-
-            setTagSelected(nom);
-            setNouveauTagPossible("");
+        if (tagsPossibles.some(tag => tag.label === nom)) {
+            setTextErreurNouvTagPossible("Ce tag existe déjà !");
+            setColorTextError("error");
+            return;
         }
 
-        isError = false;
+        const newTag = {label : nom, color : "success"}
+        setTagsPossibles([...tagsPossibles, newTag]);
+        setTextErreurNouvTagPossible("Nom de tag ajouté !")
+        setColorTextError("success");
+        setTagSelected(nom);
+        setNouveauTagPossible("");
+
     }
+
+    const handleSubmit = async () => {
+        //Validation basique
+        if (!titre || !description || !image) {
+            setMessage("Veuillez remplir tous les champs obligatoires !");
+            return;
+        }
+
+        if (ingredients.length === 0) {
+            setMessage("Une recette doit avoir au moins un ingrédient");
+            return;
+        }
+
+        if (etapes.length === 0) {
+            setMessage("Une recette doit avoir au moins une étape");
+            return;
+        }
+
+        const temps = 3600*heures + 60*minutes;
+
+        try{
+            const newRecette = {
+                description,
+                portion,
+                temps,
+                urlImage : image,
+                titre,
+                auteur: compte
+            };
+
+            const recetteResponse = await axios.post("http://localhost:8080/api/compte/createRecette", newRecette)
+            const recetteCreee = recetteResponse.data;
+
+            // --- Ingrédients + quantités ---
+            for (const ingredient of ingredients) {
+                const ingrResponse = await axios.post("http://localhost:8080/api/compte/createIngredient", {
+                    nom: ingredient.nom
+                });
+
+                const quantiteObj = {
+                    ingredient: ingrResponse.data,
+                    recette: recetteCreee,
+                    portion: ingredient.quantite,
+                    unite: ingredient.unite
+                };
+                await axios.post("http://localhost:8080/api/compte/createQuantite", quantiteObj);
+            }
+
+            // --- Étapes ---
+            for (const etape of etapes) {
+                await axios.post("http://localhost:8080/api/compte/createEtape", {
+                    txt_etape: etape,
+                    recette: recetteCreee
+                });
+            }
+
+            // --- Tags ---
+            for (const tag of tags) {
+                // Vérifie si le tag existe déjà
+                const existingTag = tagsPossibles.find(t => t.label === tag.label);
+                let tagObj;
+
+                if (existingTag) {
+                    tagObj = existingTag;
+                } else {
+                    const resTag = await axios.post("http://localhost:8080/api/compte/createTag", {
+                        nom: tag.label,
+                        type_tag: 0
+                    });
+                    tagObj = resTag.data;
+                }
+
+                await axios.post("http://localhost:8080/api/compte/associerTagARecette", {
+                    tag: tagObj,
+                    recette: recetteCreee
+                });
+            }
+
+
+            setMessage("Recette créée avec succès !");
+
+            // ✅ Réinitialisation
+            setTitre("");
+            setDescription("");
+            setImage(null);
+            setHeures(0);
+            setMinutes(0);
+            setPortion(0);
+            setIngredients([]);
+            setEtapes([]);
+            setTags([]);
+
+        }catch(error){
+            console.error("Erreur lors de la création de la recette:", error);
+            setMessage("Erreur lors de la création. Veuillez réessayer")
+        }
+    }
+
+    const handleOpen1 = () => {setOpened(true);};
+    const handleClose1 = () => {setOpened(false);};
+
+    const handleOpen2 = () => {setOpened2(true);};
+    const handleClose2 = () => {setOpened2(false);};
+
+    const handleOpen3 = () => {setOpened3(true);};
+    const handleClose3 = () => {setOpened3(false);};
+
+
+
+
+
+
 
     return (
         <React.Fragment>
@@ -198,7 +298,9 @@ export default function RecetteCreation(){
                     {/*Bouton de retour*/}
                     <Button
                         variant="contained"
-                        sx={{backgroundColor: "gray", alignItems:"center"}}>
+                        sx={{backgroundColor: "gray", alignItems:"center"}}
+                        onClick={handleRetour}
+                    >
                         <Typography className = "cancel">
                             Retour
                         </Typography>
@@ -206,18 +308,20 @@ export default function RecetteCreation(){
                     </Button>
 
                     {/*Carte de d'information*/}
-                    <CreateCardDescription
-                        texteTitreField="Nom de la recette"
-                        image={image}
-                        tags={tags}
-                        titre={titre}
-                        texteDescription={description}
-                        compte={compte}
-                        onTagAdd={handleOpen3}
-                        onTitleChange={handleTitle}
-                        onDescriptionChange={handleDescription}
-                        onTagDelete={handleTagRemove}
-                    />
+                    {compte && (
+                        <CreateCardDescription
+                            texteTitreField="Nom de la recette"
+                            image={image}
+                            tags={tags}
+                            titre={titre}
+                            texteDescription={description}
+                            compte={compte}
+                            onTagAdd={handleOpen3}
+                            onTitleChange={handleTitle}
+                            onDescriptionChange={handleDescription}
+                            onTagDelete={handleTagRemove}
+                        />
+                    )}
                 </Stack>
 
                 {/*Description détaillée*/}
@@ -355,10 +459,20 @@ export default function RecetteCreation(){
                     <Button
                         variant="contained"
                         sx={{borderRadius:5}}
+                        onClick={handleSubmit}
                     >
                         Confirmer
                     </Button>
                 </Stack>
+                {message && (
+                    <Typography
+                        variant="body2"
+                        color={message.includes("succès") ? "green" : "red"}
+                        style={{ marginTop: "10px" }}
+                    >
+                        {message}
+                    </Typography>
+                )}
 
             </Stack>
 
