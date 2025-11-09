@@ -75,6 +75,36 @@ export function SectionComm() {
         {
             idCommentaire: 7,
             idCommRepondu: 0,
+            contenu: "Je pense qu’il est préférable d’en cuisiner un autre... (et sans le chauffer cette fois)\nVoici le lien vers une recette de taboulé simple :\nhttps://www.Happy-Foody.com/Recettes/Taboulé",
+            date: new Date(2025, 10, 6, 14, 0, 0),
+
+            // idAuteur
+            username: "Angel",
+            userImageUrl: null,
+        },
+        {
+            idCommentaire: 8,
+            idCommRepondu: 0,
+            contenu: "",
+            date: new Date(2025, 10, 6, 14, 0, 0),
+
+            // idAuteur
+            username: "Angel",
+            userImageUrl: null,
+        },
+        {
+            idCommentaire: 9,
+            idCommRepondu: 0,
+            contenu: "Je pense qu’il est préférable d’en cuisiner un autre... (et sans le chauffer cette fois) Voici le lien vers une recette de taboulé simple :  https://www.Happy-Foody.com/Recettes/Taboulé",
+            date: new Date(2025, 10, 6, 14, 0, 0),
+
+            // idAuteur
+            username: "Angel",
+            userImageUrl: null,
+        },
+        {
+            idCommentaire: 10,
+            idCommRepondu: 0,
             contenu: "Je pense qu’il est préférable d’en cuisiner un autre... (et sans le chauffer cette fois) Voici le lien vers une recette de taboulé simple :  https://www.Happy-Foody.com/Recettes/Taboulé",
             date: new Date(2025, 10, 6, 14, 0, 0),
 

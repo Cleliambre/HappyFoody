@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import {Container, Stack, Button, Box} from "@mui/material";
+import {Container, Stack, Button, Box, Pagination} from "@mui/material";
 import CommBlock from "./CommBlock";
 
 // Icons
@@ -48,10 +48,21 @@ export default function CommList({width, commentaires, section, onRepondre}) {
         setVoirPlus(prev => ({...prev, [id]: !prev[id]}));
     };
 
+    const [page, setPage] = React.useState(1);
+    const parPage = 5;
+
+    const totalPages = Math.ceil(commentairesPrincipaux.length / parPage);
+
+    // Découpe des commentaires principaux affichés
+    const commentairesAffiches = commentairesPrincipaux.slice(
+        (page - 1) * parPage,
+        page * parPage
+    );
+
     return (
         <Container sx={{width: width}}>
-            <Stack spacing={2}>
-                {commentairesPrincipaux.map((comm) => {
+            <Stack spacing={1}>
+                {commentairesAffiches.map((comm) => {
 
                     let maxRepAff = 0;
                     // Trouver les réponses directes à ce commentaire
@@ -104,6 +115,17 @@ export default function CommList({width, commentaires, section, onRepondre}) {
                     );
                 })}
             </Stack>
+            {totalPages > 1 && (
+                <Box sx={{display: "flex", justifyContent: "center", mt: 3}}>
+                    <Pagination
+                        count={totalPages}
+                        page={page}
+                        onChange={(e, newPage) => setPage(newPage)}
+                        color="primary"
+                        size="medium"
+                    />
+                </Box>
+            )}
         </Container>
     );
 }

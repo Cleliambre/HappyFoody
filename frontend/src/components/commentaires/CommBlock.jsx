@@ -163,12 +163,13 @@ export default function CommBlock({ commentaire, section, onRepondre, refAuteurR
                 <CardContent>
                     <Box display="flex" flexDirection="column" gap={2}>
 
+                        {commentaire.contenu !=="" && (
                         <Typography sx={{ whiteSpace: 'pre-line' }}>
                             {refAuteurRepondu !== "" && (
                                 <Chip label={`@${refAuteurRepondu}`} sx={{mr:1}}/>
                             )}
                             {commentaire.contenu}
-                        </Typography>
+                        </Typography>)}
 
                         <Chip
                             color="primary"

@@ -29,6 +29,7 @@ import RecetteCreation from "./pages/creationPages/RecetteCreation";
 import React from "react";
 
 import {TestTypeCommentaire} from "./components/commentaires/test_commentaires/TestTypeCommentaire";
+import {SectionComm} from "./components/commentaires/SectionComm";
 
 function App() {
   return (
@@ -36,7 +37,7 @@ function App() {
         <MenuBar/>
         <div className="container">
             <Routes>
-                <Route path="/" element={<TestTypeCommentaire/>}/>
+                <Route path="/" element={<SectionComm/>}/>
 
                 {/* Onglets principaux */}
                 <Route path="/recette" element={<RecetteSearch/>}/>

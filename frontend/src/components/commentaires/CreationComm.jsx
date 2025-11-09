@@ -14,10 +14,18 @@ import {ColorAvatar} from "../ColorAvatar";
 import ConfianceIcon from "@mui/icons-material/ThumbUpOutlined";
 import RadioGroupRating from "../smiley_rating/RadioGroupRating";
 
+/* TODO Faire une fonction pour vérifier que la note
+*   est valide / compléter
+* */
+
 function CreationCommElement({typeCommentaire, setLabel}) {
 
-    // TODO prendre la note et l'ajouter à onPublier
-    const [value, setValue] = React.useState(null);
+    // TODO prendre la note de la recette et l'ajouter à onPublier
+    const [noteRecette, setNoteRecette] = React.useState(null);
+
+    /* TODO prendre les notes de restaurant (rapidité, qualité, service, hygiène)
+    *   et les ajouter à onPublier
+    * */
 
     // Element vide
     if (typeCommentaire === "communaute" || typeCommentaire === "partage") {
@@ -29,13 +37,13 @@ function CreationCommElement({typeCommentaire, setLabel}) {
         return (
             <Box sx={{ display: 'flex', flexDirection:'row', alignItems: 'center' }}>
                 <Rating
-                    value={value}
+                    value={noteRecette}
                     precision={0.5}
                     onChange={(event, newValue) => {
-                        setValue(newValue);
+                        setNoteRecette(newValue);
                     }}
                 />
-                {value === null && (
+                {noteRecette === null && (
                     <Typography color="gray" sx={{ml: 2}}>Sans Note</Typography>
                 )}
             </Box>
@@ -196,7 +204,7 @@ export default function CreationComm({
                         <Button
                             onClick={handleValidationComment}
                             variant="contained"
-                            disabled={!commentaire.trim()}
+                            disabled={!commentaire.trim()} // TODO vérifier si note valide
                         >
                             Publier
                         </Button>
