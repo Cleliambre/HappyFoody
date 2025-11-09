@@ -12,14 +12,14 @@ import {
     Container,
     Button,
     MenuItem,
-    IconButton
+    IconButton, Avatar
 } from '@mui/material';
 
 // Importation pour les Icons
 import MenuIcon from '@mui/icons-material/Menu';
-import Avatar from '@mui/material/Avatar';
 import iconHappyFoody from "./HappyFoodyIcon.png";
 
+// Icons et badge
 import MessagesIcon from "@mui/icons-material/EmailOutlined";
 import FavorisIcon from "@mui/icons-material/FavoriteBorderOutlined";
 import PartagesIcon from "@mui/icons-material/VolunteerActivismOutlined";
@@ -27,10 +27,7 @@ import CommunauteIcon from "@mui/icons-material/PeopleOutlined";
 import RestaurantsIcon from "@mui/icons-material/RestaurantOutlined";
 import RecettesIcon from "@mui/icons-material/MenuBookOutlined";
 import Badge from "@mui/material/Badge";
-
-// Noms et icons des boutons de gauche et droite du menu
-
-
+import {ColorAvatar} from "../ColorAvatar";
 
 export default function MenuBar() {
 
@@ -40,6 +37,7 @@ export default function MenuBar() {
     const isConnected = !!localStorage.getItem('token');
     const profilPath = isConnected ? "/profil" : "/connexion";
     const userImageUrl= localStorage.getItem('urlImage');
+    const username= localStorage.getItem('pseudo'); // TODO : A verifier
 
     const leftButtons = [
         { path:"/recette",    text: 'Recette',    icon: <RecettesIcon /> },
@@ -53,9 +51,12 @@ export default function MenuBar() {
         { path:"/messages", icon: <MessagesIcon />, badge: 0 },
         {
             path: profilPath,
-            icon: (<Avatar
-                src={isConnected ? userImageUrl : null}
-            />),
+            icon: (
+                <ColorAvatar
+                    src={isConnected ? userImageUrl : null}
+                    name={isConnected ? username : null}
+                />
+            ),
             badge: 0
         },
     ];

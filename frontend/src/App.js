@@ -28,13 +28,15 @@ import RestaurantPage from "./pages/InformationPages/RestaurantPage";
 import RecetteCreation from "./pages/creationPages/RecetteCreation";
 import React from "react";
 
+import {TestTypeCommentaire} from "./components/commentaires/test_commentaires/TestTypeCommentaire";
+
 function App() {
   return (
       <div className="App">
         <MenuBar/>
         <div className="container">
             <Routes>
-                <Route path="/" element={<RecetteSearch/>}/>
+                <Route path="/" element={<TestTypeCommentaire/>}/>
 
                 {/* Onglets principaux */}
                 <Route path="/recette" element={<RecetteSearch/>}/>

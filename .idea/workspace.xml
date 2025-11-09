@@ -4,31 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a51d4164-65dd-4e44-931e-9734ea826bff" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/frontend/src/components/restautant_component/CarteRestaurant.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/components/restautant_component/components.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/components/smiley_rating/RadioGroupRating.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/components/smiley_rating/getSmileys.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/pages/InformationPages/RestaurantPage.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/pages/InformationPages/informationPages.css" afterDir="false" />
+    <list default="true" id="a51d4164-65dd-4e44-931e-9734ea826bff" name="Changes" comment="Add RestaurantPage, ButtonReturn, link and remove things unused">
+      <change afterPath="$PROJECT_DIR$/frontend/src/components/ColorAvatar.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/components/commentaires/CommBlock.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/components/commentaires/CommList.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/components/commentaires/CreationComm.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/components/commentaires/SectionComm.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/components/commentaires/test_commentaires/TestCommIndent.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/components/commentaires/test_commentaires/TestCommType.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/components/commentaires/test_commentaires/TestTypeCommentaire.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/card_list/GenericCard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/card_list/GenericCard.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/components/menu/MenuBar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/menu/MenuBar.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/InformationPages/CardDescription.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/InformationPages/CardDescription.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/InformationPages/RecettePage.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/ButtonReturn.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/pages/InformationPages/RecettePage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/InformationPages/RecettePage.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/Messages.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/Messages.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/connexion/Connexion.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/connexion/Connexion.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/creationPages/CreateCardDescription.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/creationPages/CreateCardDescription.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/pages/creationPages/RecetteCreation.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/creationPages/RecetteCreation.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/searchPage/CommunauteSearchPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/searchPage/CommunauteSearchPage.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/searchPage/GenericSearchPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/searchPage/GenericSearchPage.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/searchPage/PartageSearchPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/searchPage/PartageSearchPage.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/searchPage/RecetteSearchPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/searchPage/RecetteSearchPage.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/searchPage/RestaurantSearchPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/searchPage/RestaurantSearchPage.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,16 +29,16 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JavaScript File" />
-        <option value="JSX File" />
         <option value="CSS File" />
+        <option value="JSX File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="develop" />
+        <entry key="$PROJECT_DIR$" value="front_end_restaurantPage" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -64,10 +55,10 @@
     &quot;accountId&quot;: &quot;483f852f-e9fb-421d-a929-7aa5a36df291&quot;
   }
 }</component>
-  <component name="KubernetesApiPersistence"><![CDATA[{}]]></component>
-  <component name="KubernetesApiProvider"><![CDATA[{
-  "isMigrated": true
-}]]></component>
+  <component name="KubernetesApiPersistence">{}</component>
+  <component name="KubernetesApiProvider">{
+  &quot;isMigrated&quot;: true
+}</component>
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
   </component>
@@ -79,45 +70,47 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Maven.backend [clean,install].executor": "Run",
-    "Node.js.App.js.executor": "Run",
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "Spring Boot.Backend.executor": "Run",
-    "git-widget-placeholder": "front__end__restaurantPage",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/tangf/IdeaProjects/HappyFoody/frontend/src/components",
-    "list.type.of.created.stylesheet": "CSS",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "npm.Frontend.executor": "Run",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "ts.external.directory.path": "C:\\Program Files\\JetBrains\\IntelliJ IDEA 2025.2.2\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Maven.backend [clean,install].executor&quot;: &quot;Run&quot;,
+    &quot;Node.js.App.js.executor&quot;: &quot;Run&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;Spring Boot.Backend.executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;front__end__commentaires&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/tangf/IdeaProjects/HappyFoody/frontend/src/components/commentaires&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;npm.Frontend.executor&quot;: &quot;Run&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Program Files\\JetBrains\\IntelliJ IDEA 2025.2.2\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\tangf\IdeaProjects\HappyFoody\frontend\src\components\commentaires" />
       <recent name="C:\Users\tangf\IdeaProjects\HappyFoody\frontend\src\components" />
       <recent name="C:\Users\tangf\IdeaProjects\HappyFoody\frontend\src\pages\InformationPages" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\tangf\IdeaProjects\HappyFoody\frontend\src\components\commentaires\test_commentaires" />
+      <recent name="C:\Users\tangf\IdeaProjects\HappyFoody\frontend\src\components\commentaires" />
+      <recent name="C:\Users\tangf\IdeaProjects\HappyFoody\frontend\src\components" />
       <recent name="C:\Users\tangf\IdeaProjects\HappyFoody\frontend\src\components\restautant_component" />
       <recent name="C:\Users\tangf\IdeaProjects\HappyFoody\frontend\src\components\smiley_rating" />
-      <recent name="C:\Users\tangf\IdeaProjects\HappyFoody\frontend\src\components" />
-      <recent name="C:\Users\tangf\IdeaProjects\HappyFoody\frontend\src\images" />
     </key>
   </component>
   <component name="RunManager" selected="npm.Frontend">
@@ -166,11 +159,25 @@
       <updated>1762447774945</updated>
       <workItem from="1762447777248" duration="9753000" />
       <workItem from="1762482111805" duration="604000" />
-      <workItem from="1762513110943" duration="41045000" />
+      <workItem from="1762513110943" duration="78290000" />
+      <workItem from="1762690980855" duration="11649000" />
     </task>
+    <task id="LOCAL-00001" summary="Add RestaurantPage, ButtonReturn, link and remove things unused">
+      <option name="closed" value="true" />
+      <created>1762606672871</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1762606672871</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Add RestaurantPage, ButtonReturn, link and remove things unused" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add RestaurantPage, ButtonReturn, link and remove things unused" />
   </component>
 </project>

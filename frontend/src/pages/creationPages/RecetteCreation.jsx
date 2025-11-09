@@ -20,7 +20,7 @@ export default function RecetteCreation(){
     const [description, setDescription] = useState("");
 
     const [compte] = useState(
-        {pp : berserker, pseudo : "MariaSalade"}
+        {userImageUrl : berserker, pseudo : "MariaSalade"}
     );
 
     const [heures, setHeures] = useState(0);

@@ -81,7 +81,7 @@ export default function CreateCardDescription({image, tags, titre, texteDescript
                                 />
                                 {/*auteur*/}
                                 <Avatar
-                                    src={compte.pp}
+                                    src={compte.userImageUrl}
                                 />
                                 <Typography variant="body2">
                                     {compte.pseudo}

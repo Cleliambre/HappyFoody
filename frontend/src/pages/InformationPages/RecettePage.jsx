@@ -14,8 +14,8 @@ export default function RecettePage(){
     const [description] = React.useState({
         image : taboule,
         titre: "Taboulé",
-        auteur: "ProDuTaboulé",
-        pp: berserk,
+        userName: "ProDuTaboulé",
+        userImageUrl: berserk,
         note : 3.5,
         description : "Un très bon taboulé, très frais et aérien.",
         nbLike : 120,
@@ -86,11 +86,11 @@ export default function RecettePage(){
                         <Stack direction="row" spacing={2} alignItems="center">
                             {/*photo de profil (pp)*/}
                             <Avatar
-                                src = {description.pp}
+                                src = {description.userImageUrl}
                             />
                             {/*pseudo*/}
                             <Typography variant="body2">
-                                {description.auteur}
+                                {description.userName}
                             </Typography>
                         </Stack>
                         {/*note*/}
