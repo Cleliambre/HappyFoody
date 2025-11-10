@@ -37,7 +37,7 @@ export default function CreateCardDescription({image, tags, titre, texteDescript
                                 anchorOrigin={{vertical: 'bottom', horizontal: 'right'}}
                                 className="badge"
                                 badgeContent=
-                                    {<IconButton>
+                                    {<IconButton onClick={onImageChange}>
                                         <Avatar sx={{backgroundColor : "whiteSmoke",color : "black"}}>
                                             <ModeEditOutlinedIcon/>
                                         </Avatar>
