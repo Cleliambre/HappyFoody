@@ -20,14 +20,19 @@ import Inscription from "./pages/Inscription/Inscription";
 import Connexion from "./pages/connexion/Connexion";
 import PasswordModification from "./pages/passwordModification/PasswordModification";
 
-import RecetteCreation from "./pages/creationPages/RecetteCreation";
+// Les Pages de messages
+import MessageHome from "./pages/message/MessageHome"; //liste de conversations
+import Message from "./pages/message/Message"; //conversation individuelle
 
-import { Routes, Route } from 'react-router-dom';
-import MessageHome from "./pages/message/MessageHome";
-import Message from "./pages/message/Message";
+// Les pages d'affichage individuel
+import CommunautePage from "./pages/InformationPages/CommunautePage";
+import RecettePage from "./pages/InformationPages/RecettePage";
 
 // Pages de création
 import RecetteCreation from "./pages/creationPages/RecetteCreation";
+import CommunauteCreation from "./pages/creationPages/CommunauteCreation";
+import PartageCreation from "./pages/creationPages/PartageCreation";
+
 import React from "react";
 
 function App() {
@@ -65,8 +70,17 @@ function App() {
 
                 {/* Les pages de Création */}
                 <Route path="/createRecette" element={<RecetteCreation/>}/>
+                <Route path="/createCommunaute" element={<CommunauteCreation/>}/>
+                <Route path="/createPartage" element={<PartageCreation/>}/>
+                  
+                {/*Les pages d'affichage individuel*/}
+                <Route path="/postCommunaute" element={<CommunautePage/>}/>
+                <Route path="/recettePage" element={<RecettePage/>}/>
+                  
+                {/*pages de messages*/}
                 <Route path={"/messageHome"} element={<MessageHome/>}/>
                 <Route path={"/message"} element={<Message/>}/>/
+
             </Routes>
         </div>
       </div>
