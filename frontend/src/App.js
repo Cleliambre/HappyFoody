@@ -23,10 +23,12 @@ import PasswordModification from "./pages/passwordModification/PasswordModificat
 import RecetteCreation from "./pages/creationPages/RecetteCreation";
 
 import { Routes, Route } from 'react-router-dom';
-import PartageCreation from "./pages/creationPages/PartageCreation";
 
 // Pages de création
 import RecetteCreation from "./pages/creationPages/RecetteCreation";
+import CommunauteCreation from "./pages/creationPages/CommunauteCreation";
+import PartageCreation from "./pages/creationPages/PartageCreation";
+
 import React from "react";
 
 function App() {
@@ -64,6 +66,7 @@ function App() {
 
                 {/* Les pages de Création */}
                 <Route path="/createRecette" element={<RecetteCreation/>}/>
+                <Route path="/createCommunaute" element={<CommunauteCreation/>}/>
                 <Route path="/createPartage" element={<PartageCreation/>}/>
             </Routes>
         </div>
