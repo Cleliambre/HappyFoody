@@ -1,11 +1,34 @@
-import {Stack, Card, CardMedia, Typography, Divider, Chip, CardContent, IconButton, Collapse, CardActions} from "@mui/material";
+import React from "react";
+
+import {
+    Stack,
+    Card,
+    CardMedia,
+    Typography,
+    Divider,
+    Chip,
+    CardContent,
+    IconButton,
+    Collapse,
+    CardActions
+} from "@mui/material";
+
+// Icons
 import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlined';
 import FavoriteOutlinedIcon from '@mui/icons-material/FavoriteOutlined';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import React from "react";
-import ChatBubbleOutlineOutlinedIcon from "@mui/icons-material/ChatBubbleOutlineOutlined";
 
-export default function CardDescription({image, tags, titre, texteDescription, isCommu, onTagClick, like, setLike, children}){
+export default function CardDescription(
+    {
+        image,
+        tags,
+        titre,
+        texteDescription,
+        onTagClick,
+        like,
+        setLike,
+        children}
+){
 
     // Formatage du compteur de likes (ex: 1000 → "1K")
     const formatLikes = (num) => {
@@ -14,19 +37,16 @@ export default function CardDescription({image, tags, titre, texteDescription, i
         return num.toString();
     };
 
+    // Gère le compte des likes
     const handleLike = () => {
         setLike({liked : !like.liked,
                 nb : like.liked ? like.nb-1:like.nb+1});
     };
 
     const [isExpanded, setExpanded] = React.useState(false);
-
     const handleExpandMore = () => {setExpanded(!isExpanded);};
 
     return (
-        //Contenu de la page
-
-        /*Boîte de description*/
             <Card
                 sx={{
                     width: "100%",
@@ -37,7 +57,7 @@ export default function CardDescription({image, tags, titre, texteDescription, i
                 <CardContent
                     sx={{width:'95%', display:"flex", justifyContent:"space-between"}}
                 >
-                    {/*contenu de la description*/}
+                    {/*contenu de la carte*/}
                     <Stack
                         direction="row"
                         spacing={2}
@@ -50,7 +70,7 @@ export default function CardDescription({image, tags, titre, texteDescription, i
                             sx={{width:"200px", height:"200px"}}
                         />
 
-                        {/*titre, auteur, note, description et tags*/}
+                        {/*Partie centrale : titre, auteur, note, description */}
                         <Stack
                             direction="column"
                             minHeight={"200px"}
@@ -82,8 +102,9 @@ export default function CardDescription({image, tags, titre, texteDescription, i
                                         {children}
                                     </Stack>
                                 </Stack>
+
                                 {/*Description*/}
-                                <Typography variant="body2" color="textSecondary">
+                                <Typography variant="body2" color="textSecondary" sx={{ whiteSpace: 'pre-line' }}>
                                     {texteDescription}
                                 </Typography>
 
@@ -98,16 +119,12 @@ export default function CardDescription({image, tags, titre, texteDescription, i
                                     onClick={onTagClick}
 
                                 /> :  <React.Fragment/>}
-
                             </Stack>
-
-
-
                         </Stack>
                     </Stack>
 
-                    {/*Favori*/}
-                    <Stack alignItems={"center"}>
+                    {/*Partie Favori*/}
+                    <Stack sx={{alignItems:'center'}}>
                         <IconButton onClick={handleLike}>
                             {like.liked ? <FavoriteOutlinedIcon color="error"/> : <FavoriteBorderOutlinedIcon/>}
                         </IconButton>
@@ -115,9 +132,11 @@ export default function CardDescription({image, tags, titre, texteDescription, i
                             {formatLikes(like.nb)}
                         </Typography>
                     </Stack>
+
                 </CardContent>
                 <Divider />
 
+                {/* Catégories (tags) (s'affiche seulement s'il y a des tags)*/}
                 { (!(tags===undefined || tags === null) && tags.length > 0) ?
                     <CardActions sx={{justifyContent: "space-between"}}>
                         <Typography variant="h6" color="textSecondary">
@@ -129,6 +148,7 @@ export default function CardDescription({image, tags, titre, texteDescription, i
                     </CardActions> : <React.Fragment/>
                 }
 
+                {/* Tags (s'affiche seulement s'il y a des tags) */}
                 {(!(tags===undefined || tags === null) && tags.length > 0) ?
                     <Collapse in={isExpanded}>
                         <Stack direction="row" flexWrap="wrap" gap={1} margin="10px">

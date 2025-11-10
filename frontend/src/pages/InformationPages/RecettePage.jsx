@@ -1,13 +1,17 @@
-import {Stack, Typography, Avatar, Link, Button, Paper, List, ListItem, ListItemText} from "@mui/material";
+import React, {useEffect} from "react";
+
+import {Stack, Typography, Avatar, Link, Paper, List, ListItem, ListItemText} from "@mui/material";
 import taboule from "../../images/taboule.png"
 import berserk from "../../images/berserk.jpg"
 import StarOutlinedIcon from '@mui/icons-material/StarOutlined';
-import React from "react";
+
 import CardDescription from "./CardDescription";
-import KeyboardReturnIcon from "@mui/icons-material/KeyboardReturn";
+import ButtonReturn from "../../components/ButtonReturn";
 
 export default function RecettePage(){
-    const [description, setDescription] = React.useState({
+    useEffect(() => {document.title = "Page Recette - Happy Foody"}, [])
+
+    const [description] = React.useState({
         image : taboule,
         titre: "Taboulé",
         auteur: "ProDuTaboulé",
@@ -18,13 +22,13 @@ export default function RecettePage(){
         tags : [{label : "végétarien", color : "success"}, {label : "végétarien", color : "success"}, {label : "végétarien", color : "success"},{label : "végétarien", color : "success"},{label : "végétarien", color : "success"}]
     });
 
-    const [like, setLike] = React.useState({liked: false, nb:0});
+    const [like, setLike] = React.useState({liked: false, nb:description.nbLike});
 
-    const [temps, setTemps] = React.useState(150);
+    const [temps] = React.useState(150);
 
-    const [portion, setPortion] = React.useState(4);
+    const [portion] = React.useState(4);
 
-    const [ingredients, setIngredients] = React.useState([
+    const [ingredients] = React.useState([
         {
             nom : "Couscous moyen",
             quantite : 200,
@@ -37,7 +41,7 @@ export default function RecettePage(){
         }
     ]);
 
-    const [etapes, setEtape] = React.useState([
+    const [etapes] = React.useState([
         "Test Etape 1 bla bla  bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla ",
         "Test Etape 2 ouiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii"
     ]);
@@ -105,12 +109,10 @@ export default function RecettePage(){
                 </CardDescription>
 
                 {/*Bouton de retour*/}
-                <Button variant="contained" sx={{backgroundColor: "gray", alignContent: "center"}}>
-                    <Typography className = "cancel">
-                        Retour
-                    </Typography>
-                    <KeyboardReturnIcon />
-                </Button>
+                <ButtonReturn
+                    path={"/recette"}
+                    text={"Retour à la recherche des recettes"}
+                />
             </Stack>
 
             {/*Description détaillée*/}
@@ -118,27 +120,31 @@ export default function RecettePage(){
             {/*Temps et portions*/}
             <Stack direction="row" spacing={10}>
                 {/*Temps*/}
-                <Paper elevation={2} sx={{padding:2}}>
-                    <Stack alignItems="center">
-                        <Typography variant="h5">
-                            Temps :
-                        </Typography>
-                        <Typography variant="body3">
-                            {formatTemps(temps)}
-                        </Typography>
-                    </Stack>
+                <Paper elevation={2} sx={{padding:2,
+                    alignItems:'center',
+                    alignContent:'center',
+                    display:'flex',
+                    flexDirection: 'column'}}>
+                    <Typography variant="h5">
+                        Temps :
+                    </Typography>
+                    <Typography variant="body3">
+                        {formatTemps(temps)}
+                    </Typography>
                 </Paper>
 
                 {/*portions*/}
-                <Paper elevation={2} sx={{padding:2}}>
-                    <Stack alignItems={"center"}>
-                        <Typography variant="h5">
-                            Portions :
-                        </Typography>
-                        <Typography variant="body3">
-                            {portion} personnes
-                        </Typography>
-                    </Stack>
+                <Paper elevation={2} sx={{padding:2,
+                    alignItems:'center',
+                    alignContent:'center',
+                    display:'flex',
+                    flexDirection: 'column'}}>
+                    <Typography variant="h5">
+                        Portions :
+                    </Typography>
+                    <Typography variant="body3">
+                        {portion} personnes
+                    </Typography>
                 </Paper>
             </Stack>
 

@@ -1,7 +1,7 @@
 import React from "react";
 import "./SearchPage.css"
 import Stack from "@mui/material/Stack";
-import {Typography, Button, Pagination, Chip} from "@mui/material";
+import {Typography, Button, Pagination, Chip, Box} from "@mui/material";
 import SearchBar from "../../components/searchBar/SearchBar";
 import AddIcon from '@mui/icons-material/Add';
 import CardListV2 from "../../components/card_list/CardListV2";
@@ -93,6 +93,7 @@ export default function GenericSearchPage({pageDescr, tags, barInfo, onFilterCli
                 {children}
             </CardListV2>
             <Pagination count={paginationSize}/>
+            <Box sx={{ height: '15px' }} />
         </Stack>
     );
 }
