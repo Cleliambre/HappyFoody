@@ -17,7 +17,6 @@ import {
     MenuItem,
     Typography
 } from "@mui/material";
-import axios from 'axios';
 
 
 //Fonction associée à la page de recherche d'une ou plusieurs recettes
@@ -171,7 +170,7 @@ export default function RecetteSearchPage(){
     }
 
     const handleClick = (card) => {
-        alert(`Carte sélectionnée : ${card.title}`);
+        navigate(`/recette/${card.id}`);
     };
 
     const handleLike = async (card) => {
@@ -284,7 +283,6 @@ export default function RecetteSearchPage(){
     const handlePageChange = (event, value) => {
         setPage(value);
     };
-
 
     return (
             <GenericSearchPage

@@ -5,14 +5,19 @@ import com.example.happy_foody.model.Recette;
 import com.example.happy_foody.service.RecetteService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+//import org.slf4j.Logger;
+//import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 
 @RestController
 @RequestMapping(path="api/recette")
 @CrossOrigin
+//@Component
 public class RecetteController {
     private final RecetteService recetteService;
+    //private static final Logger logger = LoggerFactory.getLogger(RecetteController.class);
 
 
     @Autowired
@@ -67,6 +72,7 @@ public class RecetteController {
     @GetMapping("/noteMoyenne/{id}")
     public Long getNoteMoyenneById(@PathVariable(value = "id") Long id)
     {
+        //logger.info(recetteService.getNoteMoyenneById(id).toString());
         return recetteService.getNoteMoyenneById(id);
     }
 

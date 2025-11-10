@@ -25,10 +25,14 @@ public class QuantiteController {
     }
 
     //SELECT
-    @GetMapping("/getQuantiteById/{id}")
-    public Quantite getQuantiteById(@PathVariable(value = "id") QuantiteId id){
+    @GetMapping("/getQuantiteById/{idRecette}/{idIngredient}")
+    public Quantite getQuantiteById(
+            @PathVariable Long idRecette,
+            @PathVariable Long idIngredient) {
+        QuantiteId id = new QuantiteId(idRecette, idIngredient);
         return quantiteService.getQuantiteById(id);
     }
+
 
     //INSERT
     @PostMapping("/createQuantite")

@@ -7,6 +7,8 @@ import RestaurantSearch from "./pages/searchPage/RestaurantSearchPage"
 import CommunauteSearch from "./pages/searchPage/CommunauteSearchPage"
 import PartageSearch from "./pages/searchPage/PartageSearchPage"
 
+import RecetteInformation from "./pages/InformationPages/RecettePage"
+
 import Favoris from "./pages/favori/Favori"
 import Messages from "./pages/Messages" //A faire
 import Profil from "./pages/profil/Profil"
@@ -19,7 +21,6 @@ import PasswordModification from "./pages/passwordModification/PasswordModificat
 import RecetteCreation from "./pages/creationPages/RecetteCreation";
 
 import { Routes, Route } from 'react-router-dom';
-import {useEffect} from "react";
 
 
 function App() {
@@ -34,6 +35,8 @@ function App() {
                 <Route path="/restaurant" element={<RestaurantSearch/>}/>
                 <Route path="/communaute" element={<CommunauteSearch/>}/>
                 <Route path="/partage" element={<PartageSearch/>}/>
+
+                <Route path="/recette/:id" element={<RecetteInformation />} />
 
                 <Route path="/favoris" element={<Favoris/>}/>
                 <Route path="/messages" element={<Messages/>}/>
