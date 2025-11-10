@@ -4,13 +4,31 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cd3b6f24-139e-4382-af2b-500df1f5a878" name="Changes" comment="Added Communaute creation page">
-      <change afterPath="$PROJECT_DIR$/frontend/src/pages/creationPages/PartageCreation.jsx" afterDir="false" />
+    <list default="true" id="a51d4164-65dd-4e44-931e-9734ea826bff" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/frontend/src/components/restautant_component/CarteRestaurant.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/components/restautant_component/components.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/components/smiley_rating/RadioGroupRating.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/components/smiley_rating/getSmileys.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/pages/InformationPages/RestaurantPage.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/pages/InformationPages/informationPages.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/creationPages/CreateCardDescription.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/creationPages/CreateCardDescription.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/card_list/GenericCard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/card_list/GenericCard.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/menu/MenuBar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/menu/MenuBar.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/InformationPages/CardDescription.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/InformationPages/CardDescription.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/InformationPages/RecettePage.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/ButtonReturn.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/InformationPages/RecettePage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/InformationPages/RecettePage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/Messages.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/Messages.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/connexion/Connexion.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/connexion/Connexion.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/creationPages/RecetteCreation.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/creationPages/RecetteCreation.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/searchPage/CommunauteSearchPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/searchPage/CommunauteSearchPage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/searchPage/GenericSearchPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/searchPage/GenericSearchPage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/searchPage/PartageSearchPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/searchPage/PartageSearchPage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/searchPage/RecetteSearchPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/searchPage/RecetteSearchPage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/searchPage/RestaurantSearchPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/searchPage/RestaurantSearchPage.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,30 +38,102 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="JavaScript File" />
         <option value="JSX File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="frontend_postCreation" />
+        <entry key="$PROJECT_DIR$" value="develop" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;FlowyCode5&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Cleliambre/HappyFoody.git&quot;,
+    &quot;accountId&quot;: &quot;483f852f-e9fb-421d-a929-7aa5a36df291&quot;
+  }
+}</component>
+  <component name="KubernetesApiPersistence"><![CDATA[{}]]></component>
+  <component name="KubernetesApiProvider"><![CDATA[{
+  "isMigrated": true
+}]]></component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 1
+}</component>
+  <component name="ProjectId" id="3574RNJoXgIwmHxbfGwXT5B3v2l" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "Node.js.CardDescription.jsx.executor": "Run",
+    "Maven.backend [clean,install].executor": "Run",
+    "Node.js.App.js.executor": "Run",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "git-widget-placeholder": "frontend__PartageCreationPage",
+    "RunOnceActivity.git.unshallow": "true",
+    "Spring Boot.Backend.executor": "Run",
+    "git-widget-placeholder": "front__end__restaurantPage",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/tangf/IdeaProjects/HappyFoody/frontend/src/components",
+    "list.type.of.created.stylesheet": "CSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
-    "npm.start.executor": "Run",
-    "ts.external.directory.path": "C:\\Program Files\\JetBrains\\IntelliJ IDEA 2025.2.2\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external"
+    "nodejs_package_manager_path": "npm",
+    "npm.Frontend.executor": "Run",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "ts.external.directory.path": "C:\\Program Files\\JetBrains\\IntelliJ IDEA 2025.2.2\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external",
+    "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager">
-    <configuration name="start" type="js.build_tools.npm" nameIsGenerated="true">
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\tangf\IdeaProjects\HappyFoody\frontend\src\components" />
+      <recent name="C:\Users\tangf\IdeaProjects\HappyFoody\frontend\src\pages\InformationPages" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\tangf\IdeaProjects\HappyFoody\frontend\src\components\restautant_component" />
+      <recent name="C:\Users\tangf\IdeaProjects\HappyFoody\frontend\src\components\smiley_rating" />
+      <recent name="C:\Users\tangf\IdeaProjects\HappyFoody\frontend\src\components" />
+      <recent name="C:\Users\tangf\IdeaProjects\HappyFoody\frontend\src\images" />
+    </key>
+  </component>
+  <component name="RunManager" selected="npm.Frontend">
+    <configuration name="Back&amp;Front" type="CompoundRunConfigurationType">
+      <toRun name="Frontend" type="js.build_tools.npm" />
+      <toRun name="Backend" type="SpringBootApplicationConfigurationType" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Backend" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="backend" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.happy_foody.HappyFoodyApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Frontend" type="js.build_tools.npm">
       <package-json value="$PROJECT_DIR$/frontend/package.json" />
       <command value="run" />
       <scripts>
@@ -53,21 +143,34 @@
       <envs />
       <method v="2" />
     </configuration>
+    <list>
+      <item itemvalue="Compound.Back&amp;Front" />
+      <item itemvalue="npm.Frontend" />
+      <item itemvalue="Spring Boot.Backend" />
+    </list>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-bf35d07a577b-intellij.indexing.shared.core-IU-252.26199.169" />
+        <option value="bundled-js-predefined-d6986cc7102b-9c94529fcfe0-JavaScript-IU-252.26199.169" />
+      </set>
+    </attachedChunks>
   </component>
   <component name="TaskManager">
-    <task id="LOCAL-00001" summary="Added Communaute creation page">
-      <option name="closed" value="true" />
-      <created>1762452382066</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1762452382066</updated>
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a51d4164-65dd-4e44-931e-9734ea826bff" name="Changes" comment="" />
+      <created>1762447774945</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1762447774945</updated>
+      <workItem from="1762447777248" duration="9753000" />
+      <workItem from="1762482111805" duration="604000" />
+      <workItem from="1762513110943" duration="41045000" />
     </task>
-    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="Added Communaute creation page" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added Communaute creation page" />
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
 </project>
