@@ -20,6 +20,10 @@ import Inscription from "./pages/Inscription/Inscription";
 import Connexion from "./pages/connexion/Connexion";
 import PasswordModification from "./pages/passwordModification/PasswordModification";
 
+// Les Pages de messages
+import MessageHome from "./pages/message/MessageHome"; //liste de conversations
+import Message from "./pages/message/Message"; //conversation individuelle
+
 // Les pages d'affichage individuel
 import CommunautePage from "./pages/InformationPages/CommunautePage";
 import RecettePage from "./pages/InformationPages/RecettePage";
@@ -72,6 +76,11 @@ function App() {
                 {/*Les pages d'affichage individuel*/}
                 <Route path="/postCommunaute" element={<CommunautePage/>}/>
                 <Route path="/recettePage" element={<RecettePage/>}/>
+                  
+                {/*pages de messages*/}
+                <Route path={"/messageHome"} element={<MessageHome/>}/>
+                <Route path={"/message"} element={<Message/>}/>/
+
             </Routes>
         </div>
       </div>
