@@ -28,6 +28,7 @@ import Message from "./pages/message/Message"; //conversation individuelle
 import CommunautePage from "./pages/InformationPages/CommunautePage";
 import RecettePage from "./pages/InformationPages/RecettePage";
 import RestaurantPage from "./pages/InformationPages/RestaurantPage";
+import PartagePage from "./pages/InformationPages/PartagePage";
 
 // Pages de création
 import RecetteCreation from "./pages/creationPages/RecetteCreation";
@@ -66,13 +67,12 @@ function App() {
                 <Route path={"/recette/:id"} element={<RecettePage/>}/>
                 <Route path="/restaurant/:id" element={<RestaurantPage />} />
                 <Route path="/postCommunaute/:id" element={<CommunautePage/>}/>
+                <Route path="/partage/:id" element={<PartagePage/>}/>
 
                 {/* Les pages de Création */}
                 <Route path="/createRecette" element={<RecetteCreation/>}/>
                 <Route path="/createCommunaute" element={<CommunauteCreation/>}/>
                 <Route path="/createPartage" element={<PartageCreation/>}/>
-
-                {/*Les pages d'affichage individuel*/}
 
                 {/*pages de messages*/}
                 <Route path={"/messageHome"} element={<MessageHome/>}/>
