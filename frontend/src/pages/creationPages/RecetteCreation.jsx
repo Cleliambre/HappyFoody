@@ -11,7 +11,7 @@ import AutoStoriesOutlinedIcon from '@mui/icons-material/AutoStoriesOutlined';
 
 export default function RecetteCreation(){
 
-    const[image, setImage] = useState(null);
+    const[image] = useState(null);
 
     const [tags, setTags] = useState([]);
 
@@ -19,7 +19,7 @@ export default function RecetteCreation(){
 
     const [description, setDescription] = useState("");
 
-    const [compte, setCompte] = useState(
+    const [compte] = useState(
         {pp : berserker, pseudo : "MariaSalade"}
     );
 
@@ -84,7 +84,7 @@ export default function RecetteCreation(){
 
     const [uniteIngredient, setUniteIngredient] = useState("");
 
-    const [uniteAccepted, setUniteAccepted] = useState([
+    const [uniteAccepted] = useState([
         "",
         "g",
         "kg",

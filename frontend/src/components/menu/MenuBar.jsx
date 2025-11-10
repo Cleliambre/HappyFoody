@@ -69,7 +69,7 @@ export default function MenuBar() {
     };
 
     return (
-        <AppBar position="static">
+        <AppBar component='nav' position='sticky'>
             <Container maxWidth="xl">
                 <Toolbar disableGutters>
 
@@ -92,14 +92,21 @@ export default function MenuBar() {
                                 onClick={handleCloseNavMenu}
                                 component={Link}
                                 to={button.path}
+
                                 sx={{
-                                    color: location.pathname === button.path ? 'white' : 'primary',
-                                    backgroundColor: location.pathname === button.path ? 'orange' : 'white',
+                                    color: 'primary',
+                                    backgroundColor: 'white',
+                                    '&.Mui-disabled': {
+                                        color: 'white',
+                                        backgroundColor: 'orange',
+                                        opacity: 1, // empêche le grisé
+                                    },
                                     display: 'flex',
                                     flexDirection: 'column',
                                     mr: 1,
                                     width: 120,
                                 }}
+                                disabled={location.pathname.startsWith(button.path)}
                             >
                                 {button.icon}
                                 <span>{button.text}</span>
