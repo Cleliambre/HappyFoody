@@ -1,12 +1,34 @@
+import React from "react";
 
-import {Stack, Card, CardMedia, Typography, Divider, Chip, CardContent, IconButton, Collapse, CardActions} from "@mui/material";
+import {
+    Stack,
+    Card,
+    CardMedia,
+    Typography,
+    Divider,
+    Chip,
+    CardContent,
+    IconButton,
+    Collapse,
+    CardActions
+} from "@mui/material";
+
+// Icons
 import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlined';
 import FavoriteOutlinedIcon from '@mui/icons-material/FavoriteOutlined';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import React from "react";
-import ChatBubbleOutlineOutlinedIcon from "@mui/icons-material/ChatBubbleOutlineOutlined";
 
-export default function CardDescription({image, tags, titre, texteDescription, isCommu, onTagClick, like, setLike, children}){
+export default function CardDescription(
+    {
+        image,
+        tags,
+        titre,
+        texteDescription,
+        onTagClick,
+        like,
+        setLike,
+        children}
+){
 
     // Formatage du compteur de likes (ex: 1000 → "1K")
     const formatLikes = (num) => {
@@ -15,28 +37,22 @@ export default function CardDescription({image, tags, titre, texteDescription, i
         return num.toString();
     };
 
+    // Gère le compte des likes
     const handleLike = () => {
         setLike({liked : !like.liked,
             nb : like.liked ? like.nb-1:like.nb+1});
     };
 
     const [isExpanded, setExpanded] = React.useState(false);
-
     const handleExpandMore = () => {setExpanded(!isExpanded);};
 
     return (
-        //Contenu de la page
-
-        /*Boîte de description*/
-        <Card
-            sx={{
-                width: "100%",
-                display: "flex",
-                flexDirection: "column",
-            }}
-        >
-            <CardContent
-                sx={{width:'95%', display:"flex", justifyContent:"space-between"}}
+            <Card
+                sx={{
+                    width: "100%",
+                    display: "flex",
+                    flexDirection: "column",
+                }}
             >
                 {/*contenu de la description*/}
                 <Stack
@@ -44,20 +60,20 @@ export default function CardDescription({image, tags, titre, texteDescription, i
                     spacing={2}
                     alignItems="start"
                 >
-                    {/*image*/}
-                    <CardMedia
-                        component="img"
-                        image={image}
-                        sx={{width:"200px", height:"200px"}}
-                    />
-
-                    {/*titre, auteur, note, description et tags*/}
+                    {/*contenu de la carte*/}
                     <Stack
                         direction="column"
                         minHeight={"200px"}
                         justifyContent="space-between"
                     >
-                        {/*titre, auteur, note, description*/}
+                        {/*image*/}
+                        <CardMedia
+                            component="img"
+                            image={image}
+                            sx={{width:"200px", height:"200px"}}
+                        />
+
+                        {/*Partie centrale : titre, auteur, note, description */}
                         <Stack
                             direction="column"
                             spacing={2}
@@ -82,6 +98,23 @@ export default function CardDescription({image, tags, titre, texteDescription, i
                                 >
                                     {children}
                                 </Stack>
+
+                                {/*Description*/}
+                                <Typography variant="body2" color="textSecondary" sx={{ whiteSpace: 'pre-line' }}>
+                                    {texteDescription}
+                                </Typography>
+
+                                {/*Bouton répondre, si c'est un post de communauté*/}
+                                {isCommu ? <Chip
+                                    label={
+                                        <Stack direction="row" spacing={1}>
+                                            <ChatBubbleOutlineOutlinedIcon size="small"/>
+                                            <Typography variant="body1">Répondre</Typography>
+                                        </Stack>}
+                                    color="primary"
+                                    onClick={onTagClick}
+
+                                /> :  <React.Fragment/>}
                             </Stack>
                             {/*Description*/}
                             <Typography variant="body2" color="textSecondary">
@@ -101,44 +134,43 @@ export default function CardDescription({image, tags, titre, texteDescription, i
                             /> :  <React.Fragment/>}
 
                         </Stack>
-
-
-
                     </Stack>
-                </Stack>
 
-                {/*Favori*/}
-                <Stack alignItems={"center"}>
-                    <IconButton onClick={handleLike}>
-                        {like.liked ? <FavoriteOutlinedIcon color="error"/> : <FavoriteBorderOutlinedIcon/>}
-                    </IconButton>
-                    <Typography variant="body2" lineHeight={0}>
-                        {formatLikes(like.nb)}
-                    </Typography>
-                </Stack>
-            </CardContent>
-            <Divider />
-
-            { (!(tags===undefined || tags === null) && tags.length > 0) ?
-                <CardActions sx={{justifyContent: "space-between"}}>
-                    <Typography variant="h6" color="textSecondary">
-                        Catégories
-                    </Typography>
-                    <IconButton onClick={handleExpandMore}>
-                        <ExpandMoreIcon/>
-                    </IconButton>
-                </CardActions> : <React.Fragment/>
-            }
-
-            {(!(tags===undefined || tags === null) && tags.length > 0) ?
-                <Collapse in={isExpanded}>
-                    <Stack direction="row" flexWrap="wrap" gap={1} margin="10px">
-                        {tags.map((tag) => (
-                            <Chip label={tag.label} color={tag.color}/>
-                        ))}
+                    {/*Partie Favori*/}
+                    <Stack sx={{alignItems:'center'}}>
+                        <IconButton onClick={handleLike}>
+                            {like.liked ? <FavoriteOutlinedIcon color="error"/> : <FavoriteBorderOutlinedIcon/>}
+                        </IconButton>
+                        <Typography variant="body2" lineHeight={0}>
+                            {formatLikes(like.nb)}
+                        </Typography>
                     </Stack>
-                </Collapse> : <React.Fragment/>
-            }
-        </Card>
+
+                </CardContent>
+                <Divider />
+
+                {/* Catégories (tags) (s'affiche seulement s'il y a des tags)*/}
+                { (!(tags===undefined || tags === null) && tags.length > 0) ?
+                    <CardActions sx={{justifyContent: "space-between"}}>
+                        <Typography variant="h6" color="textSecondary">
+                            Catégories
+                        </Typography>
+                        <IconButton onClick={handleExpandMore}>
+                            <ExpandMoreIcon/>
+                        </IconButton>
+                    </CardActions> : <React.Fragment/>
+                }
+
+                {/* Tags (s'affiche seulement s'il y a des tags) */}
+                {(!(tags===undefined || tags === null) && tags.length > 0) ?
+                    <Collapse in={isExpanded}>
+                        <Stack direction="row" flexWrap="wrap" gap={1} margin="10px">
+                            {tags.map((tag) => (
+                                <Chip label={tag.label} color={tag.color}/>
+                            ))}
+                        </Stack>
+                    </Collapse> : <React.Fragment/>
+                }
+            </Card>
     );
 }
