@@ -108,6 +108,17 @@ export default function CardDescription(
                                     {texteDescription}
                                 </Typography>
 
+                                {/*Bouton répondre, si c'est un post de communauté*/}
+                                {isCommu ? <Chip
+                                    label={
+                                        <Stack direction="row" spacing={1}>
+                                            <ChatBubbleOutlineOutlinedIcon size="small"/>
+                                            <Typography variant="body1">Répondre</Typography>
+                                        </Stack>}
+                                    color="primary"
+                                    onClick={onTagClick}
+
+                                /> :  <React.Fragment/>}
                             </Stack>
                         </Stack>
                     </Stack>
@@ -123,30 +134,30 @@ export default function CardDescription(
                     </Stack>
 
                 </CardContent>
+                <Divider />
 
+                {/* Catégories (tags) (s'affiche seulement s'il y a des tags)*/}
+                { (!(tags===undefined || tags === null) && tags.length > 0) ?
+                    <CardActions sx={{justifyContent: "space-between"}}>
+                        <Typography variant="h6" color="textSecondary">
+                            Catégories
+                        </Typography>
+                        <IconButton onClick={handleExpandMore}>
+                            <ExpandMoreIcon/>
+                        </IconButton>
+                    </CardActions> : <React.Fragment/>
+                }
 
-                <Divider/>
-
-
-                {/* Catégories (tags) */}
-                <CardActions sx={{justifyContent:"space-between"}}>
-                    <Typography variant="h6" color="textSecondary">
-                        Catégories
-                    </Typography>
-                    <IconButton onClick={handleExpandMore}>
-                        <ExpandMoreIcon/>
-                    </IconButton>
-                </CardActions>
-
-                {/* Tags */}
-                <Collapse in={isExpanded}>
-                    <Stack direction="row" flexWrap="wrap" gap={1} margin="10px">
-                        {tags.map((tag) => (
-                            <Chip label={tag.label} color={tag.color} onClick={onTagClick}/>
-                        ))}
-                    </Stack>
-                </Collapse>
-
+                {/* Tags (s'affiche seulement s'il y a des tags) */}
+                {(!(tags===undefined || tags === null) && tags.length > 0) ?
+                    <Collapse in={isExpanded}>
+                        <Stack direction="row" flexWrap="wrap" gap={1} margin="10px">
+                            {tags.map((tag) => (
+                                <Chip label={tag.label} color={tag.color}/>
+                            ))}
+                        </Stack>
+                    </Collapse> : <React.Fragment/>
+                }
             </Card>
     );
 }
