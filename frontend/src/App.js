@@ -27,6 +27,8 @@ import Message from "./pages/message/Message"; //conversation individuelle
 // Les pages d'affichage individuel
 import CommunautePage from "./pages/InformationPages/CommunautePage";
 import RecettePage from "./pages/InformationPages/RecettePage";
+import RestaurantPage from "./pages/InformationPages/RestaurantPage";
+import PartagePage from "./pages/InformationPages/PartagePage";
 
 // Pages de création
 import RecetteCreation from "./pages/creationPages/RecetteCreation";
@@ -38,7 +40,7 @@ import React from "react";
 function App() {
   return (
       <div className="App">
-        <MenuBar/>
+          <MenuBar/>
         <div className="container">
             <Routes>
                 <Route path="/" element={<RecetteSearch/>}/>
@@ -55,9 +57,6 @@ function App() {
                 {/*<Route path="/profil" element={<Profil/>}/>*/}
                 <Route path="/profil/:pseudo" element={<Profil />} />
                 <Route path="/profil" element={<Profil />} />
-                />
-                  
-                <Route path="/inscription" element={<Inscription/>} />
 
                 {/* Les pages de "Profil" */}
                 <Route path="/inscription" element={<Inscription/>} />
@@ -67,19 +66,17 @@ function App() {
                 {/* Page d'information */}
                 <Route path={"/recette/:id"} element={<RecettePage/>}/>
                 <Route path="/restaurant/:id" element={<RestaurantPage />} />
+                <Route path="/postCommunaute/:id" element={<CommunautePage/>}/>
+                <Route path="/partage/:id" element={<PartagePage/>}/>
 
                 {/* Les pages de Création */}
                 <Route path="/createRecette" element={<RecetteCreation/>}/>
                 <Route path="/createCommunaute" element={<CommunauteCreation/>}/>
                 <Route path="/createPartage" element={<PartageCreation/>}/>
-                  
-                {/*Les pages d'affichage individuel*/}
-                <Route path="/postCommunaute" element={<CommunautePage/>}/>
-                <Route path="/recettePage" element={<RecettePage/>}/>
-                  
+
                 {/*pages de messages*/}
                 <Route path={"/messageHome"} element={<MessageHome/>}/>
-                <Route path={"/message"} element={<Message/>}/>/
+                <Route path={"/message"} element={<Message/>}/>
 
             </Routes>
         </div>

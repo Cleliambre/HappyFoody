@@ -17,16 +17,18 @@ import {
 import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlined';
 import FavoriteOutlinedIcon from '@mui/icons-material/FavoriteOutlined';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import ChatBubbleOutlineOutlinedIcon from "@mui/icons-material/ChatBubbleOutlineOutlined";
 
 export default function CardDescription(
     {
         image,
-        tags,
+        tags = [],
         titre,
         texteDescription,
         onTagClick,
         like,
         setLike,
+        isCommu = false,
         children}
 ){
 
@@ -40,7 +42,7 @@ export default function CardDescription(
     // Gère le compte des likes
     const handleLike = () => {
         setLike({liked : !like.liked,
-                nb : like.liked ? like.nb-1:like.nb+1});
+            nb : like.liked ? like.nb-1:like.nb+1});
     };
 
     const [isExpanded, setExpanded] = React.useState(false);
@@ -54,6 +56,7 @@ export default function CardDescription(
                     flexDirection: "column",
                 }}
             >
+
                 <CardContent
                     sx={{width:'95%', display:"flex", justifyContent:"space-between"}}
                 >
@@ -70,18 +73,26 @@ export default function CardDescription(
                             sx={{width:"200px", height:"200px"}}
                         />
 
-                        {/*Partie centrale : titre, auteur, note, description */}
+                        {/*contenu de la carte*/}
                         <Stack
                             direction="column"
                             minHeight={"200px"}
                             justifyContent="space-between"
                         >
-                            {/*titre, auteur, note, description*/}
+
+
+                            {/*Partie centrale : titre, auteur, note, description */}
                             <Stack
                                 direction="column"
-                                spacing={2}
-                                alignItems="start"
+                                minHeight={"200px"}
+                                justifyContent="space-between"
                             >
+                                {/*titre, auteur, note, description*/}
+                                <Stack
+                                    direction="column"
+                                    spacing={2}
+                                    alignItems={"sart"}
+                                >
                                 {/*titre*/}
                                 <Typography variant="h3">
                                     {titre}
@@ -95,43 +106,38 @@ export default function CardDescription(
                                 >
                                     <Divider orientation="vertical" flexItem/>
                                     {/*auteur, note*/}
-                                    <Stack
-                                        direction="column"
-                                        spacing={1}
-                                    >
                                         {children}
-                                    </Stack>
                                 </Stack>
-
-                                {/*Description*/}
-                                <Typography variant="body2" color="textSecondary" sx={{ whiteSpace: 'pre-line' }}>
-                                    {texteDescription}
-                                </Typography>
-
-                                {/*Bouton répondre, si c'est un post de communauté*/}
-                                {isCommu ? <Chip
-                                    label={
-                                        <Stack direction="row" spacing={1}>
-                                            <ChatBubbleOutlineOutlinedIcon size="small"/>
-                                            <Typography variant="body1">Répondre</Typography>
-                                        </Stack>}
-                                    color="primary"
-                                    onClick={onTagClick}
-
-                                /> :  <React.Fragment/>}
                             </Stack>
+
+                                    {/*Description*/}
+                                    <Typography variant="body2" color="textSecondary" sx={{ whiteSpace: 'pre-line' }}>
+                                        {texteDescription}
+                                    </Typography>
+                            </Stack>
+                            {/*Bouton répondre, si c'est un post de communauté*/}
+                            {isCommu ? <Chip
+                                label={
+                                    <Stack direction="row" spacing={1}>
+                                        <ChatBubbleOutlineOutlinedIcon size="small"/>
+                                        <Typography variant="body1">Répondre</Typography>
+                                    </Stack>}
+                                color="primary"
+                                onClick={onTagClick}
+
+                            /> :  <React.Fragment/>}
                         </Stack>
                     </Stack>
 
-                    {/*Partie Favori*/}
-                    <Stack sx={{alignItems:'center'}}>
-                        <IconButton onClick={handleLike}>
-                            {like.liked ? <FavoriteOutlinedIcon color="error"/> : <FavoriteBorderOutlinedIcon/>}
-                        </IconButton>
-                        <Typography variant="body2" lineHeight={0}>
-                            {formatLikes(like.nb)}
-                        </Typography>
-                    </Stack>
+                        {/*Partie Favori*/}
+                        <Stack sx={{alignItems:'center'}}>
+                            <IconButton onClick={handleLike}>
+                                {like.liked ? <FavoriteOutlinedIcon color="error"/> : <FavoriteBorderOutlinedIcon/>}
+                            </IconButton>
+                            <Typography variant="body2" lineHeight={0}>
+                                {formatLikes(like.nb)}
+                            </Typography>
+                        </Stack>
 
                 </CardContent>
                 <Divider />

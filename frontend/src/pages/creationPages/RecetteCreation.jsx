@@ -11,7 +11,7 @@ import AutoStoriesOutlinedIcon from '@mui/icons-material/AutoStoriesOutlined';
 
 export default function RecetteCreation(){
 
-    const[image] = useState(null);
+    const[image, setImage] = useState(null);
 
     /*attention : cela ne permet que de faire un aperçu de l'image, l'URL créée n'est pas persistante.
     * il faudra enregistrer l'image (appelée file ici) dans la base de données pour ensuite avoir une url persistante*/
