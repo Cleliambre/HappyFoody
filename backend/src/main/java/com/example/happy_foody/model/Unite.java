@@ -4,7 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
 public enum Unite {
-    g("g"), kg("kg"), L("L"), mL("mL"),
+    none(""), g("g"), kg("kg"), L("L"), mL("mL"),
     grandeCuilliere("cuillère à soupe"), petiteCuillere("cuillère à café"),
     bouquet("bouquet");
     String description;
