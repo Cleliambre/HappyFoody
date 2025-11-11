@@ -9,11 +9,11 @@ import {
     ListItem,
     ListItemText
 } from "@mui/material";
+
 import taboule from "../../images/taboule.png";
 import StarOutlinedIcon from '@mui/icons-material/StarOutlined';
 import React, { useEffect, useState } from "react";
 import CardDescription from "./CardDescription";
-import KeyboardReturnIcon from "@mui/icons-material/KeyboardReturn";
 import ButtonReturn from "../../components/ButtonReturn";
 import { useParams, useNavigate } from "react-router-dom";
 
@@ -162,17 +162,13 @@ export default function RecettePage() {
     // Vérification du like de l'utilisateur
     // =========================
     const fetchLikes = async () => {
-        console.log("Bonjour");
         if (!compte || !recette) return;
-        console.log("Rebonjour");
         try {
             const likedResponse = await fetch(
                 `http://localhost:8080/api/compte/getLikedRecettes/${compte.idCompte}`
             );
-            console.log("Je suis bien là");
             if (likedResponse.ok) {
                 const likedRecettes = await likedResponse.json();
-                console.log(likedRecettes);
                 if (likedRecettes.map(r => r.idRecette).includes(recette.idRecette)) {
                     setLike(prev => ({ nb : prev.nb, liked: true }));
                 }

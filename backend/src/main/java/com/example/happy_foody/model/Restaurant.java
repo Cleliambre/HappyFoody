@@ -20,6 +20,8 @@ public class Restaurant {
     private String menu;
     private String site;
     private String urlImage;
+    private Double latitude;
+    private Double longitude;
 
     private Set<Tag> tags;
 
@@ -72,6 +74,14 @@ public class Restaurant {
     @Column (name = "adresse", nullable = true)
     public String getAdresse() {return adresse;}
     public void setAdresse(String adresse) {this.adresse = adresse;}
+
+    @Column (name = "latitude", nullable = true)
+    public Double getLatitude() {return latitude;}
+    public void setLatitude(Double latitude) {this.latitude = latitude;}
+
+    @Column (name = "longitude", nullable = true)
+    public Double getLongitude() {return longitude;}
+    public void setLongitude(Double longitude) {this.longitude = longitude;}
 
     @Column (name = "horaire", nullable = true)
     public String getHoraire() {return horaire;}

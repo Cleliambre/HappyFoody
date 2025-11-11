@@ -10,6 +10,10 @@ const icon = L.icon({
 });
 
 export default function CarteRestaurant({position}) {
+    if (!position || position.length !== 2 || position.some(coord => coord == null)) {
+        return <p>Coordonnées non disponibles</p>; // ou afficher une map par défaut
+    }
+
     return (
         <MapContainer
             center={position}

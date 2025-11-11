@@ -44,6 +44,8 @@ public class RestaurantService {
         restaurant.setMenu(restaurantDetails.getMenu());
         restaurant.setSite(restaurantDetails.getSite());
         restaurant.setUrlImage(restaurantDetails.getUrlImage());
+        restaurant.setLatitude(restaurantDetails.getLatitude());
+        restaurant.setLongitude(restaurantDetails.getLongitude());
 
         final Restaurant updatedRestaurant = restaurantRepository.save(restaurant);
         return updatedRestaurant;
@@ -117,8 +119,16 @@ public class RestaurantService {
         Long noteQualite = restaurantRepository.findNoteQualiteMoyenneById(id);
         Long noteRapidite = restaurantRepository.findNoteRapiditeMoyenneById(id);
         Long noteService = restaurantRepository.findNoteServiceMoyenneById(id);
-        return ((noteService+noteHygiene+noteQualite+noteRapidite)/4);
+
+        // Remplacer les null par 0
+        noteHygiene = (noteHygiene != null) ? noteHygiene : 0L;
+        noteQualite = (noteQualite != null) ? noteQualite : 0L;
+        noteRapidite = (noteRapidite != null) ? noteRapidite : 0L;
+        noteService = (noteService != null) ? noteService : 0L;
+
+        return (noteService + noteHygiene + noteQualite + noteRapidite) / 4;
     }
+
 
     public Long getNombreLikesById(Long id){
         return restaurantRepository.findNombreLikesById(id);

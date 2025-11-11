@@ -1,6 +1,3 @@
-import React, {useEffect} from "react";
-import './informationPages.css'
-
 // Construction de la page
 import {
     Stack,
@@ -10,8 +7,12 @@ import {
     Divider
 } from "@mui/material";
 
+import React, {useEffect, useState} from "react";
+import './informationPages.css'
+
+
+
 // Images
-import wok_sushi from "../../images/wok_sushi.png"
 
 // Création de la carte
 import CardDescription from "./CardDescription";
@@ -22,12 +23,152 @@ import {Titre} from "../../components/Titre";
 import {noteGenerale} from "../../components/smiley_rating/getSmileys";
 import CreationComm from "../../components/commentaires/CreationComm";
 
-import { Link } from "react-router-dom";
+import {Link, useNavigate, useParams} from "react-router-dom";
 
 export default function RestaurantPage(){
-    useEffect(() => {document.title = "Page Restaurant - Happy Foody"}, [])
+    const { id } = useParams();
+    const navigate = useNavigate();
+    const handleRetour = () => {navigate('/restaurant');}
 
-    const [description] = React.useState({
+    // =========================
+    // États principaux
+    // =========================
+    const [compte, setCompte] = useState(null);
+    const [restaurant, setRestaurant] = useState(null);
+    const [tags, setTags] = useState([]);
+    const [like, setLike] = useState({liked : false, nb : 0});
+    const [noteMoyenne, setNoteMoyenne] = useState(0);
+
+    // =========================
+    // Chargement du compte connecté
+    // =========================
+    useEffect(() => {
+        const idCompte = localStorage.getItem("idCompte");
+        if (idCompte) {
+            fetch(`http://localhost:8080/api/compte/getCompteById/${idCompte}`)
+                .then(res => res.json())
+                .then(data => setCompte(data))
+                .catch(err => console.error("Erreur de récupération du compte :", err));
+        }
+    }, []);
+
+    // =========================
+    // Chargement du restaurant
+    // =========================
+    useEffect(() => {
+        fetch(`http://localhost:8080/api/restaurant/getRestaurantById/${id}`)
+            .then(async res => {
+                const text = await res.text();
+                return text ? JSON.parse(text) : null;
+            })
+            .then(data => {
+                setRestaurant(data);
+            })
+            .catch(err => console.error("Erreur de récupération du restaurant :", err));
+    }, [id]);
+
+    // 🧱 Titre de l'onglet
+    useEffect(() => {
+        if(!restaurant) return ;
+        document.title = restaurant.nom + " - Happy Foody";
+    }, [restaurant]);
+
+    // =========================
+    // Note moyenne et likes
+    // =========================
+    useEffect(() => {
+        if (!restaurant) return;
+
+        fetch(`http://localhost:8080/api/restaurant/noteMoyenne/${restaurant.idRestaurant}`)
+            .then(async res => {
+                const text = await res.text();
+                return text ? JSON.parse(text) : 0; // si vide → 0
+            })
+            .then(data => setNoteMoyenne(data))
+            .catch(err => console.error("Erreur de récupération de la note moyenne :", err));
+
+    }, [restaurant]);
+
+    useEffect(() => {
+        if (!restaurant) return;
+
+        fetch(`http://localhost:8080/api/restaurant/nombreLikes/${restaurant.idRestaurant}`)
+            .then(res => res.json())
+            .then(data => setLike(prev => ({ liked: prev.liked, nb: data })))
+            .catch(err => console.error("Erreur de récupération du nombre de likes :", err));
+    }, [restaurant]);
+
+
+    // =========================
+    // Vérification du like de l'utilisateur
+    // =========================
+    const fetchLikes = async () => {
+        if (!compte || !restaurant) return;
+        try {
+            const likedResponse = await fetch(
+                `http://localhost:8080/api/compte/getLikedRestaurants/${compte.idCompte}`
+            );
+            if (likedResponse.ok) {
+                const likedRestaurants = await likedResponse.json();
+                if (likedRestaurants.map(r => r.idRestaurant).includes(restaurant.idRestaurant)) {
+                    setLike(prev => ({ nb : prev.nb, liked: true }));
+                }
+            }
+        } catch (e) {
+            console.warn("Impossible de charger les likes de l'utilisateur :", e);
+        }
+    };
+
+    useEffect(() => {
+        if (compte && restaurant) {
+            fetchLikes();
+        }
+    }, [compte, restaurant]);
+
+    const handleLike = async () => {
+        if (!compte) {
+            alert("Vous devez être connecté pour liker une restaurant !");
+            return;
+        }
+
+        const newLiked = !like.liked;
+
+        setLike({liked : !like.liked,
+            nb : like.liked ? like.nb-1:like.nb+1});
+
+        try {
+
+            const url = `http://localhost:8080/api/compte/${
+                newLiked ? "saveLikedRestaurant" : "deleteLikedRestaurant"
+            }?compteId=${compte.idCompte}&restaurantId=${restaurant.idRestaurant}`;
+
+            const method = newLiked ? "POST" : "DELETE";
+
+            const response = await fetch(url, { method });
+
+            if (!response.ok) throw new Error("Erreur réseau");
+        } catch (error) {
+            console.error("Erreur lors de la mise à jour du like :", error);
+
+            setLike({liked : like.liked,
+                nb : like.liked ? like.nb+1:like.nb-1});
+
+            alert("Impossible de mettre à jour le like. Veuillez réessayer.");
+        }
+    };
+
+    // =========================
+    // Rendu (avec garde)
+    // =========================
+    if (!restaurant) {
+        return (
+            <Typography variant="h6" align="center" sx={{ mt: 4 }}>
+                Chargement de la restaurant...
+            </Typography>
+        );
+    }
+
+    /*const [description] = React.useState({
         image : wok_sushi,
         titre: "Wok Sushi (Test restaurant)",
 
@@ -48,32 +189,32 @@ export default function RestaurantPage(){
         menu:<a href="https://royaldesulis.fr/fr/">royaldesulis.fr</a>,
         site:<a href="https://royaldesulis.fr/fr/">royaldesulis.fr</a>
 
-    });
+    });*/
 
-    const [like, setLike] = React.useState({liked: false, nb:description.nbLike});
+    /*const [like, setLike] = React.useState({liked: false, nb:description.nbLike});*/
 
     const notes = [
-        {critere:"Rapidité", note:4.2},
-        {critere:"Qualité",  note:4.3},
-        {critere:"Service",  note:4.1},
-        {critere:"Hygiène",  note:4.9}
+        {critere:"Rapidité", note:restaurant.noteRapidite},
+        {critere:"Qualité",  note:restaurant.noteQualite},
+        {critere:"Service",  note:restaurant.noteService},
+        {critere:"Hygiène",  note:restaurant.noteHygiene}
     ];
 
     // TODO : stocker la position du restaurant ?
-    const position = [48.676067465716706, 2.1728702239766395];
+    const position = [restaurant.latitude, restaurant.longitude];
 
     // ======== Information des restaurants =======
 
     const infos= [
-        {champ:"📞 Téléphone : ", variable:description.tel},
-        {champ:"🗺️ Adresse : ", variable:description.adresse},
-        {champ:"🕒 Horaires : ", variable:description.horaire},
-        {champ:"📱 Réseaux : ", variable:description.reseau},
+        {champ:"📞 Téléphone : ", variable:restaurant.tel},
+        {champ:"🗺️ Adresse : ", variable:restaurant.adresse},
+        {champ:"🕒 Horaires : ", variable:restaurant.horaire},
+        {champ:"📱 Réseaux : ", variable:restaurant.reseaux},
 
-        {champ:"\n💰Prix : ", variable:description.prix},
-        {champ:"📅 Réserver : ", variable:description.reserver},
-        {champ:"📖 Menu : ", variable:description.menu},
-        {champ:"🛜 Site Web : ", variable:description.site},
+        {champ:"\n💰Prix : ", variable:restaurant.prix},
+        {champ:"📅 Réserver : ", variable:restaurant.reserver},
+        {champ:"📖 Menu : ", variable:restaurant.menu},
+        {champ:"🛜 Site Web : ", variable:restaurant.site},
     ];
 
     return (
@@ -93,12 +234,13 @@ export default function RestaurantPage(){
 
                 {/* Présentation carte du restaurant */}
                 <CardDescription
-                    image={description.image}
-                    tags={description.tags}
-                    titre={description.titre}
-                    texteDescription={description.description}
+                    image={restaurant.urlImage}
+                    tags={tags}
+                    titre={restaurant.nom}
+                    texteDescription={restaurant.description}
                     like={like}
                     setLike={setLike}
+                    handleLike={handleLike}
                 />
 
                 {/*Bouton de retour*/}
