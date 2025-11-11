@@ -15,6 +15,16 @@ export default function RecetteCreation(){
         document.title = "Création de Recette - Happy Foody";
     }, [])
 
+    /*attention : cela ne permet que de faire un aperçu de l'image, l'URL créée n'est pas persistante.
+    * il faudra enregistrer l'image (appelée file ici) dans la base de données pour ensuite avoir une url persistante*/
+    const handleImageChange = (event) => {
+        const file = event.target.files[0];
+        if (file) {
+            setImage(URL.createObjectURL(file)); // crée une URL locale pour l’aperçu
+        }
+    }
+
+    const [tags, setTags] = useState([]);
 
 
     const navigate = useNavigate();
@@ -341,8 +351,18 @@ export default function RecetteCreation(){
                             onTitleChange={handleTitle}
                             onDescriptionChange={handleDescription}
                             onTagDelete={handleTagRemove}
+                            onImageChange={() => document.getElementById("image-upload").click()}
+                        />
+                        {/*champ proposant à l'utilisateur d'importer une image*/}
+                        <input
+                            type="file"
+                            id="image-upload"
+                            accept="image/*"
+                            style={{ display: "none" }}
+                            onChange={handleImageChange}
                         />
                     )}
+
                 </Stack>
 
                 {/*Description détaillée*/}

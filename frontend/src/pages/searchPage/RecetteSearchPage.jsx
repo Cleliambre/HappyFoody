@@ -1,5 +1,6 @@
 import GenericSearchPage from "./GenericSearchPage";
 import AutoStoriesOutlinedIcon from '@mui/icons-material/AutoStoriesOutlined';
+import RecettesIcon from "@mui/icons-material/MenuBookOutlined";
 import React, {useEffect, useState} from "react";
 import RecetteAndRestoElement from "../../components/card_list/RecetteAndRestoElement";
 import img0 from "../../images/taboule.png";
@@ -21,6 +22,7 @@ import {
 
 //Fonction associée à la page de recherche d'une ou plusieurs recettes
 export default function RecetteSearchPage(){
+    useEffect(() => {document.title = "Recherche Recette - Happy Foody"}, [])
 
     //Changement du titre de l'onglet de la page
     useEffect(() => {document.title = "Recettes - Happy Foody"}, [])
@@ -142,9 +144,9 @@ export default function RecetteSearchPage(){
 
 
     const [pageDescription] = React.useState({
-        title : "Recettes",
+        title : "Recette",
         description : "Trouve ou découvre des recettes adaptées à tes envies et besoin ! \nTu peux aussi partager tes meilleures recettes !",
-        logo : <AutoStoriesOutlinedIcon sx={{ fontSize: "150px" }} />
+        logo : <RecettesIcon sx={{ fontSize: "150px" }} />
     });
 
     const [barInfo] = React.useState({
@@ -169,6 +171,7 @@ export default function RecetteSearchPage(){
         deleteTag(deletingTag);
     }
 
+    const navigate = useNavigate();
     const handleClick = (card) => {
         navigate(`/recette/${card.id}`);
     };

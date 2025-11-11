@@ -1,14 +1,16 @@
 import GenericSearchPage from "./GenericSearchPage";
-import React from "react";
+import React, {useEffect} from "react";
 import RestaurantOutlinedIcon from '@mui/icons-material/Restaurant';
 import RecetteAndRestoElement from "../../components/card_list/RecetteAndRestoElement";
 import img1 from "../../images/enfer.jpg";
 import GenericCard from "../../components/card_list/GenericCard";
-
+import {useNavigate} from "react-router-dom";
 
 export default function RestaurantSearchPage(){
+    useEffect(() => {document.title = "Recherche Restaurant - Happy Foody"}, [])
+
     const [pageDescription] = React.useState({
-        title : "Restaurants",
+        title : "Restaurant",
         description : "Trouve ou découvre des restaurants proches de chez toi ! ",
         logo : <RestaurantOutlinedIcon sx={{ fontSize: "150px" }} />
     });
@@ -28,8 +30,9 @@ export default function RestaurantSearchPage(){
         setTags(newTags);
     }
 
+    const navigate = useNavigate();
     const handleClick = (card) => {
-        alert(`Carte sélectionnée : ${card.title}`);
+        navigate(`/restaurant/${card.id}`);
     };
 
     const handleLike = (card) => {
@@ -65,9 +68,7 @@ export default function RestaurantSearchPage(){
                     des makis california, des sashimis et plus d'autre encore."
                 tags_lieu={["Les Ulis, 91940"]}
                 tags_nourriture={["Asiatique", "Wok", "Sushi"]}
-
             />,
-            tags: [],
             thumbnail: img1,
             liked: false,
             likes: 97,

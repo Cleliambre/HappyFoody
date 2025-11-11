@@ -15,7 +15,6 @@ import {
 import FavoriteIconFalse from '@mui/icons-material/FavoriteBorderOutlined';
 import FavoriteIconTrue from '@mui/icons-material/FavoriteOutlined';
 
-
 export default function GenericCard({ card, onLike, onClick }) {
 
     // Formatage du compteur de likes (ex: 1000 → "1K")
@@ -26,7 +25,10 @@ export default function GenericCard({ card, onLike, onClick }) {
     };
 
     return (
-        <Card onClick={() => onClick?.(card)} elevation={3} sx={{ borderRadius: '14px', overflow: 'hidden' }}>
+        <Card onClick={() => onClick?.(card)}
+              elevation={3}
+              sx={{ borderRadius: '14px', overflow: 'hidden' }}
+        >
             <CardActionArea>
                 <div className="card">
 

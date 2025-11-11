@@ -102,6 +102,10 @@ public class CompteService {
         return compteRepository.findByMailOrPseudo(mail, pseudo);
     }
 
+    public Compte getCompteByPseudo(String pseudo){
+        return compteRepository.findByPseudo(pseudo);
+    }
+
     public boolean updatePassword(Long id, String oldPassword, String newPassword) {
         Optional<Compte> compteOpt = compteRepository.findById(id);
         if (compteOpt.isEmpty()) {

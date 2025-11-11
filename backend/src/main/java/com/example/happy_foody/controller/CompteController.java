@@ -38,7 +38,16 @@ public class CompteController {
         return compteService.getCompteById(id);
     }
 
-    //INSERT
+    @GetMapping("/getCompteByPseudo/{pseudo}")
+    public ResponseEntity<?> getCompteByPseudo(@PathVariable(value = "pseudo") String pseudo) {
+        Compte compte = compteService.getCompteByPseudo(pseudo);
+        if (compte == null) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Aucun compte trouvé pour ce pseudo");
+        }
+        return ResponseEntity.ok(compte);
+    }
+
+
     @PostMapping("/createCompte")
     public Compte createCompte(@RequestBody Compte compte){return compteService.createCompte(compte);}
 
@@ -138,6 +147,8 @@ public class CompteController {
         return ResponseEntity.status(HttpStatus.UNAUTHORIZED)
                 .body(Map.of("error", "Identifiants incorrects"));
     }
+
+
 
     @PutMapping("/updatePassword/{id}")
     public String updatePassword(

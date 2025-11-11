@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {useNavigate} from 'react-router-dom';
+import {useParams, useNavigate, useLocation} from 'react-router-dom';
 import './Profil.css'
 import {Typography, Button, Avatar, Tab, Stack, Container} from '@mui/material';
 import  {TabContext, TabList, TabPanel} from '@mui/lab'
@@ -12,24 +12,38 @@ import RecetteAndRestoElement from "../../components/card_list/RecetteAndRestoEl
 export default function Profil() {
     useEffect(() => {document.title = "Profil - Happy Foody"}, [])
 
+    const {pseudo} = useParams();
     const navigate = useNavigate();
+    const location = useLocation();
 
     const [value, setValue] = React.useState('1');
     const [compte, setCompte] = useState(null);
+    const [compteConnecte, setCompteConnecte] = useState(null);
+    const [isLoading, setIsLoading] = useState(true);
     const [recettes, setRecettes] = useState([]);
     const [cards, setCards] = useState([]);
 
 
+    // 🔹 Récupération du compte connecté s’il y en a un
     useEffect(() => {
         const idCompte = localStorage.getItem('idCompte');
+
         if (!idCompte) {
-            window.location.href = '/connexion';
+            // Si on est sur /profil (pas de pseudo) et pas connecté → redirige vers /connexion
+            setCompteConnecte(null);
             return;
         }
 
+        // Récupère le compte connecté
         fetch(`http://localhost:8080/api/compte/getCompteById/${idCompte}`)
-            .then(res => res.json())
-            .then(data => setCompte(data));
+            .then(async res => {
+                const text = await res.text();
+                return text ? JSON.parse(text) : null;
+            })
+            .then(data => {
+                setCompteConnecte(data);
+            })
+            .catch(err => console.error("Erreur de récupération du compte connecté :", err));
     }, []);
 
     useEffect(() => {
@@ -163,6 +177,56 @@ export default function Profil() {
         }
     };
 
+
+    // 🔹 Gestion des redirections et récupération du profil
+    useEffect(() => {
+        const handleProfil = async () => {
+            // Si on est sur /profil sans pseudo
+            if (!pseudo) {
+                const idCompte = localStorage.getItem('idCompte');
+                if (!idCompte) {
+                    // Pas connecté → redirige une seule fois
+                    if (location.pathname !== '/connexion') {
+                        navigate('/connexion', { replace: true });
+                    }
+                    return;
+                }
+
+                // Si connecté mais sans pseudo → attend d’avoir les infos du compte
+                if (compteConnecte?.pseudo) {
+                    const target = `/profil/${compteConnecte.pseudo}`;
+                    if (location.pathname !== target) {
+                        navigate(target, { replace: true });
+                    }
+                }
+                return;
+            }
+
+            // Sinon on est sur /profil/pseudo → on va chercher le profil correspondant
+            try {
+                const res = await fetch(`http://localhost:8080/api/compte/getCompteByPseudo/${pseudo}`);
+                if (!res.ok) {
+                    setCompte(null);
+                    setIsLoading(false);
+                    return;
+                }
+
+                const text = await res.text();
+                const data = text ? JSON.parse(text) : null;
+                setCompte(data);
+            } catch (err) {
+                console.error("Erreur de récupération du profil :", err);
+                setCompte(null);
+            } finally {
+                setIsLoading(false);
+            }
+        };
+
+        handleProfil();
+        // ✅ dépend seulement de pseudo et compteConnecte.pseudo
+    }, [pseudo, compteConnecte?.pseudo, navigate, location.pathname]);
+
+
     const handleChange = (event, newValue) => {
         setValue(newValue);
     };
@@ -173,7 +237,11 @@ export default function Profil() {
         window.location.href = '/connexion';
     };
 
-    if (!compte) return <div>Chargement...</div>;
+    if (isLoading) return <div>Chargement...</div>;
+    if (!compte) return <div>Profil introuvable.</div>;
+
+    //Vérifie si on affiche son propre profil
+    const isOwnProfile = compteConnecte?.pseudo === compte.pseudo;
 
     return (
         <div className="profil-content">
@@ -193,17 +261,19 @@ export default function Profil() {
                     </div>
                 </div>
 
-                <Stack
-                    className="profil-buttons"
-                    spacing={2}
-                >
-                    <Button variant="outlined" className = "modif">
-                        Modifier le profil
-                    </Button>
-                    <Button variant="outlined" color="error" onClick={handleLogout}>
-                        Déconnexion
-                    </Button>
-                </Stack>
+                {isOwnProfile && (
+                    <Stack
+                        className="profil-buttons"
+                        spacing={2}
+                    >
+                        <Button variant="outlined" className = "modif">
+                            Modifier le profil
+                        </Button>
+                        <Button variant="outlined" color="error" onClick={handleLogout}>
+                            Déconnexion
+                        </Button>
+                    </Stack>
+                )}
             </Container>
 
             <div className = "parutions">

@@ -14,6 +14,7 @@ import StarOutlinedIcon from '@mui/icons-material/StarOutlined';
 import React, { useEffect, useState } from "react";
 import CardDescription from "./CardDescription";
 import KeyboardReturnIcon from "@mui/icons-material/KeyboardReturn";
+import ButtonReturn from "../../components/ButtonReturn";
 import { useParams, useNavigate } from "react-router-dom";
 
 export default function RecettePage() {
@@ -280,26 +281,38 @@ export default function RecettePage() {
                     </Stack>
                 </CardDescription>
 
-                {/* Bouton de retour */}
-                <Button variant="contained" sx={{ backgroundColor: "gray" }} onClick={handleRetour}>
-                    <Typography className="cancel" alignContent={"center"}>
-                        Retour
-                        <KeyboardReturnIcon />
-                    </Typography>
-                </Button>
+                {/*Bouton de retour*/}
+                <ButtonReturn
+                    path={"/recette"}
+                    text={"Retour à la recherche des recettes"}
+                />
             </Stack>
 
             {/* Temps et portions */}
             <Stack direction="row" spacing={10}>
-                <Paper elevation={2} sx={{ padding: 2 }}>
-                    <Typography variant="h5">Temps :</Typography>
+                {/*Temps*/}
+                <Paper elevation={2} sx={{padding:2,
+                    alignItems:'center',
+                    alignContent:'center',
+                    display:'flex',
+                    flexDirection: 'column'}}>
+                    <Typography variant="h5">
+                        Temps :
+                    </Typography>
                     <Typography variant="body3">
                         {formatTemps(temps)}
                     </Typography>
                 </Paper>
 
-                <Paper elevation={2} sx={{ padding: 2 }}>
-                    <Typography variant="h5">Portions :</Typography>
+                {/*portions*/}
+                <Paper elevation={2} sx={{padding:2,
+                    alignItems:'center',
+                    alignContent:'center',
+                    display:'flex',
+                    flexDirection: 'column'}}>
+                    <Typography variant="h5">
+                        Portions :
+                    </Typography>
                     <Typography variant="body3">
                         {portion} personnes
                     </Typography>
