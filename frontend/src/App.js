@@ -10,6 +10,8 @@ import RestaurantSearch from "./pages/searchPage/RestaurantSearchPage"
 import CommunauteSearch from "./pages/searchPage/CommunauteSearchPage"
 import PartageSearch from "./pages/searchPage/PartageSearchPage"
 
+import RecetteInformation from "./pages/InformationPages/RecettePage"
+
 // Onglets personnels
 import Favoris from "./pages/favori/Favori"
 import Messages from "./pages/Messages" //A faire
@@ -50,6 +52,8 @@ function App() {
                 <Route path="/restaurant" element={<RestaurantSearch/>}/>
                 <Route path="/communaute" element={<CommunauteSearch/>}/>
                 <Route path="/partage" element={<PartageSearch/>}/>
+
+                <Route path="/recette/:id" element={<RecetteInformation />} />
 
                 {/* Onglets personnels */}
                 <Route path="/favoris" element={<Favoris/>}/>

@@ -1,5 +1,6 @@
 package com.example.happy_foody.service;
 
+import com.example.happy_foody.model.Ingredient;
 import com.example.happy_foody.model.Tag;
 import com.example.happy_foody.repository.TagRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -41,5 +42,9 @@ public class TagService {
         Tag tag = tagRepository.findById(tagId).orElseThrow(()->new ResourceNotFoundException("Tag not found"));
 
         tagRepository.delete(tag);
+    }
+
+    public List<Tag> getTagByRecette(Long id_recette) throws ResourceNotFoundException {
+        return tagRepository.findByRecette(id_recette);
     }
 }

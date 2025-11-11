@@ -126,7 +126,7 @@ export default function CreateCardDescription({image, tags, titre, texteDescript
                 <Stack direction="row" flexWrap="wrap" gap={1} margin="10px">
                     {tags.map((tag, index) => (
                         <Chip
-                            label={tag.label}
+                            label={tag.nom}
                             sx={{backgroundColor: tag.color}}
                             color={tag.color}
                             onDelete={()=>onTagDelete(index)}

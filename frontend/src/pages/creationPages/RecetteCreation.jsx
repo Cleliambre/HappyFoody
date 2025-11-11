@@ -1,17 +1,19 @@
 import CreateCardDescription from "./CreateCardDescription";
-import React, {useState} from "react";
-
-import berserker from "../../images/berserker.jpeg"
+import React, {useEffect, useState} from "react";
+import {useNavigate} from "react-router-dom";
 import KeyboardReturnIcon from "@mui/icons-material/KeyboardReturn";
 import {Dialog, DialogContent, DialogContentText, DialogTitle, IconButton, List, ListItem, ListItemText, MenuItem, Paper, Select, TextField, Tooltip, Typography, Stack} from "@mui/material";
 import Button from "@mui/material/Button";
-
 import DeleteOutlineOutlinedIcon from '@mui/icons-material/DeleteOutlineOutlined';
 import AutoStoriesOutlinedIcon from '@mui/icons-material/AutoStoriesOutlined';
+import axios from "axios";
 
 export default function RecetteCreation(){
 
-    const[image, setImage] = useState(null);
+    //Changement du titre de la page sur l'onglet du navigateur
+    useEffect(() => {
+        document.title = "Création de Recette - Happy Foody";
+    }, [])
 
     /*attention : cela ne permet que de faire un aperçu de l'image, l'URL créée n'est pas persistante.
     * il faudra enregistrer l'image (appelée file ici) dans la base de données pour ensuite avoir une url persistante*/
@@ -24,87 +26,110 @@ export default function RecetteCreation(){
 
     const [tags, setTags] = useState([]);
 
+
+    const navigate = useNavigate();
+    const [message, setMessage] = useState('');
+
+    const[image, setImage] = useState(null);
     const [titre, setTitre] = useState("");
-
     const [description, setDescription] = useState("");
+    const [compte, setCompte] = useState(null);
 
-    const [compte] = useState(
-        {pp : berserker, pseudo : "MariaSalade"}
-    );
+
+    const [tags, setTags] = useState([]);
+    const [tagsPossibles, setTagsPossibles] = useState([])
+    const [tagsExistants, setTagsExistants] = useState([])
+
 
     const [heures, setHeures] = useState(0);
-
     const [minutes, setMinutes] = useState(0);
-
     const [portion, setPortion] = useState(0);
 
-    const [ingredients, setIngredients] = useState([
-        {nom:"test", quantite:100, unite : "g"},
-        {nom:"test à rallonge ++ oui, toujours plus", quantite: 100000, unite: "kg"}
-    ]);
 
-    const [etapes, setEtapes] = useState([
-        "test1 blabla blabla",
-        "test2 blabla blabla youpiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii",
-    ]);
+    const [ingredients, setIngredients] = useState([]);
+    const [etapes, setEtapes] = useState([]);
 
+
+
+    useEffect(() => {
+        const idCompte = localStorage.getItem('idCompte');
+        if (!idCompte) {
+            navigate('/connexion');
+            return;
+        }
+
+        fetch(`http://localhost:8080/api/compte/getCompteById/${idCompte}`)
+            .then(res => res.json())
+            .then(data => setCompte(data));
+
+        fetch(`http://localhost:8080/api/tag/all`)
+            .then(res => res.json())
+            .then(data => {setTagsExistants(data);});
+
+    }, [navigate]);
+
+
+    useEffect(() => {
+        console.log("tagsExistants mis à jour :", tagsExistants);
+    }, [tagsExistants]);
+
+    useEffect(() => {
+        console.log("tagsPossibles mis à jour :", tagsPossibles);
+    }, [tagsPossibles]);
+
+    useEffect(() => {
+        console.log("tags mis à jour :", tags);
+    }, [tags]);
+
+
+    const handleRetour = () => {navigate('/recette');}
+
+    // --- TAGS ---
     const handleTagAdd = (nom)=>{
-
-        let error = false;
-        tags.map(tag=>{
-            if(tag.label === nom){
-                error = true;
-            }
-        })
-        if(!error)
-        {
-            const newTag = {label : nom, color : "success"};
+        if (!tags.some(tag => tag.nom === nom)) {
+            const newTag = {nom: nom, color: "success"};
             setTags([...tags, newTag]);
         }
     };
 
     const handleTagRemove = (index)=>{
-        const newTags = tags.filter((description, index2) => index2 !== index);
-        setTags(newTags);
+        setTags(tags.filter((_, i) => i !== index));
     }
 
+    // --- CHAMPS CARD ---
     const handleTitle = (titre) => setTitre(titre);
-
     const handleDescription = (description) => setDescription(description);
 
+    // --- INGREDIENTS ---
     const handleIngDelete = (index) => {
-        const newIngredients = ingredients.filter((ingredient, index2) => index2 !== index);
-        setIngredients(newIngredients);
+        setIngredients(ingredients.filter((_, i) => i !== index));
     }
 
+    // --- ÉTAPES ---
     const handleEtapeDelete = (index) => {
         const newEtapes = etapes.filter((etape, index2) => index2 !== index);
         setEtapes(newEtapes);
     }
 
+    // --- BOÎTES DE DIALOGUE ---
     const [opened, setOpened] = useState(false);
-
-    const handleOpen1 = () => {setOpened(true);};
-    const handleClose1 = () => {setOpened(false);};
-
     const [nomIngredient, setNomIngredient] = useState("");
-
     const [quantiteIngredient, setQuantiteIngredient] = useState(0);
-
     const [uniteIngredient, setUniteIngredient] = useState("");
-
-    const [uniteAccepted] = useState([
+    const [uniteAccepted, setUniteAccepted] = useState([
         "",
         "g",
         "kg",
         "L",
         "mL",
-        "cuillère(s) à soupe",
-        "cuillère(s) à café"
+        "cuillère à soupe",
+        "cuillère à café",
+        "bouquet"
     ]);
 
     const handleConfirmerIngredient = ()=>{
         setOpened(false);
+        if (!nomIngredient || quantiteIngredient <= 0) return;
         const newIngredient = {
             nom : nomIngredient,
             quantite : quantiteIngredient,
@@ -116,64 +141,161 @@ export default function RecetteCreation(){
         setQuantiteIngredient(0);
     };
 
+
     const [opened2, setOpened2] = useState(false);
-
-    const handleOpen2 = () => {setOpened2(true);};
-    const handleClose2 = () => {setOpened2(false);};
-
     const [etape, setEtape] = useState("")
-
     const handleConfirmerEtape = ()=>{
         setOpened2(false);
-        setEtapes([...etapes, etape]);
+        if (etape.trim() !== "") setEtapes([...etapes, etape]);
         setEtape("");
     }
 
+
     const [opened3, setOpened3] = useState(false);
-
-    const handleOpen3 = () => {setOpened3(true);};
-    const handleClose3 = () => {setOpened3(false);};
-
-    const [tagsPossibles, setTagsPossibles] = useState([
-        {label: "vegetarien", color : "success"}
-    ])
-
-    const [tagSelected, setTagSelected] = useState("vegetarien");
-
+    const [tagSelected, setTagSelected] = useState("");
     const [nouveauTagPossible, setNouveauTagPossible] = useState("");
-
     const [textErreurNouvTagPossible, setTextErreurNouvTagPossible] = useState("");
     const [colorTextError, setColorTextError] = useState("");
 
     const handleAjoutNouveauTagPossible = (nom)=>{
-        let isError;
-        isError = false
-        if(nom===""){
+        if(!nom.trim()){
             setTextErreurNouvTagPossible("Le nom entré est invalide ! ");
             setColorTextError("error");
-            isError = true;
+            return;
         }
-        else {
-            tagsPossibles.map(tag => {
-                if (tag.label === nom || nom === "") {
-                    setTextErreurNouvTagPossible("Le nom entré existe déjà ! ");
-                    setColorTextError("error");
-                    isError = true;
-                }
-            })
-        }
-        if(!isError){
-            const newTag = {label : nom, color : "success"}
-            setTagsPossibles([...tagsPossibles, newTag]);
-            setTextErreurNouvTagPossible("Nom de tag ajouté !")
-            setColorTextError("success");
-
-            setTagSelected(nom);
-            setNouveauTagPossible("");
+        if (tagsPossibles.some(tag => tag.nom === nom)) {
+            setTextErreurNouvTagPossible("Ce tag existe déjà !");
+            setColorTextError("error");
+            return;
         }
 
-        isError = false;
+        const newTag = {nom : nom, color : "success"}
+        setTagsPossibles([...tagsPossibles, newTag]);
+        setTextErreurNouvTagPossible("Nom de tag ajouté !")
+        setColorTextError("success");
+        setTagSelected(nom);
+        setNouveauTagPossible("");
+
     }
+
+    const handleSubmit = async () => {
+        //Validation basique
+        if (!titre || !description) {
+            setMessage("Veuillez remplir tous les champs obligatoires !");
+            return;
+        }
+
+        if (ingredients.length === 0) {
+            setMessage("Une recette doit avoir au moins un ingrédient");
+            return;
+        }
+
+        if (etapes.length === 0) {
+            setMessage("Une recette doit avoir au moins une étape");
+            return;
+        }
+
+        const temps = 3600*heures + 60*minutes;
+
+        try{
+            const newRecette = {
+                description,
+                portion,
+                temps,
+                urlImage : image,
+                titre,
+                auteur: compte
+            };
+
+            const recetteResponse = await axios.post("http://localhost:8080/api/recette/createRecette", newRecette)
+            const recetteCreee = recetteResponse.data;
+
+            console.log("Test de réception de recette : ");
+            console.log(recetteCreee);
+
+            // --- Ingrédients + quantités ---
+            for (const ingredient of ingredients) {
+                const ingrResponse = await axios.post("http://localhost:8080/api/ingredient/createIngredient", {
+                    nom: ingredient.nom
+                });
+
+
+                await axios.post("http://localhost:8080/api/quantite/createQuantite", {
+                    ingredient: ingrResponse.data,
+                    recette: recetteCreee,
+                    portion: ingredient.quantite,
+                    unite: ingredient.unite
+                });
+            }
+
+            // --- Étapes ---
+            for (const etape of etapes) {
+                await axios.post("http://localhost:8080/api/etape/createEtape", {
+                    txtEtape: etape,
+                    recette: recetteCreee
+                });
+            }
+
+            // --- Tags ---
+            for (const tag of tags) {
+                // Vérifie si le tag existe déjà
+                const existingTag = tagsExistants.find(t => t.nom === tag.nom);
+                console.log("Tags existants dans handleSubmit");
+                console.log(tagsExistants);
+                let tagObj;
+
+
+                if (existingTag) {
+                    console.log("J'existe !");
+                    tagObj = existingTag;
+                } else {
+                    const resTag = await axios.post("http://localhost:8080/api/tag/createTag", {
+                        nom: tag.nom,
+                        typeTag: 0
+                    });
+                    tagObj = resTag.data;
+
+                }
+
+                console.log(tagObj);
+                await axios.post(`http://localhost:8080/api/recette/associerTagARecette?recetteId=${recetteCreee.idRecette}&tagId=${tagObj.idTag}`);
+
+            }
+
+
+            setMessage("Recette créée avec succès !");
+
+            // ✅ Réinitialisation
+            setTitre("");
+            setDescription("");
+            setImage(null);
+            setHeures(0);
+            setMinutes(0);
+            setPortion(0);
+            setIngredients([]);
+            setEtapes([]);
+            setTags([]);
+
+        }catch(error){
+            console.error("Erreur lors de la création de la recette:", error);
+            setMessage("Erreur lors de la création. Veuillez réessayer")
+        }
+    }
+
+    const handleOpen1 = () => {setOpened(true);};
+    const handleClose1 = () => {setOpened(false);};
+
+    const handleOpen2 = () => {setOpened2(true);};
+    const handleClose2 = () => {setOpened2(false);};
+
+    const handleOpen3 = () => {setOpened3(true);};
+    const handleClose3 = () => {setOpened3(false);};
+
+
+
+
+
+
 
     return (
         <React.Fragment>
@@ -207,7 +329,9 @@ export default function RecetteCreation(){
                     {/*Bouton de retour*/}
                     <Button
                         variant="contained"
-                        sx={{backgroundColor: "gray", alignItems:"center"}}>
+                        sx={{backgroundColor: "gray", alignItems:"center"}}
+                        onClick={handleRetour}
+                    >
                         <Typography className = "cancel">
                             Retour
                         </Typography>
@@ -215,28 +339,30 @@ export default function RecetteCreation(){
                     </Button>
 
                     {/*Carte de d'information*/}
-                    <CreateCardDescription
-                        texteTitreField="Nom de la recette"
-                        image={image}
-                        tags={tags}
-                        titre={titre}
-                        texteDescription={description}
-                        compte={compte}
-                        onTagAdd={handleOpen3}
-                        onTitleChange={handleTitle}
-                        onDescriptionChange={handleDescription}
-                        onTagDelete={handleTagRemove}
-                        onImageChange={() => document.getElementById("image-upload").click()}
+                    {compte && (
+                        <CreateCardDescription
+                            texteTitreField="Nom de la recette"
+                            image={image}
+                            tags={tags}
+                            titre={titre}
+                            texteDescription={description}
+                            compte={compte}
+                            onTagAdd={handleOpen3}
+                            onTitleChange={handleTitle}
+                            onDescriptionChange={handleDescription}
+                            onTagDelete={handleTagRemove}
+                            onImageChange={() => document.getElementById("image-upload").click()}
+                        />
+                        {/*champ proposant à l'utilisateur d'importer une image*/}
+                        <input
+                            type="file"
+                            id="image-upload"
+                            accept="image/*"
+                            style={{ display: "none" }}
+                            onChange={handleImageChange}
+                        />
+                    )}
 
-                    />
-                    {/*champ proposant à l'utilisateur d'importer une image*/}
-                    <input
-                        type="file"
-                        id="image-upload"
-                        accept="image/*"
-                        style={{ display: "none" }}
-                        onChange={handleImageChange}
-                    />
                 </Stack>
 
                 {/*Description détaillée*/}
@@ -374,10 +500,20 @@ export default function RecetteCreation(){
                     <Button
                         variant="contained"
                         sx={{borderRadius:5}}
+                        onClick={handleSubmit}
                     >
                         Confirmer
                     </Button>
                 </Stack>
+                {message && (
+                    <Typography
+                        variant="body2"
+                        color={message.includes("succès") ? "green" : "red"}
+                        style={{ marginTop: "10px" }}
+                    >
+                        {message}
+                    </Typography>
+                )}
 
             </Stack>
 
@@ -463,8 +599,11 @@ export default function RecetteCreation(){
                             value={tagSelected}
                             onChange={(e)=>setTagSelected(e.target.value)}
                         >
+                            {tagsExistants.map((tag) =>
+                                <MenuItem value={tag.nom}>{tag.nom}</MenuItem>
+                            )}
                             {tagsPossibles.map((tag) =>
-                                <MenuItem value={tag.label}>{tag.label}</MenuItem>
+                                <MenuItem value={tag.nom}>{tag.nom}</MenuItem>
                             )}
                         </Select>
                         <DialogContentText>

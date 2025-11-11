@@ -29,7 +29,7 @@ public class Etape {
     public Recette getRecette() {return recette;}
     public void setRecette(Recette recette) {this.recette = recette;}
 
-    @Column(name = "txtEtape", nullable = false)
+    @Column(name = "txtEtape", nullable = false, length = 10000)
     public String getTxtEtape() {return txtEtape;}
     public void setTxtEtape(String txtEtape) {this.txtEtape = txtEtape;}
 

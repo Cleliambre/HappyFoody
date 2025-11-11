@@ -1,5 +1,6 @@
 package com.example.happy_foody.controller;
 
+import com.example.happy_foody.model.Ingredient;
 import com.example.happy_foody.model.Tag;
 import com.example.happy_foody.service.TagService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -43,5 +44,10 @@ public class TagController {
     @DeleteMapping("/deleteTag/{id}")
     public void deleteTag(@PathVariable(value = "id") Long id){
         tagService.deleteTag(id);
+    }
+
+    @GetMapping("/getTagByRecette/{id_recette}")
+    public List<Tag> getIngredientByRecette(@PathVariable(value = "id_recette") Long id_recette){
+        return tagService.getTagByRecette(id_recette);
     }
 }

@@ -45,4 +45,9 @@ public class IngredientController {
     public void deleteIngredient(@PathVariable(value = "id") Long id){
         ingredientService.deleteIngredient(id);
     }
+
+    @GetMapping("/getIngredientByRecette/{id_recette}")
+    public List<Ingredient> getIngredientByRecette(@PathVariable(value = "id_recette") Long id_recette){
+        return ingredientService.getIngredientByRecette(id_recette);
+    }
 }

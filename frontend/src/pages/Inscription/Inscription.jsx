@@ -41,6 +41,22 @@ export default function Inscription() {
             return;
         }
 
+        const responseComptes = await axios.get("http://localhost:8080/api/compte/all");
+        const comptes = responseComptes.data;
+        let isSamePseudo = false;
+        let isSameMail = false;
+        comptes.map(compte => {
+            if(pseudo === compte.pseudo){
+                setMessage("Ce pseudo est déjà utilisé");
+                isSamePseudo = true;
+            }
+            if(email === compte.mail){
+                setMessage("Ce mail est déjà utilisé");
+                isSameMail = true;
+            }
+        })
+        if(isSamePseudo || isSameMail) return ;
+
         try{
             //Appel du backend
             const newCompte = {
@@ -53,7 +69,6 @@ export default function Inscription() {
             };
 
             const response = await axios.post("http://localhost:8080/api/compte/createCompte", newCompte)
-            console.log("Compte crée : ",response.data);
             setMessage("Compte crée avec succès !");
 
             // Optionnel : vider le formulaire

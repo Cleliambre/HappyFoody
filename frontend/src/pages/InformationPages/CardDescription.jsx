@@ -19,30 +19,13 @@ import FavoriteOutlinedIcon from '@mui/icons-material/FavoriteOutlined';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import ChatBubbleOutlineOutlinedIcon from "@mui/icons-material/ChatBubbleOutlineOutlined";
 
-export default function CardDescription(
-    {
-        image,
-        tags = [],
-        titre,
-        texteDescription,
-        onTagClick,
-        like,
-        setLike,
-        isCommu = false,
-        children}
-){
+export default function CardDescription({image, tags, titre, texteDescription, onTagClick, like, setLike, handleLike, isCommu = false, children}){
 
     // Formatage du compteur de likes (ex: 1000 → "1K")
     const formatLikes = (num) => {
         if (num >= 1_000_000) return Math.floor(num / 1_000_000) + 'M';
         if (num >= 1_000) return Math.floor(num / 1_000) + 'K';
         return num.toString();
-    };
-
-    // Gère le compte des likes
-    const handleLike = () => {
-        setLike({liked : !like.liked,
-            nb : like.liked ? like.nb-1:like.nb+1});
     };
 
     const [isExpanded, setExpanded] = React.useState(false);
@@ -159,7 +142,7 @@ export default function CardDescription(
                     <Collapse in={isExpanded}>
                         <Stack direction="row" flexWrap="wrap" gap={1} margin="10px">
                             {tags.map((tag) => (
-                                <Chip label={tag.label} color={tag.color}/>
+                                <Chip label={tag.nom} color={tag.color}/>
                             ))}
                         </Stack>
                     </Collapse> : <React.Fragment/>

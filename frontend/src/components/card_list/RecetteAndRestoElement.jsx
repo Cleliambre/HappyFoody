@@ -28,10 +28,10 @@ export default function RecetteAndRestoElement(
             {/* Tags */}
             <div className="tags">
                 {tags_lieu.map((tag) =>
-                    <Chip color="primary" label={tag} sx={{ boxShadow: 2 }}/>
+                    <Chip color="primary" label={tag.nom} sx={{ boxShadow: 2 }}/>
                 )}
                 {tags_nourriture.map((tag) =>
-                    <Chip color="success" label={tag} sx={{ boxShadow: 2 }}/>
+                    <Chip color="success" label={tag.nom} sx={{ boxShadow: 2 }}/>
                 )}
             </div>
 

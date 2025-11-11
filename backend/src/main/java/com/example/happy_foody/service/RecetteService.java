@@ -2,6 +2,7 @@ package com.example.happy_foody.service;
 
 import com.example.happy_foody.model.Recette;
 import com.example.happy_foody.repository.RecetteRepository;
+import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.rest.webmvc.ResourceNotFoundException;
 import org.springframework.stereotype.Service;
@@ -10,6 +11,7 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 @Service
+@Transactional
 public class RecetteService {
 
     @Autowired
@@ -37,6 +39,7 @@ public class RecetteService {
 
         recette.setAuteur(recetteDetails.getAuteur());
         recette.setDescription(recetteDetails.getDescription());
+        recette.setUrlImage(recetteDetails.getUrlImage());
         recette.setTitre(recetteDetails.getTitre());
         recette.setPortion(recetteDetails.getPortion());
         recette.setTemps(recetteDetails.getTemps());
@@ -69,10 +72,14 @@ public class RecetteService {
 
         // ---- Recherche par mots-clés ----
         if (keyWordsList != null && !keyWordsList.isEmpty()) {
+            System.out.println("IL Y A DES MOTS !!!!!!!!!!");
+            System.out.println("Liste des mots : " + keyWordsList);
             // On récupère les recettes correspondant à CHAQUE mot
+
             List<Set<Recette>> setsParMot = keyWordsList.stream()
                     .map(mot -> new HashSet<>(recetteRepository.findByKeyWord(mot))) // méthode existante
                     .collect(Collectors.toList());
+            System.out.println("Liste de mots : " + setsParMot.size());
 
             // Intersection : on garde seulement celles qui contiennent TOUS les mots
             if (!setsParMot.isEmpty()) {
@@ -81,13 +88,18 @@ public class RecetteService {
                     recettesParMot.retainAll(set);
                 }
             }
+
+
+
         } else {
             // Si aucun mot-clé donné → tout est valide
+            System.out.println("IL N'Y A PAS DE MOTS !!!!!!!!!!");
             recettesParMot.addAll(recetteRepository.findAll());
         }
 
         // ---- Recherche par tags ----
         if (tags != null && !tags.isEmpty()) {
+            System.out.println("IL Y A DES TAGS !!!!!!!!!!");
             // On récupère les recettes correspondant à CHAQUE tag, puis on garde celles qui ont tous les tags
             List<Set<Recette>> setsParTag = tags.stream()
                     .map(tag -> new HashSet<>(recetteRepository.findByTag(tag))) // méthode existante
@@ -100,6 +112,7 @@ public class RecetteService {
                 }
             }
         } else {
+            System.out.println("IL N'Y A PAS DE TAGS !!!!!!!!!!");
             recettesParTag.addAll(recetteRepository.findAll());
         }
 
@@ -107,6 +120,18 @@ public class RecetteService {
         recettesParMot.retainAll(recettesParTag);
         return new ArrayList<>(recettesParMot);
 
+    }
+
+    public Long getNoteMoyenneById(Long id){
+        return recetteRepository.findNoteMoyenneById(id);
+    }
+
+    public Long getNombreLikesById(Long id){
+        return recetteRepository.findNombreLikesById(id);
+    }
+
+    public void associerRecetteTag(Long idRecette, Long idTag){
+        recetteRepository.associerRecetteTag(idRecette,idTag);
     }
 
 }
