@@ -17,14 +17,37 @@ export default function RecetteCreation(){
 
     /*attention : cela ne permet que de faire un aperçu de l'image, l'URL créée n'est pas persistante.
     * il faudra enregistrer l'image (appelée file ici) dans la base de données pour ensuite avoir une url persistante*/
-    const handleImageChange = (event) => {
+    /*const handleImageChange = (event) => {
         const file = event.target.files[0];
         if (file) {
             setImage(URL.createObjectURL(file)); // crée une URL locale pour l’aperçu
         }
-    }
+    }*/
 
+    const handleImageChange = async (event) => {
+        const file = event.target.files[0];
+        if (file) {
+            // Aperçu local
+            setImage(URL.createObjectURL(file));
 
+            // Envoi au backend
+            const formData = new FormData();
+            formData.append("file", file);
+
+            try {
+                const response = await axios.post("http://localhost:8080/api/upload", formData, {
+                    headers: { "Content-Type": "multipart/form-data" },
+                });
+
+                // Récupère l'URL persistante renvoyée par le backend
+                setImage(response.data.url);
+                console.log("URL de l'image reçue :", response.data.url);
+
+            } catch (err) {
+                console.error("Erreur d'upload :", err);
+            }
+        }
+    };
 
     const navigate = useNavigate();
     const [message, setMessage] = useState('');
