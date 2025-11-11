@@ -32,11 +32,13 @@ public class CompteController {
         return compteService.getAllComptes();
     }
 
+    //SELECT
     @GetMapping("/getCompteById/{id}")
     public Compte getCompteById(@PathVariable(value = "id") Long id){
         return compteService.getCompteById(id);
     }
 
+    //INSERT
     @PostMapping("/createCompte")
     public Compte createCompte(@RequestBody Compte compte){return compteService.createCompte(compte);}
 

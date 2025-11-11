@@ -43,7 +43,7 @@ public class Compte {
     public long getIdCompte() {return idCompte;}
     private void setIdCompte(long idCompte) {this.idCompte = idCompte;}
 
-    @Column(name = "pseudo", nullable = false)
+    @Column(name = "pseudo", nullable = false, unique = true)
     public String getPseudo() {return pseudo;}
     public void setPseudo(String pseudo) {
         this.pseudo = pseudo;
