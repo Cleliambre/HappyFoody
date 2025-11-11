@@ -93,7 +93,7 @@ export default function CommList({width, commentaires, section, onRepondre}) {
                                             <CommBlock
                                                 commentaire={rep}
                                                 onRepondre={onRepondre}
-                                                {...(section === "partage" ? { section: section } : {})}
+                                                {...(section === "partage" ? { section: section } : {section: "communaute"})}
                                                 refAuteurRepondu={getAuteurRepondu(rep.idCommRepondu, comm, commReponses)}
                                             />
                                         ))}

@@ -1,3 +1,4 @@
+import React from "react";
 import './App.css';
 
 // Navigation des pages
@@ -26,8 +27,6 @@ import RestaurantPage from "./pages/InformationPages/RestaurantPage";
 
 // Pages de création
 import RecetteCreation from "./pages/creationPages/RecetteCreation";
-import React from "react";
-import {RestaurantComm} from "./pages/InformationPages/RestaurantComm";
 
 function App() {
   return (
@@ -35,7 +34,7 @@ function App() {
         <MenuBar/>
         <div className="container">
             <Routes>
-                <Route path="/" element={<RestaurantComm/>}/>
+                <Route path="/" element={ <RecetteSearch/> }/>
 
                 {/* Onglets principaux */}
                 <Route path="/recette" element={<RecetteSearch/>}/>
@@ -58,6 +57,7 @@ function App() {
                 <Route path="/restaurant/:id" element={<RestaurantPage />} />
 
                 {/* Page de commentaires */}
+                {/* TODO : mettre les pages de commentaires pour les recettes et restaurants */}
 
                 {/* Les pages de Création */}
                 <Route path="/createRecette" element={<RecetteCreation/>}/>

@@ -52,7 +52,7 @@ export function RestaurantComm() {
 
                 {/*Bouton de retour*/}
                 <ButtonReturn
-                    path={"/restaurant/:id"} // TODO
+                    path={"/restaurant/:id"} // TODO retourner à sa page de restaurant
                     text={"Retour aux informations du restaurant"}
                 />
             </Stack>

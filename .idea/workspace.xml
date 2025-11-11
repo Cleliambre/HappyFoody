@@ -5,14 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a51d4164-65dd-4e44-931e-9734ea826bff" name="Changes" comment="Update SectionComm.jsx">
-      <change afterPath="$PROJECT_DIR$/frontend/src/components/Titre.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/pages/InformationPages/RestaurantComm.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/commentaires/CommBlock.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/commentaires/CommBlock.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/commentaires/CreationComm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/commentaires/CreationComm.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/commentaires/SectionComm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/commentaires/SectionComm.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/restautant_component/components.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/restautant_component/PaperNote.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/InformationPages/RestaurantPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/InformationPages/RestaurantPage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/commentaires/CommList.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/commentaires/CommList.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,7 +26,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="front_end_restaurantPage" />
+        <entry key="$PROJECT_DIR$" value="develop" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />

@@ -138,7 +138,7 @@ export default function RestaurantPage(){
                 }}
             >
                 <a href="#avis">Donner un avis</a>
-                <Link to={"/"}>Voir le détails des avis</Link>
+                <Link to={"/"}>Voir le détails des avis</Link> {/* TODO relier aux commentaires  */}
             </Grid>
 
 
