@@ -24,7 +24,7 @@ public class Ingredient {
     public long getIdIngredient() {return idIngredient;}
     private void setIdIngredient(long idIngredient) {this.idIngredient = idIngredient;}
 
-    @Column(name = "nom", nullable = false, unique = true)
+    @Column(name = "nom", nullable = false)
     public String getNom() {return nom;}
     public void setNom(String nom) {this.nom = nom;}
 
