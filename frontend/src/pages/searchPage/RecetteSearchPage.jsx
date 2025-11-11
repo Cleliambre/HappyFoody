@@ -1,5 +1,4 @@
 import GenericSearchPage from "./GenericSearchPage";
-import AutoStoriesOutlinedIcon from '@mui/icons-material/AutoStoriesOutlined';
 import RecettesIcon from "@mui/icons-material/MenuBookOutlined";
 import React, {useEffect, useState} from "react";
 import RecetteAndRestoElement from "../../components/card_list/RecetteAndRestoElement";
@@ -22,8 +21,6 @@ import {
 
 //Fonction associée à la page de recherche d'une ou plusieurs recettes
 export default function RecetteSearchPage(){
-    useEffect(() => {document.title = "Recherche Recette - Happy Foody"}, [])
-
     //Changement du titre de l'onglet de la page
     useEffect(() => {document.title = "Recettes - Happy Foody"}, [])
 
@@ -154,20 +151,11 @@ export default function RecetteSearchPage(){
         isPlus : true
     });
 
-    /*
-    const [tags, setTags] = React.useState([
-        {name: "Végétarien", color: "success"},
-        {name:"test"}
-    ]);
-
-     */
-
 
 
 
 
     const handleTag = (deletingTag)=> {
-        //const newTags = tags.filter((description) => description.name !== deletingTag.name);
         deleteTag(deletingTag);
     }
 

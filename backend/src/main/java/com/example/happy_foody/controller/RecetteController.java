@@ -1,6 +1,5 @@
 package com.example.happy_foody.controller;
 
-
 import com.example.happy_foody.model.Recette;
 import com.example.happy_foody.service.RecetteService;
 import org.springframework.beans.factory.annotation.Autowired;

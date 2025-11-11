@@ -2,10 +2,10 @@ package com.example.happy_foody.service;
 
 import com.example.happy_foody.model.Recette;
 import com.example.happy_foody.repository.RecetteRepository;
-import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.rest.webmvc.ResourceNotFoundException;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.*;
 import java.util.stream.Collectors;

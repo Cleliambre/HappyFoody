@@ -1,6 +1,5 @@
 package com.example.happy_foody.controller;
 
-import com.example.happy_foody.model.Recette;
 import com.example.happy_foody.model.Restaurant;
 import com.example.happy_foody.service.RestaurantService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -49,6 +48,24 @@ public class RestaurantController {
             @RequestParam(required = false) List<String> tags
     ) {
         return restaurantService.getRestaurantbyTagsAndKeyWords(keyWords, tags);
+    }
+
+    @GetMapping("/noteMoyenne/{id}")
+    public Long getNoteMoyenneById(@PathVariable(value = "id") Long id)
+    {
+        //logger.info(restaurantService.getNoteMoyenneById(id).toString());
+        return restaurantService.getNoteMoyenneById(id);
+    }
+
+    @GetMapping("/nombreLikes/{id}")
+    public Long getNombreLikesById(@PathVariable(value = "id") Long id)
+    {
+        return restaurantService.getNombreLikesById(id);
+    }
+
+    @PostMapping("/associerTagARestaurant")
+    public void associerTagARestaurant(@RequestParam Long restaurantId, @RequestParam Long tagId){
+        restaurantService.associerRestaurantTag(restaurantId, tagId);
     }
 
 

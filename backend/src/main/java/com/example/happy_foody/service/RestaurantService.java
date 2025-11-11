@@ -5,11 +5,13 @@ import com.example.happy_foody.repository.RestaurantRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.rest.webmvc.ResourceNotFoundException;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.*;
 import java.util.stream.Collectors;
 
 @Service
+@Transactional
 public class RestaurantService {
 
     @Autowired
@@ -41,6 +43,7 @@ public class RestaurantService {
         restaurant.setReserver(restaurantDetails.getReserver());
         restaurant.setMenu(restaurantDetails.getMenu());
         restaurant.setSite(restaurantDetails.getSite());
+        restaurant.setUrlImage(restaurantDetails.getUrlImage());
 
         final Restaurant updatedRestaurant = restaurantRepository.save(restaurant);
         return updatedRestaurant;
@@ -107,6 +110,22 @@ public class RestaurantService {
         restaurantsParMot.retainAll(restaurantsParTag);
         return new ArrayList<>(restaurantsParMot);
 
+    }
+
+    public Long getNoteMoyenneById(Long id){
+        Long noteHygiene = restaurantRepository.findNoteHygieneMoyenneById(id);
+        Long noteQualite = restaurantRepository.findNoteQualiteMoyenneById(id);
+        Long noteRapidite = restaurantRepository.findNoteRapiditeMoyenneById(id);
+        Long noteService = restaurantRepository.findNoteServiceMoyenneById(id);
+        return ((noteService+noteHygiene+noteQualite+noteRapidite)/4);
+    }
+
+    public Long getNombreLikesById(Long id){
+        return restaurantRepository.findNombreLikesById(id);
+    }
+
+    public void associerRestaurantTag(Long idRestaurant, Long idTag){
+        restaurantRepository.associerRestaurantTag(idRestaurant,idTag);
     }
 
 }
