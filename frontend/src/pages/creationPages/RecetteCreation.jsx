@@ -42,7 +42,7 @@ export default function RecetteCreation(){
 
     const [heures, setHeures] = useState(0);
     const [minutes, setMinutes] = useState(0);
-    const [portion, setPortion] = useState(0);
+    const [portion, setPortion] = useState(1);
 
 
     const [ingredients, setIngredients] = useState([]);
@@ -191,6 +191,16 @@ export default function RecetteCreation(){
 
         if (etapes.length === 0) {
             setMessage("Une recette doit avoir au moins une étape");
+            return;
+        }
+
+        if (portion < 1){
+            setMessage("Une portion doit être positive");
+            return;
+        }
+
+        if (minutes < 0 || heures < 0 || (minutes === 0 && heures === 0)){
+            setMessage("Valeur du temps interdite");
             return;
         }
 
