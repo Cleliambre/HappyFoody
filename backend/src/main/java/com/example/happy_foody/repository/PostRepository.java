@@ -23,8 +23,8 @@ public interface PostRepository extends JpaRepository<Post,Long> {
     @Query(value = """
     SELECT DISTINCT p.*
     FROM post p
-    JOIN post_tag pt ON p.id_post = pt.id_post
-    JOIN tag t ON pt.id_tag = t.id_tag
+    LEFT JOIN post_tag pt ON p.id_post = pt.id_post
+    LEFT JOIN tag t ON pt.id_tag = t.id_tag
     WHERE t.nom = :nom
 
     """, nativeQuery = true)

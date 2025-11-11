@@ -14,7 +14,7 @@ import java.util.Optional;
 public interface CompteRepository extends JpaRepository<Compte,Long> {
 
     @Query(value = """
-    SELECT DISTINCT r.* 
+    SELECT DISTINCT r.*
     FROM recette r
     JOIN compte_recette cr ON cr.id_recette = r.id_recette
     JOIN compte c ON c.id_compte = cr.id_compte
@@ -23,7 +23,7 @@ public interface CompteRepository extends JpaRepository<Compte,Long> {
     List<Recette> findLikedRecettes(@Param("id_compte") Long idCompte);
 
     @Query(value = """
-    SELECT DISTINCT r.* 
+    SELECT DISTINCT r.*
     FROM restaurant r
     JOIN compte_restaurant cr ON cr.id_restaurant = r.id_restaurant
     JOIN compte c ON c.id_compte = cr.id_compte
@@ -32,7 +32,7 @@ public interface CompteRepository extends JpaRepository<Compte,Long> {
     List<Restaurant> findLikedRestaurants(@Param("id_compte") Long idCompte);
 
     @Query(value = """
-    SELECT DISTINCT p.* 
+    SELECT DISTINCT p.*
     FROM post p
     JOIN compte_post cp ON cp.id_post = p.id_post
     JOIN compte c ON c.id_compte = cp.id_compte
@@ -41,7 +41,7 @@ public interface CompteRepository extends JpaRepository<Compte,Long> {
     List<Post> findLikedPosts(@Param("id_compte") Long idCompte);
 
     @Query(value = """
-    SELECT DISTINCT p.* 
+    SELECT DISTINCT p.*
     FROM partage p
     JOIN compte_partage cp ON cp.id_partage = p.id_partage
     JOIN compte c ON c.id_compte = cp.id_compte
@@ -51,8 +51,8 @@ public interface CompteRepository extends JpaRepository<Compte,Long> {
 
     @Modifying
     @Query(value = """
-    INSERT INTO compte_recette VALUES
-    (:id_compte,:id_recette)
+    INSERT INTO compte_recette(id_compte, id_recette)
+    VALUES (:id_compte, :id_recette)
     """, nativeQuery = true)
     int saveLikedRecette(@Param("id_compte") Long idCompte, @Param("id_recette") Long idRecette);
 
@@ -112,6 +112,13 @@ public interface CompteRepository extends JpaRepository<Compte,Long> {
     WHERE c.mail = :mail OR c.pseudo = :pseudo
     """, nativeQuery = true)
     Optional<Compte> findByMailOrPseudo(@Param("mail") String mail, @Param("pseudo") String pseudo);
+
+    @Query(value = """
+    SELECT DISTINCT c.*
+    FROM compte c
+    WHERE c.pseudo = :pseudo
+    """, nativeQuery = true)
+    Compte findByPseudo(@Param("pseudo") String pseudo);
 
 }
 

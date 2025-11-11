@@ -3,6 +3,7 @@ package com.example.happy_foody.model;
 import jakarta.persistence.*;
 
 import java.io.Serial;
+import java.util.Objects;
 
 //Création d'un composant pour les clés primaires de l'association Quantité
 @Embeddable
@@ -11,31 +12,42 @@ public class QuantiteId implements java.io.Serializable  {
     @Serial
     private static final long serialVersionUID = 1L;
 
-    private Recette recette;
-    private Ingredient ingredient;
+    private Long idRecette;
+    private Long idIngredient;
 
     public QuantiteId() {}
 
-    public QuantiteId(Recette recette, Ingredient ingredient) {
-        this.recette = recette;
-        this.ingredient = ingredient;
+    public QuantiteId(Long idRecette, Long idIngredient) {
+        this.idRecette = idRecette;
+        this.idIngredient = idIngredient;
     }
 
-    @ManyToOne
-    @JoinColumn(name = "id_recette")
-    public Recette getRecette() {
-        return recette;
-    }
-    public void setRecette(Recette recette) {
-        this.recette = recette;
+    public Long getIdRecette() {
+        return idRecette;
     }
 
-    @ManyToOne
-    @JoinColumn(name = "id_ingredient")
-    public Ingredient getIngredient() {
-        return ingredient;
+    public void setIdRecette(Long idRecette) {
+        this.idRecette = idRecette;
     }
-    public void setIngredient(Ingredient ingredient) {
-        this.ingredient = ingredient;
+
+    public Long getIdIngredient() {
+        return idIngredient;
+    }
+
+    public void setIdIngredient(Long idIngredient) {
+        this.idIngredient = idIngredient;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof QuantiteId that)) return false;
+        return Objects.equals(idRecette, that.idRecette) &&
+                Objects.equals(idIngredient, that.idIngredient);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(idRecette, idIngredient);
     }
 }

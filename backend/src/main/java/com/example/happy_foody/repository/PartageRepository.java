@@ -23,8 +23,8 @@ public interface PartageRepository extends JpaRepository<Partage,Long> {
     @Query(value = """
     SELECT DISTINCT p.*
     FROM partage p
-    JOIN partage_tag pt ON p.id_partage = pt.id_partage
-    JOIN tag t ON pt.id_tag = t.id_tag
+    LEFT JOIN partage_tag pt ON p.id_partage = pt.id_partage
+    LEFT JOIN tag t ON pt.id_tag = t.id_tag
     WHERE t.nom = :nom
 
     """, nativeQuery = true)

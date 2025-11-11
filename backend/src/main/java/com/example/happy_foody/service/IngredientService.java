@@ -39,4 +39,8 @@ public class IngredientService {
 
         ingredientRepository.delete(ingredient);
     }
+
+    public List<Ingredient> getIngredientByRecette(Long id_recette) throws ResourceNotFoundException {
+        return ingredientRepository.findByRecette(id_recette);
+    }
 }

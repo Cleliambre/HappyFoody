@@ -98,7 +98,7 @@ export default function Connexion() {
                    <Link
                        component="button"
                        variant="body2"
-                       to={"/inscription"}
+                       onClick={() => navigate("/inscription")}
                    > Inscrivez-vous. </Link>
                </Typography>
            </div>

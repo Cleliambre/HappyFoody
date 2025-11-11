@@ -52,15 +52,16 @@ export default function GenericCard({ card, onLike, onClick }) {
 
                 {/* Like button à droite */}
                 <Box className="like-container">
-                    <div onClick={(e) => e.stopPropagation()}>
                         <IconButton
                             aria-label="like"
-                            onClick={() => onLike?.(card)}
+                            onClick={(e) => {
+                                e.stopPropagation();
+                                onLike?.(card);
+                            }}
                             size="small"
                         >
                             {card.liked ? <FavoriteIconTrue color='error' /> : <FavoriteIconFalse />}
                         </IconButton>
-                    </div>
                     <Typography variant="body2" className="like-count">
                         {formatLikes(card.likes)}
                     </Typography>

@@ -5,11 +5,13 @@ import com.example.happy_foody.repository.CompteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.rest.webmvc.ResourceNotFoundException;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Optional;
 
 @Service
+@Transactional
 public class CompteService {
 
     @Autowired
@@ -64,48 +66,44 @@ public class CompteService {
         return compteRepository.findLikedPartages(compteId);
     }
 
-    public boolean createLikedRecette(Long compteId, Long recetteId) {
+    public void createLikedRecette(Long compteId, Long recetteId) {
         int rows = compteRepository.saveLikedRecette(compteId, recetteId);
-        return rows>0;
     }
 
-    public boolean createLikedRestaurant(Long compteId, Long restaurantId) {
+    public void createLikedRestaurant(Long compteId, Long restaurantId) {
         int rows = compteRepository.saveLikedRestaurant(compteId, restaurantId);
-        return rows>0;
     }
 
-    public boolean createLikedPost(Long compteId, Long postId) {
+    public void createLikedPost(Long compteId, Long postId) {
         int rows = compteRepository.saveLikedPost(compteId, postId);
-        return rows>0;
     }
 
-    public boolean createLikedPartage(Long compteId, Long partageId) {
+    public void createLikedPartage(Long compteId, Long partageId) {
         int rows = compteRepository.saveLikedPartage(compteId, partageId);
-        return rows>0;
     }
 
-    public boolean deleteLikedRecette(Long compteId, Long recetteId) {
+    public void deleteLikedRecette(Long compteId, Long recetteId) {
         int rows = compteRepository.deleteLikedRecette(compteId, recetteId);
-        return rows>0;
     }
 
-    public boolean deleteLikedRestaurant(Long compteId, Long restaurantId) {
+    public void deleteLikedRestaurant(Long compteId, Long restaurantId) {
         int rows = compteRepository.deleteLikedRestaurant(compteId, restaurantId);
-        return rows>0;
     }
 
-    public boolean deleteLikedPost(Long compteId, Long postId) {
+    public void deleteLikedPost(Long compteId, Long postId) {
         int rows = compteRepository.deleteLikedPost(compteId, postId);
-        return rows>0;
     }
 
-    public boolean deleteLikedPartage(Long compteId, Long partageId) {
+    public void deleteLikedPartage(Long compteId, Long partageId) {
         int rows = compteRepository.deleteLikedPartage(compteId, partageId);
-        return rows>0;
     }
 
     public Optional<Compte> getCompteByMailOrPseudo(String mail, String pseudo){
         return compteRepository.findByMailOrPseudo(mail, pseudo);
+    }
+
+    public Compte getCompteByPseudo(String pseudo){
+        return compteRepository.findByPseudo(pseudo);
     }
 
     public boolean updatePassword(Long id, String oldPassword, String newPassword) {
