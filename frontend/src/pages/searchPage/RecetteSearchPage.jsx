@@ -171,7 +171,6 @@ export default function RecetteSearchPage(){
         deleteTag(deletingTag);
     }
 
-    const navigate = useNavigate();
     const handleClick = (card) => {
         navigate(`/recette/${card.id}`);
     };

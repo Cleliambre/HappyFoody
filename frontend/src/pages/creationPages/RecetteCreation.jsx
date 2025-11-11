@@ -24,7 +24,6 @@ export default function RecetteCreation(){
         }
     }
 
-    const [tags, setTags] = useState([]);
 
 
     const navigate = useNavigate();
@@ -353,15 +352,15 @@ export default function RecetteCreation(){
                             onTagDelete={handleTagRemove}
                             onImageChange={() => document.getElementById("image-upload").click()}
                         />
-                        {/*champ proposant à l'utilisateur d'importer une image*/}
-                        <input
-                            type="file"
-                            id="image-upload"
-                            accept="image/*"
-                            style={{ display: "none" }}
-                            onChange={handleImageChange}
-                        />
                     )}
+                    {/*champ proposant à l'utilisateur d'importer une image*/}
+                    <input
+                        type="file"
+                        id="image-upload"
+                        accept="image/*"
+                        style={{ display: "none" }}
+                        onChange={handleImageChange}
+                    />
 
                 </Stack>
 

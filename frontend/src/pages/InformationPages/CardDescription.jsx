@@ -142,7 +142,7 @@ export default function CardDescription({image, tags, titre, texteDescription, o
                     <Collapse in={isExpanded}>
                         <Stack direction="row" flexWrap="wrap" gap={1} margin="10px">
                             {tags.map((tag) => (
-                                <Chip label={tag.nom} color={tag.color}/>
+                                <Chip label={tag.nom} color="success"/>
                             ))}
                         </Stack>
                     </Collapse> : <React.Fragment/>
