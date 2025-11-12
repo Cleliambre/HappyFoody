@@ -1,7 +1,7 @@
 import CardDescription from "./CardDescription";
 import ButtonReturn from "../../components/ButtonReturn";
 import React, {useEffect} from "react";
-import {Container, Stack} from "@mui/material";
+import {Box, Container, Stack} from "@mui/material";
 import wok_sushi from "../../images/wok_sushi.png";
 import {SectionComm} from "../../components/commentaires/SectionComm";
 
@@ -58,7 +58,7 @@ export function RestaurantComm() {
             </Stack>
 
             <SectionComm section="restaurant" commentaires={[]} currentProfil={null} setComm={()=>{}}/>
-
+            <Box sx={{ height: '30px' }} />
         </Container>
     );
 }

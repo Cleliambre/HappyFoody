@@ -100,7 +100,7 @@ export default function GenericSearchPage({pageDescr, tags, barInfo, onFilterCli
                 page={page}
                 onChange={onPageChange}
             />
-            <Box sx={{ height: '15px' }} />
+            <Box sx={{ height: '30px' }} />
         </Stack>
     );
 }

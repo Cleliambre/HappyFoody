@@ -1,7 +1,7 @@
 import Stack from "@mui/material/Stack";
 import CardDescription from "./CardDescription";
 import {
-    Avatar,
+    Avatar, Box,
     Button,
     Card,
     CardHeader,
@@ -189,6 +189,7 @@ export default function CommunautePage(){
                     </Stack>
                 </Card>
             </Stack>
+            <Box sx={{ height: '30px' }} />
         </Stack>
     );
 }

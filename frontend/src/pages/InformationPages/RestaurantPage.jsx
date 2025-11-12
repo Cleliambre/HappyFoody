@@ -322,7 +322,7 @@ export default function RestaurantPage(){
             <Titre id="avis" text="Donner un avis"/>
             {/* TODO : onPublier... */}
             <CreationComm typeCommentaire="restaurant" currentProfil={null} onPublier={() => {}} />
-            <Box color="primary" sx={{ height: '30px' }} />
+            <Box sx={{ height: '30px' }} />
         </Stack>
      );
 }

@@ -8,7 +8,7 @@ import {
     Paper,
     List,
     ListItem,
-    ListItemText
+    ListItemText, Box
 } from "@mui/material";
 
 import taboule from "../../images/default_img.png";
@@ -343,6 +343,7 @@ export default function RecettePage() {
                     ))}
                 </List>
             </Stack>
+            <Box sx={{ height: '30px' }} />
         </Stack>
     );
 }

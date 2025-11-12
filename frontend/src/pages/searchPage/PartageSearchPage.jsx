@@ -23,10 +23,7 @@ export default function PartageSearchPage(){
         isPlus : true
     });
 
-    const [tags, setTags] = React.useState([
-        {name: "Végétarien", color: "success"},
-        {name:"test"}
-    ]);
+    const [tags, setTags] = React.useState([]);
 
     const handleTag = (deletingTag)=> {
         const newTags = tags.filter((description) => description.name !== deletingTag.name);
