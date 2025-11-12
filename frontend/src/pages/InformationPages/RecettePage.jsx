@@ -272,7 +272,7 @@ export default function RecettePage() {
                         <Stack direction="row" spacing={3}>
                             <Stack direction="row" spacing={0.5} alignItems="center">
                                 <Typography variant="body2">
-                                    {noteMoyenne}
+                                    {noteMoyenne == null || noteMoyenne === 0 ? "-.-" : noteMoyenne.toFixed(1)}
                                 </Typography>
                                 <StarOutlinedIcon fontSize="small" sx={{ color: "gold" }} />
                             </Stack>
