@@ -4,9 +4,13 @@ import PeopleAltOutlinedIcon from '@mui/icons-material/PeopleAltOutlined';
 import GenericCard from "../../components/card_list/GenericCard";
 import PostElement from "../../components/card_list/PostElement";
 import img2 from "../../images/taboule_crame.png";
+import {useNavigate} from "react-router-dom";
 
 export default function CommunauteSearchPage(){
     useEffect(() => {document.title = "Recherche Communauté - Happy Foody"}, [])
+
+    //Outil permettant de naviguer entre les pages web
+    const navigate = useNavigate();
 
     const [pageDescription] = React.useState({
         title : "Communauté",
@@ -30,7 +34,7 @@ export default function CommunauteSearchPage(){
     }
 
     const handleClick = (card) => {
-        alert(`Carte sélectionnée : ${card.title}`);
+        navigate(`/communaute/${card.id}`);
     };
 
     const handleLike = (card) => {

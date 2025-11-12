@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Stack, Container } from '@mui/material';
 
-import img0 from '../../images/taboule.png'
+import img0 from '../../images/default_img.png'
 import img1 from '../../images/wok_sushi.png'
 import img2 from '../../images/taboule_crame.png'
 import img3 from '../../images/poulet.jpg'

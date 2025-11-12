@@ -11,7 +11,7 @@ import {
     ListItemText
 } from "@mui/material";
 
-import taboule from "../../images/taboule.png";
+import taboule from "../../images/default_img.png";
 import StarOutlinedIcon from '@mui/icons-material/StarOutlined';
 import React, { useEffect, useState } from "react";
 import CardDescription from "./CardDescription";
