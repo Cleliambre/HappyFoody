@@ -27,7 +27,7 @@ function CommElement({commentaire, section, onVoirDetails, notes}) {
 
     const renderSansNote = (
         <Typography variant="body2" color="text.disabled" sx={{fontStyle: "italic"}}>
-            Sans note
+            Aucune note
         </Typography>
     );
 

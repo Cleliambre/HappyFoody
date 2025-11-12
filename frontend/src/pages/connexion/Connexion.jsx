@@ -11,12 +11,12 @@ export default function Connexion() {
     useEffect(() => {
         const idCompte = localStorage.getItem('idCompte');
         if (idCompte) {
-            // ✅ Si l'utilisateur est déjà connecté, on le redirige vers le profil
+            // Si l'utilisateur est déjà connecté, on le redirige vers le profil
             window.location.href = '/profil';
         }
     }, []);
 
-    const [mailOrPseudo, setmailOrPseudo] = useState('');
+    const [mailOrPseudo, setMailOrPseudo] = useState('');
     const [password, setPassword] = useState('');
     const [message, setMessage] = useState('');
 
@@ -54,7 +54,7 @@ export default function Connexion() {
                        value={mailOrPseudo}
                        label="Pseudo / adresse mail"
                        variant="outlined"
-                       onChange={(e) => setmailOrPseudo(e.target.value)}
+                       onChange={(e) => setMailOrPseudo(e.target.value)}
                    />
                 </div>
                 <div className="input-container">

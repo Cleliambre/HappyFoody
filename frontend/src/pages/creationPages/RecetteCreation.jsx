@@ -138,7 +138,7 @@ export default function RecetteCreation(){
     const [nomIngredient, setNomIngredient] = useState("");
     const [quantiteIngredient, setQuantiteIngredient] = useState(0);
     const [uniteIngredient, setUniteIngredient] = useState("");
-    const [uniteAccepted, setUniteAccepted] = useState([
+    const [uniteAccepted] = useState([
         "",
         "g",
         "kg",
@@ -150,16 +150,23 @@ export default function RecetteCreation(){
     ]);
 
     const handleConfirmerIngredient = ()=>{
-        setOpened(false);
-        if (!nomIngredient || quantiteIngredient <= 0) return;
+        if (!nomIngredient || quantiteIngredient <= 0) {
+            alert("Nom de l'ingrédient ou la quantité de l'ingrédient invalide !");
+            return;
+        }
         const newIngredient = {
             nom : nomIngredient,
             quantite : quantiteIngredient,
             unite : uniteIngredient
         };
+        if (ingredients.filter(i => i.nom === nomIngredient).length > 0) {
+            alert("Doublon d'ingrédient : cet ingrédient existe déjà dans la liste d'ingrédients.");
+            return;
+        }
+        setOpened(false);
         setIngredients([...ingredients, newIngredient]);
-        setUniteIngredient("")
-        setNomIngredient("")
+        setUniteIngredient("");
+        setNomIngredient("");
         setQuantiteIngredient(0);
     };
 
@@ -297,7 +304,7 @@ export default function RecetteCreation(){
 
             setMessage("Recette créée avec succès !");
 
-            // ✅ Réinitialisation
+            // Réinitialisation
             setTitre("");
             setDescription("");
             setImage(null);
@@ -497,7 +504,7 @@ export default function RecetteCreation(){
                     <List sx={{listStyleType: 'decimal', pl:4}}>
                         {etapes.map((etape, index)=>
                             <ListItem
-                                sx={{display: 'list-item', py:0}}
+                                sx={{display: 'list-item', py:0 }}
                                 divider={true}
                                 secondaryAction={
                                     <Tooltip title={"supprimer"}>
@@ -510,7 +517,7 @@ export default function RecetteCreation(){
                                     </Tooltip>
                                 }
                             >
-                                <ListItemText>
+                                <ListItemText sx={{objectFit:'cover', whiteSpace:'pre-line' }}>
                                     {etape}
                                 </ListItemText>
                             </ListItem>
@@ -581,7 +588,16 @@ export default function RecetteCreation(){
                             onChange={(e)=>setUniteIngredient(e.target.value)}
                         >
                             {uniteAccepted.map((unite) =>
-                                <MenuItem value={unite}>{unite}</MenuItem>
+                                unite === "" ? (
+                                    <MenuItem
+                                        value=""
+                                        sx={{ fontStyle: 'italic', color: 'text.disabled' }}
+                                    >
+                                        Aucune unité
+                                    </MenuItem>
+                                ) : (
+                                    <MenuItem value={unite}>{unite}</MenuItem>
+                                )
                             )}
                         </Select>
                         <Button variant="contained" onClick={handleConfirmerIngredient}>Confirmer</Button>
@@ -590,7 +606,10 @@ export default function RecetteCreation(){
             </Dialog>
 
             {/*boîte de dialogue pour l'ajout d'une étape*/}
-            <Dialog open={opened2} onClose={handleClose2}>
+            <Dialog open={opened2} onClose={handleClose2}
+                    fullWidth
+                    maxWidth='md'
+            >
                 <DialogTitle>
                     Ajout d'une étape
                 </DialogTitle>
@@ -608,6 +627,7 @@ export default function RecetteCreation(){
                         <Button
                             variant="contained"
                             onClick={handleConfirmerEtape}
+                            sx={{maxWidth:200}}
                         >
                             Confirmer
                         </Button>
