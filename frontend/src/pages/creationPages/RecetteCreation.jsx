@@ -1,12 +1,29 @@
 import CreateCardDescription from "./CreateCardDescription";
 import React, {useEffect, useState} from "react";
 import {useNavigate} from "react-router-dom";
-import KeyboardReturnIcon from "@mui/icons-material/KeyboardReturn";
-import {Dialog, DialogContent, DialogContentText, DialogTitle, IconButton, List, ListItem, ListItemText, MenuItem, Paper, Select, TextField, Tooltip, Typography, Stack} from "@mui/material";
+import {
+    Dialog,
+    DialogContent,
+    DialogContentText,
+    DialogTitle,
+    IconButton,
+    List,
+    ListItem,
+    ListItemText,
+    MenuItem,
+    Paper,
+    Select,
+    TextField,
+    Tooltip,
+    Typography,
+    Stack,
+    Box
+} from "@mui/material";
 import Button from "@mui/material/Button";
 import DeleteOutlineOutlinedIcon from '@mui/icons-material/DeleteOutlineOutlined';
 import AutoStoriesOutlinedIcon from '@mui/icons-material/AutoStoriesOutlined';
 import axios from "axios";
+import ButtonReturn from "../../components/ButtonReturn";
 
 export default function RecetteCreation(){
 
