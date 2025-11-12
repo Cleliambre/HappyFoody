@@ -4,6 +4,7 @@ import {
     Avatar,
     Link,
     Button,
+    IconButton,
     Paper,
     List,
     ListItem,
@@ -257,10 +258,14 @@ export default function RecettePage() {
                 >
                     {/* Auteur et note */}
                     <Stack direction="column" spacing={1}>
-                        <Stack direction="row" spacing={2} alignItems="center">
-                            <ColorAvatar src={auteur?.urlImage || ""} name={auteur?.pseudo || ""} />
+                        <Stack direction="row" spacing={1} alignItems="center">
+                            <IconButton onClick={()=>{navigate(`/profil/${auteur?.pseudo}`)}}>
+                                <ColorAvatar src={auteur?.urlImage || ""} name={auteur?.pseudo || ""} />
+                            </IconButton>
                             <Typography variant="body2">
-                                {auteur ? auteur.pseudo : "Auteur inconnu"}
+                                <Link component="button" color="inherit" underline="none" onClick={() => navigate(`/profil/${auteur?.pseudo}`)}>
+                                    {auteur ? auteur.pseudo : "Auteur inconnu"}
+                                </Link>
                             </Typography>
                         </Stack>
 
