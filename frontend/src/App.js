@@ -13,7 +13,7 @@ import PartageSearch from "./pages/searchPage/PartageSearchPage"
 
 // Onglets personnels
 import Favoris from "./pages/favori/Favori"
-import Messages from "./pages/Messages" // TODO : A faire
+import Messages from "./pages/message/MessageHome"
 import Profil from "./pages/profil/Profil"
 
 // TODO : Page favoris

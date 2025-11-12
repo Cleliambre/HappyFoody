@@ -276,7 +276,6 @@ export default function RecetteSearchPage(){
 
     useEffect(() => {
         handleSearch("");
-        // 🔹 Mets ici ton action (fetch, redirection, etc.)
     }, []);
 
     return (

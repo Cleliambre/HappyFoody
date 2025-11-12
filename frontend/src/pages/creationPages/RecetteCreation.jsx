@@ -543,6 +543,7 @@ export default function RecetteCreation(){
                     <Button
                         variant="contained"
                         sx={{borderRadius:5, backgroundColor:"grey"}}
+                        onClick={handleRetour}
                     >
                         Annuler
                     </Button>

@@ -246,6 +246,10 @@ export default function RestaurantSearchPage(){
         setPage(value);
     };
 
+    useEffect(() => {
+        handleSearch("");
+    }, []);
+
     /*
     const [cards, setCards] = React.useState([
         {
