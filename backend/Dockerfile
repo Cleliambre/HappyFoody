@@ -12,8 +12,13 @@ COPY src ./src
 RUN mvn clean package -DskipTests
 
 # Étape 2 : Exécuter le JAR
-FROM eclipse-temurin:17-jdk
+FROM eclipse-temurin:21-jdk
 WORKDIR /app
+
 COPY --from=build /app/target/*.jar app.jar
+COPY entrypoint.sh ./
+RUN chmod +x entrypoint.sh
+
 EXPOSE 8080
-ENTRYPOINT ["java","-jar","app.jar"]
+CMD ["./entrypoint.sh"]
+
