@@ -15,15 +15,6 @@ export default function RecetteCreation(){
         document.title = "Création de Recette - Happy Foody";
     }, [])
 
-    /*attention : cela ne permet que de faire un aperçu de l'image, l'URL créée n'est pas persistante.
-    * il faudra enregistrer l'image (appelée file ici) dans la base de données pour ensuite avoir une url persistante*/
-    /*const handleImageChange = (event) => {
-        const file = event.target.files[0];
-        if (file) {
-            setImage(URL.createObjectURL(file)); // crée une URL locale pour l’aperçu
-        }
-    }*/
-
     const handleImageChange = async (event) => {
         const file = event.target.files[0];
         if (file) {
@@ -102,9 +93,6 @@ export default function RecetteCreation(){
     useEffect(() => {
         console.log("tags mis à jour :", tags);
     }, [tags]);
-
-
-    const handleRetour = () => {navigate('/recette');}
 
     // --- TAGS ---
     const handleTagAdd = (nom)=>{
@@ -366,16 +354,10 @@ export default function RecetteCreation(){
                     spacing={1}
                 >
                     {/*Bouton de retour*/}
-                    <Button
-                        variant="contained"
-                        sx={{backgroundColor: "gray", alignItems:"center"}}
-                        onClick={handleRetour}
-                    >
-                        <Typography className = "cancel">
-                            Retour
-                        </Typography>
-                        <KeyboardReturnIcon />
-                    </Button>
+                    <ButtonReturn
+                        path="/recette"
+                        text="Retour à la recherche de recette"
+                    />
 
                     {/*Carte de d'information*/}
                     {compte && (
@@ -543,7 +525,7 @@ export default function RecetteCreation(){
                     <Button
                         variant="contained"
                         sx={{borderRadius:5, backgroundColor:"grey"}}
-                        onClick={handleRetour}
+                        onClick={() => {navigate('/recette');}}
                     >
                         Annuler
                     </Button>
@@ -555,6 +537,7 @@ export default function RecetteCreation(){
                         Confirmer
                     </Button>
                 </Stack>
+                <Box sx={{ height: '15px' }} />
             </Stack>
 
             {/*boîte de dialogue pour l'ajout d'ingrédient*/}

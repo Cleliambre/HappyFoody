@@ -3,7 +3,10 @@ import React, {useState} from "react";
 
 import berserker from "../../images/berserker.jpeg"
 import KeyboardReturnIcon from "@mui/icons-material/KeyboardReturn";
-import {Dialog, DialogContent, DialogContentText, DialogTitle, MenuItem, Paper, Select, TextField, Typography, Stack} from "@mui/material";
+import {
+    Dialog, DialogContent, DialogContentText, DialogTitle, MenuItem, Paper, Select, TextField, Typography, Stack,
+    Box
+} from "@mui/material";
 import Button from "@mui/material/Button";
 import VolunteerActivismOutlinedIcon from '@mui/icons-material/VolunteerActivismOutlined';
 import { DatePicker } from "@mui/x-date-pickers/DatePicker";
@@ -229,7 +232,7 @@ export default function PartageCreation(){
                         Confirmer
                     </Button>
                 </Stack>
-
+                <Box sx={{ height: '15px' }} />
             </Stack>
 
             {/*Boîte de dialogue pour l'ajout d'un tag*/}
