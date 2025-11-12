@@ -1,8 +1,7 @@
 import React from 'react';
 import './ForgottenPassword.css'
-import {Typography, TextField, Button, Link} from '@mui/material';
-import SubdirectoryArrowLeftIcon from '@mui/icons-material/SubdirectoryArrowLeft';
-import KeyboardReturnIcon from '@mui/icons-material/KeyboardReturn';
+import {Typography, TextField, Button} from '@mui/material';
+import ButtonReturn from "../../components/ButtonReturn";
 
 
 export default function ForgottenPassword() {
@@ -12,12 +11,11 @@ export default function ForgottenPassword() {
                 <Typography variant="h3" color="textSecondary" className = "titre">
                     Mot de passe oublié
                 </Typography>
-                <Button variant="contained" className="cancel-btn" onClick={() => {}}>
-                    <Typography className = "cancel">
-                        Retour
-                        <KeyboardReturnIcon />
-                    </Typography>
-                </Button>
+
+                <ButtonReturn
+                    path="/connexion"
+                    text="Retour à la connexion"
+                />
             </div>
             <div className="input-container">
                     <TextField
