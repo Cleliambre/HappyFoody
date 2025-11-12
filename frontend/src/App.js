@@ -22,6 +22,7 @@ import Profil from "./pages/profil/Profil"
 import Inscription from "./pages/Inscription/Inscription";
 import Connexion from "./pages/connexion/Connexion";
 import PasswordModification from "./pages/passwordModification/PasswordModification";
+import ProfilModification from "./pages/profilModification/ProfilModification";
 
 // Les pages d'affichage individuel
 import CommunautePage from "./pages/InformationPages/CommunautePage";
@@ -75,6 +76,7 @@ const routes = [
     // Pages de profil
     { path: "/profil/:pseudo",         element: <Profil /> },
     { path: "/inscription",            element: <Inscription /> },
+    { path: "/modificationProfil", element: <ProfilModification /> },
     { path: "/modificationMotDePasse", element: <PasswordModification /> },
     { path: "/connexion",              element: <Connexion /> },
 ];

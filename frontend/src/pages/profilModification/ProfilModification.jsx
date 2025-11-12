@@ -1,9 +1,78 @@
-import React from 'react';
+import React, {useEffect} from 'react';
+import {useNavigate} from 'react-router-dom';
 import "./ProfilModification.css"
 import {Typography, Avatar, Stack, TextField, Button, Badge, InputAdornment, IconButton} from "@mui/material";
 import ModeEditOutlinedIcon from '@mui/icons-material/ModeEditOutlined';
+import axios from "axios";
 
-export default function ProfilModification({pseudo, pp, description, email, mdp}){
+export default function ProfilModification(){
+
+    //Changement du titre de la page sur l'onglet du navigateur
+    useEffect(() => {
+        document.title = "Modification de profil - Happy Foody";
+    }, [])
+
+    const [compte, setCompte] = React.useState(null);
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        const idCompte = localStorage.getItem('idCompte');
+        if (!idCompte) {
+            navigate('/connexion');
+            return;
+        }
+
+        fetch(`http://localhost:8080/api/compte/getCompteById/${idCompte}`)
+            .then(res => res.json())
+            .then(data => setCompte(data));
+
+    }, [navigate]);
+
+
+    const [pseudo, setPseudo] = React.useState(compte?.pseudo || "");
+    const [pp, setPP] = React.useState(compte?.urlImage || "");
+    const [description, setDescription] = React.useState(compte?.description || "");
+    const [email, setEmail] = React.useState(compte?.mail || "");
+    const [mdp, setMdp] = React.useState(compte?.password || "");
+
+    useEffect(() => {
+        if (compte) {
+            setPseudo(compte.pseudo);
+            setPP(compte.urlImage);
+            setDescription(compte.description);
+            setEmail(compte.mail);
+            setMdp(compte.password);
+        }
+
+    }, [compte]);
+
+    const handleSubmit = async () => {
+        //Validation basique
+        if(!compte) return;
+
+        if (!pseudo || !email || !mdp) {
+            alert("Champs non remplis");
+            return;
+        }
+
+        try{
+            //Appel du backend
+            const newCompte = {
+                pseudo : pseudo,
+                mail : email,
+                password: mdp,
+                urlImage: pp,
+                description: description,
+                scoreConfiance: 0
+            };
+
+            const response = await axios.put(`http://localhost:8080/api/compte/updateCompte/${compte.idCompte}`, newCompte);
+
+        }catch(error){
+            console.error("Erreur lors de la mise à jour du compte :", error)
+        }
+    }
+
     return(
         <div className="profilModification-content">
             <Typography
@@ -37,21 +106,24 @@ export default function ProfilModification({pseudo, pp, description, email, mdp}
                     id="pseudo"
                     label="Pseudo"
                     variant="outlined"
-                    defaultValue={pseudo}
+                    value={pseudo}
+                    onChange={(e) => setPseudo(e.target.value)}
                 />
                 <TextField
                     fullWidth
                     id="description"
                     label="Bio/description"
                     variant="outlined"
-                    defaultValue={description}
+                    value={description}
+                    onChange={(e) => setDescription(e.target.value)}
                 />
                 <TextField
                     fullWidth
                     id="email"
                     label="Adresse mail"
                     variant="outlined"
-                    defaultValue={email}
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
                 />
                 <TextField
                     fullWidth
@@ -76,7 +148,8 @@ export default function ProfilModification({pseudo, pp, description, email, mdp}
                             ),
                         },
                     }}
-                    defaultValue={mdp}
+                    value={mdp}
+                    onChange={(e) => setMdp(e.target.value)}
 
                 />
 
@@ -87,6 +160,7 @@ export default function ProfilModification({pseudo, pp, description, email, mdp}
                     color="primary"
                     size = "large"
                     sx ={{borderRadius:'30px'}}
+                    onClick={handleSubmit}
                 >
                     Enregistrer
                 </Button>
@@ -95,6 +169,7 @@ export default function ProfilModification({pseudo, pp, description, email, mdp}
                     color="primary"
                     size = "large"
                     sx ={{borderRadius:'30px'}}
+                    onClick={() => {navigate(`/profil/${compte.pseudo}`)}}
                 >
                     Annuler
                 </Button>
