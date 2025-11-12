@@ -2,7 +2,8 @@ import GenericSearchPage from "./GenericSearchPage";
 import RestaurantOutlinedIcon from '@mui/icons-material/Restaurant';
 import React, {useEffect, useState} from "react";
 import RecetteElement from "../../components/card_list/RecetteElement";
-import img0 from "../../images/default_img.png";
+import defaultImage from "../../images/default_img.png";
+import restoImage from "../../images/wok_sushi.png";
 import GenericCard from "../../components/card_list/GenericCard";
 import { searchRestaurants } from "../../services/restaurantService";
 import useSearchPageTags from "./useSearchPageTags";
@@ -29,6 +30,29 @@ export default function RestaurantSearchPage(){
     const {tags, addTag, deleteTag } = useSearchPageTags([]);
 
     const [cards, setCards] = React.useState([]);
+
+    // Exemple
+    /*
+    const [cards, setCards] = React.useState([
+        {
+            id: 1,
+            title: 'Wok Sushi (Test Restaurant)',
+            rate:0,
+            text: <RecetteElement
+                rate={4.0}
+                description="Le restaurant Wok & Sushi fusionne deux spécialités asiatiques.
+                    WOK exprime les plats chauds du traiteur asiatique comme les Bobuns,
+                    les nouilles sautés, les gambas et bien d'autre encore..
+                    SUSHI vous fera découvrir le restaurant japonais avec certaines saveurs telles que des sushis,
+                    des makis california, des sashimis et plus d'autre encore."
+                tags_lieu={["Les Ulis, 91940"]}
+                tags_nourriture={["Asiatique", "Wok", "Sushi"]}
+            />,
+            thumbnail: restoImage,
+            liked: false,
+            likes: 97,
+        }
+    ]);*/
 
     const navigate = useNavigate();
 
@@ -114,7 +138,7 @@ export default function RestaurantSearchPage(){
                 description : restaurant.description,
                 rate: restaurant.note_moyenne || 0,
                 tags: restaurant.tags || [],
-                thumbnail: restaurant.urlImage || img0,
+                thumbnail: restaurant.urlImage || defaultImage,
                 liked: restaurant.liked,
                 likes: restaurant.nb_likes || 0,
             }));
@@ -248,27 +272,6 @@ export default function RestaurantSearchPage(){
     useEffect(() => {
         handleSearch("");
     }, []);
-
-    /*
-    const [cards, setCards] = React.useState([
-        {
-            id: 1,
-            title: 'Wok Sushi (Test Restaurant)',
-            text: <RecetteElement
-                rate={4.0}
-                description="Le restaurant Wok & Sushi fusionne deux spécialités asiatiques.
-                    WOK exprime les plats chauds du traiteur asiatique comme les Bobuns,
-                    les nouilles sautés, les gambas et bien d'autre encore..
-                    SUSHI vous fera découvrir le restaurant japonais avec certaines saveurs telles que des sushis,
-                    des makis california, des sashimis et plus d'autre encore."
-                tags_lieu={["Les Ulis, 91940"]}
-                tags_nourriture={["Asiatique", "Wok", "Sushi"]}
-            />,
-            thumbnail: img1,
-            liked: false,
-            likes: 97,
-        }
-    ]);*/
 
     return (
         <GenericSearchPage
