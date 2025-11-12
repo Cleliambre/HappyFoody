@@ -5,7 +5,7 @@ import CardList from "../../components/card_list/CardListV2";
 import React, {useEffect} from "react";
 import GenericCard from "../../components/card_list/GenericCard";
 import RecetteAndRestoElement from "../../components/card_list/RecetteAndRestoElement";
-import img0 from "../../images/taboule.png";
+import img0 from "../../images/default_img.png";
 import img1 from "../../images/wok_sushi.png";
 import PostElement from "../../components/card_list/PostElement";
 import img2 from "../../images/taboule_crame.png";

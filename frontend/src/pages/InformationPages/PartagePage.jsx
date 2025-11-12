@@ -1,6 +1,6 @@
 import Stack from "@mui/material/Stack";
 import CardDescription from "./CardDescription";
-import taboule from "../../images/taboule.png";
+import taboule from "../../images/default_img.png";
 import {Avatar, Button, Card, CardHeader, Divider, Link, Pagination, Paper, TextField, Typography} from "@mui/material";
 import KeyboardReturnIcon from "@mui/icons-material/KeyboardReturn";
 import ThumbUpOutlinedIcon from '@mui/icons-material/ThumbUpOutlined';

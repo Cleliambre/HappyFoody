@@ -2,7 +2,7 @@ import GenericSearchPage from "./GenericSearchPage";
 import RestaurantOutlinedIcon from '@mui/icons-material/Restaurant';
 import React, {useEffect, useState} from "react";
 import RecetteAndRestoElement from "../../components/card_list/RecetteAndRestoElement";
-import img0 from "../../images/taboule.png";
+import img0 from "../../images/default_img.png";
 import GenericCard from "../../components/card_list/GenericCard";
 import { searchRestaurants } from "../../services/restaurantService";
 import useSearchPageTags from "./useSearchPageTags";
