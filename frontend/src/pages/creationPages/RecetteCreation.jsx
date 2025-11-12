@@ -1,12 +1,12 @@
 import CreateCardDescription from "./CreateCardDescription";
 import React, {useEffect, useState} from "react";
 import {useNavigate} from "react-router-dom";
-import KeyboardReturnIcon from "@mui/icons-material/KeyboardReturn";
 import {Dialog, DialogContent, DialogContentText, DialogTitle, IconButton, List, ListItem, ListItemText, MenuItem, Paper, Select, TextField, Tooltip, Typography, Stack} from "@mui/material";
 import Button from "@mui/material/Button";
 import DeleteOutlineOutlinedIcon from '@mui/icons-material/DeleteOutlineOutlined';
-import AutoStoriesOutlinedIcon from '@mui/icons-material/AutoStoriesOutlined';
+import RecettesIcon from "@mui/icons-material/MenuBookOutlined";
 import axios from "axios";
+import ButtonReturn from "../../components/ButtonReturn";
 
 export default function RecetteCreation(){
 
@@ -346,10 +346,10 @@ export default function RecetteCreation(){
                 padding={2}
             >
                 {/*Titre + bouton + carte de description*/}
-                <Stack direction="row" spacing={2} alignItems="center">
-                    <AutoStoriesOutlinedIcon sx={{ fontSize: "150px" }}/>
+                <Stack direction="row" spacing={2} alignItems="center" justifyContent="center" width={"50%"}>
+                    <RecettesIcon sx={{ fontSize: "150px" }}/>
 
-                    <Stack direction="column" spacing={2} textAlign="center">
+                    <Stack direction="column" spacing={2} textAlign="start">
                         <Typography variant="h3">
                             Création de Recette
                         </Typography>
@@ -366,16 +366,10 @@ export default function RecetteCreation(){
                     spacing={1}
                 >
                     {/*Bouton de retour*/}
-                    <Button
-                        variant="contained"
-                        sx={{backgroundColor: "gray", alignItems:"center"}}
-                        onClick={handleRetour}
-                    >
-                        <Typography className = "cancel">
-                            Retour
-                        </Typography>
-                        <KeyboardReturnIcon />
-                    </Button>
+                    <ButtonReturn
+                        path={"/recette"}
+                        text={"Retour à la recherche des recettes"}
+                    />
 
                     {/*Carte de d'information*/}
                     {compte && (

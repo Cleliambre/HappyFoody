@@ -2,7 +2,6 @@ import CreateCardDescription from "./CreateCardDescription";
 import React, {useState} from "react";
 
 import berserker from "../../images/berserker.jpeg"
-import KeyboardReturnIcon from "@mui/icons-material/KeyboardReturn";
 import {Dialog, DialogContent, DialogContentText, DialogTitle, MenuItem, Paper, Select, TextField, Typography, Stack} from "@mui/material";
 import Button from "@mui/material/Button";
 import VolunteerActivismOutlinedIcon from '@mui/icons-material/VolunteerActivismOutlined';
@@ -10,6 +9,7 @@ import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 import {LocalizationProvider} from "@mui/x-date-pickers/LocalizationProvider"
 import {AdapterDayjs} from "@mui/x-date-pickers/AdapterDayjs";
 import dayjs from "dayjs";
+import ButtonReturn from "../../components/ButtonReturn";
 
 export default function PartageCreation(){
 
@@ -119,10 +119,10 @@ export default function PartageCreation(){
                 padding={2}
             >
                 {/*Titre + bouton + carte de description*/}
-                <Stack direction="row" spacing={2} alignItems="center">
+                <Stack direction="row" spacing={2} alignItems="center" justifyContent="center"  sx={{width:'50%'}}>
                     <VolunteerActivismOutlinedIcon sx={{ fontSize: "150px" }}/>
 
-                    <Stack direction="column" spacing={2} textAlign="center">
+                    <Stack direction="column" spacing={2} textAlign="start">
                         <Typography variant="h3">
                             Création d'une page de partage
                         </Typography>
@@ -136,14 +136,10 @@ export default function PartageCreation(){
                     spacing={1}
                 >
                     {/*Bouton de retour*/}
-                    <Button
-                        variant="contained"
-                        sx={{backgroundColor: "gray", alignItems:"center"}}>
-                        <Typography className = "cancel">
-                            Retour
-                        </Typography>
-                        <KeyboardReturnIcon />
-                    </Button>
+                    <ButtonReturn
+                        path={"/partage"}
+                        text={"Retour à la recherche des partages"}
+                    />
 
                     {/*Carte de d'information*/}
                     <CreateCardDescription
@@ -198,7 +194,7 @@ export default function PartageCreation(){
                 <Paper elevation={2} sx={{padding:2, alignContent:"center"}}>
                     <Stack direction="column" spacing={2} alignItems="center">
                         <Typography variant="h5">
-                            Nombre parts/personnes :
+                            Nombre parts / personnes :
                         </Typography>
 
                         <TextField

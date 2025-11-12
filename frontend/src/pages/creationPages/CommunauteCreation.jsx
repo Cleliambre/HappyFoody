@@ -2,10 +2,10 @@ import {
     Dialog, DialogContent, DialogContentText, DialogTitle,MenuItem, Select, Stack, TextField, Typography} from "@mui/material";
 import PeopleAltOutlinedIcon from '@mui/icons-material/PeopleAltOutlined';
 import Button from "@mui/material/Button";
-import KeyboardReturnIcon from "@mui/icons-material/KeyboardReturn";
 import CreateCardDescription from "./CreateCardDescription";
 import React, {useState} from "react";
 import berserker from "../../images/berserker.jpeg";
+import ButtonReturn from "../../components/ButtonReturn";
 
 export default function CommunauteCreation(){
     const[image, setImage] = useState(null);
@@ -101,10 +101,10 @@ export default function CommunauteCreation(){
                 padding={2}
             >
                 {/*Titre + bouton + carte de description*/}
-                <Stack direction="row" spacing={2} alignItems="center">
+                <Stack direction="row" spacing={2} alignItems="center" justifyContent="center"  width="50%">
                     <PeopleAltOutlinedIcon sx={{ fontSize: "150px" }}/>
 
-                    <Stack direction="column" spacing={2} textAlign="center">
+                    <Stack direction="column" spacing={2} textAlign="start">
                         <Typography variant="h3">
                             Création d'une page de communauté
                         </Typography>
@@ -118,14 +118,10 @@ export default function CommunauteCreation(){
                     spacing={1}
                 >
                     {/*Bouton de retour*/}
-                    <Button
-                        variant="contained"
-                        sx={{backgroundColor: "gray", alignItems:"center"}}>
-                        <Typography className = "cancel">
-                            Retour
-                        </Typography>
-                        <KeyboardReturnIcon />
-                    </Button>
+                    <ButtonReturn
+                        path={"/communaute"}
+                        text={"Retour à la recherche des forums"}
+                    />
 
                     {/*Carte de d'information*/}
                     <CreateCardDescription

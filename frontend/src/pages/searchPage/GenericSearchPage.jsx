@@ -35,12 +35,13 @@ export default function GenericSearchPage({pageDescr, tags, barInfo, onFilterCli
                 direction="row"
                 spacing={2}
                 alignItems="center"
+                width="50%"
             >
                 {pageDescr.logo}
                 <Stack
                     direction="column"
                     spacing={2}
-                    alignItems="center"
+                    alignItems="start"
                     width={"80%"}
                 >
                     <Typography variant="h3">
