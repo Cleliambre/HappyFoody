@@ -3,7 +3,7 @@ import {useParams, useNavigate, useLocation} from 'react-router-dom';
 import './Profil.css'
 import {Typography, Button, Avatar, Tab, Stack, Container} from '@mui/material';
 import  {TabContext, TabList, TabPanel} from '@mui/lab'
-import CardListV2 from "../../components/card_list/CardList";
+import CardList from "../../components/card_list/CardList";
 import ColorAvatar from "../../components/ColorAvatar";
 import img0 from "../../images/default_img.png";
 import GenericCard from "../../components/card_list/GenericCard";
@@ -336,7 +336,7 @@ export default function Profil() {
                         <Tab value = "3" label="Mes partages"/>
                     </TabList>
                     <TabPanel value="1" className="tab-content">
-                        <CardListV2 resMessage={recettes.length + (recettes.length>1 ? " Resultats" : " Resultat")}>
+                        <CardList resMessage={recettes.length + (recettes.length>1 ? " Resultats" : " Resultat")}>
                             {cards.map((card) => (
                                 <GenericCard
                                     key={card.id}
@@ -354,7 +354,7 @@ export default function Profil() {
                                     onClick={handleClick}
                                 />
                             ))}
-                        </CardListV2>
+                        </CardList>
                     </TabPanel>
                     <TabPanel value="2" className="tab-content">
                         Item Two

@@ -4,7 +4,7 @@ import Stack from "@mui/material/Stack";
 import {Typography, Button, Pagination, Chip, Box} from "@mui/material";
 import SearchBar from "../../components/searchBar/SearchBar";
 import AddIcon from '@mui/icons-material/Add';
-import CardListV2 from "../../components/card_list/CardList";
+import CardList from "../../components/card_list/CardList";
 
 /**
  * Version où les enfants représentent des cartes
@@ -90,11 +90,11 @@ export default function GenericSearchPage({pageDescr, tags, barInfo, onFilterCli
                         />))}
                 </Stack>
             </Stack>
-            <CardListV2
+            <CardList
                 resMessage = {resultCount + (resultCount>1 ? " Resultats" : " Resultat")}
             >
                 {children}
-            </CardListV2>
+            </CardList>
             <Pagination
                 count={paginationSize}
                 page={page}

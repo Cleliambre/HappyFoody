@@ -1,7 +1,6 @@
 import GenericSearchPage from "./GenericSearchPage";
 import RestaurantOutlinedIcon from '@mui/icons-material/Restaurant';
 import React, {useEffect, useState} from "react";
-import RecetteElement from "../../components/card_list/RecetteElement";
 import defaultImage from "../../images/default_img.png";
 import restoImage from "../../images/wok_sushi.png";
 import GenericCard from "../../components/card_list/GenericCard";
