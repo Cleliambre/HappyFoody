@@ -583,7 +583,7 @@ export default function RecetteCreation(){
                             {uniteAccepted.map((unite) =>
                                 unite === "" ? (
                                     <MenuItem
-                                        value={unite}
+                                        value=""
                                         sx={{ fontStyle: 'italic', color: 'text.disabled' }}
                                     >
                                         Aucune unité
@@ -599,7 +599,10 @@ export default function RecetteCreation(){
             </Dialog>
 
             {/*boîte de dialogue pour l'ajout d'une étape*/}
-            <Dialog open={opened2} onClose={handleClose2}>
+            <Dialog open={opened2} onClose={handleClose2}
+                    fullWidth
+                    maxWidth='md'
+            >
                 <DialogTitle>
                     Ajout d'une étape
                 </DialogTitle>
@@ -617,6 +620,7 @@ export default function RecetteCreation(){
                         <Button
                             variant="contained"
                             onClick={handleConfirmerEtape}
+                            sx={{maxWidth:200}}
                         >
                             Confirmer
                         </Button>
