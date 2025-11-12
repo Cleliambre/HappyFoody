@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import {useParams, useNavigate, useLocation} from 'react-router-dom';
 import './Profil.css'
+import ColorAvatar from "../../components/ColorAvatar";
 import {Typography, Button, Avatar, Tab, Stack, Container} from '@mui/material';
 import  {TabContext, TabList, TabPanel} from '@mui/lab'
 import CardListV2 from "../../components/card_list/CardListV2";
@@ -45,6 +46,7 @@ export default function Profil() {
             })
             .catch(err => console.error("Erreur de récupération du compte connecté :", err));
     }, []);
+
 
     useEffect(() => {
         if (!compte) return;
@@ -179,7 +181,7 @@ export default function Profil() {
 
 
     // 🔹 Gestion des redirections et récupération du profil
-    useEffect(() => {
+    /*useEffect(() => {
         const handleProfil = async () => {
             // Si on est sur /profil sans pseudo
             if (!pseudo) {
@@ -224,7 +226,55 @@ export default function Profil() {
 
         handleProfil();
         // ✅ dépend seulement de pseudo et compteConnecte.pseudo
-    }, [pseudo, compteConnecte?.pseudo, navigate, location.pathname]);
+    }, [pseudo, compteConnecte?.pseudo, navigate, location.pathname]);*/
+
+    useEffect(() => {
+        const handleProfil = async () => {
+            // 🔹 Cas 1 : /profil sans pseudo
+            if (!pseudo) {
+                const idCompte = localStorage.getItem('idCompte');
+                if (!idCompte) {
+                    if (location.pathname !== '/connexion') {
+                        navigate('/connexion', { replace: true });
+                    }
+                    return;
+                }
+
+                // ✅ Si connecté et compteConnecte dispo → redirige
+                if (compteConnecte?.pseudo) {
+                    const target = `/profil/${compteConnecte.pseudo}`;
+                    if (location.pathname !== target) {
+                        navigate(target, { replace: true });
+                    }
+                    return;
+                }
+
+                // 🕓 Si on n’a pas encore compteConnecte, on attend (ne fait rien)
+                return;
+            }
+
+            // 🔹 Cas 2 : /profil/:pseudo → récupère le profil
+            try {
+                const res = await fetch(`http://localhost:8080/api/compte/getCompteByPseudo/${pseudo}`);
+                if (!res.ok) {
+                    setCompte(null);
+                    setIsLoading(false);
+                    return;
+                }
+
+                const text = await res.text();
+                const data = text ? JSON.parse(text) : null;
+                setCompte(data);
+            } catch (err) {
+                console.error("Erreur de récupération du profil :", err);
+                setCompte(null);
+            } finally {
+                setIsLoading(false);
+            }
+        };
+
+        handleProfil();
+    }, [pseudo, compteConnecte, navigate, location.pathname]);
 
 
     const handleChange = (event, newValue) => {
@@ -250,7 +300,7 @@ export default function Profil() {
             </Typography>
             <Container sx={{width: '80%'}}>
                 <div className="profil-description">
-                    <Avatar src={compte.urlImage} className="profil-avatar" sx={{width:150, height:150}}/>
+                    <ColorAvatar/>
                     <div className="profil-description-text">
                         <Typography variant="h4" color="textPrimary">
                             {compte.pseudo}

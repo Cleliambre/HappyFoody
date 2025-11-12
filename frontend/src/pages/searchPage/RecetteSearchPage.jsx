@@ -274,6 +274,11 @@ export default function RecetteSearchPage(){
         setPage(value);
     };
 
+    useEffect(() => {
+        handleSearch("");
+        // 🔹 Mets ici ton action (fetch, redirection, etc.)
+    }, []);
+
     return (
             <GenericSearchPage
                 pageDescr={pageDescription}

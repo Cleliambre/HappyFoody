@@ -2,7 +2,7 @@ import {Typography, Stack, Tab} from "@mui/material";
 import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlined';
 import {TabContext, TabList, TabPanel} from "@mui/lab";
 import CardList from "../../components/card_list/CardListV2";
-import React from "react";
+import React, {useEffect} from "react";
 import GenericCard from "../../components/card_list/GenericCard";
 import RecetteAndRestoElement from "../../components/card_list/RecetteAndRestoElement";
 import img0 from "../../images/taboule.png";
@@ -12,9 +12,11 @@ import img2 from "../../images/taboule_crame.png";
 import PartageElement from "../../components/card_list/PartageElement";
 import img3 from "../../images/poulet.jpg";
 import SearchBar from "../../components/searchBar/SearchBar";
+import {useNavigate} from 'react-router-dom';
 
 export default function Favori(){
 
+    useEffect(() => {document.title = "Favoris - Happy Foody"}, [])
     //Pour pouvoir changer de catégorie dans la Tab
     const [value, setValue] = React.useState('1');
     const handleChange = (event, newValue) => {
@@ -32,7 +34,172 @@ export default function Favori(){
         likes: int,
     }
     */
-    const [cartesRecettes, setCartesRecettes] = React.useState([
+
+    const navigate = useNavigate();
+
+    const [compte, setCompte] = React.useState([]);
+    const [recettesLiked, setRecettesLiked] = React.useState([]);
+    const [restaurantsLiked, setRestaurantsLiked] = React.useState([]);
+    const [cardsRecettes, setCardsRecettes] = React.useState([]);
+    const [cardsRestaurants, setCardsRestaurants] = React.useState([]);
+
+    // 🔹 Récupération du compte connecté s’il y en a un
+    useEffect(() => {
+        const idCompte = localStorage.getItem('idCompte');
+
+        if (!idCompte) {
+            // Si on est sur /profil (pas de pseudo) et pas connecté → redirige vers /connexion
+            navigate('/connexion');
+            return;
+        }
+
+        // Récupère le compte connecté
+        fetch(`http://localhost:8080/api/compte/getCompteById/${idCompte}`)
+            .then(async res => {
+                const text = await res.text();
+                return text ? JSON.parse(text) : null;
+            })
+            .then(data => {
+                setCompte(data);
+            })
+            .catch(err => console.error("Erreur de récupération du compte connecté :", err));
+    }, [navigate]);
+
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                if (compte) {
+                    try {
+                        const likedResponse = await fetch(`http://localhost:8080/api/compte/getLikedRecettes/${compte.idCompte}`);
+                        if (likedResponse.ok) {
+                            const likedRecettes = await likedResponse.json();
+                            setRecettesLiked(likedRecettes);
+                        }
+                    } catch (e) {
+                        console.warn("Impossible de charger les likes de l'utilisateur :", e);
+                    }
+                }
+
+                if(!recettesLiked) return;
+
+                const recettesAvecInfos = await Promise.all(
+                    recettesLiked.map(async (recette) => {
+                        const [noteResponse, likesResponse] = await Promise.all([
+                            fetch(`http://localhost:8080/api/recette/noteMoyenne/${recette.idRecette}`),
+                            fetch(`http://localhost:8080/api/recette/nombreLikes/${recette.idRecette}`)
+                        ]);
+
+                        const safeJson = async (response, defaultValue = 0) => {
+                            try {
+                                if (!response.ok) return defaultValue;
+                                const text = await response.text();
+                                return text ? JSON.parse(text) : defaultValue;
+                            } catch {
+                                return defaultValue;
+                            }
+                        };
+
+                        const note_moyenne = await safeJson(noteResponse, 0);
+                        const nb_likes = await safeJson(likesResponse, 0);
+
+                        return {
+                            ...recette,
+                            note_moyenne,
+                            nb_likes,
+                            id: recette.idRecette,
+                            liked: true
+                        };
+                    })
+                );
+
+                const newCards = recettesAvecInfos.map((recette) => ({
+                    id: recette.idRecette,
+                    title: recette.titre || "Recette sans nom",
+                    description: recette.description || "Aucune description",
+                    rate: recette.note_moyenne || 0,
+                    tags: recette.tags || [],
+                    thumbnail: recette.urlImage || img0,
+                    liked: recette.liked,
+                    likes: recette.nb_likes || 0,
+                }));
+
+                setCardsRecettes(newCards);
+            } catch (err) {
+                console.error(err);
+            }
+        };
+
+        fetchData();
+    }, [compte, recettesLiked]);
+
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                if (compte) {
+                    try {
+                        const likedResponse = await fetch(`http://localhost:8080/api/compte/getLikedRestaurants/${compte.idCompte}`);
+                        if (likedResponse.ok) {
+                            const likedRestaurants = await likedResponse.json();
+                            setRestaurantsLiked(likedRestaurants);
+                        }
+                    } catch (e) {
+                        console.warn("Impossible de charger les likes de l'utilisateur :", e);
+                    }
+                }
+
+                if(!restaurantsLiked) return;
+
+                const restaurantsAvecInfos = await Promise.all(
+                    restaurantsLiked.map(async (restaurant) => {
+                        const [noteResponse, likesResponse] = await Promise.all([
+                            fetch(`http://localhost:8080/api/restaurant/noteMoyenne/${restaurant.idRestaurant}`),
+                            fetch(`http://localhost:8080/api/restaurant/nombreLikes/${restaurant.idRestaurant}`)
+                        ]);
+
+                        const safeJson = async (response, defaultValue = 0) => {
+                            try {
+                                if (!response.ok) return defaultValue;
+                                const text = await response.text();
+                                return text ? JSON.parse(text) : defaultValue;
+                            } catch {
+                                return defaultValue;
+                            }
+                        };
+
+                        const note_moyenne = await safeJson(noteResponse, 0);
+                        const nb_likes = await safeJson(likesResponse, 0);
+
+                        return {
+                            ...restaurant,
+                            note_moyenne,
+                            nb_likes,
+                            id: restaurant.idRestaurant,
+                            liked: true
+                        };
+                    })
+                );
+
+                const newCards = restaurantsAvecInfos.map((restaurant) => ({
+                    id: restaurant.idRestaurant,
+                    title: restaurant.titre || "Recette sans nom",
+                    description: restaurant.description || "Aucune description",
+                    rate: restaurant.note_moyenne || 0,
+                    tags: restaurant.tags || [],
+                    thumbnail: restaurant.urlImage || img0,
+                    liked: restaurant.liked,
+                    likes: restaurant.nb_likes || 0,
+                }));
+
+                setCardsRestaurants(newCards);
+            } catch (err) {
+                console.error(err);
+            }
+        };
+
+        fetchData();
+    }, [compte, restaurantsLiked]);
+
+    /*const [cartesRecettes, setCartesRecettes] = React.useState([
         {
             id: 0,
             title: 'Taboulé (Test Recette)',
@@ -72,8 +239,9 @@ export default function Favori(){
             liked: false,
             likes: 119
         },
-    ]);
+    ]);*/
 
+    /*
     const [cartesRestaurants, setCartesRestaurants] = React.useState([
         {
             id: 1,
@@ -93,7 +261,7 @@ export default function Favori(){
             liked: false,
             likes: 97
         }
-    ]);
+    ]);*/
 
     const [cartesPosts, setCartesPosts] = React.useState([
         {
@@ -139,24 +307,116 @@ export default function Favori(){
         }
     ]);
 
-    const handleLike = (card, setCards) => {
-        setCards((prev) =>
-            prev.map((c) =>
+
+
+    const handleLikeRecette = async (card) => {
+        const idCompte = localStorage.getItem("idCompte");
+        if (!idCompte) {
+            alert("Vous devez être connecté pour liker !");
+            return;
+        }
+
+        const newLiked = !card.liked;
+
+        // ✅ Mise à jour optimiste
+        setCardsRecettes(prevCards =>
+            prevCards.map(c =>
                 c.id === card.id
-                    ? {
-                        ...c,
-                        liked: !c.liked,
-                        likes: c.liked ? c.likes - 1 : c.likes + 1,
-                    }
+                    ? { ...c, liked: newLiked, likes: Math.max(0, c.likes + (newLiked ? 1 : -1)) }
                     : c
             )
         );
-        /*ajouter la mise à jour de la liste des favoris*/
+
+        try {
+
+            const url = `http://localhost:8080/api/compte/${
+                newLiked ? "saveLikedRecette" : "deleteLikedRecette"
+            }?compteId=${idCompte}&recetteId=${card.id}`;
+
+            const method = newLiked ? "POST" : "DELETE";
+
+            const response = await fetch(url, { method });
+
+            if (!response.ok) throw new Error("Erreur réseau");
+        } catch (error) {
+            console.error("Erreur lors de la mise à jour du like :", error);
+
+            // ❌ Annule le changement local si erreur
+            setCardsRecettes(prevCards =>
+                prevCards.map(c =>
+                    c.id === card.id
+                        ? {
+                            ...c,
+                            // 🔥 rollback basé sur la version locale complète (c)
+                            liked: !newLiked,
+                            likes: Math.max(0, c.likes + (newLiked ? -1 : 1))
+                        }
+                        : c
+                )
+            );
+
+            alert("Impossible de mettre à jour le like. Veuillez réessayer.");
+        }
     };
 
-    const handleClick = (card) => {
-        alert(`Carte sélectionnée : ${card.title}`);
+    const handleLikeRestaurant = async (card) => {
+        const idCompte = localStorage.getItem("idCompte");
+        if (!idCompte) {
+            alert("Vous devez être connecté pour liker !");
+            return;
+        }
+
+        const newLiked = !card.liked;
+
+        // ✅ Mise à jour optimiste
+        setCardsRestaurants(prevCards =>
+            prevCards.map(c =>
+                c.id === card.id
+                    ? { ...c, liked: newLiked, likes: Math.max(0, c.likes + (newLiked ? 1 : -1)) }
+                    : c
+            )
+        );
+
+        try {
+
+            const url = `http://localhost:8080/api/compte/${
+                newLiked ? "saveLikedRestaurant" : "deleteLikedRestaurant"
+            }?compteId=${idCompte}&restaurantId=${card.id}`;
+
+            const method = newLiked ? "POST" : "DELETE";
+
+            const response = await fetch(url, { method });
+
+            if (!response.ok) throw new Error("Erreur réseau");
+        } catch (error) {
+            console.error("Erreur lors de la mise à jour du like :", error);
+
+            // ❌ Annule le changement local si erreur
+            setCardsRecettes(prevCards =>
+                prevCards.map(c =>
+                    c.id === card.id
+                        ? {
+                            ...c,
+                            // 🔥 rollback basé sur la version locale complète (c)
+                            liked: !newLiked,
+                            likes: Math.max(0, c.likes + (newLiked ? -1 : 1))
+                        }
+                        : c
+                )
+            );
+
+            alert("Impossible de mettre à jour le like. Veuillez réessayer.");
+        }
     };
+
+    const handleClickRecette = (card) => {
+        navigate(`/recette/${card.id}`);
+    };
+
+    const handleClickRestaurant = (card) => {
+        navigate(`/restaurant/${card.id}`);
+    };
+
 
     return (
         //contenu de la page
@@ -180,7 +440,7 @@ export default function Favori(){
                         Favoris
                     </Typography>
                     <Typography variant="body1" color="textSecondary" textAlign={"left"}>
-                        Retrouvez ici toutes les recettes, restaurants, posts et partages que vous avez mis en favoris
+                        Retrouvez ici toutes les restaurants, restaurants, posts et partages que vous avez mis en favoris
                     </Typography>
                 </Stack>
             </Stack>
@@ -199,12 +459,21 @@ export default function Favori(){
                 <TabPanel value="1" sx={{width:'80%'}}>
                     <SearchBar message={"Rechercher un favori"}/>
                     <CardList>
-                        {cartesRecettes.map((card, index) => (
+                        {cardsRecettes.map((card, index) => (
                             <GenericCard
                                 key={card.id}
-                                card={card}
-                                onLike={()=>handleLike(card, setCartesRecettes)}
-                                onClick={handleClick}
+                                card={{
+                                    ...card,
+                                    text: (
+                                        <RecetteAndRestoElement
+                                            rate={card.rate}
+                                            description={card.description}
+                                            tags_nourriture={card.tags}
+                                        />
+                                    )
+                                }}
+                                onLike={handleLikeRecette}
+                                onClick={handleClickRecette}
                             />
                         ))}
                     </CardList>
@@ -212,12 +481,21 @@ export default function Favori(){
                 <TabPanel value="2" sx={{width:'80%'}}>
                     <SearchBar message={"Rechercher un favori"}/>
                     <CardList>
-                        {cartesRestaurants.map((card, index) => (
+                        {cardsRestaurants.map((card, index) => (
                             <GenericCard
                                 key={card.id}
-                                card={card}
-                                onLike={()=>handleLike(card, setCartesRestaurants)}
-                                onClick={handleClick}
+                                card={{
+                                    ...card,
+                                    text: (
+                                        <RecetteAndRestoElement
+                                            rate={card.rate}
+                                            description={card.description}
+                                            tags_nourriture={card.tags}
+                                        />
+                                    )
+                                }}
+                                onLike={handleLikeRestaurant}
+                                onClick={handleClickRestaurant}
                             />
                         ))}
                     </CardList>
@@ -225,12 +503,21 @@ export default function Favori(){
                 <TabPanel value="3" sx={{width:'80%'}}>
                     <SearchBar message={"Rechercher un favori"}/>
                     <CardList>
-                        {cartesPosts.map((card, index) => (
+                        {cardsRecettes.map((card, index) => (
                             <GenericCard
                                 key={card.id}
-                                card={card}
-                                onLike={()=>handleLike(card, setCartesPosts)}
-                                onClick={handleClick}
+                                card={{
+                                    ...card,
+                                    text: (
+                                        <RecetteAndRestoElement
+                                            rate={card.rate}
+                                            description={card.description}
+                                            tags_nourriture={card.tags}
+                                        />
+                                    )
+                                }}
+                                onLike={handleLikeRecette}
+                                onClick={handleClickRecette}
                             />
                         ))}
                     </CardList>
@@ -238,12 +525,21 @@ export default function Favori(){
                 <TabPanel value="4" sx={{width:'80%'}}>
                     <SearchBar message={"Rechercher un favori"}/>
                     <CardList>
-                        {cartesPartages.map((card, index) => (
+                        {cardsRecettes.map((card, index) => (
                             <GenericCard
                                 key={card.id}
-                                card={card}
-                                onLike={()=>handleLike(card, setCartesPartages)}
-                                onClick={handleClick}
+                                card={{
+                                    ...card,
+                                    text: (
+                                        <RecetteAndRestoElement
+                                            rate={card.rate}
+                                            description={card.description}
+                                            tags_nourriture={card.tags}
+                                        />
+                                    )
+                                }}
+                                onLike={handleLikeRecette}
+                                onClick={handleClickRecette}
                             />
                         ))}
                     </CardList>

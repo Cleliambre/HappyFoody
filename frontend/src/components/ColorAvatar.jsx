@@ -44,7 +44,7 @@ export function colorAvatar(name) {
     };
 }
 
-export function ColorAvatar({src, name}) {
+export default function ColorAvatar({src, name}) {
     if(name === "" || name === null){
         return <Avatar/>;
     }
