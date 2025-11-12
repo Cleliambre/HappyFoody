@@ -3,6 +3,7 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import React from "react";
 import ModeEditOutlinedIcon from "@mui/icons-material/ModeEditOutlined";
 import AddIcon from '@mui/icons-material/Add';
+import ColorAvatar from "../../components/ColorAvatar";
 
 export default function CreateCardDescription({image, tags, titre, texteDescription, compte, texteTitreField, onTagAdd, onTagDelete, onTitleChange, onDescriptionChange, onImageChange, children}){
 
@@ -85,8 +86,9 @@ export default function CreateCardDescription({image, tags, titre, texteDescript
                                         flexItem
                                     />
                                     {/*auteur*/}
-                                    <Avatar
+                                    <ColorAvatar
                                         src={compte.pp}
+                                        name={compte.pseudo}
                                     />
                                     <Typography variant="body2">
                                         {compte.pseudo}

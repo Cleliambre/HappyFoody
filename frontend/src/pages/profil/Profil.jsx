@@ -1,10 +1,10 @@
 import React, {useEffect, useState} from 'react';
 import {useParams, useNavigate, useLocation} from 'react-router-dom';
 import './Profil.css'
-import ColorAvatar from "../../components/ColorAvatar";
 import {Typography, Button, Avatar, Tab, Stack, Container} from '@mui/material';
 import  {TabContext, TabList, TabPanel} from '@mui/lab'
 import CardListV2 from "../../components/card_list/CardListV2";
+import ColorAvatar from "../../components/ColorAvatar";
 import img0 from "../../images/taboule.png";
 import {searchRecettes} from "../../services/recetteService";
 import GenericCard from "../../components/card_list/GenericCard";
@@ -300,7 +300,8 @@ export default function Profil() {
             </Typography>
             <Container sx={{width: '80%'}}>
                 <div className="profil-description">
-                    <ColorAvatar/>
+                    {/*<Avatar src={compte.urlImage} className="profil-avatar" sx={{width:150, height:150}}/>*/}
+                    <ColorAvatar src={compte.urlImage} name={compte.pseudo} className="profil-avatar" sx={{width:150, height:150, fontSize:100}}/>
                     <div className="profil-description-text">
                         <Typography variant="h4" color="textPrimary">
                             {compte.pseudo}

@@ -16,6 +16,7 @@ import React, { useEffect, useState } from "react";
 import CardDescription from "./CardDescription";
 import ButtonReturn from "../../components/ButtonReturn";
 import { useParams, useNavigate } from "react-router-dom";
+import ColorAvatar from "../../components/ColorAvatar";
 
 export default function RecettePage() {
     const { id } = useParams();
@@ -257,7 +258,7 @@ export default function RecettePage() {
                     {/* Auteur et note */}
                     <Stack direction="column" spacing={1}>
                         <Stack direction="row" spacing={2} alignItems="center">
-                            <Avatar src={auteur?.urlImage || ""} />
+                            <ColorAvatar src={auteur?.urlImage || ""} name={auteur?.pseudo || ""} />
                             <Typography variant="body2">
                                 {auteur ? auteur.pseudo : "Auteur inconnu"}
                             </Typography>

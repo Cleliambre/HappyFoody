@@ -9,7 +9,7 @@ import {
     Typography, CardContent, Box, Rating, Grid,
 } from "@mui/material";
 
-import {ColorAvatar} from "../ColorAvatar";
+import ColorAvatar from "../ColorAvatar";
 import ConfianceIcon from "@mui/icons-material/ThumbUpOutlined";
 import RadioGroupRating from "../smiley_rating/RadioGroupRating";
 

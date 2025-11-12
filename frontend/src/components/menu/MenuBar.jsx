@@ -27,17 +27,19 @@ import CommunauteIcon from "@mui/icons-material/PeopleOutlined";
 import RestaurantsIcon from "@mui/icons-material/RestaurantOutlined";
 import RecettesIcon from "@mui/icons-material/MenuBookOutlined";
 import Badge from "@mui/material/Badge";
-import {ColorAvatar} from "../ColorAvatar";
+import ColorAvatar from "../ColorAvatar";
+import {useEffect} from "react";
 
 export default function MenuBar() {
 
+    const [compte, setCompte] = React.useState(null);
     const location = useLocation();
     const [anchorElNav, setAnchorElNav] = React.useState(null);
 
     const isConnected = !!localStorage.getItem('token');
     const profilPath = isConnected ? "/profil" : "/connexion";
-    const userImageUrl= localStorage.getItem('urlImage');
-    const username= localStorage.getItem('pseudo'); // TODO : A verifier
+    const [userImageUrl, setUserImageUrl]= React.useState("");
+    const [username, setUsername] = React.useState(""); // TODO : A verifier
 
     const leftButtons = [
         { path:"/recette",    text: 'Recette',    icon: <RecettesIcon /> },
@@ -53,8 +55,8 @@ export default function MenuBar() {
             path: profilPath,
             icon: (
                 <ColorAvatar
-                    src={isConnected ? userImageUrl : null}
-                    name={isConnected ? username : null}
+                    src={compte?.urlImage || ""}
+                    name={compte?.pseudo || ""}
                 />
             ),
             badge: 0
@@ -68,6 +70,27 @@ export default function MenuBar() {
     const handleCloseNavMenu = () => {
         setAnchorElNav(null);
     };
+
+    // =========================
+    // Chargement du compte connecté
+    // =========================
+    useEffect(() => {
+        const idCompte = localStorage.getItem("idCompte");
+        if (idCompte) {
+            fetch(`http://localhost:8080/api/compte/getCompteById/${idCompte}`)
+                .then(res => res.json())
+                .then(data => setCompte(data))
+                .catch(err => console.error("Erreur de récupération du compte :", err));
+        }
+    }, []);
+
+    // Pour mettre à jour les infos du profil quand le compte est chargé
+    useEffect(() => {
+        if (compte) {
+            setUserImageUrl(compte.urlImage);
+            setUsername(compte.pseudo);
+        }
+    }, [compte]);
 
     return (
         <AppBar component='nav' position='sticky'>
