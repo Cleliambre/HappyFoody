@@ -8,6 +8,7 @@ import EmailOutlinedIcon from '@mui/icons-material/EmailOutlined';
 import React from "react";
 import berserk from "../../images/berserk.jpg";
 import CardList from "../../components/card_list/CardListV2";
+import ButtonReturn from "../../components/ButtonReturn";
 
 export default function PartagePage(){
 
@@ -132,12 +133,10 @@ export default function PartagePage(){
                 </CardDescription>
 
                 {/*Bouton de retour*/}
-                <Button variant="contained" sx={{backgroundColor: "gray", alignContent:"center"}}>
-                    <Typography className = "cancel">
-                        Retour
-                    </Typography>
-                    <KeyboardReturnIcon />
-                </Button>
+                <ButtonReturn
+                    path={"/partage"}
+                    text={"Retour à la recherche de partage"}
+                />
             </Stack>
 
             {/*Description détaillée*/}

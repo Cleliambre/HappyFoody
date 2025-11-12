@@ -17,6 +17,7 @@ import React from "react";
 import tabouleCrame from "../../images/taboule_crame.png";
 import necromencienne from "../../images/necromencienne.jpg";
 import CardList from "../../components/card_list/CardListV2";
+import ButtonReturn from "../../components/ButtonReturn";
 
 export default function CommunautePage(){
     const [description, setDescription] = React.useState({
@@ -137,13 +138,10 @@ export default function CommunautePage(){
                     </Stack>
                 </CardDescription>
 
-                {/*Bouton de retour*/}
-                <Button variant="contained" sx={{backgroundColor: "gray", alignContent:"center"}}>
-                    <Typography className = "cancel" >
-                        Retour
-                    </Typography>
-                    <KeyboardReturnIcon />
-                </Button>
+                <ButtonReturn
+                    path={"/communaute"}
+                    text={"Retour à la recherche de communauté"}
+                />
 
                 {/*liste de commentaires*/}
                 <Stack alignItems="center" spacing={2} width="100%" >
