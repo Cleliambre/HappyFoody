@@ -297,7 +297,7 @@ export default function RecetteCreation(){
 
             setMessage("Recette créée avec succès !");
 
-            // ✅ Réinitialisation
+            // Réinitialisation
             setTitre("");
             setDescription("");
             setImage(null);
@@ -581,7 +581,16 @@ export default function RecetteCreation(){
                             onChange={(e)=>setUniteIngredient(e.target.value)}
                         >
                             {uniteAccepted.map((unite) =>
-                                <MenuItem value={unite}>{unite}</MenuItem>
+                                unite === "" ? (
+                                    <MenuItem
+                                        value={unite}
+                                        sx={{ fontStyle: 'italic', color: 'text.disabled' }}
+                                    >
+                                        Aucune unité
+                                    </MenuItem>
+                                ) : (
+                                    <MenuItem value={unite}>{unite}</MenuItem>
+                                )
                             )}
                         </Select>
                         <Button variant="contained" onClick={handleConfirmerIngredient}>Confirmer</Button>
