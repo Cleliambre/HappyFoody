@@ -2,7 +2,6 @@ import Stack from "@mui/material/Stack";
 import CardDescription from "./CardDescription";
 import taboule from "../../images/default_img.png";
 import {Avatar, Button, Card, CardHeader, Divider, Link, Pagination, Paper, TextField, Typography} from "@mui/material";
-import KeyboardReturnIcon from "@mui/icons-material/KeyboardReturn";
 import ThumbUpOutlinedIcon from '@mui/icons-material/ThumbUpOutlined';
 import EmailOutlinedIcon from '@mui/icons-material/EmailOutlined';
 import React from "react";
@@ -12,7 +11,7 @@ import ButtonReturn from "../../components/ButtonReturn";
 
 export default function PartagePage(){
 
-    const [description, setDescription] = React.useState({
+    const [description] = React.useState({
         image : taboule,
         titre: "Taboulé",
         auteur: "ProDuTaboulé",

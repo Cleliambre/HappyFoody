@@ -12,7 +12,6 @@ import {
     Typography
 } from "@mui/material";
 import ChatBubbleOutlineOutlinedIcon from '@mui/icons-material/ChatBubbleOutlineOutlined';
-import KeyboardReturnIcon from "@mui/icons-material/KeyboardReturn";
 import React from "react";
 import tabouleCrame from "../../images/taboule_crame.png";
 import necromencienne from "../../images/necromencienne.jpg";
@@ -20,7 +19,7 @@ import CardList from "../../components/card_list/CardListV2";
 import ButtonReturn from "../../components/ButtonReturn";
 
 export default function CommunautePage(){
-    const [description, setDescription] = React.useState({
+    const [description] = React.useState({
         image : tabouleCrame,
         titre: "Aide taboulé cramé",
         auteur: "Golanginya",

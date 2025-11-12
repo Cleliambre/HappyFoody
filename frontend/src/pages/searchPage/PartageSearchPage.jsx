@@ -109,18 +109,27 @@ export default function PartageSearchPage(){
         },
     ]);
 
+    // ---- Pagination ----
+    const [page, setPage] = useState(1);
+    const cardsPerPage = 4;
+
+    // Calcule les cartes à afficher pour la page actuelle
+    const startIndex = (page - 1) * cardsPerPage;
+    const endIndex = startIndex + cardsPerPage;
+    const paginatedCards = cards.slice(startIndex, endIndex);
+
     return (
         <GenericSearchPage
             pageDescr={pageDescription}
             barInfo={barInfo}
-            paginationSize={30}
+            paginationSize={Math.ceil(cards.length / cardsPerPage)}
             tags={tags}
             onPlusClick={handleCreate}
             onFilterClick={handleFilter}
             onSearchClick={handleSearch}
             onTagDelete={handleTag}
         >
-            {cards.map((card) => (
+            {paginatedCards.map((card) => (
                 <GenericCard
                     card={card}
                     onLike={handleLike}

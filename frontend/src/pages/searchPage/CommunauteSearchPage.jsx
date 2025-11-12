@@ -113,7 +113,7 @@ export default function CommunauteSearchPage(){
             onSearchClick={handleSearch}
             onTagDelete={handleTag}
         >
-            {cards.map((card) => (
+            {paginatedCards.map((card) => (
                 <GenericCard
                     card={card}
                     onLike={handleLike}
