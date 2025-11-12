@@ -6,7 +6,7 @@ import ThumbUpOutlinedIcon from '@mui/icons-material/ThumbUpOutlined';
 import EmailOutlinedIcon from '@mui/icons-material/EmailOutlined';
 import React from "react";
 import berserk from "../../images/berserk.jpg";
-import CardList from "../../components/card_list/CardListV2";
+import CardList from "../../components/card_list/CardList";
 import ButtonReturn from "../../components/ButtonReturn";
 
 export default function PartagePage(){

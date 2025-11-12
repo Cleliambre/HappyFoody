@@ -4,10 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a51d4164-65dd-4e44-931e-9734ea826bff" name="Changes" comment="Update SectionComm.jsx">
+    <list default="true" id="a51d4164-65dd-4e44-931e-9734ea826bff" name="Changes" comment="Modif CardList.jsx + note">
+      <change afterPath="$PROJECT_DIR$/frontend/src/components/card_list/RestoElement.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/components/card_list/test_card_list/TestCardList.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/commentaires/CommList.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/commentaires/CommList.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/card_list/CardList.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/card_list/CardList.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/card_list/CardListV2.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/card_list/RecetteAndRestoElement.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/card_list/RecetteElement.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/smiley_rating/getSmileys.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/smiley_rating/getSmileys.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/InformationPages/CardDescription.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/InformationPages/CardDescription.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/InformationPages/CommunautePage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/InformationPages/CommunautePage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/InformationPages/PartagePage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/InformationPages/PartagePage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/favori/Favori.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/favori/Favori.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/message/MessageHome.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/message/MessageHome.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/profil/Profil.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/profil/Profil.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/searchPage/GenericSearchPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/searchPage/GenericSearchPage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/searchPage/RecetteSearchPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/searchPage/RecetteSearchPage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/searchPage/RestaurantSearchPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/searchPage/RestaurantSearchPage.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,7 +39,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="develop" />
+        <entry key="$PROJECT_DIR$" value="quick_modif" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -41,6 +54,16 @@
   &quot;selectedUrlAndAccountId&quot;: {
     &quot;url&quot;: &quot;https://github.com/Cleliambre/HappyFoody.git&quot;,
     &quot;accountId&quot;: &quot;483f852f-e9fb-421d-a929-7aa5a36df291&quot;
+  },
+  &quot;recentNewPullRequestHead&quot;: {
+    &quot;server&quot;: {
+      &quot;useHttp&quot;: false,
+      &quot;host&quot;: &quot;github.com&quot;,
+      &quot;port&quot;: null,
+      &quot;suffix&quot;: null
+    },
+    &quot;owner&quot;: &quot;Cleliambre&quot;,
+    &quot;repository&quot;: &quot;HappyFoody&quot;
   }
 }</component>
   <component name="KubernetesApiPersistence">{}</component>
@@ -58,50 +81,52 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Maven.backend [clean,install].executor&quot;: &quot;Run&quot;,
-    &quot;Node.js.App.js.executor&quot;: &quot;Run&quot;,
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;Spring Boot.Backend.executor&quot;: &quot;Run&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;front__end__commentaires&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/tangf/IdeaProjects/HappyFoody/frontend/src/components/commentaires&quot;,
-    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;npm.Frontend.executor&quot;: &quot;Run&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;C:\\Program Files\\JetBrains\\IntelliJ IDEA 2025.2.2\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Maven.backend [clean,install].executor": "Run",
+    "Node.js.App.js.executor": "Run",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "Spring Boot.Backend.executor": "Run",
+    "git-widget-placeholder": "modif__nav",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/tangf/IdeaProjects/HappyFoody/frontend/src/components/card_list",
+    "list.type.of.created.stylesheet": "CSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "npm.Frontend.executor": "Run",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "ts.external.directory.path": "C:\\Program Files\\JetBrains\\IntelliJ IDEA 2025.2.2\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\tangf\IdeaProjects\HappyFoody\frontend\src\components\card_list" />
+      <recent name="C:\Users\tangf\IdeaProjects\HappyFoody\frontend\src\images" />
       <recent name="C:\Users\tangf\IdeaProjects\HappyFoody\frontend\src\components\commentaires" />
       <recent name="C:\Users\tangf\IdeaProjects\HappyFoody\frontend\src\components" />
       <recent name="C:\Users\tangf\IdeaProjects\HappyFoody\frontend\src\pages\InformationPages" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\tangf\IdeaProjects\HappyFoody\frontend\src\components\card_list\test_card_list" />
       <recent name="C:\Users\tangf\IdeaProjects\HappyFoody\frontend\src\components\commentaires\test_commentaires" />
       <recent name="C:\Users\tangf\IdeaProjects\HappyFoody\frontend\src\components\commentaires" />
       <recent name="C:\Users\tangf\IdeaProjects\HappyFoody\frontend\src\components" />
       <recent name="C:\Users\tangf\IdeaProjects\HappyFoody\frontend\src\components\restautant_component" />
-      <recent name="C:\Users\tangf\IdeaProjects\HappyFoody\frontend\src\components\smiley_rating" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.Frontend">
+  <component name="RunManager" selected="Compound.Back&amp;Front">
     <configuration name="Back&amp;Front" type="CompoundRunConfigurationType">
       <toRun name="Frontend" type="js.build_tools.npm" />
       <toRun name="Backend" type="SpringBootApplicationConfigurationType" />
@@ -149,6 +174,7 @@
       <workItem from="1762482111805" duration="604000" />
       <workItem from="1762513110943" duration="78290000" />
       <workItem from="1762690980855" duration="26656000" />
+      <workItem from="1762955124912" duration="22797000" />
     </task>
     <task id="LOCAL-00001" summary="Add RestaurantPage, ButtonReturn, link and remove things unused">
       <option name="closed" value="true" />
@@ -182,17 +208,185 @@
       <option name="project" value="LOCAL" />
       <updated>1762717755104</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Petite modif">
+      <option name="closed" value="true" />
+      <created>1762957484283</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1762957484283</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Petite modif (Majuscule)">
+      <option name="closed" value="true" />
+      <created>1762959321341</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1762959321341</updated>
+    </task>
+    <task id="LOCAL-00007" summary="deleted unused">
+      <option name="closed" value="true" />
+      <created>1762960479307</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1762960479307</updated>
+    </task>
+    <task id="LOCAL-00008" summary="MenuBar.jsx remove disabled button">
+      <option name="closed" value="true" />
+      <created>1762960932141</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1762960932141</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Modif &quot;Aucune note&quot; CommBlock.jsx">
+      <option name="closed" value="true" />
+      <created>1762962236169</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1762962236169</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Modif &quot;Aucune unité&quot; RecetteCreation.jsx">
+      <option name="closed" value="true" />
+      <created>1762962768219</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1762962768219</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Modif élargit boite de dialogue étape RecetteCreation.jsx">
+      <option name="closed" value="true" />
+      <created>1762964075625</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1762964075625</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Modif whiteSpace RecetteCreation.jsx">
+      <option name="closed" value="true" />
+      <created>1762965033976</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1762965033976</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Modif doublon ingrédient RecetteCreation.jsx">
+      <option name="closed" value="true" />
+      <created>1762970056488</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1762970056488</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Delete unused">
+      <option name="closed" value="true" />
+      <created>1762970332612</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1762970332612</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Modif App.js (Navigation)">
+      <option name="closed" value="true" />
+      <created>1762981039967</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1762981039967</updated>
+    </task>
+    <task id="LOCAL-00016" summary="default_img.png">
+      <option name="closed" value="true" />
+      <created>1762981094250</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1762981094250</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Ajout lien communaute/:id">
+      <option name="closed" value="true" />
+      <created>1762981766112</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1762981766112</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Ajout ButtonReturn">
+      <option name="closed" value="true" />
+      <created>1762983699835</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1762983699835</updated>
+    </task>
+    <task id="LOCAL-00019" summary="Ajout Navigate id commu + partage">
+      <option name="closed" value="true" />
+      <created>1762983736003</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1762983736003</updated>
+    </task>
+    <task id="LOCAL-00020" summary="Ajout Pagination id commu + partage">
+      <option name="closed" value="true" />
+      <created>1762984077944</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1762984077944</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="quick_modif" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Add RestaurantPage, ButtonReturn, link and remove things unused" />
     <MESSAGE value="Add ColorAvatar.jsx + Update commentaire" />
     <MESSAGE value="Add comment pagination" />
     <MESSAGE value="Update SectionComm.jsx" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update SectionComm.jsx" />
+    <MESSAGE value="Petite modif" />
+    <MESSAGE value="Petite modif (Majuscule)" />
+    <MESSAGE value="deleted unused" />
+    <MESSAGE value="MenuBar.jsx remove disabled button" />
+    <MESSAGE value="Modif &quot;Aucune note&quot; CommBlock.jsx" />
+    <MESSAGE value="Modif &quot;Aucune unité&quot; RecetteCreation.jsx" />
+    <MESSAGE value="Modif élargit boite de dialogue étape RecetteCreation.jsx" />
+    <MESSAGE value="Modif whiteSpace RecetteCreation.jsx" />
+    <MESSAGE value="Modif doublon ingrédient RecetteCreation.jsx" />
+    <MESSAGE value="Delete unused" />
+    <MESSAGE value="Modif App.js (Navigation)" />
+    <MESSAGE value="default_img.png" />
+    <MESSAGE value="Ajout lien communaute/:id" />
+    <MESSAGE value="Ajout ButtonReturn" />
+    <MESSAGE value="Ajout Navigate id commu + partage" />
+    <MESSAGE value="Ajout Pagination id commu + partage" />
+    <MESSAGE value="Modif CardList.jsx + note" />
+    <option name="LAST_COMMIT_MESSAGE" value="Modif CardList.jsx + note" />
   </component>
 </project>

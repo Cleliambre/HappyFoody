@@ -1,7 +1,7 @@
 import GenericSearchPage from "./GenericSearchPage";
 import RecettesIcon from "@mui/icons-material/MenuBookOutlined";
 import React, {useEffect, useState} from "react";
-import RecetteAndRestoElement from "../../components/card_list/RecetteAndRestoElement";
+import RecetteElement from "../../components/card_list/RecetteElement";
 import img0 from "../../images/default_img.png";
 import GenericCard from "../../components/card_list/GenericCard";
 import { searchRecettes } from "../../services/recetteService";
@@ -298,7 +298,7 @@ export default function RecetteSearchPage(){
                         card={{
                             ...card,
                             text: (
-                                <RecetteAndRestoElement
+                                <RecetteElement
                                     rate={card.rate}
                                     description={card.description}
                                     tags_nourriture={card.tags}

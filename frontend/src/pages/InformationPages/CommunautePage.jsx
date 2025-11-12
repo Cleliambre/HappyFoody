@@ -15,7 +15,7 @@ import ChatBubbleOutlineOutlinedIcon from '@mui/icons-material/ChatBubbleOutline
 import React from "react";
 import tabouleCrame from "../../images/taboule_crame.png";
 import necromencienne from "../../images/necromencienne.jpg";
-import CardList from "../../components/card_list/CardListV2";
+import CardList from "../../components/card_list/CardList";
 import ButtonReturn from "../../components/ButtonReturn";
 
 export default function CommunautePage(){

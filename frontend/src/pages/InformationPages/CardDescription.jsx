@@ -138,7 +138,7 @@ export default function CardDescription({image, tags, titre, texteDescription, o
                 }
 
                 {/* Tags (s'affiche seulement s'il y a des tags) */}
-                {(!(tags===undefined || tags === null) && tags.length > 0) ?
+                {(!(tags === undefined || tags === null) && tags.length > 0) ?
                     <Collapse in={isExpanded}>
                         <Stack direction="row" flexWrap="wrap" gap={1} margin="10px">
                             {tags.map((tag) => (

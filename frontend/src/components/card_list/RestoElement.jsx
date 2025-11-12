@@ -4,8 +4,9 @@ import "./Card.css"
 import Typography from "@mui/material/Typography";
 import StarIcon from '@mui/icons-material/StarOutlined';
 import {Chip} from "@mui/material";
+import {getSmileys} from "../smiley_rating/getSmileys";
 
-export default function RecetteAndRestoElement(
+export default function RestoElement(
     {rate, description,
     tags_lieu=[], tags_nourriture=[]})
 {
@@ -15,7 +16,7 @@ export default function RecetteAndRestoElement(
             {/* Note */}
             <div className="align-text-icon">
                 <Typography variant="text" className="small-font">
-                    {rate.toFixed(1)}
+                    {rate == null || rate === 0 ? (getSmileys(0)) : (getSmileys(rate))}
                 </Typography>
                 <StarIcon fontSize="small" className="star"/>
             </div>

@@ -4,7 +4,7 @@ import Stack from "@mui/material/Stack";
 import {Typography, Button, Pagination, Chip, Box} from "@mui/material";
 import SearchBar from "../../components/searchBar/SearchBar";
 import AddIcon from '@mui/icons-material/Add';
-import CardListV2 from "../../components/card_list/CardListV2";
+import CardListV2 from "../../components/card_list/CardList";
 
 /**
  * Version où les enfants représentent des cartes

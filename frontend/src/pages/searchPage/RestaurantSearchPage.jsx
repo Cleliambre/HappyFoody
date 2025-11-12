@@ -1,7 +1,7 @@
 import GenericSearchPage from "./GenericSearchPage";
 import RestaurantOutlinedIcon from '@mui/icons-material/Restaurant';
 import React, {useEffect, useState} from "react";
-import RecetteAndRestoElement from "../../components/card_list/RecetteAndRestoElement";
+import RecetteElement from "../../components/card_list/RecetteElement";
 import img0 from "../../images/default_img.png";
 import GenericCard from "../../components/card_list/GenericCard";
 import { searchRestaurants } from "../../services/restaurantService";
@@ -17,6 +17,7 @@ import {
     MenuItem,
     Typography
 } from "@mui/material";
+import RestoElement from "../../components/card_list/RestoElement";
 
 export default function RestaurantSearchPage(){
     //Changement du titre de l'onglet de la page
@@ -117,8 +118,6 @@ export default function RestaurantSearchPage(){
                 liked: restaurant.liked,
                 likes: restaurant.nb_likes || 0,
             }));
-
-
 
 
             //Mise à jour de l’état global
@@ -255,7 +254,7 @@ export default function RestaurantSearchPage(){
         {
             id: 1,
             title: 'Wok Sushi (Test Restaurant)',
-            text: <RecetteAndRestoElement
+            text: <RecetteElement
                 rate={4.0}
                 description="Le restaurant Wok & Sushi fusionne deux spécialités asiatiques.
                     WOK exprime les plats chauds du traiteur asiatique comme les Bobuns,
@@ -291,7 +290,7 @@ export default function RestaurantSearchPage(){
                 card={{
                     ...card,
                     text: (
-                        <RecetteAndRestoElement
+                        <RestoElement
                             rate={card.rate}
                             description={card.description}
                             tags_nourriture={card.tags}
