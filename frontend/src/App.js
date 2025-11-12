@@ -42,28 +42,28 @@ const routes = [
     { path: "/", element: <RecetteSearch /> },
 
     // Onglets de recherche principaux
-    { path: "/recette", element: <RecetteSearch /> },
+    { path: "/recette",    element: <RecetteSearch /> },
     { path: "/restaurant", element: <RestaurantSearch /> },
     { path: "/communaute", element: <CommunauteSearch /> },
-    { path: "/partage", element: <PartageSearch /> },
+    { path: "/partage",    element: <PartageSearch /> },
 
     // Onglets personnels principaux
-    { path: "/favoris", element: <Favoris /> },
+    { path: "/favoris",  element: <Favoris /> },
     { path: "/messages", element: <MessageHome /> },
-    { path: "/profil", element: <Profil /> },
+    { path: "/profil",   element: <Profil /> },
 
     // ==================== SOUS-PAGES ========================
 
     // Pages d'information (contenu individuel)
-    { path: "/recette/:id", element: <RecettePage /> },
+    { path: "/recette/:id",    element: <RecettePage /> },
     { path: "/restaurant/:id", element: <RestaurantPage /> },
-    { path: "/postCommunaute/:id", element: <CommunautePage /> },
-    { path: "/partage/:id", element: <PartagePage /> },
+    { path: "/communaute/:id", element: <CommunautePage /> },
+    { path: "/partage/:id",    element: <PartagePage /> },
 
     // Pages de création
-    { path: "/createRecette", element: <RecetteCreation /> },
+    { path: "/createRecette",    element: <RecetteCreation /> },
     { path: "/createCommunaute", element: <CommunauteCreation /> },
-    { path: "/createPartage", element: <PartageCreation /> },
+    { path: "/createPartage",    element: <PartageCreation /> },
 
     // TODO : Pages de commentaires (à ajouter plus tard)
     // { path: "/recette/:id/commentaires", element: <RecetteCommentaires /> },
@@ -73,10 +73,10 @@ const routes = [
     { path: "/messages/:id", element: <Message/> },
 
     // Pages de profil
-    { path: "/profil/:pseudo", element: <Profil /> },
-    { path: "/inscription", element: <Inscription /> },
+    { path: "/profil/:pseudo",         element: <Profil /> },
+    { path: "/inscription",            element: <Inscription /> },
     { path: "/modificationMotDePasse", element: <PasswordModification /> },
-    { path: "/connexion", element: <Connexion /> },
+    { path: "/connexion",              element: <Connexion /> },
 ];
 
 
