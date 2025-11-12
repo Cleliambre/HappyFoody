@@ -138,7 +138,7 @@ export default function RecetteCreation(){
     const [nomIngredient, setNomIngredient] = useState("");
     const [quantiteIngredient, setQuantiteIngredient] = useState(0);
     const [uniteIngredient, setUniteIngredient] = useState("");
-    const [uniteAccepted, setUniteAccepted] = useState([
+    const [uniteAccepted] = useState([
         "",
         "g",
         "kg",
