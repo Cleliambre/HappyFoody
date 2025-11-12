@@ -95,19 +95,13 @@ export default function MenuBar() {
                                 to={button.path}
 
                                 sx={{
-                                    color: 'primary',
-                                    backgroundColor: 'white',
-                                    '&.Mui-disabled': {
-                                        color: 'white',
-                                        backgroundColor: 'orange',
-                                        opacity: 1, // empêche le grisé
-                                    },
+                                    color: location.pathname.startsWith(button.path) ? 'white' : 'primary',
+                                    backgroundColor: location.pathname.startsWith(button.path) ? 'orange' : 'white',
                                     display: 'flex',
                                     flexDirection: 'column',
                                     mr: 1,
                                     width: 120,
                                 }}
-                                disabled={location.pathname.startsWith(button.path)}
                             >
                                 {button.icon}
                                 <span>{button.text}</span>
