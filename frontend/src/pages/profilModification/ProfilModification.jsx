@@ -46,6 +46,31 @@ export default function ProfilModification(){
 
     }, [compte]);
 
+    const handleImageChange = async (event) => {
+        const file = event.target.files[0];
+        if (file) {
+            // Aperçu local
+            setPP(URL.createObjectURL(file));
+
+            // Envoi au backend
+            const formData = new FormData();
+            formData.append("file", file);
+
+            try {
+                const response = await axios.post("http://localhost:8080/api/upload", formData, {
+                    headers: { "Content-Type": "multipart/form-data" },
+                });
+
+                // Récupère l'URL persistante renvoyée par le backend
+                setPP(response.data.url);
+                console.log("URL de l'image reçue :", response.data.url);
+
+            } catch (err) {
+                console.error("Erreur d'upload :", err);
+            }
+        }
+    };
+
     const handleSubmit = async () => {
         //Validation basique
         if(!compte) return;
@@ -87,7 +112,7 @@ export default function ProfilModification(){
                 anchorOrigin={{vertical: 'bottom', horizontal: 'right'}}
                 className="badge"
                 badgeContent=
-                    {<IconButton>
+                    {<IconButton onClick={() => document.getElementById("image-upload").click()}>
                         <Avatar sx={{backgroundColor : "whiteSmoke",color : "black"}}>
                             <ModeEditOutlinedIcon/>
                         </Avatar>
@@ -99,6 +124,14 @@ export default function ProfilModification(){
                     sx={{width:150, height:150}}
                 />
             </Badge>
+            {/*champ proposant à l'utilisateur d'importer une image*/}
+            <input
+                type="file"
+                id="image-upload"
+                accept="image/*"
+                style={{ display: "none" }}
+                onChange={handleImageChange}
+            />
             <Stack spacing={2} className="inputs"
             >
                 <TextField
