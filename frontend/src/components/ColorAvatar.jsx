@@ -32,7 +32,7 @@ function stringAvatar(name) {
     };
 }
 
-export function colorAvatar(name) {
+function colorAvatar(name) {
     if(name === "" || name === null){
         return;
     }
@@ -44,11 +44,11 @@ export function colorAvatar(name) {
     };
 }
 
-export function ColorAvatar({src, name}) {
+export function ColorAvatar({src=null, name=null, sx}) {
     if(name === "" || name === null){
         return <Avatar/>;
     }
     return (
-        <Avatar src={src} {...colorAvatar(name)}/>
+        <Avatar src={src} sx={sx} {...colorAvatar(name)}/>
     );
 }

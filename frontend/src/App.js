@@ -55,6 +55,7 @@ function App() {
                 {/* Onglets personnels */}
                 <Route path="/favoris" element={<Favoris/>}/>
                 <Route path="/messages" element={<Messages/>}/>
+                <Route path="/profil/" element={<Profil />} />
                 <Route path="/profil/:pseudo" element={<Profil />} />
 
                 {/* Les pages de "Profil" */}

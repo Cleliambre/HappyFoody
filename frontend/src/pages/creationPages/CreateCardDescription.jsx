@@ -66,9 +66,10 @@ export default function CreateCardDescription({image, tags, titre, texteDescript
                             >
                                 {/*titre*/}
                                 <TextField
+                                    required
                                     value={titre}
                                     label={texteTitreField}
-                                    fullWidth={true}
+                                    fullWidth
                                     variant="outlined"
                                     onChange={(e)=>onTitleChange(e.target.value)}
                                 />

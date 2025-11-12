@@ -202,8 +202,8 @@ export default function RecetteCreation(){
 
     const handleSubmit = async () => {
         //Validation basique
-        if (!titre || !description) {
-            setMessage("Veuillez remplir tous les champs obligatoires !");
+        if (!titre) {
+            setMessage("Veuillez remplir tous le champ titre qui est obligatoire !");
             return;
         }
 
@@ -218,7 +218,7 @@ export default function RecetteCreation(){
         }
 
         if (portion < 1){
-            setMessage("Une portion doit être positive");
+            setMessage("Une portion doit être positive et non nulle !");
             return;
         }
 
@@ -518,6 +518,16 @@ export default function RecetteCreation(){
                     </List>
                 </Stack>
 
+                {message && (
+                    <Typography
+                        variant="body2"
+                        color={message.includes("succès") ? "green" : "red"}
+                        style={{ marginTop: "10px" }}
+                    >
+                        {message}
+                    </Typography>
+                )}
+
                 {/*boutons annuler et valider*/}
                 <Stack
                     direction="row"
@@ -537,16 +547,6 @@ export default function RecetteCreation(){
                         Confirmer
                     </Button>
                 </Stack>
-                {message && (
-                    <Typography
-                        variant="body2"
-                        color={message.includes("succès") ? "green" : "red"}
-                        style={{ marginTop: "10px" }}
-                    >
-                        {message}
-                    </Typography>
-                )}
-
             </Stack>
 
             {/*boîte de dialogue pour l'ajout d'ingrédient*/}
