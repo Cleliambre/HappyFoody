@@ -1,5 +1,5 @@
 import GenericSearchPage from "./GenericSearchPage";
-import React, {useEffect} from "react";
+import React, {useEffect, useState} from "react";
 import PeopleAltOutlinedIcon from '@mui/icons-material/PeopleAltOutlined';
 import GenericCard from "../../components/card_list/GenericCard";
 import PostElement from "../../components/card_list/PostElement";
@@ -93,13 +93,21 @@ export default function CommunauteSearchPage(){
         }
     ]);
 
+    // ---- Pagination ----
+    const [page, setPage] = useState(1);
+    const cardsPerPage = 4;
+
+    // Calcule les cartes à afficher pour la page actuelle
+    const startIndex = (page - 1) * cardsPerPage;
+    const endIndex = startIndex + cardsPerPage;
+    const paginatedCards = cards.slice(startIndex, endIndex);
 
     return (
         <GenericSearchPage
             pageDescr={pageDescription}
             barInfo={barInfo}
             tags={tags}
-            paginationSize={30}
+            paginationSize={Math.ceil(cards.length / cardsPerPage)}
             onPlusClick={handleCreate}
             onFilterClick={handleFilter}
             onSearchClick={handleSearch}

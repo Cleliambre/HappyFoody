@@ -1,12 +1,16 @@
 import GenericSearchPage from "./GenericSearchPage";
-import React, {useEffect} from "react";
+import React, {useEffect, useState} from "react";
 import VolunteerActivismOutlinedIcon from '@mui/icons-material/VolunteerActivismOutlined';
 import PartageElement from "../../components/card_list/PartageElement";
 import img3 from "../../images/poulet.jpg";
 import GenericCard from "../../components/card_list/GenericCard";
+import {useNavigate} from "react-router-dom";
 
 export default function PartageSearchPage(){
     useEffect(() => {document.title = "Recherche Partage - Happy Foody"}, [])
+
+    //Outil permettant de naviguer entre les pages web
+    const navigate = useNavigate();
 
     const [pageDescription] = React.useState({
         title : "Partage",
@@ -30,7 +34,7 @@ export default function PartageSearchPage(){
     }
 
     const handleClick = (card) => {
-        alert(`Carte sélectionnée : ${card.title}`);
+        navigate(`/partage/${card.id}`);
     };
 
     const handleLike = (card) => {
@@ -58,7 +62,7 @@ export default function PartageSearchPage(){
 
     const [cards, setCards] = React.useState([
         {
-            id: 3,
+            id: 1,
             title: 'Poulet rôti (Test Partage)',
             text: <PartageElement
                 pseudo="necroDansLAme"
@@ -81,7 +85,7 @@ export default function PartageSearchPage(){
             likes: 15400,
         },
         {
-            id: 4,
+            id: 2,
             title: 'Poulet rôti (Test Partage)',
             text: <PartageElement
                 pseudo="necroDansLAme"

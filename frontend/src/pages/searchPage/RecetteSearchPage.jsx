@@ -265,7 +265,7 @@ export default function RecetteSearchPage(){
     const [page, setPage] = useState(1);
     const cardsPerPage = 4;
 
-// Calcule les cartes à afficher pour la page actuelle
+    // Calcule les cartes à afficher pour la page actuelle
     const startIndex = (page - 1) * cardsPerPage;
     const endIndex = startIndex + cardsPerPage;
     const paginatedCards = cards.slice(startIndex, endIndex);
