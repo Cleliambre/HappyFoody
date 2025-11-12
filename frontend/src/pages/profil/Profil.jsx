@@ -5,7 +5,6 @@ import {Typography, Button, Avatar, Tab, Stack, Container} from '@mui/material';
 import  {TabContext, TabList, TabPanel} from '@mui/lab'
 import CardListV2 from "../../components/card_list/CardListV2";
 import img0 from "../../images/taboule.png";
-import {searchRecettes} from "../../services/recetteService";
 import GenericCard from "../../components/card_list/GenericCard";
 import RecetteAndRestoElement from "../../components/card_list/RecetteAndRestoElement";
 
