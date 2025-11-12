@@ -150,16 +150,23 @@ export default function RecetteCreation(){
     ]);
 
     const handleConfirmerIngredient = ()=>{
-        setOpened(false);
-        if (!nomIngredient || quantiteIngredient <= 0) return;
+        if (!nomIngredient || quantiteIngredient <= 0) {
+            alert("Nom de l'ingrédient ou la quantité de l'ingrédient invalide !");
+            return;
+        }
         const newIngredient = {
             nom : nomIngredient,
             quantite : quantiteIngredient,
             unite : uniteIngredient
         };
+        if (ingredients.filter(i => i.nom === nomIngredient).length > 0) {
+            alert("Doublon d'ingrédient : cet ingrédient existe déjà dans la liste d'ingrédients.");
+            return;
+        }
+        setOpened(false);
         setIngredients([...ingredients, newIngredient]);
-        setUniteIngredient("")
-        setNomIngredient("")
+        setUniteIngredient("");
+        setNomIngredient("");
         setQuantiteIngredient(0);
     };
 
