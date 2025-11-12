@@ -253,6 +253,7 @@ export default function RecetteSearchPage(){
 
     const handleCreate = ()=> {
         const idCompte = localStorage.getItem('idCompte');
+        console.log(idCompte);
         if (idCompte) {
             // ✅ Si l'utilisateur est déjà connecté, on le redirige vers le profil
             navigate('/connexion');
