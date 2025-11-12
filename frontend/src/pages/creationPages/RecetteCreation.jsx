@@ -497,7 +497,7 @@ export default function RecetteCreation(){
                     <List sx={{listStyleType: 'decimal', pl:4}}>
                         {etapes.map((etape, index)=>
                             <ListItem
-                                sx={{display: 'list-item', py:0}}
+                                sx={{display: 'list-item', py:0 }}
                                 divider={true}
                                 secondaryAction={
                                     <Tooltip title={"supprimer"}>
@@ -510,7 +510,7 @@ export default function RecetteCreation(){
                                     </Tooltip>
                                 }
                             >
-                                <ListItemText>
+                                <ListItemText sx={{objectFit:'cover', whiteSpace:'pre-line' }}>
                                     {etape}
                                 </ListItemText>
                             </ListItem>
