@@ -12,13 +12,20 @@ import {
     Typography
 } from "@mui/material";
 import ChatBubbleOutlineOutlinedIcon from '@mui/icons-material/ChatBubbleOutlineOutlined';
-import React from "react";
+import React, {useEffect} from "react";
 import tabouleCrame from "../../images/taboule_crame.png";
 import necromencienne from "../../images/necromencienne.jpg";
 import CardList from "../../components/card_list/CardList";
 import ButtonReturn from "../../components/ButtonReturn";
 
 export default function CommunautePage(){
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            alert("Il manque des fonctionnalités à cette page");
+        }, 0);
+    }, []);
+
+
     const [description] = React.useState({
         image : tabouleCrame,
         titre: "Aide taboulé cramé",
