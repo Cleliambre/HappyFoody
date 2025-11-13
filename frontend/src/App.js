@@ -75,8 +75,8 @@ const routes = [
     { path: "/restaurant/:id/avis",      element: <RestaurantComm /> },
 
     // Pages de messages
-    { path: "/messages/:id",     element: <MessageHome /> },
-    { path: "/messages/:id/:id", element: <Message/> },
+    { path: "/messages/:pseudo",     element: <MessageHome /> },
+    { path: "/messages/:pseudo/:pseudo", element: <Message/> },
 
     // Pages de profil
     { path: "/profil/:pseudo",         element: <Profil /> },
