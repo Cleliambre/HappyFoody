@@ -15,7 +15,7 @@ export default function RecetteAndRestoElement(
             {/* Note */}
             <div className="align-text-icon">
                 <Typography variant="text" className="small-font">
-                    {rate.toFixed(1)}
+                    {rate?.toFixed(1)}
                 </Typography>
                 <StarIcon fontSize="small" className="star"/>
             </div>

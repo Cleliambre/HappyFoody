@@ -8,6 +8,7 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.Optional;
 
 @Repository
 public interface TagRepository extends JpaRepository<Tag,Long> {
@@ -20,4 +21,11 @@ public interface TagRepository extends JpaRepository<Tag,Long> {
     WHERE r.id_recette = :id_recette
     """, nativeQuery = true)
     List<Tag> findByRecette(@Param("id_recette") Long id_recette);
+
+    @Query(value= """
+    SELECT DISTINCT t.*
+    FROM tag t
+    WHERE t.nom = :nom
+    """, nativeQuery = true)
+    Optional<Tag> findByNom(@Param("nom") String nom);
 }
