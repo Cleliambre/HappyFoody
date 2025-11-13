@@ -354,7 +354,7 @@ export default function RestaurantPage(){
             {/* Donner un avis */}
             {compte && (
                 <Stack>
-                    <Titre id="avis" text="Donner un avis"/>
+                    <Titre text="Donner un avis"/>
                     <CreationComm typeCommentaire="restaurant" currentProfil={compte} onPublier={handlePublierCommentaire} />
                     <Box sx={{ height: '30px' }} />
                 </Stack>
