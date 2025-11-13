@@ -1,7 +1,7 @@
 import {Stack, Typography} from "@mui/material";
 import React from "react";
 
-export function Titre({text, id}){
+export default function Titre({text, id}){
     return(
         <Stack
             alignItems="start"

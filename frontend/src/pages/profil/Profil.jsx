@@ -3,11 +3,12 @@ import {useParams, useNavigate, useLocation} from 'react-router-dom';
 import './Profil.css'
 import {Typography, Button, Avatar, Tab, Stack, Container} from '@mui/material';
 import  {TabContext, TabList, TabPanel} from '@mui/lab'
-import CardListV2 from "../../components/card_list/CardListV2";
+import CardList from "../../components/card_list/CardList";
 import ColorAvatar from "../../components/ColorAvatar";
 import img0 from "../../images/default_img.png";
 import GenericCard from "../../components/card_list/GenericCard";
-import RecetteAndRestoElement from "../../components/card_list/RecetteAndRestoElement";
+
+import RecetteElement from "../../components/card_list/RecetteElement";
 import axios from "axios";
 
 export default function Profil() {
@@ -366,14 +367,14 @@ export default function Profil() {
                         <Tab value = "3" label="Mes partages"/>
                     </TabList>
                     <TabPanel value="1" className="tab-content">
-                        <CardListV2 resMessage={recettes.length + (recettes.length>1 ? " Resultats" : " Resultat")}>
+                        <CardList resMessage={recettes.length + (recettes.length>1 ? " Resultats" : " Resultat")}>
                             {cards.map((card) => (
                                 <GenericCard
                                     key={card.id}
                                     card={{
                                         ...card,
                                         text: (
-                                            <RecetteAndRestoElement
+                                            <RecetteElement
                                                 rate={card.rate}
                                                 description={card.description}
                                                 tags_nourriture={card.tags}
@@ -384,7 +385,7 @@ export default function Profil() {
                                     onClick={handleClick}
                                 />
                             ))}
-                        </CardListV2>
+                        </CardList>
                     </TabPanel>
                     <TabPanel value="2" className="tab-content">
                         Item Two

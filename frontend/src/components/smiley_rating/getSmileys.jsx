@@ -3,8 +3,14 @@ import SentimentDissatisfiedIcon from '@mui/icons-material/SentimentDissatisfied
 import SentimentSatisfiedIcon from '@mui/icons-material/SentimentSatisfied';
 import SentimentSatisfiedAltIcon from '@mui/icons-material/SentimentSatisfiedAltOutlined';
 import SentimentVerySatisfiedIcon from '@mui/icons-material/SentimentVerySatisfied';
+import SentimentNeutralIcon from '@mui/icons-material/SentimentNeutral';
 
 export const smileys = {
+    0: {
+        icon: <SentimentNeutralIcon color="disabled" />,
+        label: "Sans note"
+    },
+
     1: {
         icon: <SentimentVeryDissatisfiedIcon color="error" />,
         label: "Très Mécontent"
@@ -33,7 +39,7 @@ const formatNote = (num) => {
 
 // Fonctions de smileys
 export function getSmileys(index) {
-    return smileys[formatNote(index)] || smileys[3];
+    return smileys[formatNote(index)] || smileys[0];
 }
 
 export const noteGenerale = (notes) => {

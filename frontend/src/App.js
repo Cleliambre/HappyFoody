@@ -35,6 +35,10 @@ import RecetteCreation from "./pages/creationPages/RecetteCreation";
 import CommunauteCreation from "./pages/creationPages/CommunauteCreation";
 import PartageCreation from "./pages/creationPages/PartageCreation";
 
+// Pages de commentaires
+import RestaurantComm from "./pages/InformationPages/RestaurantComm";
+import RecetteComm from "./pages/InformationPages/RecetteComm";
+
 const routes = [
 
     // ==================== PAGES PRINCIPAUX ====================
@@ -49,9 +53,9 @@ const routes = [
     { path: "/partage",    element: <PartageSearch /> },
 
     // Onglets personnels principaux
-    { path: "/favoris",  element: <Favoris /> },
+    { path: "/favoris",      element: <Favoris /> },
     { path: "/messages", element: <MessageHome /> },
-    { path: "/profil",   element: <Profil /> },
+    { path: "/profil",       element: <Profil /> },
 
     // ==================== SOUS-PAGES ========================
 
@@ -62,16 +66,17 @@ const routes = [
     { path: "/partage/:id",    element: <PartagePage /> },
 
     // Pages de création
-    { path: "/createRecette",    element: <RecetteCreation /> },
-    { path: "/createCommunaute", element: <CommunauteCreation /> },
-    { path: "/createPartage",    element: <PartageCreation /> },
+    { path: "/recette/create",    element: <RecetteCreation /> },
+    { path: "/communaute/create", element: <CommunauteCreation /> },
+    { path: "/partagee/create",   element: <PartageCreation /> },
 
-    // TODO : Pages de commentaires (à ajouter plus tard)
-    // { path: "/recette/:id/commentaires", element: <RecetteCommentaires /> },
-    { path: "/restaurant/:id/commentaires", element: <RestaurantCommentaires /> },
+    // TODO : Pages de commentaires (à faire)
+    { path: "/recette/:id/commentaires", element: <RecetteComm /> },
+    { path: "/restaurant/:id/avis",      element: <RestaurantComm /> },
 
     // Pages de messages
-    { path: "/messages/:id", element: <Message/> },
+    { path: "/messages/:pseudo",     element: <MessageHome /> },
+    { path: "/messages/:pseudo/:pseudo", element: <Message/> },
 
     // Pages de profil
     { path: "/profil/:pseudo",         element: <Profil /> },

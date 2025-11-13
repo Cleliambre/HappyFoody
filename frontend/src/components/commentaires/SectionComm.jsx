@@ -4,7 +4,7 @@ import React from "react";
 import {Box, Container, Divider} from "@mui/material";
 import CommList from "./CommList";
 import CreationComm from "./CreationComm";
-import {Titre} from "../Titre";
+import Titre from "../Titre";
 
 export function SectionComm({section="communaute", currentProfil, commentaires, setComm}) {
 

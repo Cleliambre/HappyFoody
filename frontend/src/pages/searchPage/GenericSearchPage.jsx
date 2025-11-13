@@ -4,7 +4,7 @@ import Stack from "@mui/material/Stack";
 import {Typography, Button, Pagination, Chip, Box} from "@mui/material";
 import SearchBar from "../../components/searchBar/SearchBar";
 import AddIcon from '@mui/icons-material/Add';
-import CardListV2 from "../../components/card_list/CardListV2";
+import CardList from "../../components/card_list/CardList";
 
 /**
  * Version où les enfants représentent des cartes
@@ -23,7 +23,21 @@ import CardListV2 from "../../components/card_list/CardListV2";
  * @returns {React.JSX.Element}
  * @constructor
  */
-export default function GenericSearchPage({pageDescr, tags, barInfo, onFilterClick, onSearchClick, onTagDelete, onPlusClick, paginationSize, children, resultCount,page, onPageChange}) {
+export default function GenericSearchPage(
+    {
+        pageDescr,
+        tags,
+        barInfo,
+        onFilterClick,
+        onSearchClick,
+        onTagDelete,
+        onPlusClick,
+        paginationSize,
+        children,
+        resultCount,
+        page,
+        onPageChange
+    }) {
     return (
         <Stack
             spacing={2}
@@ -91,17 +105,17 @@ export default function GenericSearchPage({pageDescr, tags, barInfo, onFilterCli
                         />))}
                 </Stack>
             </Stack>
-            <CardListV2
-                resMessage = {resultCount + (resultCount>1 ? " Resultats" : " Resultat")}
+            <CardList
+                resMessage = {resultCount + (resultCount>1 ? " Résultats" : " Résultat")}
             >
                 {children}
-            </CardListV2>
+            </CardList>
             <Pagination
                 count={paginationSize}
                 page={page}
                 onChange={onPageChange}
             />
-            <Box sx={{ height: '15px' }} />
+            <Box sx={{ height: '30px' }} />
         </Stack>
     );
 }
