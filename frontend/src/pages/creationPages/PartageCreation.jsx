@@ -1,5 +1,5 @@
 import CreateCardDescription from "./CreateCardDescription";
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 
 import berserker from "../../images/berserker.jpeg"
 import KeyboardReturnIcon from "@mui/icons-material/KeyboardReturn";
@@ -15,6 +15,11 @@ import {AdapterDayjs} from "@mui/x-date-pickers/AdapterDayjs";
 import dayjs from "dayjs";
 
 export default function PartageCreation(){
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            alert("Il manque des fonctionnalités à cette page");
+        }, 0);
+    }, []);
 
     const[image, setImage] = useState(null);
 

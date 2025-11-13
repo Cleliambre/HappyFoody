@@ -1,6 +1,6 @@
 import Stack from "@mui/material/Stack";
 import {Avatar, Box, Card, Divider, IconButton, InputBase, Paper, TextField, Typography} from "@mui/material";
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import necromencienne from "../../images/necromencienne.jpg"
 import CloseOutlinedIcon from '@mui/icons-material/CloseOutlined';
 import SendOutlinedIcon from '@mui/icons-material/SendOutlined';
@@ -8,6 +8,11 @@ import MessageDisplay from "../../components/card_list/MessageDisplay";
 import berserker from "../../images/berserker.jpeg"
 
 export default function Message() {
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            alert("Il manque des fonctionnalités à cette page");
+        }, 0);
+    }, []);
 
     const [destinataire, setDestinataire] = useState({
         id : 2,
