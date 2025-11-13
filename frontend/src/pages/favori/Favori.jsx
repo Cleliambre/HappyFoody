@@ -18,9 +18,6 @@ export default function Favori(){
 
     useEffect(() => {
         document.title = "Favoris - Happy Foody"
-        const timer = setTimeout(() => {
-            alert("Il manque des fonctionnalités à cette page");
-        }, 0);
     }, [])
     //Pour pouvoir changer de catégorie dans la Tab
     const [value, setValue] = React.useState('1');
