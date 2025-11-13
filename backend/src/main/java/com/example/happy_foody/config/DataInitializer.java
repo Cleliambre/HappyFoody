@@ -147,7 +147,7 @@ public class DataInitializer {
                         "https://www.budsdeli.fr/menu",
                         "http://budsdeli.fr/"
                 );
-                r7.setUrlImage("https://lh3.googleusercontent.com/gps-cs-s/AG0ilSwTZ1iqIj_pORIvZXcemqCjFQ2fl4jETdQSFIIQq2TTJMMVLbnV-8M3cyjKBY6SgAlHwTAxOOrAtdlszQHjrG2irSPDN-DOeaORKpZCeZRmG2NVjBER-qusARv5wGgfVImR-RA=w519-h240-k-no");
+                r7.setUrlImage("https://static.apidae-tourisme.com/filestore/objets-touristiques/images/111/45/25505135-diaporama.jpg");
                 r7.setLatitude(48.69683868644372);
                 r7.setLongitude(2.185403938054992);
                 r7.setTags(Set.of(tagsMap.get("Française")));
