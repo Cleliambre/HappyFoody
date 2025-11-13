@@ -94,7 +94,7 @@ export default function Connexion() {
                    className="inscription-link"
                    variant="body3"
                    color="textSecondary">
-                   Pas de compte ?
+                   {"Pas de compte ? "}
                    <Link
                        component="button"
                        variant="body2"

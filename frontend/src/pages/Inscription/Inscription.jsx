@@ -174,7 +174,7 @@ export default function Inscription() {
                     className="inscription-link"
                     variant="body3"
                     color="textSecondary">
-                    Vous avez un compte ?
+                    {"Vous avez un compte ? "}
                     <Link
                         component="button"
                         variant="body2"
