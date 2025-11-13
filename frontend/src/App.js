@@ -65,13 +65,13 @@ const routes = [
     { path: "/partage/:id",    element: <PartagePage /> },
 
     // Pages de création
-    { path: "/createRecette",    element: <RecetteCreation /> },
-    { path: "/createCommunaute", element: <CommunauteCreation /> },
-    { path: "/createPartage",    element: <PartageCreation /> },
+    { path: "/recette/create",    element: <RecetteCreation /> },
+    { path: "/communaute/create", element: <CommunauteCreation /> },
+    { path: "/partagee/create",   element: <PartageCreation /> },
 
     // TODO : Pages de commentaires (à faire)
     { path: "/recette/:id/commentaires", element: <RecetteComm /> },
-    { path: "/restaurant/:id/avis", element: <RestaurantComm /> },
+    { path: "/restaurant/:id/avis",      element: <RestaurantComm /> },
 
     // Pages de messages
     { path: "/messages/:id",     element: <MessageHome /> },

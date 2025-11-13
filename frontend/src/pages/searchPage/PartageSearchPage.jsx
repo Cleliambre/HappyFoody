@@ -55,7 +55,14 @@ export default function PartageSearchPage(){
     const handleSearch = ()=> {}
 
     /*à compléter pour gérer le bouton de création de recette*/
-    const handleCreate = ()=> {};
+    const handleCreate = ()=> {
+        const idCompte = localStorage.getItem('idCompte');
+        if (idCompte) {
+            // ✅ Si l'utilisateur est déjà connecté, on le redirige vers le profil
+            navigate('/connexion');
+        }
+        navigate('/partage/create');
+    };
 
     const [cards, setCards] = React.useState([
         {
@@ -119,12 +126,16 @@ export default function PartageSearchPage(){
         <GenericSearchPage
             pageDescr={pageDescription}
             barInfo={barInfo}
-            paginationSize={Math.ceil(cards.length / cardsPerPage)}
             tags={tags}
+            paginationSize={Math.ceil(cards.length / cardsPerPage)}
+
             onPlusClick={handleCreate}
             onFilterClick={handleFilter}
             onSearchClick={handleSearch}
             onTagDelete={handleTag}
+
+            resultCount={cards.length}
+            page={page}
         >
             {paginatedCards.map((card) => (
                 <GenericCard

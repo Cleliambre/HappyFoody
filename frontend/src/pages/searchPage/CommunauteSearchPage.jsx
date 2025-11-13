@@ -55,7 +55,14 @@ export default function CommunauteSearchPage(){
     const handleSearch = ()=> {}
 
     /*à compléter pour gérer le bouton de création de recette*/
-    const handleCreate = ()=> {};
+    const handleCreate = ()=> {
+        const idCompte = localStorage.getItem('idCompte');
+        if (idCompte) {
+            // ✅ Si l'utilisateur est déjà connecté, on le redirige vers le profil
+            navigate('/connexion');
+        }
+        navigate('/communaute/create');
+    };
 
     const [cards, setCards] = React.useState([
         {
@@ -105,10 +112,14 @@ export default function CommunauteSearchPage(){
             barInfo={barInfo}
             tags={tags}
             paginationSize={Math.ceil(cards.length / cardsPerPage)}
+
             onPlusClick={handleCreate}
             onFilterClick={handleFilter}
             onSearchClick={handleSearch}
             onTagDelete={handleTag}
+
+            resultCount={cards.length}
+            page={page}
         >
             {paginatedCards.map((card) => (
                 <GenericCard

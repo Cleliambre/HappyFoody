@@ -257,7 +257,7 @@ export default function RecetteSearchPage(){
             // ✅ Si l'utilisateur est déjà connecté, on le redirige vers le profil
             navigate('/connexion');
         }
-        navigate('/createRecette');
+        navigate('/recette/create');
     };
 
 
@@ -284,13 +284,15 @@ export default function RecetteSearchPage(){
                 barInfo={barInfo}
                 tags={tags}
                 paginationSize={Math.ceil(cards.length / cardsPerPage)}
+
                 onFilterClick={handleFilter}
                 onSearchClick={handleSearch}
                 onTagDelete={handleTag}
                 onPlusClick={handleCreate}
+                onPageChange={handlePageChange}
+
                 resultCount={cards.length}
                 page={page}
-                onPageChange={handlePageChange}
             >
                 {paginatedCards.map((card) => (
                     <GenericCard
