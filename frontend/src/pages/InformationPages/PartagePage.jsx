@@ -23,10 +23,6 @@ import ButtonReturn from "../../components/ButtonReturn";
 import Titre from "../../components/Titre";
 
 export default function PartagePage(){
-    useEffect(() => {
-        const timer = setTimeout(() => {
-        }, 0);
-    }, []);
 
     const [description] = React.useState({
         image : taboule,

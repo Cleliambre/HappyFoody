@@ -6,6 +6,7 @@ import CloseOutlinedIcon from '@mui/icons-material/CloseOutlined';
 import SendOutlinedIcon from '@mui/icons-material/SendOutlined';
 import MessageDisplay from "../../components/card_list/MessageDisplay";
 import berserker from "../../images/berserker.jpeg"
+import {useNavigate} from "react-router-dom";
 
 export default function Message() {
     useEffect(() => {
@@ -67,6 +68,8 @@ export default function Message() {
         messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
     }, [messages]);
 
+    const navigate = useNavigate();
+
     return (
         <Stack
             height={"100%"}
@@ -102,7 +105,7 @@ export default function Message() {
                     </Stack>
 
                     <IconButton>
-                        <CloseOutlinedIcon/>
+                        <CloseOutlinedIcon onClick={() => navigate("/messages")}/>
                     </IconButton>
                 </Stack>
                 <Divider flexItem={true} sx={{ borderBottomWidth: 1 }}/>

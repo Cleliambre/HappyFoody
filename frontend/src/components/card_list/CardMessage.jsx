@@ -100,10 +100,10 @@ export default function({avatar, pseudo, lastMessage, muet, lu, date, onClick, o
                                 <IconButton onClick={onNotif?onNotif:null}>
                                     {muet ?
                                         <Tooltip title={"activer les notifications"}>
-                                            <NotificationsActiveOutlinedIcon/>
+                                            <NotificationsOffOutlinedIcon/>
                                         </Tooltip> :
                                         <Tooltip title={"désactiver les notifications"}>
-                                            <NotificationsOffOutlinedIcon/>
+                                            <NotificationsActiveOutlinedIcon/>
                                         </Tooltip>}
                                 </IconButton>
                             </Stack>

@@ -8,7 +8,12 @@ import {SectionComm} from "../../components/commentaires/SectionComm";
 
 // TODO à modifier pour les recettes
 export default function RecetteComm() {
-    useEffect(() => {document.title = "Commentaires Recette - Happy Foody"}, [])
+    useEffect(() => {
+        document.title = "Commentaires Recette - Happy Foody"
+        const timer = setTimeout(() => {
+                alert("Il manque des fonctionnalités dans cette page.");
+            }, 0);
+    }, [])
 
     const [description] = React.useState({
         image : wok_sushi,

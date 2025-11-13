@@ -19,11 +19,6 @@ import CardList from "../../components/card_list/CardList";
 import ButtonReturn from "../../components/ButtonReturn";
 
 export default function CommunautePage(){
-    useEffect(() => {
-        const timer = setTimeout(() => {
-        }, 0);
-    }, []);
-
 
     const [description] = React.useState({
         image : tabouleCrame,

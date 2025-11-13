@@ -4,6 +4,7 @@ import CardList from "../../components/card_list/CardList";
 import {useEffect, useState} from "react";
 import CardMessage from "../../components/card_list/CardMessage";
 import necromencienne from "../../images/necromencienne.jpg"
+import {useNavigate} from "react-router-dom";
 
 export default function MessageHome(){
     useEffect(() => {
@@ -51,8 +52,10 @@ export default function MessageHome(){
         }
     ]);
 
+    const navigate = useNavigate();
+
     const handleClick = (card) =>{
-        alert("Clique sur la conversation de " + card.pseudo)
+        navigate('/messages/:pseudo/:pseudo');
     }
 
     const handleNotif = (card)=>{
