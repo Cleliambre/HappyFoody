@@ -62,12 +62,12 @@ export default function RestaurantSearchPage(){
             //Récupération des tags ajoutés
             const tagNames = tags.map(t => t.name);
 
-            //Récupération des recettes répondant aux critères de recherche
+            //Récupération des restaurants répondant aux critères de recherche
             const data = await searchRestaurants(keyWordsInput, tagNames);
 
             const idCompte = localStorage.getItem("idCompte");
 
-            // ✅ Si l'utilisateur est connecté, on récupère les recettes qu'il a likées
+            // ✅ Si l'utilisateur est connecté, on récupère les restaurants qu'il a likées
             let likedIds = [];
             if (idCompte) {
                 try {
@@ -76,7 +76,7 @@ export default function RestaurantSearchPage(){
                         const likedRestaurants = await likedResponse.json();
                         console.log(likedRestaurants);
 
-                        // Ton backend renvoie une liste d'objets Recette → on extrait les IDs
+                        // Ton backend renvoie une liste d'objets restaurant → on extrait les IDs
                         likedIds = likedRestaurants.map(r => r.idRestaurant);
                     }
                 } catch (e) {
@@ -84,7 +84,7 @@ export default function RestaurantSearchPage(){
                 }
             }
 
-            //Récupération, pour chaque recette, de la note moyenne et du nombre de likes
+            //Récupération, pour chaque restaurant, de la note moyenne et du nombre de likes
             const restaurantsAvecInfos = await Promise.all(
                 data.map(async (restaurant) => {
                     try {
@@ -126,7 +126,7 @@ export default function RestaurantSearchPage(){
                 })
             );
 
-            //On transforme chaque recette en une "card" pour affichage :
+            //On transforme chaque restaurant en une "card" pour affichage :
             const newCards = restaurantsAvecInfos.map((restaurant) => ({
                 id: restaurant.idRestaurant,
                 title: restaurant.nom,
@@ -141,7 +141,6 @@ export default function RestaurantSearchPage(){
 
             //Mise à jour de l’état global
             setCards(newCards);
-            //setRecettes(recettesAvecInfos);
 
         } catch (err) {
             console.error(err);
@@ -173,7 +172,7 @@ export default function RestaurantSearchPage(){
     const handleLike = async (card) => {
         const idCompte = localStorage.getItem("idCompte");
         if (!idCompte) {
-            alert("Vous devez être connecté pour liker une recette !");
+            alert("Vous devez être connecté pour liker une restaurant !");
             return;
         }
 
@@ -303,7 +302,7 @@ export default function RestaurantSearchPage(){
 
             {/* --- Boîte de dialogue pour les filtres --- */}
             <Dialog open={openFilter} onClose={handleCloseFilter}>
-                <DialogTitle>Filtrer les recettes par tag</DialogTitle>
+                <DialogTitle>Filtrer les restaurants par tag</DialogTitle>
                 <DialogContent sx={{ minWidth: 300 }}>
                     <Typography variant="body1" sx={{ mb: 2 }}>
                         Sélectionne un tag à ajouter à ta recherche :
