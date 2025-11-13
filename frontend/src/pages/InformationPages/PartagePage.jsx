@@ -20,6 +20,7 @@ import React from "react";
 import berserk from "../../images/berserk.jpg";
 import CardList from "../../components/card_list/CardList";
 import ButtonReturn from "../../components/ButtonReturn";
+import Titre from "../../components/Titre";
 
 export default function PartagePage(){
 
@@ -184,9 +185,7 @@ export default function PartagePage(){
                 spacing={2}
                 width="80%"
             >
-                <Typography variant="h4">
-                    Commentaires
-                </Typography>
+                <Titre text="Commentaire"/>
                 <Divider flexItem={true}/>
 
                 <CardList>

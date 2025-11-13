@@ -21,7 +21,7 @@ import {
 } from "@mui/material";
 import Button from "@mui/material/Button";
 import DeleteOutlineOutlinedIcon from '@mui/icons-material/DeleteOutlineOutlined';
-import AutoStoriesOutlinedIcon from '@mui/icons-material/AutoStoriesOutlined';
+import RecettesIcon from "@mui/icons-material/MenuBookOutlined";
 import axios from "axios";
 import ButtonReturn from "../../components/ButtonReturn";
 
@@ -352,7 +352,7 @@ export default function RecetteCreation(){
             >
                 {/*Titre + bouton + carte de description*/}
                 <Stack direction="row" spacing={2} alignItems="center">
-                    <AutoStoriesOutlinedIcon sx={{ fontSize: "150px" }}/>
+                    <RecettesIcon sx={{ fontSize: "150px" }}/>
 
                     <Stack direction="column" spacing={2} textAlign="center">
                         <Typography variant="h3">
