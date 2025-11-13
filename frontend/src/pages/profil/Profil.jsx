@@ -7,7 +7,9 @@ import CardList from "../../components/card_list/CardList";
 import ColorAvatar from "../../components/ColorAvatar";
 import img0 from "../../images/default_img.png";
 import GenericCard from "../../components/card_list/GenericCard";
+
 import RecetteElement from "../../components/card_list/RecetteElement";
+import axios from "axios";
 
 export default function Profil() {
     useEffect(() => {document.title = "Profil - Happy Foody"}, [])
@@ -286,6 +288,32 @@ export default function Profil() {
         window.location.href = '/connexion';
     };
 
+    const handleRemove = async () => {
+        //Validation basique
+        if(!compte) return;
+
+        try{
+//Appel du backend
+            const newCompte = {
+                pseudo : "deletedUser"+compte.idCompte,
+                mail : "deletedUser"+compte.idCompte+"@",
+                password: "",
+                urlImage: "",
+                description: "",
+                scoreConfiance: 0
+            };
+
+            const response = await axios.put(`http://localhost:8080/api/compte/updateCompte/${compte.idCompte}`, newCompte);
+
+
+        }catch(error){
+            console.error("Erreur lors de la suppression du compte :", error)
+        }
+        localStorage.removeItem('token');
+        localStorage.removeItem('idCompte');
+        window.location.href = '/connexion';
+    };
+
     if (isLoading) return <div>Chargement...</div>;
     if (!compte) return <div>Profil introuvable.</div>;
 
@@ -316,11 +344,14 @@ export default function Profil() {
                         className="profil-buttons"
                         spacing={2}
                     >
-                        <Button variant="outlined" className = "modif">
+                        <Button variant="outlined" className = "modif" onClick={() => {navigate('/modificationProfil')}}>
                             Modifier le profil
                         </Button>
                         <Button variant="outlined" color="error" onClick={handleLogout}>
                             Déconnexion
+                        </Button>
+                        <Button variant="outlined" color="error" onClick={handleRemove}>
+                            Supprimer le compte
                         </Button>
                     </Stack>
                 )}

@@ -137,9 +137,10 @@ export default function CommunautePage(){
                     </Stack>
                 </CardDescription>
 
+                {/*Bouton de retour*/}
                 <ButtonReturn
-                    path={"/communaute"}
-                    text={"Retour à la recherche de communauté"}
+                    path="/communaute"
+                    text="Retour à la recherche de forums"
                 />
 
                 {/*liste de commentaires*/}

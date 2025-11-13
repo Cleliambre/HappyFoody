@@ -72,14 +72,15 @@ export default function CardDescription(
                             direction="column"
                             minHeight={"200px"}
                             justifyContent="space-between"
+                            spacing={1}
                         >
-
 
                             {/*Partie centrale : titre, auteur, note, description */}
                             <Stack
                                 direction="column"
                                 minHeight={"200px"}
                                 justifyContent="space-between"
+                                spacing={1}
                             >
                                 {/*titre, auteur, note, description*/}
                                 <Stack
@@ -87,38 +88,36 @@ export default function CardDescription(
                                     spacing={2}
                                     alignItems={"sart"}
                                 >
-                                {/*titre*/}
-                                <Typography variant="h3">
-                                    {titre}
-                                </Typography>
-
-                                {/*auteur, note + divider*/}
-                                <Stack
-                                    direction="row"
-                                    spacing={2}
-                                    flexWrap= "wrap"
-                                >
-                                    <Divider orientation="vertical" flexItem/>
-                                    {/*auteur, note*/}
-                                        {children}
-                                </Stack>
-                            </Stack>
-
-                                    {/*Description*/}
-                                    <Typography variant="body2" color="textSecondary" sx={{ whiteSpace: 'pre-line' }}>
-                                        {texteDescription}
+                                    {/*titre*/}
+                                    <Typography variant="h3">
+                                        {titre}
                                     </Typography>
+
+                                    {/*auteur, note + divider*/}
+                                    <Stack
+                                        direction="row"
+                                        spacing={2}
+                                        flexWrap= "wrap"
+                                    >
+                                        <Divider orientation="vertical" flexItem/>
+                                        {/*auteur, note*/}
+                                            {children}
+                                    </Stack>
+                                </Stack>
+
+                                {/*Description*/}
+                                <Typography variant="body2" color="textSecondary" sx={{ whiteSpace: 'pre-line', paddingLeft : "10px" }}>
+                                    {texteDescription}
+                                </Typography>
                             </Stack>
+
                             {/*Bouton répondre, si c'est un post de communauté*/}
                             {isCommu ? <Chip
-                                label={
-                                    <Stack direction="row" spacing={1}>
-                                        <ChatBubbleOutlineOutlinedIcon size="small"/>
-                                        <Typography variant="body1">Répondre</Typography>
-                                    </Stack>}
+                                icon ={<ChatBubbleOutlineOutlinedIcon size="small"/>}
+                                label = "Répondre"
                                 color="primary"
                                 onClick={onTagClick}
-
+                                sx={{width: "fit-content", justifyContent: 'center', paddingLeft: '5px'}}
                             /> :  <React.Fragment/>}
                         </Stack>
                     </Stack>

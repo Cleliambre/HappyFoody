@@ -1,19 +1,7 @@
 import Stack from "@mui/material/Stack";
 import CardDescription from "./CardDescription";
 import taboule from "../../images/default_img.png";
-import {
-    Avatar,
-    Box,
-    Button,
-    Card,
-    CardHeader,
-    Divider,
-    Link,
-    Pagination,
-    Paper,
-    TextField,
-    Typography
-} from "@mui/material";
+import {Avatar, Button, Card, CardHeader, Divider, Link, Pagination, Paper, TextField, Typography} from "@mui/material";
 import ThumbUpOutlinedIcon from '@mui/icons-material/ThumbUpOutlined';
 import EmailOutlinedIcon from '@mui/icons-material/EmailOutlined';
 import React from "react";
@@ -91,7 +79,7 @@ export default function PartagePage(){
                 spacing={1}
             >
 
-                {/*description brève de la recette*/}
+                {/*description brève de la page de partage*/}
                 <CardDescription
                     image={taboule}
                     tags={description.tags}
@@ -145,8 +133,8 @@ export default function PartagePage(){
 
                 {/*Bouton de retour*/}
                 <ButtonReturn
-                    path={"/partage"}
-                    text={"Retour à la recherche de partage"}
+                    path="/partage"
+                    text="Retour à la recherche de partages"
                 />
             </Stack>
 
