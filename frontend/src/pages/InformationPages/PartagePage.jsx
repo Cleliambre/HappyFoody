@@ -16,13 +16,18 @@ import {
 } from "@mui/material";
 import ThumbUpOutlinedIcon from '@mui/icons-material/ThumbUpOutlined';
 import EmailOutlinedIcon from '@mui/icons-material/EmailOutlined';
-import React from "react";
+import React, {useEffect} from "react";
 import berserk from "../../images/berserk.jpg";
 import CardList from "../../components/card_list/CardList";
 import ButtonReturn from "../../components/ButtonReturn";
 import Titre from "../../components/Titre";
 
 export default function PartagePage(){
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            alert("Il manque des fonctionnalités à cette page");
+        }, 0);
+    }, []);
 
     const [description] = React.useState({
         image : taboule,

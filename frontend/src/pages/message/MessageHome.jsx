@@ -1,11 +1,16 @@
 import Stack from "@mui/material/Stack";
 import {Avatar, Typography} from "@mui/material";
 import CardList from "../../components/card_list/CardList";
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import CardMessage from "../../components/card_list/CardMessage";
 import necromencienne from "../../images/necromencienne.jpg"
 
 export default function MessageHome(){
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            alert("Il manque des fonctionnalités à cette page");
+        }, 0);
+    }, []);
 
     const [messages, setMessages] = useState([
         {

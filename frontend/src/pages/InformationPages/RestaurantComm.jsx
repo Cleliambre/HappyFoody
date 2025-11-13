@@ -158,33 +158,8 @@ export default function RestaurantComm() {
         );
     }
 
-    /*const [description] = React.useState({
-        image : wok_sushi,
-        titre: "Wok Sushi (Test restaurant)",
-
-        description : "Le restaurant Wok & Sushi fusionne deux spécialités asiatiques.\n\n" +
-            "WOK exprime les plats chauds du traiteur asiatique comme les Bobuns, les nouilles sautés, les gambas et bien d'autre encore...\n\n" +
-            "SUSHI vous fera découvrir le restaurant japonais avec certaines saveurs telles que des sushis, des makis california, des sashimis et plus d'autre encore.",
-
-        nbLike : 120,
-        tags : [{label : "Lieu", color : "primary"}, {label : "Nourriture", color : "success"}],
-
-        tel:"01 69 28 88 18",
-        adresse: <a href="https://share.google/lf4D7DbNYBTVCjHmC">RN 446, 91940 Les Ulis</a>,
-        horaire: "lundi - dimanche, 12h00-14h30 et 19h00-22h30",
-        reseau:"-",
-
-        prix:"20-30€ par personne",
-        reserver:<a href="https://royaldesulis.fr/fr/">royaldesulis.fr</a>,
-        menu:<a href="https://royaldesulis.fr/fr/">royaldesulis.fr</a>,
-        site:<a href="https://royaldesulis.fr/fr/">royaldesulis.fr</a>
-
-    });*/
-
-    //const [like, setLike] = React.useState({liked: false, nb:description.nbLike});
-
     return (
-        <Container>
+        <Container sx={{ paddingBottom:"5px" }}>
 
             <Stack
                 alignItems="start"
