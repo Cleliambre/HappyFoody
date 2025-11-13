@@ -151,7 +151,8 @@ export default function RecetteCreation(){
         "mL",
         "cuillère à soupe",
         "cuillère à café",
-        "bouquet"
+        "bouquet",
+        "pincée"
     ]);
 
     const handleConfirmerIngredient = ()=>{
