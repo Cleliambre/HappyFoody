@@ -76,6 +76,17 @@ export default function RestaurantComm() {
             .then(res => res.json())
             .then(data => setCommentaires(data))
             .catch(err => console.error("Erreur de récupération des commentaires :", err));
+
+    }, [restaurant]);
+
+    useEffect(() => {
+        if (!restaurant) return;
+
+        fetch(`http://localhost:8080/api/commentaire/getCommentaireResponsesByRestaurant/${restaurant.idRestaurant}`)
+            .then(res => res.json())
+            .then(data => setCommentaires(prevCommentaires => [...prevCommentaires, ...data]))
+            .catch(err => console.error("Erreur de récupération des commentaires :", err));
+
     }, [restaurant]);
 
     // =========================
