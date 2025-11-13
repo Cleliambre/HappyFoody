@@ -28,30 +28,26 @@ export default function RestaurantSearchPage(){
 
     const {tags, addTag, deleteTag } = useSearchPageTags([]);
 
-    const [cards, setCards] = React.useState([]);
+    //const [cards, setCards] = React.useState([]);
 
     // Exemple
-    /*
     const [cards, setCards] = React.useState([
         {
             id: 1,
             title: 'Wok Sushi (Test Restaurant)',
-            rate:0,
-            text: <RecetteElement
-                rate={4.0}
-                description="Le restaurant Wok & Sushi fusionne deux spécialités asiatiques.
-                    WOK exprime les plats chauds du traiteur asiatique comme les Bobuns,
-                    les nouilles sautés, les gambas et bien d'autre encore..
-                    SUSHI vous fera découvrir le restaurant japonais avec certaines saveurs telles que des sushis,
-                    des makis california, des sashimis et plus d'autre encore."
-                tags_lieu={["Les Ulis, 91940"]}
-                tags_nourriture={["Asiatique", "Wok", "Sushi"]}
-            />,
+            rate:5,
+
+            description : "Le restaurant Wok & Sushi fusionne deux spécialités asiatiques.\n\n" +
+                "WOK exprime les plats chauds du traiteur asiatique comme les Bobuns, les nouilles sautés, les gambas et bien d'autre encore...\n\n" +
+                "SUSHI vous fera découvrir le restaurant japonais avec certaines saveurs telles que des sushis, des makis california, des sashimis et plus d'autre encore.",
+
+            tags_nourriture:["Asiatique", "Wok", "Sushi"],
+            tags_lieu:["Les Ulis, 91940"],
             thumbnail: restoImage,
             liked: false,
             likes: 97,
-        }
-    ]);*/
+        },
+    ]);
 
     const navigate = useNavigate();
 
@@ -144,7 +140,7 @@ export default function RestaurantSearchPage(){
 
 
             //Mise à jour de l’état global
-            setCards(newCards);
+            //setCards(newCards); // TODO à remettre
             //setRecettes(recettesAvecInfos);
 
         } catch (err) {

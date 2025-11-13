@@ -2,23 +2,28 @@ import * as React from "react";
 import "./Card.css"
 
 import Typography from "@mui/material/Typography";
-import StarIcon from '@mui/icons-material/StarOutlined';
 import {Chip} from "@mui/material";
 import {getSmileys} from "../smiley_rating/getSmileys";
 
 export default function RestoElement(
-    {rate, description,
-    tags_lieu=[], tags_nourriture=[]})
-{
+    {
+        rate,
+        description,
+        tags_lieu = [],
+        tags_nourriture = []
+    }
+) {
+    const smiley = rate == null || rate === 0 ? getSmileys(0) : getSmileys(rate);
+
     return(
         <React.Fragment>
 
             {/* Note */}
             <div className="align-text-icon">
-                <Typography variant="text" className="small-font">
-                    {rate == null || rate === 0 ? (getSmileys(0)) : (getSmileys(rate))}
+                {smiley.icon}
+                <Typography variant="body2" className="small-font">
+                    {smiley.label}
                 </Typography>
-                <StarIcon fontSize="small" className="star"/>
             </div>
 
             {/* Description */}
