@@ -1,8 +1,9 @@
 import React, {useState} from 'react';
 import './PasswordModification.css'
-import {Typography, TextField, Button, Link, Alert} from '@mui/material';
+import {Typography, TextField, Button, Alert} from '@mui/material';
 import Stack from "@mui/material/Stack";
 import { useNavigate } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 export default function PasswordModification() {
     const [ancienMdp, setAncienMdp] = useState('');
@@ -102,7 +103,7 @@ export default function PasswordModification() {
                         autoComplete="current-password"
                     />
                     {/*"#" à remplacer avec l'url de la page d'accueil*/}
-                    <Link href="#" className = 'lien-mdp'>Mot de passe oublié ?</Link>
+                    <Link to={"/oublieMotDePasse"} className = 'lien-mdp'>Mot de passe oublié ?</Link>
                 </Stack>
                 <TextField
                     fullWidth

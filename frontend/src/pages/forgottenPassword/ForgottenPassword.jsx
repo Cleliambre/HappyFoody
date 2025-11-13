@@ -1,10 +1,18 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import './ForgottenPassword.css'
 import {Typography, TextField, Button} from '@mui/material';
 import ButtonReturn from "../../components/ButtonReturn";
 
 
 export default function ForgottenPassword() {
+
+    useEffect(() => {
+        document.title = "Mot de passe oublié - Happy Foody";
+        const timer = setTimeout(() => {
+            alert("Il manque des fonctionnalités dans cette page.");
+        }, 0);
+    }, [])
+
     return (
         <div className="fpassword-content">
             <div className="titre-group">

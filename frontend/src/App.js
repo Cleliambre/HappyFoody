@@ -21,8 +21,9 @@ import Profil from "./pages/profil/Profil"
 // Les pages de profils
 import Inscription from "./pages/Inscription/Inscription";
 import Connexion from "./pages/connexion/Connexion";
-import PasswordModification from "./pages/passwordModification/PasswordModification";
 import ProfilModification from "./pages/profilModification/ProfilModification";
+import PasswordModification from "./pages/passwordModification/PasswordModification";
+import ForgottenPassword from "./pages/forgottenPassword/ForgottenPassword";
 
 // Les pages d'affichage individuel
 import CommunautePage from "./pages/InformationPages/CommunautePage";
@@ -70,7 +71,7 @@ const routes = [
     { path: "/communaute/create", element: <CommunauteCreation /> },
     { path: "/partagee/create",   element: <PartageCreation /> },
 
-    // TODO : Pages de commentaires (à faire)
+    // Pages de commentaire
     { path: "/recette/commentaires", element: <RecetteComm /> },
     { path: "/restaurant/:id/avis",      element: <RestaurantComm /> },
 
@@ -81,9 +82,10 @@ const routes = [
     // Pages de profil
     { path: "/profil/:pseudo",         element: <Profil /> },
     { path: "/inscription",            element: <Inscription /> },
+    { path: "/connexion",              element: <Connexion /> },
     { path: "/modificationProfil",     element: <ProfilModification /> },
     { path: "/modificationMotDePasse", element: <PasswordModification /> },
-    { path: "/connexion",              element: <Connexion /> },
+    { path: "/oublieMotDePasse",       element: <ForgottenPassword /> },
 ];
 
 

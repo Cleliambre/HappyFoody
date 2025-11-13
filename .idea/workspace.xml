@@ -4,14 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a51d4164-65dd-4e44-931e-9734ea826bff" name="Changes" comment="Modif note RecettePage.jsx">
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/happy_foody/config/DataInitializer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/data_source_mapping.xml" beforeDir="false" />
+    <list default="true" id="a51d4164-65dd-4e44-931e-9734ea826bff" name="Changes" comment="Ajout navigation">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/happy_foody/config/CorsConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/happy_foody/model/Restaurant.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/happy_foody/model/Restaurant.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/happy_foody/repository/TagRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/happy_foody/repository/TagRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/card_list/CardList.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/card_list/CardList.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/connexion/Connexion.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/connexion/Connexion.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/forgottenPassword/ForgottenPassword.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/forgottenPassword/ForgottenPassword.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/passwordModification/PasswordModification.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/passwordModification/PasswordModification.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,7 +82,7 @@
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
     "Spring Boot.Backend.executor": "Run",
-    "git-widget-placeholder": "develop__add__resto__default",
+    "git-widget-placeholder": "develop",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/tangf/IdeaProjects/HappyFoody/frontend/src/components/card_list",
     "list.type.of.created.stylesheet": "CSS",
@@ -343,7 +341,71 @@
       <option name="project" value="LOCAL" />
       <updated>1762988529429</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="Update Restos data">
+      <option name="closed" value="true" />
+      <created>1763047838797</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1763047838797</updated>
+    </task>
+    <task id="LOCAL-00024" summary="Modif &quot;-.-&quot; Pour les restos sans note">
+      <option name="closed" value="true" />
+      <created>1763048723625</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1763048723625</updated>
+    </task>
+    <task id="LOCAL-00025" summary="Modif &quot;-.-&quot; Pour les restos sans note (le retour)">
+      <option name="closed" value="true" />
+      <created>1763049415898</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1763049415898</updated>
+    </task>
+    <task id="LOCAL-00026" summary="Alignement des notes resto">
+      <option name="closed" value="true" />
+      <created>1763050519603</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1763050519603</updated>
+    </task>
+    <task id="LOCAL-00027" summary="Correction de la moyenne des notes de restaurant">
+      <option name="closed" value="true" />
+      <created>1763055118481</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1763055118481</updated>
+    </task>
+    <task id="LOCAL-00028" summary="Changer l'init">
+      <option name="closed" value="true" />
+      <created>1763066972397</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1763066972397</updated>
+    </task>
+    <task id="LOCAL-00029" summary="Ajout lien comm des recettes + enlever certaines alertes">
+      <option name="closed" value="true" />
+      <created>1763068073779</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1763068073779</updated>
+    </task>
+    <task id="LOCAL-00030" summary="Ajout navigation">
+      <option name="closed" value="true" />
+      <created>1763069097179</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1763069097179</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -373,11 +435,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add RestaurantPage, ButtonReturn, link and remove things unused" />
-    <MESSAGE value="Add ColorAvatar.jsx + Update commentaire" />
-    <MESSAGE value="Add comment pagination" />
-    <MESSAGE value="Update SectionComm.jsx" />
-    <MESSAGE value="Petite modif" />
     <MESSAGE value="Petite modif (Majuscule)" />
     <MESSAGE value="deleted unused" />
     <MESSAGE value="MenuBar.jsx remove disabled button" />
@@ -395,6 +452,14 @@
     <MESSAGE value="Ajout Pagination id commu + partage" />
     <MESSAGE value="Modif CardList.jsx + note" />
     <MESSAGE value="Modif note RecettePage.jsx" />
-    <option name="LAST_COMMIT_MESSAGE" value="Modif note RecettePage.jsx" />
+    <MESSAGE value="Update Restos data" />
+    <MESSAGE value="Modif &quot;-.-&quot; Pour les restos sans note" />
+    <MESSAGE value="Modif &quot;-.-&quot; Pour les restos sans note (le retour)" />
+    <MESSAGE value="Alignement des notes resto" />
+    <MESSAGE value="Correction de la moyenne des notes de restaurant" />
+    <MESSAGE value="Changer l'init" />
+    <MESSAGE value="Ajout lien comm des recettes + enlever certaines alertes" />
+    <MESSAGE value="Ajout navigation" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ajout navigation" />
   </component>
 </project>
