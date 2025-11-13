@@ -38,7 +38,7 @@ public interface RestaurantRepository extends JpaRepository<Restaurant,Long> {
     SELECT AVG(cr.note_hygiene)
     FROM commentaire_restaurant cr
     JOIN restaurant r ON cr.id_restaurant = r.id_restaurant
-    WHERE r.id_restaurant = :id_restaurant AND cr.note_hygiene > 0
+    WHERE r.id_restaurant = :id_restaurant AND cr.note_hygiene >= 1
     """, nativeQuery = true)
     Double findNoteHygieneMoyenneById(@Param("id_restaurant") Long id_restaurant);
 
@@ -46,7 +46,7 @@ public interface RestaurantRepository extends JpaRepository<Restaurant,Long> {
     SELECT AVG(cr.note_qualite)
     FROM commentaire_restaurant cr
     JOIN restaurant r ON cr.id_restaurant = r.id_restaurant
-    WHERE r.id_restaurant = :id_restaurant AND cr.note_qualite>0
+    WHERE r.id_restaurant = :id_restaurant AND cr.note_qualite>=1
     """, nativeQuery = true)
     Double findNoteQualiteMoyenneById(@Param("id_restaurant") Long id_restaurant);
 
@@ -54,7 +54,7 @@ public interface RestaurantRepository extends JpaRepository<Restaurant,Long> {
     SELECT AVG(cr.note_rapidite)
     FROM commentaire_restaurant cr
     JOIN restaurant r ON cr.id_restaurant = r.id_restaurant
-    WHERE r.id_restaurant = :id_restaurant AND cr.note_qualite>0
+    WHERE r.id_restaurant = :id_restaurant AND cr.note_rapidite>=1
     """, nativeQuery = true)
     Double findNoteRapiditeMoyenneById(@Param("id_restaurant") Long id_restaurant);
 
@@ -62,7 +62,7 @@ public interface RestaurantRepository extends JpaRepository<Restaurant,Long> {
     SELECT AVG(cr.note_service)
     FROM commentaire_restaurant cr
     JOIN restaurant r ON cr.id_restaurant = r.id_restaurant
-    WHERE r.id_restaurant = :id_restaurant AND cr.note_service>0
+    WHERE r.id_restaurant = :id_restaurant AND cr.note_service>=1
     """, nativeQuery = true)
     Double findNoteServiceMoyenneById(@Param("id_restaurant") Long id_restaurant);
 
