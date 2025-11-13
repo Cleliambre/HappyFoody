@@ -23,7 +23,21 @@ import CardList from "../../components/card_list/CardList";
  * @returns {React.JSX.Element}
  * @constructor
  */
-export default function GenericSearchPage({pageDescr, tags, barInfo, onFilterClick, onSearchClick, onTagDelete, onPlusClick, paginationSize, children, resultCount,page, onPageChange}) {
+export default function GenericSearchPage(
+    {
+        pageDescr,
+        tags,
+        barInfo,
+        onFilterClick,
+        onSearchClick,
+        onTagDelete,
+        onPlusClick,
+        paginationSize,
+        children,
+        resultCount,
+        page,
+        onPageChange
+    }) {
     return (
         <Stack
             spacing={2}
