@@ -54,7 +54,7 @@ const routes = [
 
     // Onglets personnels principaux
     { path: "/favoris",      element: <Favoris /> },
-    { path: "/messages", element: <MessageHome /> },
+    { path: "/messages",     element: <MessageHome /> },
     { path: "/profil",       element: <Profil /> },
 
     // ==================== SOUS-PAGES ========================
@@ -75,13 +75,13 @@ const routes = [
     { path: "/restaurant/:id/avis",      element: <RestaurantComm /> },
 
     // Pages de messages
-    { path: "/messages/:pseudo",     element: <MessageHome /> },
+    { path: "/messages/:pseudo",         element: <MessageHome /> },
     { path: "/messages/:pseudo/:pseudo", element: <Message/> },
 
     // Pages de profil
     { path: "/profil/:pseudo",         element: <Profil /> },
     { path: "/inscription",            element: <Inscription /> },
-    { path: "/modificationProfil", element: <ProfilModification /> },
+    { path: "/modificationProfil",     element: <ProfilModification /> },
     { path: "/modificationMotDePasse", element: <PasswordModification /> },
     { path: "/connexion",              element: <Connexion /> },
 ];
