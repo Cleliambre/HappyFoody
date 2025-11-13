@@ -105,7 +105,7 @@ export default function GenericSearchPage(
                 </Stack>
             </Stack>
             <CardList
-                resMessage = {resultCount + (resultCount>1 ? " Resultats" : " Resultat")}
+                resMessage = {resultCount + (resultCount>1 ? " Résultats" : " Résultat")}
             >
                 {children}
             </CardList>
