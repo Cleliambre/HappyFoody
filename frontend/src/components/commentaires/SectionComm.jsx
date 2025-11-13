@@ -7,7 +7,7 @@ import CreationComm from "./CreationComm";
 import Titre from "../Titre";
 import axios from "axios";
 
-export function SectionComm({section="communaute", currentProfil, commentaires, setComm, idRestaurant}) {
+export function SectionComm({section="communaute", currentProfil, commentaires, setComm, idRestaurant, onRefresh}) {
 
     const [reponseA, setReponseA] = React.useState(null);
     const creationRef = React.useRef(null);
@@ -90,6 +90,10 @@ export function SectionComm({section="communaute", currentProfil, commentaires, 
                     contenu: data.contenu,
                 }
                 const postCommentaire = await axios.post('http://localhost:8080/api/commentaire/createCommentaire', newCommentaire)
+                if (postCommentaire.status === 200 && onRefresh) {
+                    onRefresh();
+                }
+
             }
             else{
                 const newCommentaire = {
@@ -104,6 +108,10 @@ export function SectionComm({section="communaute", currentProfil, commentaires, 
                     noteQualite: data.noteQualite
                 }
                 const postCommentaire = await axios.post('http://localhost:8080/api/commentaireRestaurant/createCommentaireRestaurant', newCommentaire)
+                if (postCommentaire.status === 200 && onRefresh) {
+                    onRefresh();
+                }
+
             }
 
         }catch(error){

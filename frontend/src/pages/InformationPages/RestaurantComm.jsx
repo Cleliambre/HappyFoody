@@ -89,6 +89,24 @@ export default function RestaurantComm() {
 
     }, [restaurant]);
 
+    const rafraichirCommentaires = () => {
+        if (!restaurant) return;
+
+        Promise.all([
+            fetch(`http://localhost:8080/api/commentaireRestaurant/getCommentaireRestaurantByRestaurant/${restaurant.idRestaurant}`).then(res => res.json()),
+            fetch(`http://localhost:8080/api/commentaire/getCommentaireResponsesByRestaurant/${restaurant.idRestaurant}`).then(res => res.json())
+        ])
+            .then(([principaux, reponses]) => {
+                const merged = [...principaux, ...reponses];
+                const uniques = merged.filter((c, i, self) =>
+                    i === self.findIndex(x => x.idCommentaire === c.idCommentaire)
+                );
+                setCommentaires(uniques);
+            })
+            .catch(err => console.error("Erreur de rafraîchissement des commentaires :", err));
+    };
+
+
     // =========================
     // Vérification du like de l'utilisateur
     // =========================
@@ -182,7 +200,7 @@ export default function RestaurantComm() {
                 />
             </Stack>
 
-            <SectionComm section="restaurant" commentaires={commentaires} currentProfil={compte} setComm={setCommentaires} idRestaurant={restaurant.idRestaurant}/>
+            <SectionComm section="restaurant" commentaires={commentaires} currentProfil={compte} setComm={setCommentaires} idRestaurant={restaurant.idRestaurant} onRefresh={rafraichirCommentaires}/>
             <Box sx={{ height: '30px' }} />
         </Container>
     );

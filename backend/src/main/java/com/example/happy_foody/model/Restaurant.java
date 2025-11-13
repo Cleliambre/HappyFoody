@@ -59,8 +59,7 @@ public class Restaurant {
     public String getNom() {return nom;}
     public void setNom(String nom) {this.nom = nom;}
 
-    @Lob
-    @Column(name = "description", nullable = true)
+    @Column(name = "description", nullable = true, length = 10000)
     public String getDescription() {return description;}
     public void setDescription(String description) {this.description = description;}
 
