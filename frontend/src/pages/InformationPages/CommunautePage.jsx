@@ -1,7 +1,7 @@
 import Stack from "@mui/material/Stack";
 import CardDescription from "./CardDescription";
 import {
-    Avatar,
+    Avatar, Box,
     Button,
     Card,
     CardHeader,
@@ -12,14 +12,14 @@ import {
     Typography
 } from "@mui/material";
 import ChatBubbleOutlineOutlinedIcon from '@mui/icons-material/ChatBubbleOutlineOutlined';
-import KeyboardReturnIcon from "@mui/icons-material/KeyboardReturn";
 import React from "react";
 import tabouleCrame from "../../images/taboule_crame.png";
 import necromencienne from "../../images/necromencienne.jpg";
-import CardList from "../../components/card_list/CardListV2";
+import CardList from "../../components/card_list/CardList";
+import ButtonReturn from "../../components/ButtonReturn";
 
 export default function CommunautePage(){
-    const [description, setDescription] = React.useState({
+    const [description] = React.useState({
         image : tabouleCrame,
         titre: "Aide taboulé cramé",
         auteur: "Golanginya",
@@ -138,12 +138,10 @@ export default function CommunautePage(){
                 </CardDescription>
 
                 {/*Bouton de retour*/}
-                <Button variant="contained" sx={{backgroundColor: "gray", alignContent:"center"}}>
-                    <Typography className = "cancel" >
-                        Retour
-                    </Typography>
-                    <KeyboardReturnIcon />
-                </Button>
+                <ButtonReturn
+                    path="/communaute"
+                    text="Retour à la recherche de forums"
+                />
 
                 {/*liste de commentaires*/}
                 <Stack alignItems="center" spacing={2} width="100%" >
@@ -192,6 +190,7 @@ export default function CommunautePage(){
                     </Stack>
                 </Card>
             </Stack>
+            <Box sx={{ height: '30px' }} />
         </Stack>
     );
 }

@@ -19,7 +19,18 @@ import FavoriteOutlinedIcon from '@mui/icons-material/FavoriteOutlined';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import ChatBubbleOutlineOutlinedIcon from "@mui/icons-material/ChatBubbleOutlineOutlined";
 
-export default function CardDescription({image, tags, titre, texteDescription, onTagClick, like, setLike, handleLike, isCommu = false, children}){
+export default function CardDescription(
+    {
+        image,
+        tags,
+        titre,
+        texteDescription,
+        onTagClick,
+        like=0,
+        handleLike,
+        isCommu = false,
+        children
+    }) {
 
     // Formatage du compteur de likes (ex: 1000 → "1K")
     const formatLikes = (num) => {
@@ -61,14 +72,15 @@ export default function CardDescription({image, tags, titre, texteDescription, o
                             direction="column"
                             minHeight={"200px"}
                             justifyContent="space-between"
+                            spacing={1}
                         >
-
 
                             {/*Partie centrale : titre, auteur, note, description */}
                             <Stack
                                 direction="column"
                                 minHeight={"200px"}
                                 justifyContent="space-between"
+                                spacing={1}
                             >
                                 {/*titre, auteur, note, description*/}
                                 <Stack
@@ -76,38 +88,36 @@ export default function CardDescription({image, tags, titre, texteDescription, o
                                     spacing={2}
                                     alignItems={"sart"}
                                 >
-                                {/*titre*/}
-                                <Typography variant="h3">
-                                    {titre}
-                                </Typography>
-
-                                {/*auteur, note + divider*/}
-                                <Stack
-                                    direction="row"
-                                    spacing={2}
-                                    flexWrap= "wrap"
-                                >
-                                    <Divider orientation="vertical" flexItem/>
-                                    {/*auteur, note*/}
-                                        {children}
-                                </Stack>
-                            </Stack>
-
-                                    {/*Description*/}
-                                    <Typography variant="body2" color="textSecondary" sx={{ whiteSpace: 'pre-line' }}>
-                                        {texteDescription}
+                                    {/*titre*/}
+                                    <Typography variant="h3">
+                                        {titre}
                                     </Typography>
+
+                                    {/*auteur, note + divider*/}
+                                    <Stack
+                                        direction="row"
+                                        spacing={2}
+                                        flexWrap= "wrap"
+                                    >
+                                        <Divider orientation="vertical" flexItem/>
+                                        {/*auteur, note*/}
+                                            {children}
+                                    </Stack>
+                                </Stack>
+
+                                {/*Description*/}
+                                <Typography variant="body2" color="textSecondary" sx={{ whiteSpace: 'pre-line', paddingLeft : "10px" }}>
+                                    {texteDescription}
+                                </Typography>
                             </Stack>
+
                             {/*Bouton répondre, si c'est un post de communauté*/}
                             {isCommu ? <Chip
-                                label={
-                                    <Stack direction="row" spacing={1}>
-                                        <ChatBubbleOutlineOutlinedIcon size="small"/>
-                                        <Typography variant="body1">Répondre</Typography>
-                                    </Stack>}
+                                icon ={<ChatBubbleOutlineOutlinedIcon size="small"/>}
+                                label = "Répondre"
                                 color="primary"
                                 onClick={onTagClick}
-
+                                sx={{width: "fit-content", justifyContent: 'center', paddingLeft: '5px'}}
                             /> :  <React.Fragment/>}
                         </Stack>
                     </Stack>
@@ -138,7 +148,7 @@ export default function CardDescription({image, tags, titre, texteDescription, o
                 }
 
                 {/* Tags (s'affiche seulement s'il y a des tags) */}
-                {(!(tags===undefined || tags === null) && tags.length > 0) ?
+                {(!(tags === undefined || tags === null) && tags.length > 0) ?
                     <Collapse in={isExpanded}>
                         <Stack direction="row" flexWrap="wrap" gap={1} margin="10px">
                             {tags.map((tag) => (

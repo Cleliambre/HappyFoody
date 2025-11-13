@@ -1,8 +1,8 @@
 import GenericSearchPage from "./GenericSearchPage";
 import RestaurantOutlinedIcon from '@mui/icons-material/Restaurant';
 import React, {useEffect, useState} from "react";
-import RecetteAndRestoElement from "../../components/card_list/RecetteAndRestoElement";
-import img0 from "../../images/taboule.png";
+import defaultImage from "../../images/default_img.png";
+import restoImage from "../../images/wok_sushi.png";
 import GenericCard from "../../components/card_list/GenericCard";
 import { searchRestaurants } from "../../services/restaurantService";
 import useSearchPageTags from "./useSearchPageTags";
@@ -17,6 +17,7 @@ import {
     MenuItem,
     Typography
 } from "@mui/material";
+import RestoElement from "../../components/card_list/RestoElement";
 
 export default function RestaurantSearchPage(){
     //Changement du titre de l'onglet de la page
@@ -27,7 +28,26 @@ export default function RestaurantSearchPage(){
 
     const {tags, addTag, deleteTag } = useSearchPageTags([]);
 
-    const [cards, setCards] = React.useState([]);
+    //const [cards, setCards] = React.useState([]);
+
+    // Exemple
+    const [cards, setCards] = React.useState([
+        {
+            id: 1,
+            title: 'Wok Sushi (Test Restaurant)',
+            rate:5,
+
+            description : "Le restaurant Wok & Sushi fusionne deux spécialités asiatiques.\n\n" +
+                "WOK exprime les plats chauds du traiteur asiatique comme les Bobuns, les nouilles sautés, les gambas et bien d'autre encore...\n\n" +
+                "SUSHI vous fera découvrir le restaurant japonais avec certaines saveurs telles que des sushis, des makis california, des sashimis et plus d'autre encore.",
+
+            tags_nourriture:["Asiatique", "Wok", "Sushi"],
+            tags_lieu:["Les Ulis, 91940"],
+            thumbnail: restoImage,
+            liked: false,
+            likes: 97,
+        },
+    ]);
 
     const navigate = useNavigate();
 
@@ -113,16 +133,14 @@ export default function RestaurantSearchPage(){
                 description : restaurant.description,
                 rate: restaurant.note_moyenne || 0,
                 tags: restaurant.tags || [],
-                thumbnail: restaurant.urlImage || img0,
+                thumbnail: restaurant.urlImage || defaultImage,
                 liked: restaurant.liked,
                 likes: restaurant.nb_likes || 0,
             }));
 
 
-
-
             //Mise à jour de l’état global
-            setCards(newCards);
+            //setCards(newCards); // TODO à remettre
             //setRecettes(recettesAvecInfos);
 
         } catch (err) {
@@ -246,26 +264,9 @@ export default function RestaurantSearchPage(){
         setPage(value);
     };
 
-    /*
-    const [cards, setCards] = React.useState([
-        {
-            id: 1,
-            title: 'Wok Sushi (Test Restaurant)',
-            text: <RecetteAndRestoElement
-                rate={4.0}
-                description="Le restaurant Wok & Sushi fusionne deux spécialités asiatiques.
-                    WOK exprime les plats chauds du traiteur asiatique comme les Bobuns,
-                    les nouilles sautés, les gambas et bien d'autre encore..
-                    SUSHI vous fera découvrir le restaurant japonais avec certaines saveurs telles que des sushis,
-                    des makis california, des sashimis et plus d'autre encore."
-                tags_lieu={["Les Ulis, 91940"]}
-                tags_nourriture={["Asiatique", "Wok", "Sushi"]}
-            />,
-            thumbnail: img1,
-            liked: false,
-            likes: 97,
-        }
-    ]);*/
+    useEffect(() => {
+        handleSearch("");
+    }, []);
 
     return (
         <GenericSearchPage
@@ -287,7 +288,7 @@ export default function RestaurantSearchPage(){
                 card={{
                     ...card,
                     text: (
-                        <RecetteAndRestoElement
+                        <RestoElement
                             rate={card.rate}
                             description={card.description}
                             tags_nourriture={card.tags}

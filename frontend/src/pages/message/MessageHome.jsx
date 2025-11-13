@@ -1,6 +1,6 @@
 import Stack from "@mui/material/Stack";
 import {Avatar, Typography} from "@mui/material";
-import CardList from "../../components/card_list/CardListV2";
+import CardList from "../../components/card_list/CardList";
 import {useState} from "react";
 import CardMessage from "../../components/card_list/CardMessage";
 import necromencienne from "../../images/necromencienne.jpg"

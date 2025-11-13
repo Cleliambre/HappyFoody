@@ -32,23 +32,24 @@ function stringAvatar(name) {
     };
 }
 
-function colorAvatar(name) {
+function colorAvatar(name, sx) {
     if(name === "" || name === null){
         return;
     }
     return {
         sx: {
+            ...sx,
             bgcolor: stringToColor(name),
         },
         children: `${name.split(' ')[0][0]}`,
     };
 }
 
-export function ColorAvatar({src=null, name=null, sx}) {
+export default function ColorAvatar({src=null, name=null, sx, className}) {
     if(name === "" || name === null){
-        return <Avatar/>;
+        return <Avatar sx={sx} className={className}/>;
     }
     return (
-        <Avatar src={src} sx={sx} {...colorAvatar(name)}/>
+        <Avatar src={src} className={className} {...colorAvatar(name, sx)}/>
     );
 }

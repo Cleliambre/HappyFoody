@@ -20,8 +20,8 @@ import CommIcon from "@mui/icons-material/ChatBubbleOutlineOutlined";
 import ConfianceIcon from '@mui/icons-material/ThumbUpOutlined';
 import CloseIcon from "@mui/icons-material/Close";
 import {getSmileys, noteGenerale} from "../smiley_rating/getSmileys";
-import {PaperNote} from "../restautant_component/PaperNote";
-import {ColorAvatar} from "../ColorAvatar";
+import PaperNote from "../restautant_component/PaperNote";
+import ColorAvatar from "../ColorAvatar";
 
 function CommElement({commentaire, section, onVoirDetails, notes}) {
 

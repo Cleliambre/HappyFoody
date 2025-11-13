@@ -1,28 +1,25 @@
 import {
     Stack,
     Typography,
-    Avatar,
     Link,
-    Button,
+    IconButton,
     Paper,
     List,
     ListItem,
-    ListItemText
+    ListItemText, Box
 } from "@mui/material";
 
-import taboule from "../../images/taboule.png";
+import taboule from "../../images/default_img.png";
 import StarOutlinedIcon from '@mui/icons-material/StarOutlined';
 import React, { useEffect, useState } from "react";
 import CardDescription from "./CardDescription";
 import ButtonReturn from "../../components/ButtonReturn";
 import { useParams, useNavigate } from "react-router-dom";
+import ColorAvatar from "../../components/ColorAvatar";
 
 export default function RecettePage() {
     const { id } = useParams();
     const navigate = useNavigate();
-    const handleRetour = () => {navigate('/recette');}
-
-
 
     // =========================
     // États principaux
@@ -256,22 +253,26 @@ export default function RecettePage() {
                 >
                     {/* Auteur et note */}
                     <Stack direction="column" spacing={1}>
-                        <Stack direction="row" spacing={2} alignItems="center">
-                            <Avatar src={auteur?.urlImage || ""} />
+                        <Stack direction="row" spacing={1} alignItems="center">
+                            <IconButton onClick={()=>{navigate(`/profil/${auteur?.pseudo}`)}}>
+                                <ColorAvatar src={auteur?.urlImage || ""} name={auteur?.pseudo || ""} />
+                            </IconButton>
                             <Typography variant="body2">
-                                {auteur ? auteur.pseudo : "Auteur inconnu"}
+                                <Link component="button" color="inherit" underline="none" onClick={() => navigate(`/profil/${auteur?.pseudo}`)}>
+                                    {auteur ? auteur.pseudo : "Auteur inconnu"}
+                                </Link>
                             </Typography>
                         </Stack>
 
                         <Stack direction="row" spacing={3}>
                             <Stack direction="row" spacing={0.5} alignItems="center">
                                 <Typography variant="body2">
-                                    {noteMoyenne}
+                                    {noteMoyenne == null || noteMoyenne === 0 ? "-.-" : noteMoyenne.toFixed(1)}
                                 </Typography>
                                 <StarOutlinedIcon fontSize="small" sx={{ color: "gold" }} />
                             </Stack>
                             <Link href={"#"} variant="body2">
-                                Voir le top3 des commentaires
+                                Voir les commentaires
                             </Link>
                         </Stack>
                     </Stack>
@@ -337,6 +338,7 @@ export default function RecettePage() {
                     ))}
                 </List>
             </Stack>
+            <Box sx={{ height: '30px' }} />
         </Stack>
     );
 }

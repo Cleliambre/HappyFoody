@@ -2,7 +2,7 @@ import {Paper, Typography} from "@mui/material";
 import {getSmileys} from "../smiley_rating/getSmileys";
 import React from "react";
 
-export function PaperNote({text, note, isGlobal}) {
+export default function PaperNote({text, note, isGlobal}) {
     return (
         <Paper elevation={2}
                sx={{padding:2,

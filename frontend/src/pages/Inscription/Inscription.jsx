@@ -36,6 +36,21 @@ export default function Inscription() {
             return;
         }
 
+        if (pseudo.includes("@")){
+            setMessage("Le symbole @ est interdit dans le pseudo");
+            return;
+        }
+
+        if (pseudo.includes("deletedUser")){
+            setMessage("deletedUser est interdit dans le pseudo");
+            return;
+        }
+
+        if (!(email.includes("@"))){
+            setMessage("Le symbole @ est obligatoire dans le mail");
+            return;
+        }
+
         if (password !== password2) {
             setMessage("Les mots de passe ne correspondent pas !");
             return;

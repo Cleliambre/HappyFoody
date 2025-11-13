@@ -3,10 +3,13 @@ import {useParams, useNavigate, useLocation} from 'react-router-dom';
 import './Profil.css'
 import {Typography, Button, Avatar, Tab, Stack, Container} from '@mui/material';
 import  {TabContext, TabList, TabPanel} from '@mui/lab'
-import CardListV2 from "../../components/card_list/CardListV2";
-import img0 from "../../images/taboule.png";
+import CardList from "../../components/card_list/CardList";
+import ColorAvatar from "../../components/ColorAvatar";
+import img0 from "../../images/default_img.png";
 import GenericCard from "../../components/card_list/GenericCard";
-import RecetteAndRestoElement from "../../components/card_list/RecetteAndRestoElement";
+
+import RecetteElement from "../../components/card_list/RecetteElement";
+import axios from "axios";
 
 export default function Profil() {
     useEffect(() => {document.title = "Profil - Happy Foody"}, [])
@@ -44,6 +47,7 @@ export default function Profil() {
             })
             .catch(err => console.error("Erreur de récupération du compte connecté :", err));
     }, []);
+
 
     useEffect(() => {
         if (!compte) return;
@@ -178,7 +182,7 @@ export default function Profil() {
 
 
     // 🔹 Gestion des redirections et récupération du profil
-    useEffect(() => {
+    /*useEffect(() => {
         const handleProfil = async () => {
             // Si on est sur /profil sans pseudo
             if (!pseudo) {
@@ -223,7 +227,55 @@ export default function Profil() {
 
         handleProfil();
         // ✅ dépend seulement de pseudo et compteConnecte.pseudo
-    }, [pseudo, compteConnecte?.pseudo, navigate, location.pathname]);
+    }, [pseudo, compteConnecte?.pseudo, navigate, location.pathname]);*/
+
+    useEffect(() => {
+        const handleProfil = async () => {
+            // 🔹 Cas 1 : /profil sans pseudo
+            if (!pseudo) {
+                const idCompte = localStorage.getItem('idCompte');
+                if (!idCompte) {
+                    if (location.pathname !== '/connexion') {
+                        navigate('/connexion', { replace: true });
+                    }
+                    return;
+                }
+
+                // ✅ Si connecté et compteConnecte dispo → redirige
+                if (compteConnecte?.pseudo) {
+                    const target = `/profil/${compteConnecte.pseudo}`;
+                    if (location.pathname !== target) {
+                        navigate(target, { replace: true });
+                    }
+                    return;
+                }
+
+                // 🕓 Si on n’a pas encore compteConnecte, on attend (ne fait rien)
+                return;
+            }
+
+            // 🔹 Cas 2 : /profil/:pseudo → récupère le profil
+            try {
+                const res = await fetch(`http://localhost:8080/api/compte/getCompteByPseudo/${pseudo}`);
+                if (!res.ok) {
+                    setCompte(null);
+                    setIsLoading(false);
+                    return;
+                }
+
+                const text = await res.text();
+                const data = text ? JSON.parse(text) : null;
+                setCompte(data);
+            } catch (err) {
+                console.error("Erreur de récupération du profil :", err);
+                setCompte(null);
+            } finally {
+                setIsLoading(false);
+            }
+        };
+
+        handleProfil();
+    }, [pseudo, compteConnecte, navigate, location.pathname]);
 
 
     const handleChange = (event, newValue) => {
@@ -231,6 +283,32 @@ export default function Profil() {
     };
 
     const handleLogout = () => {
+        localStorage.removeItem('token');
+        localStorage.removeItem('idCompte');
+        window.location.href = '/connexion';
+    };
+
+    const handleRemove = async () => {
+        //Validation basique
+        if(!compte) return;
+
+        try{
+//Appel du backend
+            const newCompte = {
+                pseudo : "deletedUser"+compte.idCompte,
+                mail : "deletedUser"+compte.idCompte+"@",
+                password: "",
+                urlImage: "",
+                description: "",
+                scoreConfiance: 0
+            };
+
+            const response = await axios.put(`http://localhost:8080/api/compte/updateCompte/${compte.idCompte}`, newCompte);
+
+
+        }catch(error){
+            console.error("Erreur lors de la suppression du compte :", error)
+        }
         localStorage.removeItem('token');
         localStorage.removeItem('idCompte');
         window.location.href = '/connexion';
@@ -249,7 +327,8 @@ export default function Profil() {
             </Typography>
             <Container sx={{width: '80%'}}>
                 <div className="profil-description">
-                    <Avatar src={compte.urlImage} className="profil-avatar" sx={{width:150, height:150}}/>
+                    {/*<Avatar src={compte.urlImage} className="profil-avatar" sx={{width:150, height:150}}/>*/}
+                    <ColorAvatar src={compte.urlImage} name={compte.pseudo} className="profil-avatar" sx={{width:150, height:150, fontSize:100}}/>
                     <div className="profil-description-text">
                         <Typography variant="h4" color="textPrimary">
                             {compte.pseudo}
@@ -265,11 +344,14 @@ export default function Profil() {
                         className="profil-buttons"
                         spacing={2}
                     >
-                        <Button variant="outlined" className = "modif">
+                        <Button variant="outlined" className = "modif" onClick={() => {navigate('/modificationProfil')}}>
                             Modifier le profil
                         </Button>
                         <Button variant="outlined" color="error" onClick={handleLogout}>
                             Déconnexion
+                        </Button>
+                        <Button variant="outlined" color="error" onClick={handleRemove}>
+                            Supprimer le compte
                         </Button>
                     </Stack>
                 )}
@@ -285,14 +367,14 @@ export default function Profil() {
                         <Tab value = "3" label="Mes partages"/>
                     </TabList>
                     <TabPanel value="1" className="tab-content">
-                        <CardListV2 resMessage={recettes.length + (recettes.length>1 ? " Resultats" : " Resultat")}>
+                        <CardList resMessage={recettes.length + (recettes.length>1 ? " Resultats" : " Resultat")}>
                             {cards.map((card) => (
                                 <GenericCard
                                     key={card.id}
                                     card={{
                                         ...card,
                                         text: (
-                                            <RecetteAndRestoElement
+                                            <RecetteElement
                                                 rate={card.rate}
                                                 description={card.description}
                                                 tags_nourriture={card.tags}
@@ -303,7 +385,7 @@ export default function Profil() {
                                     onClick={handleClick}
                                 />
                             ))}
-                        </CardListV2>
+                        </CardList>
                     </TabPanel>
                     <TabPanel value="2" className="tab-content">
                         Item Two

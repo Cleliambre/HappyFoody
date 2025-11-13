@@ -5,8 +5,10 @@ import {Box, Container, Stack} from "@mui/material";
 import wok_sushi from "../../images/wok_sushi.png";
 import {SectionComm} from "../../components/commentaires/SectionComm";
 
-export default function RestaurantComm() {
-    useEffect(() => {document.title = "Commentaires Restaurant - Happy Foody"}, [])
+
+// TODO à modifier pour les recettes
+export default function RecetteComm() {
+    useEffect(() => {document.title = "Commentaires Recette - Happy Foody"}, [])
 
     const [description] = React.useState({
         image : wok_sushi,
@@ -52,8 +54,8 @@ export default function RestaurantComm() {
 
                 {/*Bouton de retour*/}
                 <ButtonReturn
-                    path={"/restaurant/:id"} // TODO retourner à sa page de restaurant
-                    text={"Retour aux informations du restaurant"}
+                    path={"/recette/:id"} // TODO retourner à sa page de restaurant
+                    text={"Retour aux informations de la recette"}
                 />
             </Stack>
 

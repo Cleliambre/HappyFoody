@@ -1,12 +1,29 @@
 import CreateCardDescription from "./CreateCardDescription";
 import React, {useEffect, useState} from "react";
 import {useNavigate} from "react-router-dom";
-import KeyboardReturnIcon from "@mui/icons-material/KeyboardReturn";
-import {Dialog, DialogContent, DialogContentText, DialogTitle, IconButton, List, ListItem, ListItemText, MenuItem, Paper, Select, TextField, Tooltip, Typography, Stack} from "@mui/material";
+import {
+    Dialog,
+    DialogContent,
+    DialogContentText,
+    DialogTitle,
+    IconButton,
+    List,
+    ListItem,
+    ListItemText,
+    MenuItem,
+    Paper,
+    Select,
+    TextField,
+    Tooltip,
+    Typography,
+    Stack,
+    Box
+} from "@mui/material";
 import Button from "@mui/material/Button";
 import DeleteOutlineOutlinedIcon from '@mui/icons-material/DeleteOutlineOutlined';
-import AutoStoriesOutlinedIcon from '@mui/icons-material/AutoStoriesOutlined';
+import RecettesIcon from "@mui/icons-material/MenuBookOutlined";
 import axios from "axios";
+import ButtonReturn from "../../components/ButtonReturn";
 
 export default function RecetteCreation(){
 
@@ -14,15 +31,6 @@ export default function RecetteCreation(){
     useEffect(() => {
         document.title = "Création de Recette - Happy Foody";
     }, [])
-
-    /*attention : cela ne permet que de faire un aperçu de l'image, l'URL créée n'est pas persistante.
-    * il faudra enregistrer l'image (appelée file ici) dans la base de données pour ensuite avoir une url persistante*/
-    /*const handleImageChange = (event) => {
-        const file = event.target.files[0];
-        if (file) {
-            setImage(URL.createObjectURL(file)); // crée une URL locale pour l’aperçu
-        }
-    }*/
 
     const handleImageChange = async (event) => {
         const file = event.target.files[0];
@@ -102,9 +110,6 @@ export default function RecetteCreation(){
     useEffect(() => {
         console.log("tags mis à jour :", tags);
     }, [tags]);
-
-
-    const handleRetour = () => {navigate('/recette');}
 
     // --- TAGS ---
     const handleTagAdd = (nom)=>{
@@ -347,7 +352,7 @@ export default function RecetteCreation(){
             >
                 {/*Titre + bouton + carte de description*/}
                 <Stack direction="row" spacing={2} alignItems="center">
-                    <AutoStoriesOutlinedIcon sx={{ fontSize: "150px" }}/>
+                    <RecettesIcon sx={{ fontSize: "150px" }}/>
 
                     <Stack direction="column" spacing={2} textAlign="center">
                         <Typography variant="h3">
@@ -366,16 +371,10 @@ export default function RecetteCreation(){
                     spacing={1}
                 >
                     {/*Bouton de retour*/}
-                    <Button
-                        variant="contained"
-                        sx={{backgroundColor: "gray", alignItems:"center"}}
-                        onClick={handleRetour}
-                    >
-                        <Typography className = "cancel">
-                            Retour
-                        </Typography>
-                        <KeyboardReturnIcon />
-                    </Button>
+                    <ButtonReturn
+                        path="/recette"
+                        text="Retour à la recherche de recette"
+                    />
 
                     {/*Carte de d'information*/}
                     {compte && (
@@ -543,6 +542,7 @@ export default function RecetteCreation(){
                     <Button
                         variant="contained"
                         sx={{borderRadius:5, backgroundColor:"grey"}}
+                        onClick={() => {navigate('/recette');}}
                     >
                         Annuler
                     </Button>
@@ -554,6 +554,7 @@ export default function RecetteCreation(){
                         Confirmer
                     </Button>
                 </Stack>
+                <Box sx={{ height: '15px' }} />
             </Stack>
 
             {/*boîte de dialogue pour l'ajout d'ingrédient*/}
