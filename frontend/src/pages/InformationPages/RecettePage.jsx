@@ -1,9 +1,7 @@
 import {
     Stack,
     Typography,
-    Avatar,
     Link,
-    Button,
     IconButton,
     Paper,
     List,
@@ -22,9 +20,6 @@ import ColorAvatar from "../../components/ColorAvatar";
 export default function RecettePage() {
     const { id } = useParams();
     const navigate = useNavigate();
-    const handleRetour = () => {navigate('/recette');}
-
-
 
     // =========================
     // États principaux
@@ -277,7 +272,7 @@ export default function RecettePage() {
                                 <StarOutlinedIcon fontSize="small" sx={{ color: "gold" }} />
                             </Stack>
                             <Link href={"#"} variant="body2">
-                                Voir le top3 des commentaires
+                                Voir les commentaires
                             </Link>
                         </Stack>
                     </Stack>

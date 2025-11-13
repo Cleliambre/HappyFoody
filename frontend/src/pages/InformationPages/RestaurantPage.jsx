@@ -10,16 +10,12 @@ import {
 import React, {useEffect, useState} from "react";
 import './informationPages.css'
 
-
-
-// Images
-
 // Création de la carte
 import CardDescription from "./CardDescription";
 import ButtonReturn from "../../components/ButtonReturn";
 import CarteRestaurant from "../../components/restautant_component/CarteRestaurant";
-import {PaperNote} from "../../components/restautant_component/PaperNote";
-import {Titre} from "../../components/Titre";
+import PaperNote from "../../components/restautant_component/PaperNote";
+import Titre from "../../components/Titre";
 import {noteGenerale} from "../../components/smiley_rating/getSmileys";
 import CreationComm from "../../components/commentaires/CreationComm";
 
@@ -280,7 +276,7 @@ export default function RestaurantPage(){
                 }}
             >
                 <a href="#avis">Donner un avis</a>
-                <Link to={"/"}>Voir le détails des avis</Link> {/* TODO relier aux commentaires  */}
+                <Link to={"/restaurant/:id/avis"}>Voir le détails des avis</Link> {/* TODO relier aux commentaires  */}
             </Grid>
 
 

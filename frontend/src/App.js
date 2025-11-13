@@ -34,6 +34,10 @@ import RecetteCreation from "./pages/creationPages/RecetteCreation";
 import CommunauteCreation from "./pages/creationPages/CommunauteCreation";
 import PartageCreation from "./pages/creationPages/PartageCreation";
 
+// Pages de commentaires
+import RestaurantComm from "./pages/InformationPages/RestaurantComm";
+import RecetteComm from "./pages/InformationPages/RecetteComm";
+
 const routes = [
 
     // ==================== PAGES PRINCIPAUX ====================
@@ -65,9 +69,9 @@ const routes = [
     { path: "/createCommunaute", element: <CommunauteCreation /> },
     { path: "/createPartage",    element: <PartageCreation /> },
 
-    // TODO : Pages de commentaires (à ajouter plus tard)
-    // { path: "/recette/:id/commentaires", element: <RecetteCommentaires /> },
-    // { path: "/restaurant/:id/commentaires", element: <RestaurantCommentaires /> },
+    // TODO : Pages de commentaires (à faire)
+    { path: "/recette/:id/commentaires", element: <RecetteComm /> },
+    { path: "/restaurant/:id/avis", element: <RestaurantComm /> },
 
     // Pages de messages
     { path: "/messages/:id",     element: <MessageHome /> },

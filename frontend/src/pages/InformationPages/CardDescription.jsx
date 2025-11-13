@@ -19,7 +19,18 @@ import FavoriteOutlinedIcon from '@mui/icons-material/FavoriteOutlined';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import ChatBubbleOutlineOutlinedIcon from "@mui/icons-material/ChatBubbleOutlineOutlined";
 
-export default function CardDescription({image, tags, titre, texteDescription, onTagClick, like, setLike, handleLike, isCommu = false, children}){
+export default function CardDescription(
+    {
+        image,
+        tags,
+        titre,
+        texteDescription,
+        onTagClick,
+        like=0,
+        handleLike,
+        isCommu = false,
+        children
+    }) {
 
     // Formatage du compteur de likes (ex: 1000 → "1K")
     const formatLikes = (num) => {
