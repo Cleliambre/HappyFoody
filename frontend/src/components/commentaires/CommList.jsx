@@ -34,9 +34,9 @@ const getAuteurRepondu = (commRepondu, comm, commReponses) => {
 };
 
 export default function CommList({ width, commentaires, section, onRepondre }) {
-    // ✅ Séparer les commentaires principaux et les réponses
     const commentairesPrincipaux = commentaires.filter((c) => c.commRepondu === null);
     const reponses = commentaires.filter((c) => c.commRepondu !== null);
+    console.log("LES REPONSES : " + JSON.stringify(reponses));
 
     const [voirPlus, setVoirPlus] = useState({});
     const toggleVoirPlus = (id) => setVoirPlus((prev) => ({ ...prev, [id]: !prev[id] }));

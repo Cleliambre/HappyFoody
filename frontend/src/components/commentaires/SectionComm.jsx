@@ -79,19 +79,32 @@ export function SectionComm({section="communaute", currentProfil, commentaires, 
             const responseRestaurant = await axios.get(`http://localhost:8080/api/restaurant/getRestaurantById/${idRestaurant}`);
             const restaurant = responseRestaurant.data;
 
-            const newCommentaire = {
-                date: Date.now(),
-                auteur: currentProfil,
-                restaurant: restaurant,
-                commRepondu: commentaire,
-                contenu: data.contenu,
-                noteHygiene: data.noteHygiene,
-                noteRapidite: data.noteRapidite,
-                noteService: data.noteService,
-                noteQualite: data.noteQualite
-            }
 
-            const postCommentaire = await axios.post('http://localhost:8080/api/commentaireRestaurant/createCommentaireRestaurant', newCommentaire);
+
+            if(data.idCommRepondu !== 0) {
+                const newCommentaire = {
+                    date: Date.now(),
+                    auteur: currentProfil,
+                    restaurant: restaurant,
+                    commRepondu: commentaire,
+                    contenu: data.contenu,
+                }
+                const postCommentaire = await axios.post('http://localhost:8080/api/commentaire/createCommentaire', newCommentaire)
+            }
+            else{
+                const newCommentaire = {
+                    date: Date.now(),
+                    auteur: currentProfil,
+                    restaurant: restaurant,
+                    commRepondu: commentaire,
+                    contenu: data.contenu,
+                    noteHygiene: data.noteHygiene,
+                    noteRapidite: data.noteRapidite,
+                    noteService: data.noteService,
+                    noteQualite: data.noteQualite
+                }
+                const postCommentaire = await axios.post('http://localhost:8080/api/commentaireRestaurant/createCommentaireRestaurant', newCommentaire)
+            }
 
         }catch(error){
             console.error("Erreur lors de la création du compte :", error);
@@ -119,7 +132,7 @@ export function SectionComm({section="communaute", currentProfil, commentaires, 
                     repondA={reponseA}
                     onPublier={handlePublierCommentaire}
                     onCancel={() => setReponseA(null)}
-                    {...(section === "partage" ? { typeCommentaire: section } : {})}
+                    {...((section === "partage" || section === "restaurant") ? { typeCommentaire: section } : {})}
                 />
             </Container>
             <Box sx={{height: '50px'}}/>
