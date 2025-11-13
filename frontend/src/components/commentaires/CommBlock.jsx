@@ -56,22 +56,28 @@ function CommElement({commentaire, section, onVoirDetails, notes}) {
 
                 {getSmileys(noteGenerale(notes)).icon}
 
-                <Typography
-                    component="button"
-                    onClick={onVoirDetails}
-                    sx={{
-                        cursor: "pointer",
-                        border: "none",
-                        background: "none",
-                        textDecoration: "underline",
-                        color: "primary.main",
-                        "&:hover": {
-                            color: "primary.dark"
-                        }
-                    }}
-                >
-                    Voir les détails de l'avis
-                </Typography>
+                {noteGenerale(notes) === 0 ? (
+                    <Typography sx={{ color: "text.secondary", fontStyle: "italic" }}>
+                        Sans avis
+                    </Typography>
+                ) : (
+                    <Typography
+                        component="button"
+                        onClick={onVoirDetails}
+                        sx={{
+                            cursor: "pointer",
+                            border: "none",
+                            background: "none",
+                            textDecoration: "underline",
+                            color: "primary.main",
+                            "&:hover": {
+                                color: "primary.dark"
+                            }
+                        }}
+                    >
+                        Voir les détails de l'avis
+                    </Typography>
+                )}
 
             </Box>
         );

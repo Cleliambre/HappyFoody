@@ -17,6 +17,7 @@ import tabouleCrame from "../../images/taboule_crame.png";
 import necromencienne from "../../images/necromencienne.jpg";
 import CardList from "../../components/card_list/CardList";
 import ButtonReturn from "../../components/ButtonReturn";
+import ColorAvatar from "../../components/ColorAvatar";
 
 export default function CommunautePage(){
 
@@ -109,8 +110,9 @@ export default function CommunautePage(){
                         {/*auteur*/}
                         <Stack direction="row" spacing={2} alignItems="center">
                             {/*photo de profil (pp)*/}
-                            <Avatar
+                            <ColorAvatar
                                 src = {description.pp}
+                                name={description.auteur}
                             />
                             {/*pseudo*/}
                             <Typography variant="body2">
@@ -161,7 +163,7 @@ export default function CommunautePage(){
                 <Typography variant="h4">Commentaire</Typography>
                 <Card sx={{width:'100%', padding: '10px'}}>
                     <CardHeader
-                        avatar={<Avatar src={ description.pp}/>}
+                        avatar={<ColorAvatar src={ description.pp} name={description.auteur}/>}
                         title={description.auteur}
                     />
                     <Stack direction="column" spacing={2} alignItems="center">

@@ -1,10 +1,11 @@
 import Stack from "@mui/material/Stack";
-import {Avatar, Typography} from "@mui/material";
+import {Typography} from "@mui/material";
 import CardList from "../../components/card_list/CardList";
 import {useEffect, useState} from "react";
 import CardMessage from "../../components/card_list/CardMessage";
 import necromencienne from "../../images/necromencienne.jpg"
 import {useNavigate} from "react-router-dom";
+import ColorAvatar from "../../components/ColorAvatar";
 
 export default function MessageHome(){
     useEffect(() => {
@@ -34,18 +35,18 @@ export default function MessageHome(){
         },
         {
             id : 2,
-            avatar : necromencienne,
+            avatar : null,
             pseudo : "User1",
-            lastMessage : "flemme...",
+            lastMessage : "Salut ! Comment vas-tu depuis ?",
             lu : true,
             muet : false,
             date : new Date(2025, 10, 4, 1, 2),
         },
         {
             id : 3,
-            avatar : necromencienne,
+            avatar : null,
             pseudo : "User2",
-            lastMessage : "flemme...",
+            lastMessage : "J'adore vos recettes !",
             lu : true,
             muet : false,
             date : new Date(2024, 10, 4, 1, 2),
@@ -81,7 +82,7 @@ export default function MessageHome(){
             <CardList>
                 {messages.map((message) => (
                     <CardMessage
-                        avatar={<Avatar src={message.avatar} />}
+                        avatar={<ColorAvatar src={message.avatar} name={message.pseudo} />}
                         pseudo={message.pseudo}
                         lastMessage={message.lastMessage}
                         muet={message.muet}

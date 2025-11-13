@@ -4,6 +4,7 @@ import "./ProfilModification.css"
 import {Typography, Avatar, Stack, TextField, Button, Badge, InputAdornment, IconButton} from "@mui/material";
 import ModeEditOutlinedIcon from '@mui/icons-material/ModeEditOutlined';
 import axios from "axios";
+import ColorAvatar from "../../components/ColorAvatar";
 
 export default function ProfilModification(){
 
@@ -118,8 +119,9 @@ export default function ProfilModification(){
                         </Avatar>
                     </IconButton>}
             >
-                <Avatar
+                <ColorAvatar
                     src={pp}
+                    name={pseudo}
                     className="profil-avatar"
                     sx={{width:150, height:150}}
                 />

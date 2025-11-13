@@ -390,10 +390,10 @@ export default function Profil() {
                         </CardList>
                     </TabPanel>
                     <TabPanel value="2" className="tab-content">
-                        Item Two
+                        Aucun post créé
                     </TabPanel>
                     <TabPanel value="3" className="tab-content">
-                        Item Three
+                        Aucun partage créé actif
                     </TabPanel>
                 </TabContext>
             </div>

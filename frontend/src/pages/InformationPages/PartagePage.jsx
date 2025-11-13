@@ -2,7 +2,6 @@ import Stack from "@mui/material/Stack";
 import CardDescription from "./CardDescription";
 import taboule from "../../images/default_img.png";
 import {
-    Avatar,
     Box,
     Button,
     Card,
@@ -21,6 +20,7 @@ import berserk from "../../images/berserk.jpg";
 import CardList from "../../components/card_list/CardList";
 import ButtonReturn from "../../components/ButtonReturn";
 import Titre from "../../components/Titre";
+import ColorAvatar from "../../components/ColorAvatar";
 
 export default function PartagePage(){
 
@@ -109,8 +109,9 @@ export default function PartagePage(){
                         {/*auteur*/}
                         <Stack direction="row" spacing={2} alignItems="center">
                             {/*photo de profil (pp)*/}
-                            <Avatar
+                            <ColorAvatar
                                 src = {description.pp}
+                                name = { description.auteur}
                             />
 
                             {/*Pseudo + confiance pour améliorer l'affichage selon la taille de la fenêtre*/}
@@ -207,7 +208,7 @@ export default function PartagePage(){
 
                 <Card sx={{width:'100%', padding: '10px'}}>
                     <CardHeader
-                        avatar={<Avatar src={ description.pp}/>}
+                        avatar={<ColorAvatar src={ description.pp} name={description.auteur}/>}
                         title={description.auteur}
                     />
                     <Stack direction="column" spacing={2} alignItems="center">
