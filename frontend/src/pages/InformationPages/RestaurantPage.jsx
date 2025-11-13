@@ -156,10 +156,10 @@ export default function RestaurantPage(){
 
 
     const [notes, setNotes] = useState([
-        {critere:"Rapidité", note:"-"},
-        {critere:"Qualité",  note:"-"},
-        {critere:"Service",  note:"-"},
-        {critere:"Hygiène",  note:"-"}
+        {critere:"Rapidité", note:"-.-"},
+        {critere:"Qualité",  note:"-.-"},
+        {critere:"Service",  note:"-.-"},
+        {critere:"Hygiène",  note:"-.-"}
     ]);
 
 
@@ -287,7 +287,7 @@ export default function RestaurantPage(){
             <Titre text={"Avis du restaurant"}/>
 
             <PaperNote text={"Avis global du restaurant"} isGlobal={true}
-                       note={noteGenerale(notes)}
+                       note={(noteGenerale(notes) === 0 ? "-.-" : noteGenerale(notes))}
             />
 
             <Grid container spacing={2}
@@ -299,7 +299,7 @@ export default function RestaurantPage(){
             >
                 {notes.map((note) => (
                     <PaperNote text={note.critere} isGlobal={false}
-                               note={note.note}
+                               note={(note.note === 0 ? "-.-" : note.note)}
                     />
                 ))}
             </Grid>

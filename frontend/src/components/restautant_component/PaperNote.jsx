@@ -24,7 +24,7 @@ export default function PaperNote({text, note, isGlobal}) {
                             gap:'3px'
                         }}
             >
-                {getSmileys(note).icon}{Number(note).toFixed(1)}{"/5"}
+                {getSmileys(note).icon}{note}{"/5"}
             </Typography>
         </Paper>
     );
