@@ -144,8 +144,8 @@ export default function CreationComm({
                 ...notes,
 
                 // idAuteur
-                username: currentProfil.pseudo,
-                userImageUrl: currentProfil.urlImage,
+                peusdo: currentProfil.pseudo,
+                urlImage: currentProfil.urlImage,
                 scoreConfiance : currentProfil.scoreConfiance
             });
             onCancel();
@@ -175,7 +175,7 @@ export default function CreationComm({
                 title={currentProfil && (
                         <Box sx={{display: "flex", alignItems: "center", gap: 1}}>
                             <Typography variant="subtitle1" fontWeight="bold">
-                                {currentProfil.username}
+                                {currentProfil.pseudo}
                             </Typography>
                             { typeCommentaire === "partage" &&
                             <Box sx={{display: "flex", flexDirection: "row", gap: 0.5}}>

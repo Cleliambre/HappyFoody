@@ -181,7 +181,7 @@ export default function Favori(){
 
                 const newCards = restaurantsAvecInfos.map((restaurant) => ({
                     id: restaurant.idRestaurant,
-                    title: restaurant.titre || "Recette sans nom",
+                    title: restaurant.nom || "Restaurant sans nom",
                     description: restaurant.description || "Aucune description",
                     rate: restaurant.note_moyenne || 0,
                     tags: restaurant.tags || [],

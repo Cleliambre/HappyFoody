@@ -232,7 +232,7 @@ export default function RestaurantPage(){
 
         try {
             const newCommentaire = {
-                date: new Date().toISOString(),
+                date: Date.now(),
                 auteur: compte,
                 restaurant: restaurant,
                 commRepondu: commentaire,
@@ -313,7 +313,7 @@ export default function RestaurantPage(){
                 }}
             >
                 <a href="#avis">Donner un avis</a>
-                <Link to={"/restaurant/:id/avis"}>Voir le détails des avis</Link>
+                <Link to={`/restaurant/${id}/avis`}>Voir le détails des avis</Link>
             </Grid>
 
 

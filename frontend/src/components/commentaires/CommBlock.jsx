@@ -9,6 +9,8 @@ import {
     Typography, Chip, Box,
     Rating,
 
+    Link,
+
     // Dialog
     Dialog, DialogTitle, DialogContent,
     IconButton, Grid
@@ -22,6 +24,7 @@ import CloseIcon from "@mui/icons-material/Close";
 import {getSmileys, noteGenerale} from "../smiley_rating/getSmileys";
 import PaperNote from "../restautant_component/PaperNote";
 import ColorAvatar from "../ColorAvatar";
+import {useNavigate} from "react-router-dom";
 
 function CommElement({commentaire, section, onVoirDetails, notes}) {
 
@@ -95,6 +98,8 @@ function CommElement({commentaire, section, onVoirDetails, notes}) {
 
 export default function CommBlock({ commentaire, section, onRepondre, refAuteurRepondu="" }) {
 
+    const navigate = useNavigate();
+
     const [openDetails, setOpenDetails] = React.useState(false);
 
     const handleVoirDetails = () => {
@@ -106,7 +111,18 @@ export default function CommBlock({ commentaire, section, onRepondre, refAuteurR
     };
 
     const delai = (date) => {
-        const diff = Date.now() - date;
+        let ts;
+        if (typeof date === "number") {
+            ts = date; // déjà en ms
+        } else if (date instanceof Date) {
+            ts = date.getTime();
+        } else {
+            // dateInput est probablement une string ISO
+            ts = Date.parse(date); // renvoie ms ou NaN si invalide
+        }
+
+
+        const diff = Date.now() - ts;
         if (diff<0){
             return "ERROR";
         }
@@ -140,14 +156,16 @@ export default function CommBlock({ commentaire, section, onRepondre, refAuteurR
                 <CardHeader
                     avatar={
                         <ColorAvatar
-                            src={commentaire.userImageUrl}
-                            name={commentaire.username}
+                            src={commentaire.auteur?.urlImage}
+                            name={commentaire.auteur?.pseudo}
                         />
                     }
                     title={
                         <Box sx={{display: "flex", alignItems: "center", gap: 1}}>
                             <Typography variant="subtitle1" fontWeight="bold">
-                                {commentaire.username}
+                                <Link component="button" color="inherit" underline="none" onClick={()=>{navigate(`/profil/${commentaire.auteur.pseudo}`)}}>
+                                    {commentaire.auteur.pseudo}
+                                </Link>
                             </Typography>
 
                             <CommElement
@@ -201,9 +219,11 @@ export default function CommBlock({ commentaire, section, onRepondre, refAuteurR
                             alignItems: "center",
                         }}
                     >
-                        <ColorAvatar src={commentaire.userImageUrl} name={commentaire.username}/>
+                        <ColorAvatar src={commentaire.auteur.urlImage} name={commentaire.auteur.pseudo}/>
                         <Typography variant="subtitle1" fontWeight="bold">
-                            {commentaire.username}
+                            <Link component="button" color="inherit" underline="none" onClick={() => {navigate(`/profil/${commentaire.auteur.pseudo}`)}}>
+                            {commentaire.auteur.pseudo}
+                            </Link>
                         </Typography>
                     </Box>
 
