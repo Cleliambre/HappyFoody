@@ -22,7 +22,16 @@ public class DataInitializer {
 
             // 1️⃣ Créer ou récupérer les tags
             Map<String, Tag> tagsMap = new HashMap<>();
-            String[] tagNames = {"Française", "Thaï", "Italienne", "Américaine", "Japonaise", "Restauration rapide", "Universitaire"};
+            String[] tagNames = {
+                    "Française",
+                    "Thaï",
+                    "Italienne",
+                    "Américaine",
+                    "Japonaise",
+                    "Restauration rapide",
+                    "Universitaire",
+                    "Cuisine maison"
+            };
             for (String tagName : tagNames) {
                 Tag tag = tagRepository.findByNom(tagName).orElseGet(() -> {
                     Tag t = new Tag(TypeTag.NOURRITURE, tagName);
@@ -35,11 +44,23 @@ public class DataInitializer {
             if (restaurantRepository.count() == 0) {
                 Restaurant r1 = new Restaurant(
                         "Le Gramophone",
-                        "Cuisine inventive dans ce bar-restaurant chic et vintage à l'ambiance jazzy, orné d'un vrai gramophone",
+                        """
+                                Restaurant traditionnel, "tout fait maison" (tout !), dans une ambiance chaleureuse\
+                                 et jazzy. Parking Dubreuil à 20m (offert par la maison).
+                                
+                                • 100% cuisine maison/produits frais de saison
+                                • Vente à emporter
+                                • Happy Hour en semaine à partir de 17h30
+                                • Soirée Jazz chaque dernier samedi du mois
+                                """,
                         "+33 1 69 28 42 15",
                         "27 Bd Dubreuil, 91400 Orsay",
                         "lundi-vendredi : 12h00-14h00 et 17h30-22h00; samedi : 18h00-22h00",
-                        "https://www.instagram.com/legramophone_orsay \n"+"https://www.facebook.com/legramophoneorsay",
+                        """
+                                
+                                • https://www.instagram.com/legramophone_orsay
+                                • https://www.facebook.com/legramophoneorsay
+                                """,
                         "€€",
                         "",
                         "Change chaque semaine",
@@ -48,7 +69,7 @@ public class DataInitializer {
                 r1.setUrlImage("https://lh3.googleusercontent.com/gps-cs-s/AG0ilSx9ZqThiaiAYNoygCiZZLmVYsrygNLAfsHfxoou2D7oFfHaAIHD_SmXnA7KLn9HuSR5mq0hsWA_gbmEGXeM-YaEqnihdWNBGSMOH17bC9kaHcUb1LZuBsgStLwcdRIilTCSncsnXQEnkAo=w479-h240-k-no");
                 r1.setLatitude(48.69810340968567);
                 r1.setLongitude(2.18447063783343);
-                r1.setTags(Set.of(tagsMap.get("Française")));
+                r1.setTags(Set.of(tagsMap.get("Française"),tagsMap.get("Cuisine maison")));
 
                 Restaurant r2 = new Restaurant(
                         "Papaye Verte",
@@ -69,7 +90,7 @@ public class DataInitializer {
 
                 Restaurant r3 = new Restaurant(
                         "Brass & Co",
-                        "Restaurant convivial.",
+                        "Brass & Co, c’est avant tout un endroit convivial et un concept exceptionnel, un restaurant le midi et un bar le soir. Nous sommes à Gif sur Yvette au cœur du plateau de Saclay, la Silicon Valley française, niché entre les grandes écoles et à deux pas d’Orsay et Palaiseau. Une escale incontournable connue pour son cadre convivial, sa grande terrasse ensoleillée par les beaux jours sur le Mail Pierre Potier et son équipe friendly et attentive.",
                         "01 22 33 44 55",
                         "24 - 26 Mail Pierre Potier, 91190 Gif-sur-Yvette",
                         "lundi-vendredi : 11h30-23h30",
