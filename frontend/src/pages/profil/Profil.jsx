@@ -293,7 +293,7 @@ export default function Profil() {
         if(!compte) return;
 
         try{
-//Appel du backend
+            //Appel du backend
             const newCompte = {
                 pseudo : "deletedUser"+compte.idCompte,
                 mail : "deletedUser"+compte.idCompte+"@",
@@ -327,7 +327,6 @@ export default function Profil() {
             </Typography>
             <Container sx={{width: '80%'}}>
                 <div className="profil-description">
-                    {/*<Avatar src={compte.urlImage} className="profil-avatar" sx={{width:150, height:150}}/>*/}
                     <ColorAvatar src={compte.urlImage} name={compte.pseudo} className="profil-avatar" sx={{width:150, height:150, fontSize:100}}/>
                     <div className="profil-description-text">
                         <Typography variant="h4" color="textPrimary">
