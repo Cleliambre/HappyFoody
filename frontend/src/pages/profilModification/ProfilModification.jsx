@@ -173,6 +173,7 @@ export default function ProfilModification(){
                                         <Button
                                             variant="contained"
                                             sx ={{borderRadius:'30px'}}
+                                            onClick={() => {navigate('/modificationMotDePasse')}}
                                         >
                                             Modifier
                                         </Button>

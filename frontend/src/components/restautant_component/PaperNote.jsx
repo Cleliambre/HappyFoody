@@ -3,6 +3,9 @@ import {getSmileys} from "../smiley_rating/getSmileys";
 import React from "react";
 
 export function PaperNote({text, note, isGlobal}) {
+    console.log("Nous sommes dans PaperNote ! Voici la note :");
+    console.log(text);
+    console.log(note);
     return (
         <Paper elevation={2}
                sx={{padding:2,

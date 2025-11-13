@@ -68,7 +68,7 @@ const routes = [
 
     // TODO : Pages de commentaires (à ajouter plus tard)
     // { path: "/recette/:id/commentaires", element: <RecetteCommentaires /> },
-    // { path: "/restaurant/:id/commentaires", element: <RestaurantCommentaires /> },
+    { path: "/restaurant/:id/commentaires", element: <RestaurantCommentaires /> },
 
     // Pages de messages
     { path: "/messages/:id", element: <Message/> },

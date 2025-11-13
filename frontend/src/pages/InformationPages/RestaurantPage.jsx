@@ -24,6 +24,7 @@ import {noteGenerale} from "../../components/smiley_rating/getSmileys";
 import CreationComm from "../../components/commentaires/CreationComm";
 
 import {Link, useNavigate, useParams} from "react-router-dom";
+import axios from "axios";
 
 export default function RestaurantPage(){
     const { id } = useParams();
@@ -157,50 +158,59 @@ export default function RestaurantPage(){
         }
     };
 
+
+    const [notes, setNotes] = useState([
+        {critere:"Rapidité", note:"-"},
+        {critere:"Qualité",  note:"-"},
+        {critere:"Service",  note:"-"},
+        {critere:"Hygiène",  note:"-"}
+    ]);
+
+
+    useEffect(() => {
+        if (!restaurant) return;
+
+        const fetchNotes = async () => {
+            try {
+                const endpoints = [
+                    { critere: "Rapidité", url: `noteRapiditeMoyenne` },
+                    { critere: "Qualité", url: `noteQualiteMoyenne` },
+                    { critere: "Service", url: `noteServiceMoyenne` },
+                    { critere: "Hygiène", url: `noteHygieneMoyenne` }
+                ];
+
+                const results = await Promise.all(
+                    endpoints.map(async ({ critere, url }) => {
+                        const res = await fetch(`http://localhost:8080/api/restaurant/${url}/${restaurant.idRestaurant}`);
+                        const text = await res.text();
+                        const note = text ? JSON.parse(text) : 0;
+                        return { critere, note };
+                    })
+                );
+
+                setNotes(results);
+            } catch (err) {
+                console.error("Erreur de récupération des notes :", err);
+            }
+        };
+
+        fetchNotes();
+    }, [restaurant]);
+
+
     // =========================
     // Rendu (avec garde)
     // =========================
     if (!restaurant) {
         return (
             <Typography variant="h6" align="center" sx={{ mt: 4 }}>
-                Chargement de la restaurant...
+                Chargement du restaurant...
             </Typography>
         );
     }
 
-    /*const [description] = React.useState({
-        image : wok_sushi,
-        titre: "Wok Sushi (Test restaurant)",
-
-        description : "Le restaurant Wok & Sushi fusionne deux spécialités asiatiques.\n\n" +
-            "WOK exprime les plats chauds du traiteur asiatique comme les Bobuns, les nouilles sautés, les gambas et bien d'autre encore...\n\n" +
-            "SUSHI vous fera découvrir le restaurant japonais avec certaines saveurs telles que des sushis, des makis california, des sashimis et plus d'autre encore.",
-
-        nbLike : 120,
-        tags : [{label : "Lieu", color : "primary"}, {label : "Nourriture", color : "success"}],
-
-        tel:"01 69 28 88 18",
-        adresse: <a href="https://share.google/lf4D7DbNYBTVCjHmC">RN 446, 91940 Les Ulis</a>,
-        horaire: "lundi - dimanche, 12h00-14h30 et 19h00-22h30",
-        reseau:"-",
-
-        prix:"20-30€ par personne",
-        reserver:<a href="https://royaldesulis.fr/fr/">royaldesulis.fr</a>,
-        menu:<a href="https://royaldesulis.fr/fr/">royaldesulis.fr</a>,
-        site:<a href="https://royaldesulis.fr/fr/">royaldesulis.fr</a>
-
-    });*/
-
     /*const [like, setLike] = React.useState({liked: false, nb:description.nbLike});*/
 
-    const notes = [
-        {critere:"Rapidité", note:restaurant.noteRapidite},
-        {critere:"Qualité",  note:restaurant.noteQualite},
-        {critere:"Service",  note:restaurant.noteService},
-        {critere:"Hygiène",  note:restaurant.noteHygiene}
-    ];
-
-    // TODO : stocker la position du restaurant ?
     const position = [restaurant.latitude, restaurant.longitude];
 
     // ======== Information des restaurants =======
@@ -216,6 +226,33 @@ export default function RestaurantPage(){
         {champ:"📖 Menu : ", variable:restaurant.menu},
         {champ:"🛜 Site Web : ", variable:restaurant.site},
     ];
+
+    const handlePublierCommentaire = async (data) => {
+        let commentaire = null;
+        if(data.idCommRepondu !== 0){
+            const responseCommentaire = await axios.get(`http://localhost:8080/api/commentaire/getCommentaireById/${data.idCommRepondu}`);
+            commentaire = responseCommentaire.data;
+        }
+
+        try {
+            const newCommentaire = {
+                date: new Date().toISOString(),
+                auteur: compte,
+                restaurant: restaurant,
+                commRepondu: commentaire,
+                contenu: data.contenu,
+                noteHygiene: data.noteHygiene,
+                noteRapidite: data.noteRapidite,
+                noteService: data.noteService,
+                noteQualite: data.noteQualite
+            }
+
+            const postCommentaire = await axios.post('http://localhost:8080/api/commentaireRestaurant/createCommentaireRestaurant', newCommentaire);
+
+        }catch(error){
+            console.error("Erreur lors de la création du compte :", error);
+        }
+    }
 
     return (
         <Stack
@@ -280,7 +317,7 @@ export default function RestaurantPage(){
                 }}
             >
                 <a href="#avis">Donner un avis</a>
-                <Link to={"/"}>Voir le détails des avis</Link> {/* TODO relier aux commentaires  */}
+                <Link to={"/"}>Voir le détails des avis</Link>
             </Grid>
 
 
@@ -319,10 +356,13 @@ export default function RestaurantPage(){
             />
 
             {/* Donner un avis */}
-            <Titre id="avis" text="Donner un avis"/>
-            {/* TODO : onPublier... */}
-            <CreationComm typeCommentaire="restaurant" currentProfil={null} onPublier={() => {}} />
-            <Box color="primary" sx={{ height: '30px' }} />
+            {compte && (
+                <Stack>
+                    <Titre id="avis" text="Donner un avis"/>
+                    <CreationComm typeCommentaire="restaurant" currentProfil={compte} onPublier={handlePublierCommentaire} />
+                    <Box color="primary" sx={{ height: '30px' }} />
+                </Stack>
+            )}
         </Stack>
      );
 }

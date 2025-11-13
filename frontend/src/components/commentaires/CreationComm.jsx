@@ -144,8 +144,8 @@ export default function CreationComm({
                 ...notes,
 
                 // idAuteur
-                username: currentProfil.username,
-                userImageUrl: currentProfil.userImageUrl,
+                username: currentProfil.pseudo,
+                userImageUrl: currentProfil.urlImage,
                 scoreConfiance : currentProfil.scoreConfiance
             });
             onCancel();
@@ -167,8 +167,8 @@ export default function CreationComm({
                 avatar={
                     currentProfil && (
                         <ColorAvatar
-                            src={currentProfil.userImageUrl}
-                            name={currentProfil.username}
+                            src={currentProfil.urlImage}
+                            name={currentProfil.pseudo}
                         />
                     )
                 }

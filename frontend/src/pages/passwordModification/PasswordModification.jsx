@@ -13,7 +13,7 @@ export default function PasswordModification() {
     const navigate = useNavigate();
 
     // Id de l'utilisateur connecté (stocké après login)
-    const userId = localStorage.getItem('userId');
+    const userId = localStorage.getItem('idCompte');
     const token = localStorage.getItem('token');
 
     const handlePasswordChange = async () => {
@@ -53,7 +53,7 @@ export default function PasswordModification() {
             if (response.ok && result.includes("succès")) {
                 setError(false);
                 setMessage(result);
-                setTimeout(() => navigate("/profil"), 2000); // redirection après 2s
+                setTimeout(() => navigate("/profil"), 1000); // redirection après 2s
             } else {
                 setError(true);
                 setMessage(result || "Erreur lors de la modification du mot de passe.");
