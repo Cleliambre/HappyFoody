@@ -63,7 +63,7 @@ public class Restaurant {
     public String getDescription() {return description;}
     public void setDescription(String description) {this.description = description;}
 
-    @Column(name = "urlImage", nullable = true)
+    @Column(name = "urlImage", length = 1000, nullable = true)
     public String getUrlImage() {return urlImage;}
     public void setUrlImage(String urlImage) {this.urlImage = urlImage;}
 
