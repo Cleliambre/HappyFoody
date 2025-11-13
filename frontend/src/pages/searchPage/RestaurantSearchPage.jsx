@@ -28,10 +28,10 @@ export default function RestaurantSearchPage(){
 
     const {tags, addTag, deleteTag } = useSearchPageTags([]);
 
-    //const [cards, setCards] = React.useState([]);
+    const [cards, setCards] = React.useState([]);
 
     // Exemple
-    const [cards, setCards] = React.useState([
+    /*const [cards, setCards] = React.useState([
         {
             id: 1,
             title: 'Wok Sushi (Test Restaurant)',
@@ -47,7 +47,7 @@ export default function RestaurantSearchPage(){
             liked: false,
             likes: 97,
         },
-    ]);
+    ]);*/
 
     const navigate = useNavigate();
 
@@ -140,7 +140,7 @@ export default function RestaurantSearchPage(){
 
 
             //Mise à jour de l’état global
-            //setCards(newCards); // TODO à remettre
+            setCards(newCards);
             //setRecettes(recettesAvecInfos);
 
         } catch (err) {
