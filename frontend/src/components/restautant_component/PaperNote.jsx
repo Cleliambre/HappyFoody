@@ -2,7 +2,10 @@ import {Paper, Typography} from "@mui/material";
 import {getSmileys} from "../smiley_rating/getSmileys";
 import React from "react";
 
-export default function PaperNote({text, note, isGlobal}) {
+export default function PaperNote({text, note=0, isGlobal}) {
+
+    const noteText = (note===0 ? "-.-" : Number(note).toFixed(1));
+
     return (
         <Paper elevation={2}
                sx={{padding:2,
@@ -24,7 +27,7 @@ export default function PaperNote({text, note, isGlobal}) {
                             gap:'3px'
                         }}
             >
-                {getSmileys(note).icon}{note}{"/5"}
+                {getSmileys(note).icon}{noteText}{"/5"}
             </Typography>
         </Paper>
     );

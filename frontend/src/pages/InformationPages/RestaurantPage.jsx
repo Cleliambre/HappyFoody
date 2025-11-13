@@ -287,7 +287,7 @@ export default function RestaurantPage(){
             <Titre text={"Avis du restaurant"}/>
 
             <PaperNote text={"Avis global du restaurant"} isGlobal={true}
-                       note={(noteGenerale(notes) === 0 ? "-.-" : noteGenerale(notes))}
+                       note={noteGenerale(notes)}
             />
 
             <Grid container spacing={2}
@@ -299,7 +299,7 @@ export default function RestaurantPage(){
             >
                 {notes.map((note) => (
                     <PaperNote text={note.critere} isGlobal={false}
-                               note={(note.note === 0 ? "-.-" : note.note)}
+                               note={note.note}
                     />
                 ))}
             </Grid>
