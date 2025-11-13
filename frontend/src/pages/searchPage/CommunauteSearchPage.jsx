@@ -10,7 +10,7 @@ export default function CommunauteSearchPage(){
     useEffect(() => {
         document.title = "Recherche Communauté - Happy Foody";
         const timer = setTimeout(() => {
-            alert("Il manque des fonctionnalités à cette page");
+            alert("Il manque des fonctionnalités dans la section communauté");
         }, 0);
     }, [])
 

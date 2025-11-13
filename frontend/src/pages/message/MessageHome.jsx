@@ -8,7 +8,7 @@ import necromencienne from "../../images/necromencienne.jpg"
 export default function MessageHome(){
     useEffect(() => {
         const timer = setTimeout(() => {
-            alert("Il manque des fonctionnalités à cette page");
+            alert("Il manque des fonctionnalités dans la section des messages");
         }, 0);
     }, []);
 

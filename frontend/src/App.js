@@ -71,7 +71,7 @@ const routes = [
     { path: "/partagee/create",   element: <PartageCreation /> },
 
     // TODO : Pages de commentaires (à faire)
-    { path: "/recette/:id/commentaires", element: <RecetteComm /> },
+    { path: "/recette/commentaires", element: <RecetteComm /> },
     { path: "/restaurant/:id/avis",      element: <RestaurantComm /> },
 
     // Pages de messages

@@ -25,7 +25,6 @@ import Titre from "../../components/Titre";
 export default function PartagePage(){
     useEffect(() => {
         const timer = setTimeout(() => {
-            alert("Il manque des fonctionnalités à cette page");
         }, 0);
     }, []);
 

@@ -21,7 +21,6 @@ import ButtonReturn from "../../components/ButtonReturn";
 export default function CommunautePage(){
     useEffect(() => {
         const timer = setTimeout(() => {
-            alert("Il manque des fonctionnalités à cette page");
         }, 0);
     }, []);
 

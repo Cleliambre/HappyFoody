@@ -17,7 +17,6 @@ import dayjs from "dayjs";
 export default function PartageCreation(){
     useEffect(() => {
         const timer = setTimeout(() => {
-            alert("Il manque des fonctionnalités à cette page");
         }, 0);
     }, []);
 

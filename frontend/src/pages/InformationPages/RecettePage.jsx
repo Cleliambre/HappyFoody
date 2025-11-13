@@ -1,13 +1,13 @@
 import {
     Stack,
     Typography,
-    Link,
     IconButton,
     Paper,
     List,
     ListItem,
     ListItemText, Box, Divider
 } from "@mui/material";
+import { Link } from "react-router-dom";
 
 import taboule from "../../images/default_img.png";
 import StarOutlinedIcon from '@mui/icons-material/StarOutlined';
@@ -274,7 +274,7 @@ export default function RecettePage() {
                                 <StarOutlinedIcon fontSize="small" sx={{ color: "gold" }} />
                             </Stack>
                             {/* Corriger le lien */}
-                            <Link to={`/recette/${id}/commentaires`} variant="body2">
+                            <Link to={"/recette/commentaires"} variant="body2">
                                 Voir les commentaires
                             </Link>
                         </Stack>

@@ -10,7 +10,7 @@ export default function PartageSearchPage(){
     useEffect(() => {
         document.title = "Recherche Partage - Happy Foody"
         const timer = setTimeout(() => {
-            alert("Il manque des fonctionnalités à cette page");
+            alert("Il manque des fonctionnalités dans la section Partage");
         }, 0);
     }, [])
 

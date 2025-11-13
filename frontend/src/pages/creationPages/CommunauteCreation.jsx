@@ -10,7 +10,6 @@ import ButtonReturn from "../../components/ButtonReturn";
 export default function CommunauteCreation(){
     useEffect(() => {
         const timer = setTimeout(() => {
-            alert("Il manque des fonctionnalités à cette page");
         }, 0);
     }, []);
 

@@ -10,7 +10,6 @@ import berserker from "../../images/berserker.jpeg"
 export default function Message() {
     useEffect(() => {
         const timer = setTimeout(() => {
-            alert("Il manque des fonctionnalités à cette page");
         }, 0);
     }, []);
 
