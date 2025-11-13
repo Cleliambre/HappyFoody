@@ -79,7 +79,6 @@ export default function CardDescription(
                             <Stack
                                 direction="column"
                                 minHeight={"200px"}
-                                justifyContent="space-between"
                                 spacing={1}
                             >
                                 {/*titre, auteur, note, description*/}

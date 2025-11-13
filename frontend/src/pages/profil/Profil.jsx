@@ -343,15 +343,18 @@ export default function Profil() {
                         className="profil-buttons"
                         spacing={2}
                     >
-                        <Button variant="outlined" className = "modif" onClick={() => {navigate('/modificationProfil')}}>
-                            Modifier le profil
-                        </Button>
+                        <Stack direction="row" justifyContent="space-between" width="100%">
+                            <Button variant="outlined" className = "modif" onClick={() => {navigate('/modificationProfil')}}>
+                                Modifier le profil
+                            </Button>
+                            <Button variant="outlined" color="error" onClick={handleRemove}>
+                                Supprimer le compte
+                            </Button>
+                        </Stack>
                         <Button variant="outlined" color="error" onClick={handleLogout}>
                             Déconnexion
                         </Button>
-                        <Button variant="outlined" color="error" onClick={handleRemove}>
-                            Supprimer le compte
-                        </Button>
+
                     </Stack>
                 )}
             </Container>

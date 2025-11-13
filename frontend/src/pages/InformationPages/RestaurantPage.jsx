@@ -268,7 +268,7 @@ export default function RestaurantPage(){
                 {/* Présentation carte du restaurant */}
                 <CardDescription
                     image={restaurant.urlImage}
-                    tags={tags}
+                    tags={restaurant.tags}
                     titre={restaurant.nom}
                     texteDescription={restaurant.description}
                     like={like}
