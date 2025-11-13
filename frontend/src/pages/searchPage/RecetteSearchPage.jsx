@@ -1,7 +1,7 @@
 import GenericSearchPage from "./GenericSearchPage";
 import RecettesIcon from "@mui/icons-material/MenuBookOutlined";
 import React, {useEffect, useState} from "react";
-import RecetteAndRestoElement from "../../components/card_list/RecetteAndRestoElement";
+import RecetteElement from "../../components/card_list/RecetteElement";
 import img0 from "../../images/default_img.png";
 import GenericCard from "../../components/card_list/GenericCard";
 import { searchRecettes } from "../../services/recetteService";
@@ -258,7 +258,7 @@ export default function RecetteSearchPage(){
             // ✅ Si l'utilisateur est déjà connecté, on le redirige vers le profil
             navigate('/connexion');
         }
-        navigate('/createRecette');
+        navigate('/recette/create');
     };
 
 
@@ -266,7 +266,7 @@ export default function RecetteSearchPage(){
     const [page, setPage] = useState(1);
     const cardsPerPage = 4;
 
-// Calcule les cartes à afficher pour la page actuelle
+    // Calcule les cartes à afficher pour la page actuelle
     const startIndex = (page - 1) * cardsPerPage;
     const endIndex = startIndex + cardsPerPage;
     const paginatedCards = cards.slice(startIndex, endIndex);
@@ -285,13 +285,15 @@ export default function RecetteSearchPage(){
                 barInfo={barInfo}
                 tags={tags}
                 paginationSize={Math.ceil(cards.length / cardsPerPage)}
+
                 onFilterClick={handleFilter}
                 onSearchClick={handleSearch}
                 onTagDelete={handleTag}
                 onPlusClick={handleCreate}
+                onPageChange={handlePageChange}
+
                 resultCount={cards.length}
                 page={page}
-                onPageChange={handlePageChange}
             >
                 {paginatedCards.map((card) => (
                     <GenericCard
@@ -299,7 +301,7 @@ export default function RecetteSearchPage(){
                         card={{
                             ...card,
                             text: (
-                                <RecetteAndRestoElement
+                                <RecetteElement
                                     rate={card.rate}
                                     description={card.description}
                                     tags_nourriture={card.tags}

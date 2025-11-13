@@ -1,10 +1,10 @@
 import {Typography, Stack, Tab} from "@mui/material";
 import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlined';
 import {TabContext, TabList, TabPanel} from "@mui/lab";
-import CardList from "../../components/card_list/CardListV2";
+import CardList from "../../components/card_list/CardList";
 import React, {useEffect} from "react";
 import GenericCard from "../../components/card_list/GenericCard";
-import RecetteAndRestoElement from "../../components/card_list/RecetteAndRestoElement";
+import RecetteElement from "../../components/card_list/RecetteElement";
 import img0 from "../../images/default_img.png";
 import img1 from "../../images/wok_sushi.png";
 import PostElement from "../../components/card_list/PostElement";
@@ -203,7 +203,7 @@ export default function Favori(){
         {
             id: 0,
             title: 'Taboulé (Test Recette)',
-            text: <RecetteAndRestoElement
+            text: <RecetteElement
                 rate={3.5}
                 description="Un très bon taboulé, très frais et aérien."
                 tags_nourriture={["Végétarien"]}
@@ -216,7 +216,7 @@ export default function Favori(){
         {
             id: 1,
             title: 'Taboulé (Test Recette)',
-            text: <RecetteAndRestoElement
+            text: <RecetteElement
                 rate={3.5}
                 description="Un très bon taboulé, très frais et aérien."
                 tags_nourriture={["Végétarien"]}
@@ -229,7 +229,7 @@ export default function Favori(){
         {
             id: 2,
             title: 'Taboulé (Test Recette)',
-            text: <RecetteAndRestoElement
+            text: <RecetteElement
                 rate={3.5}
                 description="Un très bon taboulé, très frais et aérien."
                 tags_nourriture={["Végétarien"]}
@@ -246,7 +246,7 @@ export default function Favori(){
         {
             id: 1,
             title: 'Wok Sushi (Test Restaurant)',
-            text: <RecetteAndRestoElement
+            text: <RecetteElement
                 rate={4.0}
                 description="Le restaurant Wok & Sushi fusionne deux spécialités asiatiques.
                     WOK exprime les plats chauds du traiteur asiatique comme les Bobuns,
@@ -465,7 +465,7 @@ export default function Favori(){
                                 card={{
                                     ...card,
                                     text: (
-                                        <RecetteAndRestoElement
+                                        <RecetteElement
                                             rate={card.rate}
                                             description={card.description}
                                             tags_nourriture={card.tags}
@@ -487,7 +487,7 @@ export default function Favori(){
                                 card={{
                                     ...card,
                                     text: (
-                                        <RecetteAndRestoElement
+                                        <RecetteElement
                                             rate={card.rate}
                                             description={card.description}
                                             tags_nourriture={card.tags}
@@ -509,7 +509,7 @@ export default function Favori(){
                                 card={{
                                     ...card,
                                     text: (
-                                        <RecetteAndRestoElement
+                                        <RecetteElement
                                             rate={card.rate}
                                             description={card.description}
                                             tags_nourriture={card.tags}
@@ -531,7 +531,7 @@ export default function Favori(){
                                 card={{
                                     ...card,
                                     text: (
-                                        <RecetteAndRestoElement
+                                        <RecetteElement
                                             rate={card.rate}
                                             description={card.description}
                                             tags_nourriture={card.tags}

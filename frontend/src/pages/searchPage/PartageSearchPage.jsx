@@ -1,12 +1,16 @@
 import GenericSearchPage from "./GenericSearchPage";
-import React, {useEffect} from "react";
+import React, {useEffect, useState} from "react";
 import VolunteerActivismOutlinedIcon from '@mui/icons-material/VolunteerActivismOutlined';
 import PartageElement from "../../components/card_list/PartageElement";
 import img3 from "../../images/poulet.jpg";
 import GenericCard from "../../components/card_list/GenericCard";
+import {useNavigate} from "react-router-dom";
 
 export default function PartageSearchPage(){
     useEffect(() => {document.title = "Recherche Partage - Happy Foody"}, [])
+
+    //Outil permettant de naviguer entre les pages web
+    const navigate = useNavigate();
 
     const [pageDescription] = React.useState({
         title : "Partage",
@@ -19,10 +23,7 @@ export default function PartageSearchPage(){
         isPlus : true
     });
 
-    const [tags, setTags] = React.useState([
-        {name: "Végétarien", color: "success"},
-        {name:"test"}
-    ]);
+    const [tags, setTags] = React.useState([]);
 
     const handleTag = (deletingTag)=> {
         const newTags = tags.filter((description) => description.name !== deletingTag.name);
@@ -30,7 +31,7 @@ export default function PartageSearchPage(){
     }
 
     const handleClick = (card) => {
-        alert(`Carte sélectionnée : ${card.title}`);
+        navigate(`/partage/${card.id}`);
     };
 
     const handleLike = (card) => {
@@ -54,11 +55,18 @@ export default function PartageSearchPage(){
     const handleSearch = ()=> {}
 
     /*à compléter pour gérer le bouton de création de recette*/
-    const handleCreate = ()=> {};
+    const handleCreate = ()=> {
+        const idCompte = localStorage.getItem('idCompte');
+        if (idCompte) {
+            // ✅ Si l'utilisateur est déjà connecté, on le redirige vers le profil
+            navigate('/connexion');
+        }
+        navigate('/partage/create');
+    };
 
     const [cards, setCards] = React.useState([
         {
-            id: 3,
+            id: 1,
             title: 'Poulet rôti (Test Partage)',
             text: <PartageElement
                 pseudo="necroDansLAme"
@@ -81,7 +89,7 @@ export default function PartageSearchPage(){
             likes: 15400,
         },
         {
-            id: 4,
+            id: 2,
             title: 'Poulet rôti (Test Partage)',
             text: <PartageElement
                 pseudo="necroDansLAme"
@@ -105,18 +113,31 @@ export default function PartageSearchPage(){
         },
     ]);
 
+    // ---- Pagination ----
+    const [page, setPage] = useState(1);
+    const cardsPerPage = 4;
+
+    // Calcule les cartes à afficher pour la page actuelle
+    const startIndex = (page - 1) * cardsPerPage;
+    const endIndex = startIndex + cardsPerPage;
+    const paginatedCards = cards.slice(startIndex, endIndex);
+
     return (
         <GenericSearchPage
             pageDescr={pageDescription}
             barInfo={barInfo}
-            paginationSize={30}
             tags={tags}
+            paginationSize={Math.ceil(cards.length / cardsPerPage)}
+
             onPlusClick={handleCreate}
             onFilterClick={handleFilter}
             onSearchClick={handleSearch}
             onTagDelete={handleTag}
+
+            resultCount={cards.length}
+            page={page}
         >
-            {cards.map((card) => (
+            {paginatedCards.map((card) => (
                 <GenericCard
                     card={card}
                     onLike={handleLike}

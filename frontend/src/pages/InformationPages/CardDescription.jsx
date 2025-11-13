@@ -19,7 +19,18 @@ import FavoriteOutlinedIcon from '@mui/icons-material/FavoriteOutlined';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import ChatBubbleOutlineOutlinedIcon from "@mui/icons-material/ChatBubbleOutlineOutlined";
 
-export default function CardDescription({image, tags, titre, texteDescription, onTagClick, like, setLike, handleLike, isCommu = false, children}){
+export default function CardDescription(
+    {
+        image,
+        tags,
+        titre,
+        texteDescription,
+        onTagClick,
+        like=0,
+        handleLike,
+        isCommu = false,
+        children
+    }) {
 
     // Formatage du compteur de likes (ex: 1000 → "1K")
     const formatLikes = (num) => {
@@ -137,7 +148,7 @@ export default function CardDescription({image, tags, titre, texteDescription, o
                 }
 
                 {/* Tags (s'affiche seulement s'il y a des tags) */}
-                {(!(tags===undefined || tags === null) && tags.length > 0) ?
+                {(!(tags === undefined || tags === null) && tags.length > 0) ?
                     <Collapse in={isExpanded}>
                         <Stack direction="row" flexWrap="wrap" gap={1} margin="10px">
                             {tags.map((tag) => (

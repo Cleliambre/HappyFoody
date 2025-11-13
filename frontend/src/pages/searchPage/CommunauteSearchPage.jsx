@@ -1,5 +1,5 @@
 import GenericSearchPage from "./GenericSearchPage";
-import React, {useEffect} from "react";
+import React, {useEffect, useState} from "react";
 import PeopleAltOutlinedIcon from '@mui/icons-material/PeopleAltOutlined';
 import GenericCard from "../../components/card_list/GenericCard";
 import PostElement from "../../components/card_list/PostElement";
@@ -23,10 +23,7 @@ export default function CommunauteSearchPage(){
         isPlus : true
     });
 
-    const [tags, setTags] = React.useState([
-        {name: "Végétarien", color: "success"},
-        {name:"test"}
-    ]);
+    const [tags, setTags] = React.useState([]);
 
     const handleTag = (deletingTag)=> {
         const newTags = tags.filter((description) => description.name !== deletingTag.name);
@@ -58,7 +55,14 @@ export default function CommunauteSearchPage(){
     const handleSearch = ()=> {}
 
     /*à compléter pour gérer le bouton de création de recette*/
-    const handleCreate = ()=> {};
+    const handleCreate = ()=> {
+        const idCompte = localStorage.getItem('idCompte');
+        if (idCompte) {
+            // ✅ Si l'utilisateur est déjà connecté, on le redirige vers le profil
+            navigate('/connexion');
+        }
+        navigate('/communaute/create');
+    };
 
     const [cards, setCards] = React.useState([
         {
@@ -93,19 +97,31 @@ export default function CommunauteSearchPage(){
         }
     ]);
 
+    // ---- Pagination ----
+    const [page, setPage] = useState(1);
+    const cardsPerPage = 4;
+
+    // Calcule les cartes à afficher pour la page actuelle
+    const startIndex = (page - 1) * cardsPerPage;
+    const endIndex = startIndex + cardsPerPage;
+    const paginatedCards = cards.slice(startIndex, endIndex);
 
     return (
         <GenericSearchPage
             pageDescr={pageDescription}
             barInfo={barInfo}
             tags={tags}
-            paginationSize={30}
+            paginationSize={Math.ceil(cards.length / cardsPerPage)}
+
             onPlusClick={handleCreate}
             onFilterClick={handleFilter}
             onSearchClick={handleSearch}
             onTagDelete={handleTag}
+
+            resultCount={cards.length}
+            page={page}
         >
-            {cards.map((card) => (
+            {paginatedCards.map((card) => (
                 <GenericCard
                     card={card}
                     onLike={handleLike}
