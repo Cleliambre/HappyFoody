@@ -1,13 +1,13 @@
 import {
     Stack,
     Typography,
-    Link,
     IconButton,
     Paper,
     List,
     ListItem,
-    ListItemText, Box
+    ListItemText, Box, Divider
 } from "@mui/material";
+import { Link } from "react-router-dom";
 
 import taboule from "../../images/default_img.png";
 import StarOutlinedIcon from '@mui/icons-material/StarOutlined';
@@ -16,6 +16,8 @@ import CardDescription from "./CardDescription";
 import ButtonReturn from "../../components/ButtonReturn";
 import { useParams, useNavigate } from "react-router-dom";
 import ColorAvatar from "../../components/ColorAvatar";
+import CreationComm from "../../components/commentaires/CreationComm";
+import Titre from "../../components/Titre";
 
 export default function RecettePage() {
     const { id } = useParams();
@@ -271,7 +273,8 @@ export default function RecettePage() {
                                 </Typography>
                                 <StarOutlinedIcon fontSize="small" sx={{ color: "gold" }} />
                             </Stack>
-                            <Link href={"#"} variant="body2">
+                            {/* Corriger le lien */}
+                            <Link to={"/recette/commentaires"} variant="body2">
                                 Voir les commentaires
                             </Link>
                         </Stack>
@@ -318,7 +321,7 @@ export default function RecettePage() {
 
             {/* Ingrédients et étapes */}
             <Stack width={"80%"} maxWidth={"900px"} alignItems="start" spacing={1}>
-                <Typography variant="h5">Ingrédients :</Typography>
+                <Titre text="Ingrédients :"/>
                 <List sx={{ listStyleType: 'disc', pl: 4 }}>
                     {ingredients.map((ingredient, index) => (
                         <ListItem key={index} sx={{ display: 'list-item', py: 0 }}>
@@ -329,7 +332,7 @@ export default function RecettePage() {
                     ))}
                 </List>
 
-                <Typography variant="h5">Préparation :</Typography>
+                <Titre text="Préparation :"/>
                 <List sx={{ listStyleType: 'decimal', pl: 4 }}>
                     {etapes.map((etape, index) => (
                         <ListItem key={index} sx={{ display: 'list-item', py: 0 }}>
@@ -338,6 +341,13 @@ export default function RecettePage() {
                     ))}
                 </List>
             </Stack>
+
+            <Divider variant="middle" flexItem
+                     sx={{borderBottomWidth: 3, padding:'10px'}}
+            />
+
+            <Titre text="Commentaire"/>
+            <CreationComm typeCommentaire="recette" /> {/*TODO : current profil*/}
             <Box sx={{ height: '30px' }} />
         </Stack>
     );

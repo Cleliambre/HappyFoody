@@ -59,11 +59,11 @@ public class Restaurant {
     public String getNom() {return nom;}
     public void setNom(String nom) {this.nom = nom;}
 
-    @Column(name = "description", nullable = true)
+    @Column(name = "description", nullable = true, length = 10000)
     public String getDescription() {return description;}
     public void setDescription(String description) {this.description = description;}
 
-    @Column(name = "urlImage", nullable = true)
+    @Column(name = "urlImage", length = 1000, nullable = true)
     public String getUrlImage() {return urlImage;}
     public void setUrlImage(String urlImage) {this.urlImage = urlImage;}
 

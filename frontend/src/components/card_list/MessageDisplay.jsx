@@ -1,8 +1,9 @@
-import {Avatar, Card, CardActions, CardContent, Typography} from "@mui/material";
+import {Card, CardActions, CardContent, Typography} from "@mui/material";
 import Stack from "@mui/material/Stack";
 import React from "react";
+import ColorAvatar from "../ColorAvatar";
 
-export default function MessageDisplay({avatar, content, date, isUser}){
+export default function MessageDisplay({avatar, pseudo="", content, date, isUser}){
     const formatDate = () => {
         let year = date.getFullYear();
         let month = date.getMonth(); //0 : Janvier
@@ -84,7 +85,7 @@ export default function MessageDisplay({avatar, content, date, isUser}){
             >
                 <CardContent>
                     <Stack direction="row" spacing={2} alignItems={"center"}>
-                        <Avatar src={avatar}/>
+                        <ColorAvatar src={avatar} name={pseudo}/>
                         <Typography variant="body2" sx={{whiteSpace: "pre-wrap"}}>
                             {content}
                         </Typography>

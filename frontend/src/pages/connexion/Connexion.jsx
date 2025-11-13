@@ -1,8 +1,8 @@
 import React, {useState, useEffect} from 'react';
 import './Connexion.css'
-import {Typography, TextField, Button, Link} from '@mui/material';
+import {Typography, TextField, Button} from '@mui/material';
 import {useNavigate} from 'react-router-dom';
-
+import { Link } from "react-router-dom";
 
 export default function Connexion() {
 
@@ -68,7 +68,7 @@ export default function Connexion() {
                        onChange={(e) => setPassword(e.target.value)}
                    />
                    {/*"#" à remplacer avec l'url de la page d'accueil*/}
-                   <Link href="#" className = 'lien-mdp'>Mot de passe oublié ?</Link>
+                   <Link to={"/oublieMotDePasse"} className = 'lien-mdp'>Mot de passe oublié ?</Link>
                 </div>
            </div>
            <div className="validation-group">
@@ -94,7 +94,7 @@ export default function Connexion() {
                    className="inscription-link"
                    variant="body3"
                    color="textSecondary">
-                   Pas de compte ?
+                   {"Pas de compte ? "}
                    <Link
                        component="button"
                        variant="body2"

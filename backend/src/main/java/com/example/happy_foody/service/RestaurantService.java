@@ -114,11 +114,11 @@ public class RestaurantService {
 
     }
 
-    public Long getNoteMoyenneById(Long id){
-        Long noteHygiene = restaurantRepository.findNoteHygieneMoyenneById(id);
-        Long noteQualite = restaurantRepository.findNoteQualiteMoyenneById(id);
-        Long noteRapidite = restaurantRepository.findNoteRapiditeMoyenneById(id);
-        Long noteService = restaurantRepository.findNoteServiceMoyenneById(id);
+    public Double getNoteMoyenneById(Long id){
+        Double noteHygiene = restaurantRepository.findNoteHygieneMoyenneById(id);
+        Double noteQualite = restaurantRepository.findNoteQualiteMoyenneById(id);
+        Double noteRapidite = restaurantRepository.findNoteRapiditeMoyenneById(id);
+        Double noteService = restaurantRepository.findNoteServiceMoyenneById(id);
 
         // Remplacer les null par 0
         noteHygiene = (noteHygiene != null) ? noteHygiene : 0L;
@@ -129,6 +129,29 @@ public class RestaurantService {
         return (noteService + noteHygiene + noteQualite + noteRapidite) / 4;
     }
 
+    public Double getNoteQualiteMoyenneById(Long id){
+        Double noteQualite = restaurantRepository.findNoteQualiteMoyenneById(id);
+        noteQualite = (noteQualite != null) ? noteQualite : 0L;
+        return noteQualite;
+    }
+
+    public Double getNoteServiceMoyenneById(Long id){
+        Double noteService = restaurantRepository.findNoteServiceMoyenneById(id);
+        noteService = (noteService != null) ? noteService : 0L;
+        return noteService;
+    }
+
+    public Double getNoteRapiditeMoyenneById(Long id){
+        Double noteRapidite = restaurantRepository.findNoteRapiditeMoyenneById(id);
+        noteRapidite = (noteRapidite != null) ? noteRapidite : 0L;
+        return noteRapidite;
+    }
+
+    public Double getNoteHygieneMoyenneById(Long id){
+        Double noteHygiene = restaurantRepository.findNoteHygieneMoyenneById(id);
+        noteHygiene = (noteHygiene != null) ? noteHygiene : 0L;
+        return noteHygiene;
+    }
 
     public Long getNombreLikesById(Long id){
         return restaurantRepository.findNombreLikesById(id);

@@ -27,6 +27,11 @@ public class CommentaireController {
         return commentaireService.getCommentaireById(id);
     }
 
+    @GetMapping("/getCommentaireResponsesByRestaurant/{id}")
+    public List<Commentaire> getCommentaireResponsesById(@PathVariable(value = "id") Long id){
+        return commentaireService.getCommentaireResponsesByRestaurant(id);
+    }
+
     @PostMapping("/createCommentaire")
     public Commentaire createCommentaire(@RequestBody Commentaire commentaire){return commentaireService.createCommentaire(commentaire);}
 

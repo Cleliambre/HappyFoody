@@ -7,7 +7,12 @@ import GenericCard from "../../components/card_list/GenericCard";
 import {useNavigate} from "react-router-dom";
 
 export default function PartageSearchPage(){
-    useEffect(() => {document.title = "Recherche Partage - Happy Foody"}, [])
+    useEffect(() => {
+        document.title = "Recherche Partage - Happy Foody"
+        const timer = setTimeout(() => {
+            alert("Il manque des fonctionnalités dans la section Partage");
+        }, 0);
+    }, [])
 
     //Outil permettant de naviguer entre les pages web
     const navigate = useNavigate();

@@ -8,7 +8,12 @@ import {SectionComm} from "../../components/commentaires/SectionComm";
 
 // TODO à modifier pour les recettes
 export default function RecetteComm() {
-    useEffect(() => {document.title = "Commentaires Recette - Happy Foody"}, [])
+    useEffect(() => {
+        document.title = "Commentaires Recette - Happy Foody"
+        const timer = setTimeout(() => {
+                alert("Il manque des fonctionnalités dans cette page.");
+            }, 0);
+    }, [])
 
     const [description] = React.useState({
         image : wok_sushi,
@@ -19,7 +24,7 @@ export default function RecetteComm() {
             "SUSHI vous fera découvrir le restaurant japonais avec certaines saveurs telles que des sushis, des makis california, des sashimis et plus d'autre encore.",
 
         nbLike : 120,
-        tags : [{label : "Lieu", color : "primary"}, {label : "Nourriture", color : "success"}],
+        tags : [{label : "Nourriture", color : "success"}],
 
         tel:"01 69 28 88 18",
         adresse: <a href="https://share.google/lf4D7DbNYBTVCjHmC">RN 446, 91940 Les Ulis</a>,
@@ -54,12 +59,12 @@ export default function RecetteComm() {
 
                 {/*Bouton de retour*/}
                 <ButtonReturn
-                    path={"/recette/:id"} // TODO retourner à sa page de restaurant
+                    path={"/recette"} // TODO retourner à sa page de restaurant
                     text={"Retour aux informations de la recette"}
                 />
             </Stack>
 
-            <SectionComm section="restaurant" commentaires={[]} currentProfil={null} setComm={()=>{}}/>
+            <SectionComm section="recette" commentaires={[]} currentProfil={null} setComm={()=>{}}/>
             <Box sx={{ height: '30px' }} />
         </Container>
     );

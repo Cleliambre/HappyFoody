@@ -60,7 +60,7 @@ function CreationCommElement(
         setLabel("Avis");
 
         return (
-            <Grid container spacing={5}
+            <Grid container spacing={5} width={'100%'}
                   sx={{
                       justifyContent: "space-around",
                       alignItems: "center"
@@ -144,8 +144,8 @@ export default function CreationComm({
                 ...notes,
 
                 // idAuteur
-                username: currentProfil.username,
-                userImageUrl: currentProfil.userImageUrl,
+                peusdo: currentProfil.pseudo,
+                urlImage: currentProfil.urlImage,
                 scoreConfiance : currentProfil.scoreConfiance
             });
             onCancel();
@@ -167,15 +167,15 @@ export default function CreationComm({
                 avatar={
                     currentProfil && (
                         <ColorAvatar
-                            src={currentProfil.userImageUrl}
-                            name={currentProfil.username}
+                            src={currentProfil.urlImage}
+                            name={currentProfil.pseudo}
                         />
                     )
                 }
                 title={currentProfil && (
                         <Box sx={{display: "flex", alignItems: "center", gap: 1}}>
                             <Typography variant="subtitle1" fontWeight="bold">
-                                {currentProfil.username}
+                                {currentProfil.pseudo}
                             </Typography>
                             { typeCommentaire === "partage" &&
                             <Box sx={{display: "flex", flexDirection: "row", gap: 0.5}}>

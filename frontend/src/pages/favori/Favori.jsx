@@ -13,10 +13,13 @@ import PartageElement from "../../components/card_list/PartageElement";
 import img3 from "../../images/poulet.jpg";
 import SearchBar from "../../components/searchBar/SearchBar";
 import {useNavigate} from 'react-router-dom';
+import RestoElement from "../../components/card_list/RestoElement";
 
 export default function Favori(){
 
-    useEffect(() => {document.title = "Favoris - Happy Foody"}, [])
+    useEffect(() => {
+        document.title = "Favoris - Happy Foody"
+    }, [])
     //Pour pouvoir changer de catégorie dans la Tab
     const [value, setValue] = React.useState('1');
     const handleChange = (event, newValue) => {
@@ -37,167 +40,110 @@ export default function Favori(){
 
     const navigate = useNavigate();
 
-    const [compte, setCompte] = React.useState([]);
+    const [compte, setCompte] = React.useState(null);
     const [recettesLiked, setRecettesLiked] = React.useState([]);
     const [restaurantsLiked, setRestaurantsLiked] = React.useState([]);
     const [cardsRecettes, setCardsRecettes] = React.useState([]);
     const [cardsRestaurants, setCardsRestaurants] = React.useState([]);
 
-    // 🔹 Récupération du compte connecté s’il y en a un
     useEffect(() => {
         const idCompte = localStorage.getItem('idCompte');
-
         if (!idCompte) {
-            // Si on est sur /profil (pas de pseudo) et pas connecté → redirige vers /connexion
             navigate('/connexion');
             return;
         }
 
-        // Récupère le compte connecté
-        fetch(`http://localhost:8080/api/compte/getCompteById/${idCompte}`)
-            .then(async res => {
-                const text = await res.text();
-                return text ? JSON.parse(text) : null;
-            })
-            .then(data => {
-                setCompte(data);
-            })
-            .catch(err => console.error("Erreur de récupération du compte connecté :", err));
-    }, [navigate]);
-
-    useEffect(() => {
-        const fetchData = async () => {
+        const chargerDonnees = async () => {
             try {
-                if (compte) {
-                    try {
-                        const likedResponse = await fetch(`http://localhost:8080/api/compte/getLikedRecettes/${compte.idCompte}`);
-                        if (likedResponse.ok) {
-                            const likedRecettes = await likedResponse.json();
-                            setRecettesLiked(likedRecettes);
-                        }
-                    } catch (e) {
-                        console.warn("Impossible de charger les likes de l'utilisateur :", e);
-                    }
-                }
+                // 1️⃣ Charger le compte
+                const compteRes = await fetch(`http://localhost:8080/api/compte/getCompteById/${idCompte}`);
+                const compteText = await compteRes.text();
+                const compteData = compteText ? JSON.parse(compteText) : null;
+                setCompte(compteData);
 
-                if(!recettesLiked) return;
+                if (!compteData?.idCompte) return;
 
+                // 2️⃣ Charger les recettes likées
+                const recettesRes = await fetch(`http://localhost:8080/api/compte/getLikedRecettes/${compteData.idCompte}`);
+                const recettesLiked = recettesRes.ok ? await recettesRes.json() : [];
+                setRecettesLiked(recettesLiked);
+
+                // Charger leurs infos complémentaires
                 const recettesAvecInfos = await Promise.all(
                     recettesLiked.map(async (recette) => {
-                        const [noteResponse, likesResponse] = await Promise.all([
+                        const [noteRes, likesRes] = await Promise.all([
                             fetch(`http://localhost:8080/api/recette/noteMoyenne/${recette.idRecette}`),
                             fetch(`http://localhost:8080/api/recette/nombreLikes/${recette.idRecette}`)
                         ]);
 
-                        const safeJson = async (response, defaultValue = 0) => {
-                            try {
-                                if (!response.ok) return defaultValue;
-                                const text = await response.text();
-                                return text ? JSON.parse(text) : defaultValue;
-                            } catch {
-                                return defaultValue;
-                            }
-                        };
-
-                        const note_moyenne = await safeJson(noteResponse, 0);
-                        const nb_likes = await safeJson(likesResponse, 0);
+                        const noteText = await noteRes.text();
+                        const likesText = await likesRes.text();
 
                         return {
                             ...recette,
-                            note_moyenne,
-                            nb_likes,
+                            note_moyenne: noteText ? JSON.parse(noteText) : 0,
+                            nb_likes: likesText ? JSON.parse(likesText) : 0,
                             id: recette.idRecette,
                             liked: true
                         };
                     })
                 );
 
-                const newCards = recettesAvecInfos.map((recette) => ({
-                    id: recette.idRecette,
-                    title: recette.titre || "Recette sans nom",
-                    description: recette.description || "Aucune description",
-                    rate: recette.note_moyenne || 0,
-                    tags: recette.tags || [],
-                    thumbnail: recette.urlImage || img0,
-                    liked: recette.liked,
-                    likes: recette.nb_likes || 0,
-                }));
+                setCardsRecettes(recettesAvecInfos.map((r) => ({
+                    id: r.id,
+                    title: r.titre || "Recette sans nom",
+                    description: r.description || "Aucune description",
+                    rate: r.note_moyenne,
+                    tags_nourriture: r.tags || [],
+                    thumbnail: r.urlImage || img0,
+                    liked: true,
+                    likes: r.nb_likes
+                })));
 
-                setCardsRecettes(newCards);
-            } catch (err) {
-                console.error(err);
-            }
-        };
+                // 3️⃣ Charger les restaurants likés
+                const restosRes = await fetch(`http://localhost:8080/api/compte/getLikedRestaurants/${compteData.idCompte}`);
+                const restosLiked = restosRes.ok ? await restosRes.json() : [];
+                setRestaurantsLiked(restosLiked);
 
-        fetchData();
-    }, [compte, recettesLiked]);
-
-    useEffect(() => {
-        const fetchData = async () => {
-            try {
-                if (compte) {
-                    try {
-                        const likedResponse = await fetch(`http://localhost:8080/api/compte/getLikedRestaurants/${compte.idCompte}`);
-                        if (likedResponse.ok) {
-                            const likedRestaurants = await likedResponse.json();
-                            setRestaurantsLiked(likedRestaurants);
-                        }
-                    } catch (e) {
-                        console.warn("Impossible de charger les likes de l'utilisateur :", e);
-                    }
-                }
-
-                if(!restaurantsLiked) return;
-
-                const restaurantsAvecInfos = await Promise.all(
-                    restaurantsLiked.map(async (restaurant) => {
-                        const [noteResponse, likesResponse] = await Promise.all([
+                const restosAvecInfos = await Promise.all(
+                    restosLiked.map(async (restaurant) => {
+                        const [noteRes, likesRes] = await Promise.all([
                             fetch(`http://localhost:8080/api/restaurant/noteMoyenne/${restaurant.idRestaurant}`),
                             fetch(`http://localhost:8080/api/restaurant/nombreLikes/${restaurant.idRestaurant}`)
                         ]);
 
-                        const safeJson = async (response, defaultValue = 0) => {
-                            try {
-                                if (!response.ok) return defaultValue;
-                                const text = await response.text();
-                                return text ? JSON.parse(text) : defaultValue;
-                            } catch {
-                                return defaultValue;
-                            }
-                        };
-
-                        const note_moyenne = await safeJson(noteResponse, 0);
-                        const nb_likes = await safeJson(likesResponse, 0);
+                        const noteText = await noteRes.text();
+                        const likesText = await likesRes.text();
 
                         return {
                             ...restaurant,
-                            note_moyenne,
-                            nb_likes,
+                            note_moyenne: noteText ? JSON.parse(noteText) : 0,
+                            nb_likes: likesText ? JSON.parse(likesText) : 0,
                             id: restaurant.idRestaurant,
                             liked: true
                         };
                     })
                 );
 
-                const newCards = restaurantsAvecInfos.map((restaurant) => ({
-                    id: restaurant.idRestaurant,
-                    title: restaurant.titre || "Recette sans nom",
-                    description: restaurant.description || "Aucune description",
-                    rate: restaurant.note_moyenne || 0,
-                    tags: restaurant.tags || [],
-                    thumbnail: restaurant.urlImage || img0,
-                    liked: restaurant.liked,
-                    likes: restaurant.nb_likes || 0,
-                }));
+                setCardsRestaurants(restosAvecInfos.map((r) => ({
+                    id: r.id,
+                    title: r.nom || "Restaurant sans nom",
+                    description: r.description || "Aucune description",
+                    rate: r.note_moyenne,
+                    tags_nourriture: r.tags || [],
+                    thumbnail: r.urlImage || img0,
+                    liked: true,
+                    likes: r.nb_likes
+                })));
 
-                setCardsRestaurants(newCards);
             } catch (err) {
-                console.error(err);
+                console.error("Erreur lors du chargement des favoris :", err);
             }
         };
 
-        fetchData();
-    }, [compte, restaurantsLiked]);
+        chargerDonnees();
+    }, [navigate]);
+
 
     /*const [cartesRecettes, setCartesRecettes] = React.useState([
         {
@@ -468,7 +414,7 @@ export default function Favori(){
                                         <RecetteElement
                                             rate={card.rate}
                                             description={card.description}
-                                            tags_nourriture={card.tags}
+                                            tags_nourriture={card.tags_nourriture}
                                         />
                                     )
                                 }}
@@ -487,10 +433,10 @@ export default function Favori(){
                                 card={{
                                     ...card,
                                     text: (
-                                        <RecetteElement
+                                        <RestoElement
                                             rate={card.rate}
                                             description={card.description}
-                                            tags_nourriture={card.tags}
+                                            tags_nourriture={card.tags_nourriture}
                                         />
                                     )
                                 }}

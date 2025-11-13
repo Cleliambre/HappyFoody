@@ -2,7 +2,7 @@ import Stack from "@mui/material/Stack";
 import {Container} from "@mui/material";
 import React from "react";
 
-export default function cardList({resMessage, children}){
+export default function CardList({resMessage, children}){
     return (
         <Container>
             <p>{resMessage}</p>

@@ -23,6 +23,10 @@ public class CommentaireService {
         return commentaire;
     }
 
+    public List<Commentaire> getCommentaireResponsesByRestaurant(Long id) throws ResourceNotFoundException {
+        return commentaireRepository.findResponsesByRestaurant(id);
+    }
+
     public Commentaire createCommentaire(Commentaire commentaire) {
         return commentaireRepository.save(commentaire);
     }

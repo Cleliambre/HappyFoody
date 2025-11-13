@@ -293,7 +293,7 @@ export default function Profil() {
         if(!compte) return;
 
         try{
-//Appel du backend
+            //Appel du backend
             const newCompte = {
                 pseudo : "deletedUser"+compte.idCompte,
                 mail : "deletedUser"+compte.idCompte+"@",
@@ -327,7 +327,6 @@ export default function Profil() {
             </Typography>
             <Container sx={{width: '80%'}}>
                 <div className="profil-description">
-                    {/*<Avatar src={compte.urlImage} className="profil-avatar" sx={{width:150, height:150}}/>*/}
                     <ColorAvatar src={compte.urlImage} name={compte.pseudo} className="profil-avatar" sx={{width:150, height:150, fontSize:100}}/>
                     <div className="profil-description-text">
                         <Typography variant="h4" color="textPrimary">
@@ -344,15 +343,18 @@ export default function Profil() {
                         className="profil-buttons"
                         spacing={2}
                     >
-                        <Button variant="outlined" className = "modif" onClick={() => {navigate('/modificationProfil')}}>
-                            Modifier le profil
-                        </Button>
+                        <Stack direction="row" justifyContent="space-between" width="100%">
+                            <Button variant="outlined" className = "modif" onClick={() => {navigate('/modificationProfil')}}>
+                                Modifier le profil
+                            </Button>
+                            <Button variant="outlined" color="error" onClick={handleRemove}>
+                                Supprimer le compte
+                            </Button>
+                        </Stack>
                         <Button variant="outlined" color="error" onClick={handleLogout}>
                             Déconnexion
                         </Button>
-                        <Button variant="outlined" color="error" onClick={handleRemove}>
-                            Supprimer le compte
-                        </Button>
+
                     </Stack>
                 )}
             </Container>
@@ -388,10 +390,10 @@ export default function Profil() {
                         </CardList>
                     </TabPanel>
                     <TabPanel value="2" className="tab-content">
-                        Item Two
+                        Aucun post créé
                     </TabPanel>
                     <TabPanel value="3" className="tab-content">
-                        Item Three
+                        Aucun partage créé actif
                     </TabPanel>
                 </TabContext>
             </div>

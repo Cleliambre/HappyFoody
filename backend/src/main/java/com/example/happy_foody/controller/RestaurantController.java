@@ -51,10 +51,34 @@ public class RestaurantController {
     }
 
     @GetMapping("/noteMoyenne/{id}")
-    public Long getNoteMoyenneById(@PathVariable(value = "id") Long id)
+    public Double getNoteMoyenneById(@PathVariable(value = "id") Long id)
     {
         //logger.info(restaurantService.getNoteMoyenneById(id).toString());
         return restaurantService.getNoteMoyenneById(id);
+    }
+
+    @GetMapping("/noteRapiditeMoyenne/{id}")
+    public Double getNoteRapiditeMoyenneById(@PathVariable(value = "id") Long id)
+    {
+        return restaurantService.getNoteRapiditeMoyenneById(id);
+    }
+
+    @GetMapping("/noteQualiteMoyenne/{id}")
+    public Double getNoteQualiteMoyenneById(@PathVariable(value = "id") Long id)
+    {
+        return restaurantService.getNoteQualiteMoyenneById(id);
+    }
+
+    @GetMapping("/noteServiceMoyenne/{id}")
+    public Double getNoteServiceMoyenneById(@PathVariable(value = "id") Long id)
+    {
+        return restaurantService.getNoteServiceMoyenneById(id);
+    }
+
+    @GetMapping("/noteHygieneMoyenne/{id}")
+    public Double getNoteHygieneMoyenneById(@PathVariable(value = "id") Long id)
+    {
+        return restaurantService.getNoteHygieneMoyenneById(id);
     }
 
     @GetMapping("/nombreLikes/{id}")

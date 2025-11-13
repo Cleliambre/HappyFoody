@@ -7,7 +7,12 @@ import img2 from "../../images/taboule_crame.png";
 import {useNavigate} from "react-router-dom";
 
 export default function CommunauteSearchPage(){
-    useEffect(() => {document.title = "Recherche Communauté - Happy Foody"}, [])
+    useEffect(() => {
+        document.title = "Recherche Communauté - Happy Foody";
+        const timer = setTimeout(() => {
+            alert("Il manque des fonctionnalités dans la section communauté");
+        }, 0);
+    }, [])
 
     //Outil permettant de naviguer entre les pages web
     const navigate = useNavigate();
@@ -121,6 +126,7 @@ export default function CommunauteSearchPage(){
             resultCount={cards.length}
             page={page}
         >
+
             {paginatedCards.map((card) => (
                 <GenericCard
                     card={card}
